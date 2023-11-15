@@ -10,18 +10,27 @@ import java.util.Objects;
 public class Position implements Serializable {
     public static final DataFormat POSITION_FORMAT = new DataFormat("amazons.position");
 
-   int x;
-   int y;
+    private int x; // x is considered as the column number of the position;
+    private int y; // y is considered as the row number of the position;
 
-   //TODO
+    //TODO
     public int getX() {return 0;}
     public int getY() {return 0;}
 
 
-    //TODO
+    /**
+     * check if the position of the piece is contained in the chessboard
+     * @param numberOfColumns
+     * @param numberOfRows
+     * @return true if it's not contained in the chessboard
+     */
     public boolean isOutOfBounds(int numberOfColumns, int numberOfRows){
-        return true;
+        if(x<0 || x>= numberOfColumns || y<0 || y>= numberOfRows){
+            return true;
+        }
+        return false;
     }
+
     // TODO
     public Position next(CardinalDirection direction) {
         return new Position();
