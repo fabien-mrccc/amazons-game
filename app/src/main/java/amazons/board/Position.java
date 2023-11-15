@@ -13,6 +13,10 @@ public class Position implements Serializable {
     private int x; // x is considered as the column number of the position;
     private int y; // y is considered as the row number of the position;
 
+    public Position(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
     //TODO
     public int getX() {return 0;}
     public int getY() {return 0;}
@@ -31,9 +35,13 @@ public class Position implements Serializable {
         return false;
     }
 
-    // TODO
+    /**
+     * return next position of this position in a chosen direction
+     * @param direction
+     * @return next position
+     */
     public Position next(CardinalDirection direction) {
-        return new Position();
+        return new Position(this.x + direction.deltaColumn, this.y + direction.deltaRow);
     }
     public CardinalDirection getDirection(Position destPosition){
         return CardinalDirection.getDirection(x,y, destPosition.x, destPosition.y);
