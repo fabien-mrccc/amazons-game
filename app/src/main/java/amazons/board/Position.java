@@ -43,6 +43,11 @@ public class Position implements Serializable {
     public Position next(CardinalDirection direction) {
         return new Position(this.x + direction.deltaColumn, this.y + direction.deltaRow);
     }
+
+    public String toString(){
+        return "(" + x + "," + y + ")";
+    }
+    
     public CardinalDirection getDirection(Position destPosition){
         return CardinalDirection.getDirection(x,y, destPosition.x, destPosition.y);
     }
