@@ -46,5 +46,17 @@ public class Position implements Serializable {
     public CardinalDirection getDirection(Position destPosition){
         return CardinalDirection.getDirection(x,y, destPosition.x, destPosition.y);
     }
+    public boolean equals (Object other){
+        if(!(other instanceof Position p)){
+            return false;
+        }
+        if (other == null) {
+            return false;
+        }
+        if (this.x == ((Position)other).x && this.y == ((Position) other).y) {
+            return true;
+        }
+        return false;
+    }
 
 }
