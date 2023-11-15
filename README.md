@@ -8,5 +8,5 @@ The square is then inaccessible to other players' pieces for the rest of the gam
 The winner is the last player to complete a move.
 
 ## Project members
-FANANI, amina, numéro de groupe 3, du premier participant
-MARCUCCINI, fabien, numéro de groupe 3, du deuxième participant
+- FANANI, amina, numéro de groupe 3, du premier participant
+- MARCUCCINI, fabien, numéro de groupe 3, du deuxième participant
