@@ -14,7 +14,9 @@ public class MatrixBoard implements Board {
     }
     @Override
     public void setFigure(Position position, Figure figure) {
-
+        if(!isOutOfBoard(position)) {
+            figures[position.getX()][position.getY()] = figure;
+        }
     }
 
     @Override
@@ -29,6 +31,9 @@ public class MatrixBoard implements Board {
 
     @Override
     public boolean isOutOfBoard(Position position) {
+        if(position.isOutOfBounds(figures.length,figures[0].length)){
+            return true;
+        }
         return false;
     }
 }

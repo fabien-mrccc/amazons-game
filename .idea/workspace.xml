@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +176,7 @@
       <workItem from="1699618245081" duration="4361000" />
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700063484378" duration="3042000" />
-      <workItem from="1700226215293" duration="1767000" />
+      <workItem from="1700226215293" duration="4119000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -221,7 +220,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700226667157</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add public int hashCode() and MatrixBoard class">
+      <created>1700228037774</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700228037774</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add MatrixBoard(int numberOfColumns, int numberOfRows)">
+      <created>1700229150703</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700229150703</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +246,8 @@
     <MESSAGE value="add public Position(int x, int y)&#10;fix public Position next(CardinalDirection direction)" />
     <MESSAGE value="add public boolean equals (Object other)" />
     <MESSAGE value="fix public int getX() and public int getY()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public int getX() and public int getY()" />
+    <MESSAGE value="add public int hashCode() and MatrixBoard class" />
+    <MESSAGE value="add MatrixBoard(int numberOfColumns, int numberOfRows)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add MatrixBoard(int numberOfColumns, int numberOfRows)" />
   </component>
 </project>
