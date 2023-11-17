@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public int getX() and public int getY()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" afterDir="false" />
     </list>
@@ -233,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700226667157</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix public void moveTo(Position position, Board board)">
+      <created>1700230118340</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700230118340</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +253,7 @@
     <MESSAGE value="add public Position(int x, int y)&#10;fix public Position next(CardinalDirection direction)" />
     <MESSAGE value="add public boolean equals (Object other)" />
     <MESSAGE value="fix public int getX() and public int getY()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public int getX() and public int getY()" />
+    <MESSAGE value="fix public void moveTo(Position position, Board board)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public void moveTo(Position position, Board board)" />
   </component>
 </project>

@@ -6,31 +6,35 @@ import amazons.player.PlayerID;
 
 public class EmptyFigure implements Figure {
     public static EmptyFigure EMPTY_FIGURE;
-    private Position position;
     private EmptyFigure(){
         EMPTY_FIGURE = new EmptyFigure();
     }
     @Override
     public boolean canMoveTo(Position position, Board board) {
+        /*
         if(board.isEmpty(position) && !board.isOutOfBoard(position)){
             return true;
         }
+         */
         return false;
     }
 
     @Override
     public void moveTo(Position position, Board board) {
+        throw new IllegalArgumentException();
+        /*
         if(canMoveTo(position, board)){
             setPosition(position);
         }
         else{
             throw new IllegalArgumentException();
         }
+
+         */
     }
 
     @Override
     public void setPosition(Position position) {
-        this.position = position;
     }
 
     @Override
