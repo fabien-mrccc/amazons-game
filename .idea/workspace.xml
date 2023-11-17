@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +176,7 @@
       <workItem from="1699618245081" duration="4361000" />
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700063484378" duration="3042000" />
-      <workItem from="1700226215293" duration="4552000" />
+      <workItem from="1700226215293" duration="5646000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -240,7 +241,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700230397729</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add public boolean isEmpty(Position position)">
+      <created>1700230789668</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700230789668</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add public Figure getFigure(Position position)">
+      <created>1700230941040</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700230941040</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +270,8 @@
     <MESSAGE value="add public int hashCode() and MatrixBoard class" />
     <MESSAGE value="add MatrixBoard(int numberOfColumns, int numberOfRows)" />
     <MESSAGE value="add public void setFigure(Position position, Figure figure) and public boolean isOutOfBoard(Position position)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public void setFigure(Position position, Figure figure) and public boolean isOutOfBoard(Position position)" />
+    <MESSAGE value="add public boolean isEmpty(Position position)" />
+    <MESSAGE value="add public Figure getFigure(Position position)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public Figure getFigure(Position position)" />
   </component>
 </project>
