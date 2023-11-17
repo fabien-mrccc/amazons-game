@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public Figure getFigure(Position position)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +177,7 @@
       <workItem from="1699618245081" duration="4361000" />
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700063484378" duration="3042000" />
-      <workItem from="1700226215293" duration="5646000" />
+      <workItem from="1700226215293" duration="6917000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -255,7 +256,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700230941040</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix public MatrixBoard(int numberOfColumns, int numberOfRows) &#10;add public int getNumberOfColumns() and public int getNumberOfRows()">
+      <created>1700232222720</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700232222720</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add private ArrowFigure()">
+      <created>1700232767251</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700232767251</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +287,8 @@
     <MESSAGE value="add public void setFigure(Position position, Figure figure) and public boolean isOutOfBoard(Position position)" />
     <MESSAGE value="add public boolean isEmpty(Position position)" />
     <MESSAGE value="add public Figure getFigure(Position position)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public Figure getFigure(Position position)" />
+    <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows) &#10;add public int getNumberOfColumns() and public int getNumberOfRows()" />
+    <MESSAGE value="add private ArrowFigure()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add private ArrowFigure()" />
   </component>
 </project>

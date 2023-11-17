@@ -12,7 +12,7 @@ public class ArrowFigure implements Figure{
     }
     @Override
     public boolean canMoveTo(Position position, Board board) {
-        return false;
+        return board.isEmpty(position);
     }
 
     @Override
