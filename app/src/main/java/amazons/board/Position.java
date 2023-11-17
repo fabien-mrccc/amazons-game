@@ -17,7 +17,7 @@ public class Position implements Serializable {
         this.x = x;
         this.y = y;
     }
-    
+
     public int getX() {return x;}
     public int getY() {return y;}
 
@@ -62,6 +62,9 @@ public class Position implements Serializable {
             return true;
         }
         return false;
+    }
+    public int hashCode(){
+        return Objects.hash(x,y);
     }
 
 }
