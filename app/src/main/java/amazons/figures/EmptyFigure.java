@@ -29,7 +29,6 @@ public class EmptyFigure implements Figure {
         else{
             throw new IllegalArgumentException();
         }
-
          */
     }
 
