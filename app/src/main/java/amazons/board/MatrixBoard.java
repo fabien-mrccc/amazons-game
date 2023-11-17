@@ -26,6 +26,11 @@ public class MatrixBoard implements Board {
 
     @Override
     public boolean isEmpty(Position position) {
+        if(!isOutOfBoard(position)) {
+            if (figures[position.getX()][position.getY()] == EmptyFigure.EMPTY_FIGURE) {
+                return true;
+            }
+        }
         return false;
     }
 
