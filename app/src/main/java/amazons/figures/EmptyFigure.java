@@ -6,11 +6,13 @@ import amazons.player.PlayerID;
 
 public class EmptyFigure implements Figure {
     public static EmptyFigure EMPTY_FIGURE;
+    private Position position;
     private EmptyFigure(){
         EMPTY_FIGURE = new EmptyFigure();
     }
     @Override
     public boolean canMoveTo(Position position, Board board) {
+
         return false;
     }
 
@@ -21,7 +23,7 @@ public class EmptyFigure implements Figure {
 
     @Override
     public void setPosition(Position position) {
-
+        this.position = position;
     }
 
     @Override

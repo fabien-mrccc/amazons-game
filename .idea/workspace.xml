@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +158,7 @@
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700061386968" duration="2514000" />
       <workItem from="1700064113633" duration="1600000" />
-      <workItem from="1700226147112" duration="1056000" />
+      <workItem from="1700226147112" duration="1541000" />
     </task>
     <task id="LOCAL-00001" summary="add public String toString()">
       <created>1700064911517</created>
@@ -168,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700064911517</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add private EmptyFigure()">
+      <created>1700227512046</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700227512046</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +182,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add public String toString()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public String toString()" />
+    <MESSAGE value="add private EmptyFigure()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add private EmptyFigure()" />
   </component>
 </project>
