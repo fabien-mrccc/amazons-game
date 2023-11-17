@@ -21,7 +21,7 @@ public class MatrixBoard implements Board {
 
     @Override
     public Figure getFigure(Position position) {
-        return null;
+        return figures[position.getX()][position.getY()];
     }
 
     @Override
