@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public PlayerID getPlayerID()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" afterDir="false" />
     </list>
@@ -158,7 +158,7 @@
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700061386968" duration="2514000" />
       <workItem from="1700064113633" duration="1600000" />
-      <workItem from="1700226147112" duration="1541000" />
+      <workItem from="1700226147112" duration="2451000" />
     </task>
     <task id="LOCAL-00001" summary="add public String toString()">
       <created>1700064911517</created>
@@ -174,7 +174,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700227512046</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add public void setPosition(Position position)">
+      <created>1700227737243</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700227737243</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add public PlayerID getPlayerID()">
+      <created>1700227913503</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700227913503</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +197,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add public String toString()" />
     <MESSAGE value="add private EmptyFigure()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add private EmptyFigure()" />
+    <MESSAGE value="add public void setPosition(Position position)" />
+    <MESSAGE value="add public PlayerID getPlayerID()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public PlayerID getPlayerID()" />
   </component>
 </project>
