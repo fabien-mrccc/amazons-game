@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/PositionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/IllegalMoveException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +182,7 @@
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700063484378" duration="3042000" />
       <workItem from="1700226215293" duration="7224000" />
-      <workItem from="1700572641812" duration="2897000" />
+      <workItem from="1700572641812" duration="4667000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -304,7 +310,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700575193004</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="comeback here to check if constant is always null">
+      <created>1700575578149</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1700575578149</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add void fill(FigureGenerator figureGenerator);">
+      <created>1700576305009</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700576305009</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +348,8 @@
     <MESSAGE value="add public void setPosition(Position position)" />
     <MESSAGE value="add public PlayerID getPlayerID()" />
     <MESSAGE value="add public class ArrowFigureTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public class ArrowFigureTest" />
+    <MESSAGE value="comeback here to check if constant is always null" />
+    <MESSAGE value="add void fill(FigureGenerator figureGenerator);" />
+    <option name="LAST_COMMIT_MESSAGE" value="add void fill(FigureGenerator figureGenerator);" />
   </component>
 </project>
