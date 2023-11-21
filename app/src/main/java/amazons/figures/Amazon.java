@@ -1,5 +1,6 @@
 package amazons.figures;
 
+import amazons.IllegalMoveException;
 import amazons.board.Board;
 import amazons.board.CardinalDirection;
 import amazons.board.Position;

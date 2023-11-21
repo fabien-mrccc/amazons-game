@@ -1,5 +1,6 @@
 package amazons.figures;
 
+import amazons.IllegalMoveException;
 import amazons.board.Board;
 import amazons.board.Position;
 import amazons.player.PlayerID;
