@@ -177,7 +177,7 @@
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700063484378" duration="3042000" />
       <workItem from="1700226215293" duration="6917000" />
-      <workItem from="1700572649641" duration="1915000" />
+      <workItem from="1700572649641" duration="2946000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -277,7 +277,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700574050576</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix public PlayerID getPlayerID()">
+      <created>1700574727055</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700574727055</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix public Amazon(Position position, PlayerID playerID)">
+      <created>1700574985030</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700574985030</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +311,8 @@
     <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows) &#10;add public int getNumberOfColumns() and public int getNumberOfRows()" />
     <MESSAGE value="add private ArrowFigure()" />
     <MESSAGE value="fix public void setPosition(Position position)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void setPosition(Position position)" />
+    <MESSAGE value="fix public PlayerID getPlayerID()" />
+    <MESSAGE value="fix public Amazon(Position position, PlayerID playerID)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public Amazon(Position position, PlayerID playerID)" />
   </component>
 </project>

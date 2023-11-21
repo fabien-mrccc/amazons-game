@@ -10,9 +10,9 @@ public class Amazon extends MovableFigure implements Figure{
     private Position position;
     private final PlayerID playerID;
 
-    public Amazon(Position position, PlayerID playerID){
+    public Amazon(Position position, int playerIDIndex){
         setPosition(position);
-        this.playerID = playerID;
+        this.playerID = PlayerID.getPlayerIDFromIndex(playerIDIndex);
     }
     @Override
     public boolean canMoveTo(Position position, Board board) {
