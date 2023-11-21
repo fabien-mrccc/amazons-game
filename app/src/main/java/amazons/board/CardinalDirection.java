@@ -12,8 +12,8 @@ public enum CardinalDirection {
     WEST(-1, 0),
     NORTH_WEST(-1,-1);
 
-    public final int deltaColumn; // value to add to the colum index of a square to get the column index of the neighboring square in that direction
-    public final int deltaRow; // value to add to the line index of a square to get the line index of the neighboring square in that direction
+    public final int deltaColumn;
+    public final int deltaRow;
 
 
     CardinalDirection(int deltaColumn, int deltaRow) {

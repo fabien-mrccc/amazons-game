@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/CardinalDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/CardinalDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/IllegalMoveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/IllegalMoveException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -359,21 +358,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700577777664</updated>
     </task>
-    <task id="LOCAL-00026" summary="fix public boolean canMoveTo(Position position, Board board): delete unnecessary comments&#10;fix public void moveTo(Position position, Board board) throws IllegalMoveException: delete unnecessary comments">
-      <created>1700579915391</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1700579915391</updated>
-    </task>
-    <task id="LOCAL-00027" summary="fix public void moveTo(Position position, Board board) throws IllegalMoveException: change with new IllegalMoveException">
-      <created>1700580094464</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1700580094464</updated>
-    </task>
-    <option name="localTasksCounter" value="28" />
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,8 +388,6 @@
     <MESSAGE value="fix void moveTo (Position position, Board board)throws IllegalMoveException" />
     <MESSAGE value="add public PositionException(String message)" />
     <MESSAGE value="add public void moveTo(Position position, Board board) throws IllegalMoveException" />
-    <MESSAGE value="fix public boolean canMoveTo(Position position, Board board): delete unnecessary comments&#10;fix public void moveTo(Position position, Board board) throws IllegalMoveException: delete unnecessary comments" />
-    <MESSAGE value="fix public void moveTo(Position position, Board board) throws IllegalMoveException: change with new IllegalMoveException" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void moveTo(Position position, Board board) throws IllegalMoveException: change with new IllegalMoveException" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public void moveTo(Position position, Board board) throws IllegalMoveException" />
   </component>
 </project>

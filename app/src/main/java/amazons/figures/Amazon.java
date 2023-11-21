@@ -55,17 +55,17 @@ public class Amazon extends MovableFigure implements Figure{
      */
     @Override
     public List<Position> getAccessiblePositions(Board board) {
-        List<Position> positions = new ArrayList<>();
+        List<Position> reachablePositions = new ArrayList<>();
 
         for(CardinalDirection direction : CardinalDirection.values()){
             Position positionCheck = this.position;
 
             while(canMoveTo(positionCheck.next(direction), board)){
-                positions.add(positionCheck);
+                reachablePositions.add(positionCheck);
                 positionCheck = positionCheck.next(direction);
             }
         }
 
-        return positions;
+        return reachablePositions;
     }
 }

@@ -13,11 +13,11 @@ import java.util.*;
 
 import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;*/
 
 
 class MatrixBoardTest {
-
+/*
     private MatrixBoard testBoard;
     private final Random random = new Random();
     private final int NUMBER_OF_COLUMNS = 4;
@@ -236,6 +236,5 @@ class MatrixBoardTest {
     void testIsEmpty() {
         testBoard.setFigure(position32,EMPTY_FIGURE);
         assertThat(testBoard.isEmpty(position32)).isTrue();
-    }
+    }*/
 }
- */

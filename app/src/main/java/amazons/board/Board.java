@@ -1,6 +1,7 @@
 package amazons.board;
 
 
+import amazons.IllegalMoveException;
 import amazons.figures.Figure;
 
 import java.util.Iterator;
@@ -43,7 +44,7 @@ public interface Board {
      * @throws IllegalMoveException: if position {@code startPosition} is empty, or the figure
      * at position {@code startPosition} cannot move to {@code dstPosition}
      */
-    //void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException;
+    void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException;
 
     /**
      * Place an arrow at  {@code dstPosition}. The arrow originates from {@code startPosition}
@@ -52,7 +53,7 @@ public interface Board {
      * @throws IllegalMoveException: if {@code dstPosition} is not empty occupied or there is no amazon
      * at position {@code startPosition} or it is not legal for the amazon to shoot an arrow to {@code dstPosition}
      */
-    //void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException;
+    void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException;
 
     /***
      * fill the board with the chosen figure generator

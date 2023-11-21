@@ -1,7 +1,9 @@
 package amazons.board;
 
+import amazons.IllegalMoveException;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
+import amazons.figures.Amazon;
 
 public class MatrixBoard implements Board {
     private final int numberOfColumns;
@@ -18,9 +20,7 @@ public class MatrixBoard implements Board {
     }
     @Override
     public void setFigure(Position position, Figure figure) {
-        if(!isOutOfBoard(position)) {
-            figures[position.getX()][position.getY()] = figure;
-        }
+        figures[position.getX()][position.getY()] = figure;
     }
 
     @Override
@@ -30,10 +30,8 @@ public class MatrixBoard implements Board {
 
     @Override
     public boolean isEmpty(Position position) {
-        if(!isOutOfBoard(position)) {
-            if (figures[position.getX()][position.getY()] == EmptyFigure.EMPTY_FIGURE) {
-                return true;
-            }
+        if (getFigure(position) == EmptyFigure.EMPTY_FIGURE) {
+            return true;
         }
         return false;
     }
@@ -51,6 +49,22 @@ public class MatrixBoard implements Board {
     public int getNumberOfRows(){
         return numberOfRows;
     }
+    @Override
+    public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException{
+        Amazon playedAmazon = (Amazon) getFigure(startPosition);
+        if(!playedAmazon.canMoveTo(dstPosition,this)){
+            throw new IllegalMoveException("This position is unreachable!");
+        }
+        if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
+            setFigure(dstPosition,playedAmazon);
+        }
+    }
+
+    @Override
+    public void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException {
+
+    }
+
 
     /*public void fill(FigureGenerator figureGenerator){
 
