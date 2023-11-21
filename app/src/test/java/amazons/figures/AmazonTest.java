@@ -35,7 +35,7 @@ class AmazonTest {
                   0    1    2    3"""
     */
 
-    /*
+
      void setUp(){
          for(int x=0; x<NUMBER_OF_COLUMNS; x++){
              for(int y=0; y<NUMBER_OF_ROWS; y++){

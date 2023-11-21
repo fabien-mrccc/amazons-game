@@ -54,6 +54,11 @@ public interface Board {
      */
     //void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException;
 
+    /***
+     * fill the board with the chosen figure generator
+     * @param figureGenerator
+     */
+    void fill(FigureGenerator figureGenerator);
 
 
 
