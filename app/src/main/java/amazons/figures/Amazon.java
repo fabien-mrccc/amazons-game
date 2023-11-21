@@ -1,9 +1,11 @@
 package amazons.figures;
 
 import amazons.board.Board;
+import amazons.board.CardinalDirection;
 import amazons.board.Position;
 import amazons.player.PlayerID;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Amazon extends MovableFigure implements Figure{
@@ -44,11 +46,25 @@ public class Amazon extends MovableFigure implements Figure{
 
     /**
      * Returns the list of positions that the Amazon can reach from its current position and according to the pieces already on the board.
+     * An Amazon moves at least one square in a straight line horizontally, vertically or diagonally through any number of squares.
+     * They can only move through unoccupied squares.
+     * This means that no square can be occupied (by an Amazon of any color or by an arrow) between the starting square and the Amazon's destination.
      * @param board
      * @return list of positions that the Amazon can reach from its current position
      */
     @Override
     public List<Position> getAccessiblePositions(Board board) {
-        return null;
+        List<Position> positions = new ArrayList<>();
+
+        for(CardinalDirection direction : CardinalDirection.values()){
+            Position positionCheck = this.position;
+
+            while(canMoveTo(positionCheck.next(direction), board)){
+                positions.add(positionCheck);
+                positionCheck = positionCheck.next(direction);
+            }
+        }
+
+        return positions;
     }
 }

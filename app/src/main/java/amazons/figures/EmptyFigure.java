@@ -17,14 +17,6 @@ public class EmptyFigure implements Figure {
     @Override
     public void moveTo(Position position, Board board) {
         throw new IllegalArgumentException();
-        /*
-        if(canMoveTo(position, board)){
-            setPosition(position);
-        }
-        else{
-            throw new IllegalArgumentException();
-        }
-         */
     }
 
     @Override

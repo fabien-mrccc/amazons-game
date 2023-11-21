@@ -21,8 +21,6 @@ class AmazonTest {
     private final int NUMBER_OF_ROWS = 3;
     private final Board board = new MatrixBoard(NUMBER_OF_COLUMNS, NUMBER_OF_ROWS);
     private Amazon amazon11;
-    @BeforeEach
-
 
     /*
                 +----+----+----+----+
@@ -35,7 +33,8 @@ class AmazonTest {
                   0    1    2    3"""
     */
 
-
+    /*
+    @BeforeEach
      void setUp(){
          for(int x=0; x<NUMBER_OF_COLUMNS; x++){
              for(int y=0; y<NUMBER_OF_ROWS; y++){
@@ -55,6 +54,8 @@ class AmazonTest {
          accessiblePositions.add(allPositions[2][1]);
          accessiblePositions.add(allPositions[3][1]);
      }
+
+     */
 
 
 /*
