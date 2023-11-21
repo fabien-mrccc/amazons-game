@@ -51,4 +51,8 @@ public class MatrixBoard implements Board {
     public int getNumberOfRows(){
         return numberOfRows;
     }
+
+    /*public void fill(FigureGenerator figureGenerator){
+
+    }*/
 }
