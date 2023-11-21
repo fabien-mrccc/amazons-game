@@ -8,10 +8,11 @@ import java.util.List;
 
 public class Amazon extends MovableFigure implements Figure{
     private Position position;
-    private PlayerID playerID;
+    private final PlayerID playerID;
 
-    public Amazon(Position position, ){
-
+    public Amazon(Position position, PlayerID playerID){
+        setPosition(position);
+        this.playerID = playerID;
     }
     @Override
     public boolean canMoveTo(Position position, Board board) {
