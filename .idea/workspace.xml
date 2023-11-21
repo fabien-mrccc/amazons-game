@@ -177,7 +177,8 @@
       <workItem from="1699618245081" duration="4361000" />
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700063484378" duration="3042000" />
-      <workItem from="1700226215293" duration="6917000" />
+      <workItem from="1700226215293" duration="7224000" />
+      <workItem from="1700572641812" duration="1482000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -270,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700232767251</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add public boolean canMoveTo(Position position, Board board)">
+      <created>1700233222389</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700233222389</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +297,7 @@
     <MESSAGE value="add public Figure getFigure(Position position)" />
     <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows) &#10;add public int getNumberOfColumns() and public int getNumberOfRows()" />
     <MESSAGE value="add private ArrowFigure()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add private ArrowFigure()" />
+    <MESSAGE value="add public boolean canMoveTo(Position position, Board board)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public boolean canMoveTo(Position position, Board board)" />
   </component>
 </project>
