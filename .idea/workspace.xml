@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +176,7 @@
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700063484378" duration="3042000" />
       <workItem from="1700226215293" duration="6917000" />
-      <workItem from="1700572649641" duration="2946000" />
+      <workItem from="1700572649641" duration="3290000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -291,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700574985030</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix public Amazon(Position position, int playerIDIndex): use an index to return the playerID">
+      <created>1700575618522</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700575618522</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +319,7 @@
     <MESSAGE value="fix public void setPosition(Position position)" />
     <MESSAGE value="fix public PlayerID getPlayerID()" />
     <MESSAGE value="fix public Amazon(Position position, PlayerID playerID)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public Amazon(Position position, PlayerID playerID)" />
+    <MESSAGE value="fix public Amazon(Position position, int playerIDIndex): use an index to return the playerID" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public Amazon(Position position, int playerIDIndex): use an index to return the playerID" />
   </component>
 </project>
