@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +176,7 @@
       <workItem from="1699622689482" duration="14966000" />
       <workItem from="1700063484378" duration="3042000" />
       <workItem from="1700226215293" duration="7224000" />
-      <workItem from="1700572641812" duration="1813000" />
+      <workItem from="1700572641812" duration="2897000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -283,7 +283,28 @@
       <option name="project" value="LOCAL" />
       <updated>1700574193652</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add public void setPosition(Position position)">
+      <created>1700574488320</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700574488320</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add public PlayerID getPlayerID()">
+      <created>1700574671734</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700574671734</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add public class ArrowFigureTest">
+      <created>1700575193004</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700575193004</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +325,9 @@
     <MESSAGE value="add private ArrowFigure()" />
     <MESSAGE value="add public boolean canMoveTo(Position position, Board board)" />
     <MESSAGE value="fix public boolean canMoveTo(Position position, Board board)&#10;add public void moveTo(Position position, Board board)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public boolean canMoveTo(Position position, Board board)&#10;add public void moveTo(Position position, Board board)" />
+    <MESSAGE value="add public void setPosition(Position position)" />
+    <MESSAGE value="add public PlayerID getPlayerID()" />
+    <MESSAGE value="add public class ArrowFigureTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public class ArrowFigureTest" />
   </component>
 </project>
