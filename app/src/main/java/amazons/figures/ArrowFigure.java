@@ -15,8 +15,8 @@ public class ArrowFigure implements Figure{
     }
 
     @Override
-    public void moveTo(Position position, Board board) {
-        throw new IllegalArgumentException();
+    public void moveTo (Position position, Board board) throws IllegalMoveException {
+        throw new IllegalMoveException("ArrowFigure can't be moved");
     }
 
     @Override
