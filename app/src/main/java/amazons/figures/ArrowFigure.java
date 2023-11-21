@@ -20,9 +20,7 @@ public class ArrowFigure implements Figure{
     }
 
     @Override
-    public void setPosition(Position position) {
-        throw new PositionException("ArrowFigure can't have a position set.");
-    }
+    public void setPosition(Position position) {}
 
     @Override
     public PlayerID getPlayerID() {

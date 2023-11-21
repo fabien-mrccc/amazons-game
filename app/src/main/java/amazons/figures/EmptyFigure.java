@@ -33,9 +33,7 @@ public class EmptyFigure implements Figure {
     }
 
     @Override
-    public void setPosition(Position position) {
-        throw new PositionException("EmptyFigure can't have a position set.");
-    }
+    public void setPosition(Position position){}
 
     @Override
     public PlayerID getPlayerID() {
