@@ -1,6 +1,7 @@
 package amazons.board;
 
 import amazons.IllegalMoveException;
+import amazons.figures.ArrowFigure;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 import amazons.figures.Amazon;
@@ -56,13 +57,20 @@ public class MatrixBoard implements Board {
             throw new IllegalMoveException("This position is unreachable!");
         }
         if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
+            playedAmazon.setPosition(dstPosition);
             setFigure(dstPosition,playedAmazon);
         }
     }
 
     @Override
     public void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException {
-
+        Amazon shootingAmazon = (Amazon) getFigure(startPosition);
+        if(!ArrowFigure.ARROW_FIGURE.canMoveTo(arrowDstPosition,this)){
+            throw new IllegalMoveException("This position is unreachable!");
+        }
+        if(shootingAmazon.getAccessiblePositions(this).contains(arrowDstPosition)){
+            setFigure(arrowDstPosition,ArrowFigure.ARROW_FIGURE);
+        }
     }
 
 

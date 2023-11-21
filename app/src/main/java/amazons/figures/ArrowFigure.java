@@ -27,4 +27,5 @@ public class ArrowFigure implements Figure{
     public PlayerID getPlayerID() {
         return PlayerID.NONE;
     }
+
 }
