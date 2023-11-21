@@ -11,25 +11,12 @@ public class EmptyFigure implements Figure {
     }
     @Override
     public boolean canMoveTo(Position position, Board board) {
-        /*
-        if(board.isEmpty(position) && !board.isOutOfBoard(position)){
-            return true;
-        }
-         */
         return false;
     }
 
     @Override
     public void moveTo(Position position, Board board) throws IllegalMoveException {
         throw new IllegalMoveException("EmptyFigure can't be moved");
-        /*
-        if(canMoveTo(position, board)){
-            setPosition(position);
-        }
-        else{
-            throw new IllegalArgumentException();
-        }
-         */
     }
 
     @Override
