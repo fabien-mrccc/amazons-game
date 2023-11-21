@@ -8,8 +8,9 @@ import java.util.List;
 
 public class Amazon extends MovableFigure implements Figure{
     private Position position;
+    private PlayerID playerID;
 
-    public Amazon(){
+    public Amazon(Position position, ){
 
     }
     @Override
@@ -29,7 +30,7 @@ public class Amazon extends MovableFigure implements Figure{
 
     @Override
     public PlayerID getPlayerID() {
-        return null;
+        return playerID;
     }
 
     /**
