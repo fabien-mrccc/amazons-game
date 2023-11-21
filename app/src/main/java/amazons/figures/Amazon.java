@@ -16,6 +16,9 @@ public class Amazon extends MovableFigure implements Figure{
     }
     @Override
     public boolean canMoveTo(Position position, Board board) {
+        if(board.isEmpty(position) && !board.isOutOfBoard(position)){
+            return true;
+        }
         return false;
     }
 
