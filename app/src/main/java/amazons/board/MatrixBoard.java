@@ -52,4 +52,7 @@ public class MatrixBoard implements Board {
         return numberOfRows;
     }
 
+    /*public void fill(FigureGenerator figureGenerator){
+
+    }*/
 }
