@@ -6,9 +6,8 @@ import amazons.player.PlayerID;
 
 import java.util.List;
 
-public abstract  class MovableFigure {
+public abstract class MovableFigure {
 
-
-    abstract  public List<Position> getAccessiblePositions(Board board);
+    abstract public List<Position> getAccessiblePositions(Board board);
 
 }

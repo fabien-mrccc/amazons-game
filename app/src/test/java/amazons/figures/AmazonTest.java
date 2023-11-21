@@ -2,7 +2,7 @@ package amazons.figures;
 
 import amazons.board.Board;
 // import amazons.board.EmptyFigureGenerator;
-// import amazons.board.MatrixBoard;
+import amazons.board.MatrixBoard;
 import amazons.board.Position;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class AmazonTest {
-    /*
+
     private final Position[][] allPositions = new Position[4][3];
     private final List<Position> accessiblePositions = new ArrayList<>();
     private final int NUMBER_OF_COLUMNS = 4;
@@ -22,7 +22,7 @@ class AmazonTest {
     private final Board board = new MatrixBoard(NUMBER_OF_COLUMNS, NUMBER_OF_ROWS);
     private Amazon amazon11;
     @BeforeEach
-    */
+
 
     /*
                 +----+----+----+----+
@@ -35,7 +35,7 @@ class AmazonTest {
                   0    1    2    3"""
     */
 
-    /*
+
      void setUp(){
          for(int x=0; x<NUMBER_OF_COLUMNS; x++){
              for(int y=0; y<NUMBER_OF_ROWS; y++){
@@ -55,7 +55,7 @@ class AmazonTest {
          accessiblePositions.add(allPositions[2][1]);
          accessiblePositions.add(allPositions[3][1]);
      }
-*/
+
 
 /*
     @Test
