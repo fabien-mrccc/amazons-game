@@ -1,6 +1,7 @@
 package amazons.board;
 
 import amazons.IllegalMoveException;
+import amazons.figures.ArrowFigure;
 import amazons.figures.Amazon;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
@@ -52,17 +53,16 @@ public class MapBoard implements Board{
 
     @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
-
-        if(!figures.get(startPosition).canMoveTo(dstPosition,this)){
+        if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
             throw new IllegalMoveException("This position is unreachable!");
         }
         if(isEmpty(startPosition)){
             throw new IllegalMoveException("This position is empty!");
         }
-        Amazon amazon = (Amazon) figures.get(startPosition);
-        if(amazon.getAccessiblePositions(this).contains(dstPosition)){
-            amazon.setPosition(dstPosition);
-            setFigure(dstPosition,amazon);
+        Amazon playedAmazon = (Amazon) getFigure(startPosition);
+        if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
+            playedAmazon.setPosition(dstPosition);
+            setFigure(dstPosition,playedAmazon);
             setFigure(startPosition, EmptyFigure.EMPTY_FIGURE);
         }
     }
