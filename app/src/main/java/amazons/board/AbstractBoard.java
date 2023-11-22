@@ -34,26 +34,36 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
-        if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
-            throw new IllegalMoveException("This position is unreachable or your figure is neutral!");
-        }
+        moveCheck(startPosition, dstPosition);
 
         Amazon playedAmazon = (Amazon) getFigure(startPosition);
-        if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
-            playedAmazon.moveTo(dstPosition, this);
-            setFigure(dstPosition,playedAmazon);
-            setFigure(startPosition, EmptyFigure.EMPTY_FIGURE);
-        }
+        playedAmazon.moveTo(dstPosition, this);
+        setFigure(dstPosition,playedAmazon);
+        setFigure(startPosition, EmptyFigure.EMPTY_FIGURE);
     }
 
     @Override
     public void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException {
-        Amazon shootingAmazon = (Amazon) getFigure(startPosition);
-        if(!ArrowFigure.ARROW_FIGURE.canMoveTo(arrowDstPosition,this)){
-            throw new IllegalMoveException("This position is unreachable!");
+        moveCheck(startPosition, arrowDstPosition);
+
+        setFigure(arrowDstPosition,ArrowFigure.ARROW_FIGURE);
+    }
+
+    /**
+     * Common method for checking the validity of a move/shoot operation
+     * (factor moveFigure() and shootArrow() methods).
+     * @param startPosition The starting position of the figure.
+     * @param dstPosition The destination position of the figure.
+     * @throws IllegalMoveException Thrown if the move is invalid or the destination is unreachable.
+     */
+    private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException{
+        if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
+            throw new IllegalMoveException("Your move/shoot is forbidden or your moving/shooting figure is neutral!");
         }
-        if(shootingAmazon.getAccessiblePositions(this).contains(arrowDstPosition)){
-            setFigure(arrowDstPosition,ArrowFigure.ARROW_FIGURE);
+
+        Amazon amazonOrArrow = (Amazon) getFigure(startPosition);
+        if(!amazonOrArrow.getAccessiblePositions(this).contains(dstPosition)){
+            throw new IllegalMoveException("This position is unreachable!");
         }
     }
 

@@ -60,7 +60,4 @@ public interface Board {
      * @param generator: the chosen figure generator
      */
    void fill(FigureGenerator generator);
-
-
-
 }
