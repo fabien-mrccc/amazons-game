@@ -5,13 +5,10 @@ import javafx.scene.input.DataFormat;
 import java.io.Serializable;
 import java.util.Objects;
 
-//TODO complete the code this class and its documentation
-
 public class Position implements Serializable {
     public static final DataFormat POSITION_FORMAT = new DataFormat("amazons.position");
-
-    private int x; // x is considered as the column number of the position;
-    private int y; // y is considered as the row number of the position;
+    private final int x; // x is considered as the column number of the position;
+    private final int y; // y is considered as the row number of the position;
 
     public Position(int x, int y){
         this.x = x;
