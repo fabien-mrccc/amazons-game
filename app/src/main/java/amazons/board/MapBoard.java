@@ -1,21 +1,15 @@
 package amazons.board;
 
-import amazons.IllegalMoveException;
-import amazons.figures.ArrowFigure;
-import amazons.figures.Amazon;
-import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
+
 import java.util.Map;
 
-public class MapBoard implements Board{
-    private final int numberOfColumns;
-    private final int numberOfRows;
+public class MapBoard extends AbstractBoard {
+
     private Map<Position,Figure> figures;
 
     public MapBoard(int numberOfColumns, int numberOfRows){
-        this.numberOfColumns = numberOfColumns;
-        this.numberOfRows = numberOfRows;
-        fill(new EmptyFigureGenerator());
+        super(numberOfColumns, numberOfRows);
     }
 
     @Override
@@ -26,54 +20,5 @@ public class MapBoard implements Board{
     @Override
     public Figure getFigure(Position position) {
         return figures.get(position);
-    }
-
-    @Override
-    public boolean isEmpty(Position position) {
-        if(getFigure(position) == EmptyFigure.EMPTY_FIGURE){
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public boolean isOutOfBoard(Position position) {
-        if(position.isOutOfBounds(numberOfColumns,numberOfRows)){
-            return true;
-        }
-        return false;
-    }
-
-    public int getNumberOfColumns(){
-        return numberOfColumns;
-    }
-    public int getNumberOfRows(){
-        return numberOfRows;
-    }
-
-    @Override
-    public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
-        if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
-            throw new IllegalMoveException("This position is unreachable!");
-        }
-        if(isEmpty(startPosition)){
-            throw new IllegalMoveException("This position is empty!");
-        }
-        Amazon playedAmazon = (Amazon) getFigure(startPosition);
-        if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
-            playedAmazon.setPosition(dstPosition);
-            setFigure(dstPosition,playedAmazon);
-            setFigure(startPosition, EmptyFigure.EMPTY_FIGURE);
-        }
-    }
-
-    @Override
-    public void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException {
-
-    }
-
-    @Override
-    public void fill(FigureGenerator generator) {
-
     }
 }
