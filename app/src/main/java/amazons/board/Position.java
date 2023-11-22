@@ -63,6 +63,7 @@ public class Position implements Serializable {
         }
         return false;
     }
+    @Override
     public int hashCode(){
         return Objects.hash(x,y);
     }
