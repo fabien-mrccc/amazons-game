@@ -1,7 +1,9 @@
-package amazons.figures;
+package amazons.board;
 
 import amazons.board.FigureGenerator;
 import amazons.board.Position;
+import amazons.figures.EmptyFigure;
+import amazons.figures.Figure;
 
 public class EmptyFigureGenerator implements FigureGenerator {
     @Override

@@ -73,8 +73,12 @@ public class MatrixBoard implements Board {
         }
     }
 
-
-    /*public void fill(FigureGenerator figureGenerator){
-
-    }*/
+    @Override
+    public void fill(FigureGenerator generator){
+        for(int x=0; x< numberOfColumns; x++){
+            for(int y=0; y< numberOfRows; y++){
+                figures[x][y] = generator.nextFigure(new Position(x,y));
+            }
+        }
+    }
 }

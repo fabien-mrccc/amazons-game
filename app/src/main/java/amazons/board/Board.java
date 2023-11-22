@@ -57,9 +57,9 @@ public interface Board {
 
     /***
      * fill the board with the chosen figure generator
-     * @param figureGenerator
+     * @param generator
      */
-   /* void fill(FigureGenerator figureGenerator);*/
+   void fill(FigureGenerator generator);
 
 
 
