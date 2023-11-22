@@ -14,7 +14,7 @@ public class MapBoard implements Board{
 
     @Override
     public Figure getFigure(Position position) {
-        return null;
+        return squares.get(position);
     }
 
     @Override
