@@ -35,11 +35,9 @@ public abstract class AbstractBoard implements Board{
     @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
         if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
-            throw new IllegalMoveException("This position is unreachable!");
+            throw new IllegalMoveException("This position is unreachable or your figure is neutral!");
         }
-        if(isEmpty(startPosition)){
-            throw new IllegalMoveException("This position is empty!");
-        }
+
         Amazon playedAmazon = (Amazon) getFigure(startPosition);
         if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
             playedAmazon.moveTo(dstPosition, this);
