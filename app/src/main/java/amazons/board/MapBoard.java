@@ -8,7 +8,16 @@ import amazons.figures.Figure;
 import java.util.Map;
 
 public class MapBoard implements Board{
+    private final int numberOfColumns;
+    private final int numberOfRows;
     private Map<Position,Figure> figures;
+
+    public MapBoard(int numberOfColumns, int numberOfRows){
+        this.numberOfColumns = numberOfColumns;
+        this.numberOfRows = numberOfRows;
+        fill(new EmptyFigureGenerator());
+    }
+
     @Override
     public void setFigure(Position position, Figure figure) {
         figures.put(position,figure);

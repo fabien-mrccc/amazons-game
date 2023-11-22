@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix private final int x, y: add final keyword">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix: figures variable refactoring from squares name">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +194,7 @@
       <workItem from="1700226215293" duration="7224000" />
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
-      <workItem from="1700676649531" duration="1110000" />
+      <workItem from="1700676649531" duration="1914000" />
     </task>
     <task id="LOCAL-00001" summary="fix public boolean isOutOfBounds(int numberOfColumns, int numberOfRows)&#10;fix x and y attributes: add private specification">
       <created>1700063612022</created>
@@ -427,15 +427,27 @@
       <option name="project" value="LOCAL" />
       <updated>1700677503341</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fix public MatrixBoard(int numberOfColumns, int numberOfRows): remove unnecessary variable">
+      <created>1700677814394</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700677814394</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix: figures variable refactoring from squares name">
+      <created>1700678269018</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1700678269018</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public int getX() and public int getY()" />
-    <MESSAGE value="add public int hashCode() and MatrixBoard class" />
     <MESSAGE value="add MatrixBoard(int numberOfColumns, int numberOfRows)" />
     <MESSAGE value="add public void setFigure(Position position, Figure figure) and public boolean isOutOfBoard(Position position)" />
     <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows) &#10;add public int getNumberOfColumns() and public int getNumberOfRows()" />
@@ -459,6 +471,8 @@
     <MESSAGE value="add public boolean isEmpty(Position position)" />
     <MESSAGE value="add public boolean isOutOfBoard(Position position)" />
     <MESSAGE value="fix private final int x, y: add final keyword" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix private final int x, y: add final keyword" />
+    <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows): remove unnecessary variable" />
+    <MESSAGE value="fix: figures variable refactoring from squares name" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: figures variable refactoring from squares name" />
   </component>
 </project>
