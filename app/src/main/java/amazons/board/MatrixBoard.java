@@ -59,6 +59,7 @@ public class MatrixBoard implements Board {
         if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
             playedAmazon.setPosition(dstPosition);
             setFigure(dstPosition,playedAmazon);
+            setFigure(startPosition, EmptyFigure.EMPTY_FIGURE);
         }
     }
 
