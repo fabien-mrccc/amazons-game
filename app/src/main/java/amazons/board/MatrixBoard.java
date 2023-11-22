@@ -10,12 +10,13 @@ public class MatrixBoard implements Board {
     private final int numberOfColumns;
     private final int numberOfRows;
     private Figure[][] figures ;
+
     public MatrixBoard(int numberOfColumns, int numberOfRows){
         this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
-        EmptyFigureGenerator generator = new EmptyFigureGenerator();
-        fill(generator);
+        fill(new EmptyFigureGenerator());
     }
+
     @Override
     public void setFigure(Position position, Figure figure) {
         figures[position.getX()][position.getY()] = figure;
