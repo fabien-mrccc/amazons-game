@@ -49,10 +49,13 @@ public class MatrixBoard implements Board {
     }
     @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException{
-        Amazon playedAmazon = (Amazon) getFigure(startPosition);
-        if(!playedAmazon.canMoveTo(dstPosition,this)){
+        if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
             throw new IllegalMoveException("This position is unreachable!");
         }
+        if(isEmpty(startPosition)){
+            throw new IllegalMoveException("This position is empty!");
+        }
+        Amazon playedAmazon = (Amazon) getFigure(startPosition);
         if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
             playedAmazon.setPosition(dstPosition);
             setFigure(dstPosition,playedAmazon);
