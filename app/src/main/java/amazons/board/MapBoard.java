@@ -8,20 +8,20 @@ import amazons.figures.Figure;
 import java.util.Map;
 
 public class MapBoard implements Board{
-    private Map<Position,Figure> squares;
+    private Map<Position,Figure> figures;
     @Override
     public void setFigure(Position position, Figure figure) {
-        squares.put(position,figure);
+        figures.put(position,figure);
     }
 
     @Override
     public Figure getFigure(Position position) {
-        return squares.get(position);
+        return figures.get(position);
     }
 
     @Override
     public boolean isEmpty(Position position) {
-        if(squares.get(position) == EmptyFigure.EMPTY_FIGURE){
+        if(figures.get(position) == EmptyFigure.EMPTY_FIGURE){
             return true;
         }
         return false;
@@ -29,7 +29,7 @@ public class MapBoard implements Board{
 
     @Override
     public boolean isOutOfBoard(Position position) {
-        if(squares.containsKey(position)){
+        if(figures.containsKey(position)){
             return false;
         }
         return true;
@@ -38,13 +38,13 @@ public class MapBoard implements Board{
     @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
 
-        if(!squares.get(startPosition).canMoveTo(dstPosition,this)){
+        if(!figures.get(startPosition).canMoveTo(dstPosition,this)){
             throw new IllegalMoveException("This position is unreachable!");
         }
         if(isEmpty(startPosition)){
             throw new IllegalMoveException("This position is empty!");
         }
-        Amazon amazon = (Amazon) squares.get(startPosition);
+        Amazon amazon = (Amazon) figures.get(startPosition);
         if(amazon.getAccessiblePositions(this).contains(dstPosition)){
             amazon.setPosition(dstPosition);
             setFigure(dstPosition,amazon);
