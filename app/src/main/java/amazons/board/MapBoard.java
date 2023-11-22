@@ -4,7 +4,6 @@ import amazons.IllegalMoveException;
 import amazons.figures.Amazon;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
-
 import java.util.Map;
 
 public class MapBoard implements Board{
@@ -30,7 +29,7 @@ public class MapBoard implements Board{
 
     @Override
     public boolean isEmpty(Position position) {
-        if(figures.get(position) == EmptyFigure.EMPTY_FIGURE){
+        if(getFigure(position) == EmptyFigure.EMPTY_FIGURE){
             return true;
         }
         return false;
