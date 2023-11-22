@@ -43,6 +43,13 @@ public class MapBoard implements Board{
         return false;
     }
 
+    public int getNumberOfColumns(){
+        return numberOfColumns;
+    }
+    public int getNumberOfRows(){
+        return numberOfRows;
+    }
+
     @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
 
