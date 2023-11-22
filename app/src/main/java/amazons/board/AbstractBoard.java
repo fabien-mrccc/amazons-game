@@ -16,6 +16,7 @@ public abstract class AbstractBoard implements Board{
         fill(new EmptyFigureGenerator());
     }
 
+    @Override
     public boolean isEmpty(Position position) {
         if(getFigure(position) == EmptyFigure.EMPTY_FIGURE){
             return true;
@@ -23,6 +24,7 @@ public abstract class AbstractBoard implements Board{
         return false;
     }
 
+    @Override
     public boolean isOutOfBoard(Position position) {
         if(position.isOutOfBounds(numberOfColumns,numberOfRows)){
             return true;
@@ -30,6 +32,7 @@ public abstract class AbstractBoard implements Board{
         return false;
     }
 
+    @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
         if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
             throw new IllegalMoveException("This position is unreachable!");
@@ -39,12 +42,13 @@ public abstract class AbstractBoard implements Board{
         }
         Amazon playedAmazon = (Amazon) getFigure(startPosition);
         if(playedAmazon.getAccessiblePositions(this).contains(dstPosition)){
-            playedAmazon.setPosition(dstPosition);
+            playedAmazon.moveTo(dstPosition, this);
             setFigure(dstPosition,playedAmazon);
             setFigure(startPosition, EmptyFigure.EMPTY_FIGURE);
         }
     }
 
+    @Override
     public void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException {
         Amazon shootingAmazon = (Amazon) getFigure(startPosition);
         if(!ArrowFigure.ARROW_FIGURE.canMoveTo(arrowDstPosition,this)){
@@ -55,6 +59,7 @@ public abstract class AbstractBoard implements Board{
         }
     }
 
+    @Override
     public void fill(FigureGenerator generator){
         for(int x=0; x< getNumberOfColumns(); x++){
             for(int y=0; y< getNumberOfRows(); y++){
