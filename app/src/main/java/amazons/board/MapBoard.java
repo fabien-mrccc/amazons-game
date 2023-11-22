@@ -37,10 +37,10 @@ public class MapBoard implements Board{
 
     @Override
     public boolean isOutOfBoard(Position position) {
-        if(figures.containsKey(position)){
-            return false;
+        if(position.isOutOfBounds(numberOfColumns,numberOfRows)){
+            return true;
         }
-        return true;
+        return false;
     }
 
     @Override

@@ -42,6 +42,7 @@ public class MatrixBoard implements Board {
         }
         return false;
     }
+
     public int getNumberOfColumns(){
         return numberOfColumns;
     }
