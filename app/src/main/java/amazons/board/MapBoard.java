@@ -28,7 +28,10 @@ public class MapBoard implements Board{
 
     @Override
     public boolean isOutOfBoard(Position position) {
-        return false;
+        if(squares.containsKey(position)){
+            return false;
+        }
+        return true;
     }
 
     @Override
