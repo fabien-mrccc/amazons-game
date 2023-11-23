@@ -33,4 +33,9 @@ public class MapBoard extends AbstractBoard {
 
     }
 
+    @Override
+    public Figure[][] getPositionMatrix() {
+        return new Figure[0][];
+    }
+
 }
