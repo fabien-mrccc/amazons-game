@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public Figure[][] getMatrix()">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public boolean hasNext(): now using equals() method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,20 +196,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00003" summary="add README.md file with team members and project description">
-      <created>1700064000488</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1700064000488</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add public Position(int x, int y)&#10;fix public Position next(CardinalDirection direction)">
-      <created>1700064661913</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1700064661913</updated>
     </task>
     <task id="LOCAL-00005" summary="add public boolean equals (Object other)">
       <created>1700065537369</created>
@@ -538,15 +526,27 @@
       <option name="project" value="LOCAL" />
       <updated>1700763883689</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fix public boolean hasNext()">
+      <created>1700764104305</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1700764104305</updated>
+    </task>
+    <task id="LOCAL-00053" summary="fix public boolean hasNext(): now using equals() method">
+      <created>1700764372277</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1700764372277</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public Figure nextFigure(Position position)" />
-    <MESSAGE value="add public void fill(FigureGenerator generator)" />
     <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows)" />
     <MESSAGE value="add public void setFigure(Position position, Figure figure)" />
     <MESSAGE value="add public Figure getFigure(Position position)" />
@@ -570,6 +570,8 @@
     <MESSAGE value="fix public Iterator&lt;Figure&gt; iterator()" />
     <MESSAGE value="add public void setCurrentPosition(Position position)" />
     <MESSAGE value="fix public Figure[][] getMatrix()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public Figure[][] getMatrix()" />
+    <MESSAGE value="fix public boolean hasNext()" />
+    <MESSAGE value="fix public boolean hasNext(): now using equals() method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public boolean hasNext(): now using equals() method" />
   </component>
 </project>

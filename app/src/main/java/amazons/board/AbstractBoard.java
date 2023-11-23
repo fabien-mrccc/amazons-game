@@ -83,6 +83,11 @@ public abstract class AbstractBoard implements Board{
         return new MatrixIterator<>(getNumberOfColumns(),getNumberOfRows(),getMatrix());
     }
 
+    @Override
+    public Iterator<Position> positionIterator(){
+        return null;
+    }
+
     public int getNumberOfColumns(){
         return numberOfColumns;
     }

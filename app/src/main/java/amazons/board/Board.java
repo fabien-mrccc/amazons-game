@@ -68,9 +68,8 @@ public interface Board extends Iterable<Figure>{
     Iterator<Figure> iterator();
 
     /**
-     * return every positions contained in the board
+     * return an instance of MatrixIterator<Position>
      * @return MatrixIterator<Position>
      */
-    //Iterator<Position> positionIterator();
-    
+    Iterator<Position> positionIterator();
 }
