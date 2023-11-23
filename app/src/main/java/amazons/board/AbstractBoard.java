@@ -25,10 +25,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public boolean isOutOfBoard(Position position) {
-        if(position.isOutOfBounds(getNumberOfColumns(),getNumberOfRows())){
-            return true;
-        }
-        return false;
+        return position.isOutOfBounds(getNumberOfColumns(), getNumberOfRows());
     }
 
     @Override
