@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public boolean hasNext(): now using equals() method">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public boolean isOutOfBoard(Position position)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,27 +197,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00005" summary="add public boolean equals (Object other)">
-      <created>1700065537369</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1700065537369</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fix public int getX() and public int getY()">
-      <created>1700226667157</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1700226667157</updated>
-    </task>
-    <task id="LOCAL-00007" summary="add public int hashCode() and MatrixBoard class">
-      <created>1700228037774</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1700228037774</updated>
     </task>
     <task id="LOCAL-00008" summary="add MatrixBoard(int numberOfColumns, int numberOfRows)">
       <created>1700229150703</created>
@@ -540,14 +520,34 @@
       <option name="project" value="LOCAL" />
       <updated>1700764372277</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="add public Iterator&lt;Position&gt; positionIterator()">
+      <created>1700764873056</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1700764873056</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fix public boolean isEmpty(Position position)">
+      <created>1700764916669</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1700764916670</updated>
+    </task>
+    <task id="LOCAL-00056" summary="fix public boolean isOutOfBoard(Position position)">
+      <created>1700764937334</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1700764937334</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows)" />
     <MESSAGE value="add public void setFigure(Position position, Figure figure)" />
     <MESSAGE value="add public Figure getFigure(Position position)" />
     <MESSAGE value="add public boolean isEmpty(Position position)" />
@@ -556,8 +556,6 @@
     <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows): remove unnecessary variable" />
     <MESSAGE value="fix: figures variable refactoring from squares name" />
     <MESSAGE value="add public MatrixBoard(int numberOfColumns, int numberOfRows)" />
-    <MESSAGE value="fix public boolean isEmpty(Position position)" />
-    <MESSAGE value="fix public boolean isOutOfBoard(Position position)" />
     <MESSAGE value="add public int getNumberOfColumns()&#10;add public int getNumberOfRows()" />
     <MESSAGE value="add AbstractBoard class and refactoring MatrixBoard and MapBoard classes" />
     <MESSAGE value="fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException" />
@@ -572,6 +570,9 @@
     <MESSAGE value="fix public Figure[][] getMatrix()" />
     <MESSAGE value="fix public boolean hasNext()" />
     <MESSAGE value="fix public boolean hasNext(): now using equals() method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public boolean hasNext(): now using equals() method" />
+    <MESSAGE value="add public Iterator&lt;Position&gt; positionIterator()" />
+    <MESSAGE value="fix public boolean isEmpty(Position position)" />
+    <MESSAGE value="fix public boolean isOutOfBoard(Position position)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public boolean isOutOfBoard(Position position)" />
   </component>
 </project>

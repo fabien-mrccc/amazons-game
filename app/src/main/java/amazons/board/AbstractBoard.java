@@ -96,5 +96,4 @@ public abstract class AbstractBoard implements Board{
 
     public abstract Figure[][] getMatrix();
 
-
 }

@@ -32,6 +32,7 @@ public class MapBoard extends AbstractBoard {
             }
         }
         return mapToMatrix.getMatrix();
+
     }
 
 }
