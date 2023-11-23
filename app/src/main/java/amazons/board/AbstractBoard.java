@@ -6,6 +6,8 @@ import amazons.figures.Amazon;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 
+import java.util.Iterator;
+
 public abstract class AbstractBoard implements Board{
     private final int numberOfColumns;
     private final int numberOfRows;
@@ -86,5 +88,8 @@ public abstract class AbstractBoard implements Board{
     public abstract void setFigure(Position position, Figure figure);
 
     public abstract Figure getFigure(Position position);
+    @Override
+    public abstract Iterator<Figure> iterator();
+
 
 }
