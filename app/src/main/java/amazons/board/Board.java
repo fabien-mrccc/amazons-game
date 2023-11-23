@@ -6,7 +6,7 @@ import amazons.figures.Figure;
 
 import java.util.Iterator;
 
-public interface Board {
+public interface Board extends Iterable<Figure>{
     /**
      * Place the given figure {@code figure} at the position {@code position}. Nothing happens if {@code position}
      * is outside this board.
@@ -60,4 +60,11 @@ public interface Board {
      * @param generator: the chosen figure generator
      */
    void fill(FigureGenerator generator);
+
+    /**
+     * return an instance of MatrixIterator<Figure>
+     * @return MatrixIterator<Figure>
+     */
+    Iterator<Figure> iterator();
+    
 }
