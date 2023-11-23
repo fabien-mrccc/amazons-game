@@ -22,11 +22,13 @@ public class MapBoard extends AbstractBoard {
     public Figure getFigure(Position position) {
         return figures.get(position);
     }
+
+    @Override
     public Figure[][] getMatrix(){
         MatrixBoard mapToMatrix = new MatrixBoard(getNumberOfColumns(),getNumberOfRows());
         for(int x=0; x< mapToMatrix.getNumberOfColumns();x++){
             for(int y=0; y< mapToMatrix.getNumberOfRows();y++){
-                mapToMatrix.setFigure(new Position(x,y), figures.get(new Position(x,y)));
+                mapToMatrix.setFigure(new Position(x,y), getFigure(new Position(x,y)));
             }
         }
         return mapToMatrix.getMatrix();

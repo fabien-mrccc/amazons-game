@@ -22,6 +22,7 @@ public class MatrixBoard extends AbstractBoard {
         return figures[position.getX()][position.getY()];
     }
 
+    @Override
     public Figure[][] getMatrix() {
         return figures;
     }
