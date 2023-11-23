@@ -2,22 +2,25 @@ package amazons.board;
 
 import javax.swing.text.html.HTMLDocument;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class MatrixIterator<T> implements Iterator<T> {
     private final int numberOfColumns;
     private final int numberOfRows;
     private final Position lastPosition;
     private T[][] matrix;
-    private Position currentPosition = new Position(0,0);
-    public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix){
+    private Position currentPosition = new Position(0, 0);
+
+    public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix) {
         this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
-        this.lastPosition = new Position(numberOfColumns-1, numberOfRows-1);
+        this.lastPosition = new Position(numberOfColumns - 1, numberOfRows - 1);
         this.matrix = matrix;
     }
+
     @Override
     public boolean hasNext() {
-        if(currentPosition == lastPosition){
+        if (currentPosition == lastPosition) {
             return false;
         }
         return true;
@@ -25,11 +28,17 @@ public class MatrixIterator<T> implements Iterator<T> {
 
     @Override
     public T next() {
-
-        return  ;
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        if (currentPosition.getX() == numberOfColumns - 1) {
+            return getT(new Position(0, currentPosition.getY() + 1));
+        }
+        return getT(new Position(currentPosition.getX() + 1, currentPosition.getY()));
     }
 
-    public T getT(Position position){
+    public T getT(Position position) {
         return matrix[position.getX()][position.getY()];
     }
+    
 }
