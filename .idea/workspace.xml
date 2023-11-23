@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add NeutralFigure class and refactoring EmptyFigure and ArrowFigure classes&#10;fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException: previous exception manage in once">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -486,16 +488,34 @@
       <option name="project" value="LOCAL" />
       <updated>1700684553164</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="add Iterator&lt;Figure&gt; iterator();">
+      <created>1700729378482</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1700729378482</updated>
+    </task>
+    <task id="LOCAL-00045" summary="add public abstract Iterator&lt;Figure&gt; iterator();">
+      <created>1700729434620</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1700729434621</updated>
+    </task>
+    <task id="LOCAL-00046" summary="add public T[][] getMatrix()&#10;add public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)">
+      <created>1700731139849</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1700731139849</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public PlayerID getPlayerID()" />
-    <MESSAGE value="add public class ArrowFigureTest" />
-    <MESSAGE value="comeback here to check if constant is always null" />
     <MESSAGE value="add void fill(FigureGenerator figureGenerator);" />
     <MESSAGE value="add public IllegalMoveException(String message)" />
     <MESSAGE value="fix void moveTo (Position position, Board board)throws IllegalMoveException" />
@@ -518,6 +538,9 @@
     <MESSAGE value="add AbstractBoard class and refactoring MatrixBoard and MapBoard classes" />
     <MESSAGE value="fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException" />
     <MESSAGE value="add NeutralFigure class and refactoring EmptyFigure and ArrowFigure classes&#10;fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException: previous exception manage in once" />
-    <option name="LAST_COMMIT_MESSAGE" value="add NeutralFigure class and refactoring EmptyFigure and ArrowFigure classes&#10;fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException: previous exception manage in once" />
+    <MESSAGE value="add Iterator&lt;Figure&gt; iterator();" />
+    <MESSAGE value="add public abstract Iterator&lt;Figure&gt; iterator();" />
+    <MESSAGE value="add public T[][] getMatrix()&#10;add public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public T[][] getMatrix()&#10;add public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)" />
   </component>
 </project>

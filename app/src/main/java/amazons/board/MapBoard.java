@@ -2,6 +2,7 @@ package amazons.board;
 
 import amazons.figures.Figure;
 
+import java.util.Iterator;
 import java.util.Map;
 
 public class MapBoard extends AbstractBoard {
@@ -21,4 +22,9 @@ public class MapBoard extends AbstractBoard {
     public Figure getFigure(Position position) {
         return figures.get(position);
     }
+    @Override
+    public Iterator<Figure> iterator(){
+
+    }
+
 }
