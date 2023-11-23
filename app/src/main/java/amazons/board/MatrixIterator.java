@@ -20,7 +20,7 @@ public class MatrixIterator<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
-        return currentPosition != lastPosition;
+        return !currentPosition.equals(lastPosition);
     }
 
     @Override
