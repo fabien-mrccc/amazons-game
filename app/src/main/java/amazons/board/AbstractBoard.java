@@ -89,7 +89,10 @@ public abstract class AbstractBoard implements Board{
 
     public abstract Figure getFigure(Position position);
     @Override
-    public abstract Iterator<Figure> iterator();
+    public Iterator<Figure> iterator(){
+        return new MatrixIterator<Figure>(getNumberOfColumns(),getNumberOfRows(),getMatrix());
+    }
+    public abstract Figure[][] getMatrix();
 
 
 }
