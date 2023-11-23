@@ -24,4 +24,9 @@ public class MatrixBoard extends AbstractBoard {
     public Figure[][] getFigureMatrix() {
         return figures;
     }
+
+    @Override
+    public Position[][] getPositionMatrix() {
+        return new Position[0][];
+    }
 }

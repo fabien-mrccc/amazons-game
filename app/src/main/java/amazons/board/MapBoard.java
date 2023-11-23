@@ -30,12 +30,11 @@ public class MapBoard extends AbstractBoard {
             }
         }
         return mapToMatrix.getFigureMatrix();
-
     }
 
     @Override
-    public Figure[][] getPositionMatrix() {
-        return new Figure[0][];
+    public Position[][] getPositionMatrix() {
+        return new Position[0][];
     }
 
 }

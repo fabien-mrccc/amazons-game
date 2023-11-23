@@ -79,7 +79,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public Iterator<Position> positionIterator(){
-        return null;
+        return new MatrixIterator<>(getNumberOfColumns(),getNumberOfRows(),getPositionMatrix());
     }
 
     public int getNumberOfColumns(){
@@ -94,8 +94,16 @@ public abstract class AbstractBoard implements Board{
 
     public abstract Figure getFigure(Position position);
 
+    /**
+     * Make an optional conversion to return a matrix that contains all figures on the board
+     * @return a matrix that contains all figures on the board
+     */
     public abstract Figure[][] getFigureMatrix();
 
+    /**
+     * Make an optional conversion to return a matrix that contains all positions on the board
+     * @return a matrix that contains all positions on the board
+     */
     public abstract Position[][] getPositionMatrix();
 
 }
