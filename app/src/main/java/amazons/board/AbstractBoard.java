@@ -28,7 +28,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public boolean isOutOfBoard(Position position) {
-        if(position.isOutOfBounds(numberOfColumns,numberOfRows)){
+        if(position.isOutOfBounds(getNumberOfColumns(),getNumberOfRows())){
             return true;
         }
         return false;
@@ -78,9 +78,15 @@ public abstract class AbstractBoard implements Board{
         }
     }
 
+    @Override
+    public Iterator<Figure> iterator(){
+        return new MatrixIterator<>(getNumberOfColumns(),getNumberOfRows(),getMatrix());
+    }
+
     public int getNumberOfColumns(){
         return numberOfColumns;
     }
+
     public int getNumberOfRows(){
         return numberOfRows;
     }
@@ -88,10 +94,7 @@ public abstract class AbstractBoard implements Board{
     public abstract void setFigure(Position position, Figure figure);
 
     public abstract Figure getFigure(Position position);
-    @Override
-    public Iterator<Figure> iterator(){
-        return new MatrixIterator<Figure>(getNumberOfColumns(),getNumberOfRows(),getMatrix());
-    }
+
     public abstract Figure[][] getMatrix();
 
 

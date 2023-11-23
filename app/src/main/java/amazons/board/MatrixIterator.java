@@ -8,7 +8,7 @@ public class MatrixIterator<T> implements Iterator<T> {
     private final int numberOfColumns;
     private final int numberOfRows;
     private final Position lastPosition;
-    private T[][] matrix;
+    private final T[][] matrix;
     private Position currentPosition = new Position(0, 0);
 
     public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix) {
@@ -40,6 +40,12 @@ public class MatrixIterator<T> implements Iterator<T> {
     public T getT(Position position) {
         return matrix[position.getX()][position.getY()];
     }
+
+    public void setCurrentPosition(Position position){
+        this.currentPosition = position;
+    }
+
+
     /*
     private final int numberOfColumns;
     private final int numberOfRows;
