@@ -2,8 +2,6 @@ package amazons.board;
 
 import amazons.figures.Figure;
 
-import java.util.Iterator;
-
 public class MatrixBoard extends AbstractBoard {
 
     private Figure[][] figures ;
@@ -23,7 +21,7 @@ public class MatrixBoard extends AbstractBoard {
     }
 
     @Override
-    public Figure[][] getMatrix() {
+    public Figure[][] getFigureMatrix() {
         return figures;
     }
 }

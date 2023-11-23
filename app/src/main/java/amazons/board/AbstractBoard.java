@@ -74,7 +74,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public Iterator<Figure> iterator(){
-        return new MatrixIterator<>(getNumberOfColumns(),getNumberOfRows(),getMatrix());
+        return new MatrixIterator<>(getNumberOfColumns(),getNumberOfRows(),getFigureMatrix());
     }
 
     @Override
@@ -94,6 +94,6 @@ public abstract class AbstractBoard implements Board{
 
     public abstract Figure getFigure(Position position);
 
-    public abstract Figure[][] getMatrix();
+    public abstract Figure[][] getFigureMatrix();
 
 }

@@ -1,8 +1,6 @@
 package amazons.board;
 
 import amazons.figures.Figure;
-
-import java.util.Iterator;
 import java.util.Map;
 
 public class MapBoard extends AbstractBoard {
@@ -24,14 +22,14 @@ public class MapBoard extends AbstractBoard {
     }
 
     @Override
-    public Figure[][] getMatrix(){
+    public Figure[][] getFigureMatrix(){
         MatrixBoard mapToMatrix = new MatrixBoard(getNumberOfColumns(),getNumberOfRows());
         for(int x=0; x< mapToMatrix.getNumberOfColumns();x++){
             for(int y=0; y< mapToMatrix.getNumberOfRows();y++){
                 mapToMatrix.setFigure(new Position(x,y), getFigure(new Position(x,y)));
             }
         }
-        return mapToMatrix.getMatrix();
+        return mapToMatrix.getFigureMatrix();
 
     }
 
