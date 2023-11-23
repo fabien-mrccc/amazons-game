@@ -20,10 +20,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public boolean isEmpty(Position position) {
-        if(getFigure(position) == EmptyFigure.EMPTY_FIGURE){
-            return true;
-        }
-        return false;
+        return getFigure(position) == EmptyFigure.EMPTY_FIGURE;
     }
 
     @Override
