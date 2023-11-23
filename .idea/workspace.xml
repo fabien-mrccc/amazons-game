@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public Position getCurrentPosition()&#10;add public Position getLastPosition()" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public abstract Figure[][] getFigureMatrix(): name refactoring">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,13 +194,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00010" summary="add public boolean isEmpty(Position position)">
-      <created>1700230789668</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700230789668</updated>
     </task>
     <task id="LOCAL-00011" summary="add public Figure getFigure(Position position)">
       <created>1700230941040</created>
@@ -536,14 +531,20 @@
       <option name="project" value="LOCAL" />
       <updated>1700767503503</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="fix public abstract Figure[][] getFigureMatrix(): name refactoring">
+      <created>1700767714510</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1700767714510</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public boolean isEmpty(Position position)" />
     <MESSAGE value="add public boolean isOutOfBoard(Position position)" />
     <MESSAGE value="fix private final int x, y: add final keyword" />
     <MESSAGE value="fix public MatrixBoard(int numberOfColumns, int numberOfRows): remove unnecessary variable" />
@@ -568,6 +569,7 @@
     <MESSAGE value="fix public boolean isOutOfBoard(Position position)" />
     <MESSAGE value="fix public T next(): add currentPosition value management" />
     <MESSAGE value="add public Position getCurrentPosition()&#10;add public Position getLastPosition()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public Position getCurrentPosition()&#10;add public Position getLastPosition()" />
+    <MESSAGE value="fix public abstract Figure[][] getFigureMatrix(): name refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public abstract Figure[][] getFigureMatrix(): name refactoring" />
   </component>
 </project>
