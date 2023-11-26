@@ -40,10 +40,7 @@ public class Amazon extends MovableFigure implements Figure{
         this.position = position;
     }
 
-    /**
-     * get the position of the amazon
-     * @return position
-     */
+   @Override
     public Position getPosition(){
         return position;
     }
