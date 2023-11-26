@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public Position[][] getPositionMatrix()">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,19 +157,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="amazons-template" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="amazons-template" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.amazons-template [test]" />
@@ -198,13 +181,8 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00015" summary="fix public boolean canMoveTo(Position position, Board board)&#10;add public void moveTo(Position position, Board board)">
-      <created>1700574193652</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1700574193652</updated>
+      <workItem from="1700909959854" duration="621000" />
+      <workItem from="1701013193183" duration="253000" />
     </task>
     <task id="LOCAL-00016" summary="add public void setPosition(Position position)">
       <created>1700574488320</created>
@@ -542,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700769100665</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="fix public Position[][] getPositionMatrix()">
+      <created>1700770360922</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1700770360922</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
