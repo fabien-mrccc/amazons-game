@@ -1,17 +1,19 @@
 package amazons.board;
-import java.util.Random;
+import java.util.*;
 
 import amazons.figures.Figure;
 import amazons.figures.MovableFigure;
-import java.util.List;
-import java.util.Iterator;
+
 public class RandomFigureGenerator implements FigureGenerator{
-    private List<MovableFigure> movableFigures;
+    private Set<MovableFigure> movableFiguresSet;
     private Random random;
     private Iterator<Position> positionIterator;
 
-    public RandomFigureGenerator(Random random, List<MovableFigure> movableFigures, Iterator<Position> positionIterator){
-        this.movableFigures = movableFigures;
+    public RandomFigureGenerator(Random random, List<MovableFigure> movableFiguresList, Iterator<Position> positionIterator){
+        this.movableFiguresSet = new HashSet<>();
+        for (MovableFigure movableFigure : movableFiguresList){
+            this.movableFiguresSet.add(movableFigure);
+        }
         this.random = random;
         this.positionIterator = positionIterator;
     }
