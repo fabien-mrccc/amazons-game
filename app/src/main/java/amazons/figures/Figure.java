@@ -31,6 +31,8 @@ public interface  Figure extends Serializable {
      */
     void setPosition(Position position);
 
+
+
     /**
      * Get the ID of the player who owns this figure (maybe NONE if this figure is an arrow or empty)
      * @return the PlayerID of the player who owns this figure

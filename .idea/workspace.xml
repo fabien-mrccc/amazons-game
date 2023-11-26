@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public Position getPosition()">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/PresetFigureGenerator.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public Figure nextFigure(Position position)">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/RandomFigureGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/MovableFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/MovableFigure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,13 +196,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00016" summary="add public void setPosition(Position position)">
-      <created>1700574488320</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1700574488320</updated>
     </task>
     <task id="LOCAL-00017" summary="add public PlayerID getPlayerID()">
       <created>1700574671734</created>
@@ -542,14 +533,20 @@
       <option name="project" value="LOCAL" />
       <updated>1700929321620</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="add public Figure nextFigure(Position position)">
+      <created>1700991099565</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1700991099565</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add AbstractBoard class and refactoring MatrixBoard and MapBoard classes" />
     <MESSAGE value="fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException" />
     <MESSAGE value="add NeutralFigure class and refactoring EmptyFigure and ArrowFigure classes&#10;fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException: previous exception manage in once" />
     <MESSAGE value="add Iterator&lt;Figure&gt; iterator();" />
@@ -574,6 +571,7 @@
     <MESSAGE value="fix public Iterator&lt;Position&gt; positionIterator()" />
     <MESSAGE value="fix public Position[][] getPositionMatrix()" />
     <MESSAGE value="add public Position getPosition()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public Position getPosition()" />
+    <MESSAGE value="add public Figure nextFigure(Position position)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public Figure nextFigure(Position position)" />
   </component>
 </project>
