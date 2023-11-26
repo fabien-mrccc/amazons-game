@@ -5,15 +5,13 @@ import amazons.figures.Figure;
 import amazons.figures.MovableFigure;
 
 public class RandomFigureGenerator implements FigureGenerator{
-    private Set<MovableFigure> movableFiguresSet;
-    private Random random;
-    private Iterator<Position> positionIterator;
+    private final Set<MovableFigure> movableFiguresSet;
+    private final Random random;
+    private final Iterator<Position> positionIterator;
 
     public RandomFigureGenerator(Random random, List<MovableFigure> movableFiguresList, Iterator<Position> positionIterator){
         this.movableFiguresSet = new HashSet<>();
-        for (MovableFigure movableFigure : movableFiguresList){
-            this.movableFiguresSet.add(movableFigure);
-        }
+        this.movableFiguresSet.addAll(movableFiguresList);
         this.random = random;
         this.positionIterator = positionIterator;
     }
