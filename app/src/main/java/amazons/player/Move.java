@@ -30,9 +30,11 @@ public class Move {
     private Move() {}
 
 
-    // TODO
+    // DONE
     public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition) {
-
+        this.amazonStartPosition = amazonStartPosition;
+        this.amazonDstPosition = amazonDstPosition;
+        this.arrowDstPosition = arrowDstPosition;
     }
 
 
