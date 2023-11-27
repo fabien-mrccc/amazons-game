@@ -21,7 +21,7 @@ public class Move {
         // TODO
     }
 
-    public Position getArrowDestPosition() {
+    public Position getArrowDstPosition() {
         return null;
         // TODO
     }
@@ -31,12 +31,16 @@ public class Move {
 
 
     // TODO
-    public Move(Position amazonStartPosition, Position amazonDestPosition, Position arrowDestPosition) {
+    public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition) {
 
     }
 
 
     // TODO method equals
-    // TODO method toString
+    // DONE 
+    public String toString(){
+        return getAmazonStartPosition().toString()+":"+getAmazonDstPosition().toString()
+                +"->"+getArrowDstPosition().toString();
+    }
     // TODO method hashCode
 }
