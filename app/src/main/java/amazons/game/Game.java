@@ -5,7 +5,9 @@ import amazons.player.Move;
 import amazons.player.Player;
 import amazons.player.PlayerID;
 import java.util.List;
+import java.util.ArrayList;
 import amazons.figures.Amazon;
+import amazons.figures.MovableFigure;
 public class Game {
     public static final int NUMBER_OF_PLAYERS = 2;
     public static final int DEFAULT_NUMBER_OF_AMAZONS = 4;
@@ -34,32 +36,25 @@ public class Game {
         this.board = new MapBoard(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS);
     }
 
-    // TODO
+    // DONE
     public void initializeGame(Player player0, Player player1){
         player0.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ZERO, new List[]{DEFAULT_PLAYER0_POSITIONS});
-        for(Position defaultPosition : DEFAULT_PLAYER0_POSITIONS){
-            Amazon amazon = new Amazon(defaultPosition,PlayerID.PLAYER_ZERO.index) ;
-        }
         player1.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ONE, new List[]{DEFAULT_PLAYER1_POSITIONS});
-        for(Position defaultPosition : DEFAULT_PLAYER1_POSITIONS){
-            Amazon amazon = new Amazon(defaultPosition,PlayerID.PLAYER_ONE.index) ;
-        }
+        createPlayersFiguresWithDefaultPosition();
     }
 
 
-    // TODO uncomment
-    /*
+
     private List<MovableFigure> createPlayersFiguresWithDefaultPosition(){
         List<MovableFigure> allPlayersFigures = new ArrayList<>();
         for(Position position: DEFAULT_PLAYER0_POSITIONS){
-            allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ZERO));
+            allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ZERO.index));
         }
         for(Position position: DEFAULT_PLAYER1_POSITIONS){
-            allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ONE));
+            allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ONE.index));
         }
         return allPlayersFigures;
     }
-   */
 
 
 
