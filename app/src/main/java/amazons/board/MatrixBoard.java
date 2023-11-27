@@ -1,5 +1,7 @@
 package amazons.board;
 
+import amazons.figures.ArrowFigure;
+import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 import amazons.figures.Amazon;
 
@@ -28,22 +30,23 @@ public class MatrixBoard extends AbstractBoard {
     public String toString(){
         String matrix = "";
         for(int r = 0; r < super.getNumberOfRows();r++){
-            matrix ="+";
+            matrix =matrix + "+";
             for(int c = 0; c < super.getNumberOfColumns();c++){
                 matrix = matrix + "----+";
             }
-            System.out.println("");
-            System.out.print('|');
+            matrix = matrix + "\n" +"|";
             for(int c = 0; c < super.getNumberOfColumns();c++){
-                matrix = matrix +"    |";
-                if((Amazon)getFigure(new Position(c,r))){
-
+                if(getFigure(new Position(c,r))== EmptyFigure.EMPTY_FIGURE){
+                    matrix = matrix +"    |";
+                } else if (getFigure(new Position(c,r))== ArrowFigure.ARROW_FIGURE) {
+                    matrix = matrix +" XX |";
+                }
+                else{
+                    matrix = matrix +" A"+ getFigure(new Position(c,r)).getPlayerID() + " |";
                 }
             }
-            System.out.println("");
-
+            matrix = matrix +"\n";
         }
-
         return matrix;
     }
 }
