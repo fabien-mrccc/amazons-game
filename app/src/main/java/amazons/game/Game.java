@@ -5,7 +5,6 @@ import amazons.player.Move;
 import amazons.player.Player;
 import amazons.player.PlayerID;
 
-
 public class Game {
     public static final int NUMBER_OF_PLAYERS = 2;
     public static final int DEFAULT_NUMBER_OF_AMAZONS = 4;
@@ -28,10 +27,12 @@ public class Game {
 
     private int turn = 0;
     private boolean isThisIsTheEnd = false;
+    private Board board;
 
 
-    // TODO
+    // DONE
     public Game() {
+        this.board = new MapBoard(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS);
     }
 
     // TODO

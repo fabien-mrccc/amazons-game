@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,27 +213,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00022" summary="fix void moveTo (Position position, Board board)throws IllegalMoveException">
-      <created>1700577482447</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1700577482447</updated>
-    </task>
-    <task id="LOCAL-00023" summary="fix void moveTo (Position position, Board board)throws IllegalMoveException">
-      <created>1700577500768</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1700577500768</updated>
-    </task>
-    <task id="LOCAL-00024" summary="add public PositionException(String message)">
-      <created>1700577649157</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1700577649157</updated>
     </task>
     <task id="LOCAL-00025" summary="add public void moveTo(Position position, Board board) throws IllegalMoveException">
       <created>1700577777664</created>
@@ -556,16 +536,34 @@
       <option name="project" value="LOCAL" />
       <updated>1701081435053</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="add public boolean equals(Move move)">
+      <created>1701081714693</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1701081714693</updated>
+    </task>
+    <task id="LOCAL-00072" summary="add public int hashCode()">
+      <created>1701081914650</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1701081914650</updated>
+    </task>
+    <task id="LOCAL-00073" summary="fix public Move play(Move opponentMove)">
+      <created>1701083554907</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1701083554908</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)&#10;fix public boolean hasNext()" />
-    <MESSAGE value="fix public T next()" />
-    <MESSAGE value="fix public Iterator&lt;Figure&gt; iterator()" />
     <MESSAGE value="add public void setCurrentPosition(Position position)" />
     <MESSAGE value="fix public Figure[][] getMatrix()" />
     <MESSAGE value="fix public boolean hasNext()" />
@@ -588,6 +586,9 @@
     <MESSAGE value="add public String toString()" />
     <MESSAGE value="add public Position getAmazonStartPosition()&#10;add public Position getAmazonDstPosition()&#10;add public Position getArrowDstPosition()" />
     <MESSAGE value="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)" />
+    <MESSAGE value="add public boolean equals(Move move)" />
+    <MESSAGE value="add public int hashCode()" />
+    <MESSAGE value="fix public Move play(Move opponentMove)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public Move play(Move opponentMove)" />
   </component>
 </project>
