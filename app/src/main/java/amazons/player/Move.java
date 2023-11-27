@@ -7,23 +7,23 @@ import java.util.Objects;
 public class Move {
 
     public static final Move DUMMY_MOVE = new Move();
+    private Position amazonStartPosition;
+    private Position amazonDstPosition;
+    private Position arrowDstPosition;
 
 
     // TODO complete the code of this class
 
     public Position getAmazonStartPosition() {
-        return null;
-        // TODO
+        return amazonStartPosition;
     }
 
     public Position getAmazonDstPosition() {
-        return null;
-        // TODO
+        return amazonDstPosition;
     }
 
     public Position getArrowDstPosition() {
-        return null;
-        // TODO
+        return arrowDstPosition;
     }
 
 
@@ -37,7 +37,7 @@ public class Move {
 
 
     // TODO method equals
-    // DONE 
+    // DONE
     public String toString(){
         return getAmazonStartPosition().toString()+":"+getAmazonDstPosition().toString()
                 +"->"+getArrowDstPosition().toString();
