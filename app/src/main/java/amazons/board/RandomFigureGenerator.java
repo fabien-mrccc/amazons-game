@@ -8,6 +8,7 @@ import amazons.figures.MovableFigure;
 public class RandomFigureGenerator implements FigureGenerator{
     private final List<MovableFigure> movableFigures;
     private final Random random;
+    private final double randomProbability; // 1/randomProbability to generate an amazon on the board
     private final Iterator<Position> positionIterator;
     private Set<Figure> usedFigure;
 
@@ -15,7 +16,13 @@ public class RandomFigureGenerator implements FigureGenerator{
         this.movableFigures = movableFigures;
         this.random = random;
         this.positionIterator = positionIterator;
-        this.usedFigure = new HashSet<>();
+        usedFigure = new HashSet<>();
+        randomProbability = calculateRandomProbability(movableFigures, positionIterator);
+    }
+
+    private double calculateRandomProbability(List<MovableFigure> movableFigures, Iterator<Position> positionIterator){
+        MatrixIterator matrixIterator = (MatrixIterator) positionIterator;
+        return (matrixIterator.getLastPosition().getX() * matrixIterator.getLastPosition().getY()) / (double) movableFigures.size();
     }
 
     @Override
