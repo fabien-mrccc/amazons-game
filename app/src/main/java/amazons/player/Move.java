@@ -52,5 +52,8 @@ public class Move {
         return getAmazonStartPosition().toString()+":"+getAmazonDstPosition().toString()
                 +"->"+getArrowDstPosition().toString();
     }
-    // TODO method hashCode
+    // DONE
+    public int hashCode(){
+        return Objects.hash(amazonStartPosition,amazonDstPosition,arrowDstPosition);
+    }
 }

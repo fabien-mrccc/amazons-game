@@ -213,13 +213,6 @@
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
     </task>
-    <task id="LOCAL-00021" summary="add public IllegalMoveException(String message)">
-      <created>1700577438189</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1700577438189</updated>
-    </task>
     <task id="LOCAL-00022" summary="fix void moveTo (Position position, Board board)throws IllegalMoveException">
       <created>1700577482447</created>
       <option name="number" value="00022" />
@@ -556,14 +549,20 @@
       <option name="project" value="LOCAL" />
       <updated>1701081164337</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)">
+      <created>1701081435053</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1701081435053</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public T[][] getMatrix()&#10;add public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)" />
     <MESSAGE value="fix public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)&#10;fix public boolean hasNext()" />
     <MESSAGE value="fix public T next()" />
     <MESSAGE value="fix public Iterator&lt;Figure&gt; iterator()" />
@@ -588,6 +587,7 @@
     <MESSAGE value="fix public String toString()" />
     <MESSAGE value="add public String toString()" />
     <MESSAGE value="add public Position getAmazonStartPosition()&#10;add public Position getAmazonDstPosition()&#10;add public Position getArrowDstPosition()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public Position getAmazonStartPosition()&#10;add public Position getAmazonDstPosition()&#10;add public Position getArrowDstPosition()" />
+    <MESSAGE value="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)" />
   </component>
 </project>
