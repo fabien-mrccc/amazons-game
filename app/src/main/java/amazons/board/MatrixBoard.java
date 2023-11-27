@@ -1,6 +1,7 @@
 package amazons.board;
 
 import amazons.figures.Figure;
+import amazons.figures.Amazon;
 
 public class MatrixBoard extends AbstractBoard {
 
@@ -23,5 +24,26 @@ public class MatrixBoard extends AbstractBoard {
     @Override
     public Figure[][] getFigureMatrix() {
         return figures;
+    }
+    public String toString(){
+        String matrix = "";
+        for(int r = 0; r < super.getNumberOfRows();r++){
+            matrix ="+";
+            for(int c = 0; c < super.getNumberOfColumns();c++){
+                matrix = matrix + "----+";
+            }
+            System.out.println("");
+            System.out.print('|');
+            for(int c = 0; c < super.getNumberOfColumns();c++){
+                matrix = matrix +"    |";
+                if((Amazon)getFigure(new Position(c,r))){
+
+                }
+            }
+            System.out.println("");
+
+        }
+
+        return matrix;
     }
 }
