@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 public class MatrixIterator<T> implements Iterator<T> {
     private final Position lastPosition;
     private final T[][] matrix;
-    private Position currentPosition = new Position(0, 0);
+    private Position currentPosition = new Position(0, -1);
 
     public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix) {
         this.lastPosition = new Position(numberOfColumns - 1, numberOfRows - 1);
