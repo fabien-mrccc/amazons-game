@@ -4,7 +4,8 @@ import amazons.board.*;
 import amazons.player.Move;
 import amazons.player.Player;
 import amazons.player.PlayerID;
-
+import java.util.List;
+import amazons.figures.Amazon;
 public class Game {
     public static final int NUMBER_OF_PLAYERS = 2;
     public static final int DEFAULT_NUMBER_OF_AMAZONS = 4;
@@ -12,14 +13,12 @@ public class Game {
     private static  final int DEFAULT_NUMBER_OF_ROWS = 10;
 
     // TODO Complete the code of this class
-    /* Default positions of the amazons TODO: UNCOMMENT
-
+    //Default positions of the amazons
     private static final List<Position> DEFAULT_PLAYER0_POSITIONS =
             List.of(new Position(0,6), new Position(9,6), new Position(3,9), new Position(6,9));
     private static final List<Position> DEFAULT_PLAYER1_POSITIONS =
             List.of(new Position(3,0), new Position(6,0), new Position(0,3), new Position(9,3));
 
-     */
 
     private final Player[] players = new Player[NUMBER_OF_PLAYERS];
 
@@ -37,6 +36,14 @@ public class Game {
 
     // TODO
     public void initializeGame(Player player0, Player player1){
+        player0.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ZERO, new List[]{DEFAULT_PLAYER0_POSITIONS});
+        for(Position defaultPosition : DEFAULT_PLAYER0_POSITIONS){
+            Amazon amazon = new Amazon(defaultPosition,PlayerID.PLAYER_ZERO.index) ;
+        }
+        player1.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ONE, new List[]{DEFAULT_PLAYER1_POSITIONS});
+        for(Position defaultPosition : DEFAULT_PLAYER1_POSITIONS){
+            Amazon amazon = new Amazon(defaultPosition,PlayerID.PLAYER_ONE.index) ;
+        }
     }
 
 
