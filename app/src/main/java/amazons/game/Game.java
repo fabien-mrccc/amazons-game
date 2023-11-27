@@ -86,9 +86,9 @@ public class Game {
 
     }
 
-    // TODO
+    // DONE
     public Board getBoard(){
-         return null;
+         return board;
     }
 
     // TODO
