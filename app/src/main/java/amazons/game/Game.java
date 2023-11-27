@@ -91,9 +91,9 @@ public class Game {
          return board;
     }
 
-    // TODO
+    // DONE
     public PlayerID getWinner(){
-        return PlayerID.NONE;
+        return winner;
     }
 
     // TODO
