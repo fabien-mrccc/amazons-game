@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public int getNumberOfColumns()&#10;add public int getNumberOfRows()&#10;fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): shuffle list&#10;add private int calculateRandomProbability(List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, Iterator&lt;Position&gt; positionIterator)">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/RandomFigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/RandomFigureGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +62,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/main" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -97,7 +94,33 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.amazons-template [test]">
+  <component name="RunManager" selected="Application.MatrixBoard">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="amazons.App" />
+      <module name="amazons-template.app.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="amazons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MatrixBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="amazons.board.MatrixBoard" />
+      <module name="amazons-template.app.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="amazons.board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="amazons-template [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -163,6 +186,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.MatrixBoard" />
         <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Gradle.amazons-template [build]" />
         <item itemvalue="Gradle.amazons-template [run]" />
@@ -185,43 +210,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-      <workItem from="1701016111751" duration="9016000" />
-      <workItem from="1701114785616" duration="5337000" />
-    </task>
-    <task id="LOCAL-00026" summary="add public Figure nextFigure(Position position)">
-      <created>1700668934824</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1700668934824</updated>
-    </task>
-    <task id="LOCAL-00027" summary="add public void fill(FigureGenerator generator)">
-      <created>1700669980292</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1700669980292</updated>
-    </task>
-    <task id="LOCAL-00028" summary="fix public MatrixBoard(int numberOfColumns, int numberOfRows)">
-      <created>1700670268422</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1700670268422</updated>
-    </task>
-    <task id="LOCAL-00029" summary="add public void setFigure(Position position, Figure figure)">
-      <created>1700671456752</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1700671456752</updated>
-    </task>
-    <task id="LOCAL-00030" summary="add public Figure getFigure(Position position)">
-      <created>1700671528236</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1700671528236</updated>
     </task>
     <task id="LOCAL-00031" summary="add public boolean isEmpty(Position position)">
       <created>1700671683059</created>
@@ -468,79 +456,111 @@
       <option name="project" value="LOCAL" />
       <updated>1700991099565</updated>
     </task>
-    <task id="LOCAL-00066" summary="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator)">
-      <created>1701016383140</created>
+    <task id="LOCAL-00066" summary="add public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; figures, Iterator&lt;Position&gt; positionIterator)">
+      <created>1701013455640</created>
       <option name="number" value="00066" />
       <option name="presentableId" value="LOCAL-00066" />
       <option name="project" value="LOCAL" />
-      <updated>1701016383141</updated>
+      <updated>1701013455644</updated>
     </task>
-    <task id="LOCAL-00067" summary="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): change for loop with this assignments">
-      <created>1701016812828</created>
+    <task id="LOCAL-00067" summary="fix public String toString()">
+      <created>1701079925080</created>
       <option name="number" value="00067" />
       <option name="presentableId" value="LOCAL-00067" />
       <option name="project" value="LOCAL" />
-      <updated>1701016812828</updated>
+      <updated>1701079925081</updated>
     </task>
-    <task id="LOCAL-00068" summary="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): movableFiguresSet use">
-      <created>1701024752404</created>
+    <task id="LOCAL-00068" summary="add public String toString()">
+      <created>1701080956259</created>
       <option name="number" value="00068" />
       <option name="presentableId" value="LOCAL-00068" />
       <option name="project" value="LOCAL" />
-      <updated>1701024752404</updated>
+      <updated>1701080956259</updated>
     </task>
-    <task id="LOCAL-00069" summary="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): movableFiguresSet used">
-      <created>1701024907522</created>
+    <task id="LOCAL-00069" summary="add public Position getAmazonStartPosition()&#10;add public Position getAmazonDstPosition()&#10;add public Position getArrowDstPosition()">
+      <created>1701081164337</created>
       <option name="number" value="00069" />
       <option name="presentableId" value="LOCAL-00069" />
       <option name="project" value="LOCAL" />
-      <updated>1701024907522</updated>
+      <updated>1701081164337</updated>
     </task>
-    <task id="LOCAL-00070" summary="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): change the constructor for nextFigure()&#10;fix public Figure nextFigure(Position position): implementation processing">
-      <created>1701070416762</created>
+    <task id="LOCAL-00070" summary="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)">
+      <created>1701081435053</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1701070416762</updated>
+      <updated>1701081435053</updated>
     </task>
-    <task id="LOCAL-00071" summary="fix public T next(): add tempPosition">
-      <created>1701115236971</created>
+    <task id="LOCAL-00071" summary="add public boolean equals(Move move)">
+      <created>1701081714693</created>
       <option name="number" value="00071" />
       <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1701115236972</updated>
+      <updated>1701081714693</updated>
     </task>
-    <task id="LOCAL-00072" summary="fix public boolean hasNext(): change return">
-      <created>1701115412355</created>
+    <task id="LOCAL-00072" summary="add public int hashCode()">
+      <created>1701081914650</created>
       <option name="number" value="00072" />
       <option name="presentableId" value="LOCAL-00072" />
       <option name="project" value="LOCAL" />
-      <updated>1701115412355</updated>
+      <updated>1701081914650</updated>
     </task>
-    <task id="LOCAL-00073" summary="add private double calculateRandomProbability(List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator)">
-      <created>1701116730653</created>
+    <task id="LOCAL-00073" summary="fix public Move play(Move opponentMove)">
+      <created>1701083554907</created>
       <option name="number" value="00073" />
       <option name="presentableId" value="LOCAL-00073" />
       <option name="project" value="LOCAL" />
-      <updated>1701116730653</updated>
+      <updated>1701083554908</updated>
     </task>
-    <task id="LOCAL-00074" summary="add public int getNumberOfColumns()&#10;add public int getNumberOfRows()&#10;fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): shuffle list&#10;add private int calculateRandomProbability(List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, Iterator&lt;Position&gt; positionIterator)">
-      <created>1701119642841</created>
+    <task id="LOCAL-00074" summary="fix public void initializeGame(Player player0, Player player1)&#10;fix private List&lt;MovableFigure&gt; createPlayersFiguresWithDefaultPosition()">
+      <created>1701097942775</created>
       <option name="number" value="00074" />
       <option name="presentableId" value="LOCAL-00074" />
       <option name="project" value="LOCAL" />
-      <updated>1701119642841</updated>
+      <updated>1701097942776</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="add public void updateGame(Move move)&#10;add public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)&#10;add public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)">
+      <created>1701110737913</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1701110737913</updated>
+    </task>
+    <task id="LOCAL-00076" summary="add private boolean hasLost(PlayerID playerID)">
+      <created>1701110931984</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1701110931984</updated>
+    </task>
+    <task id="LOCAL-00077" summary="add public Board getBoard()">
+      <created>1701111024637</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1701111024637</updated>
+    </task>
+    <task id="LOCAL-00078" summary="add public PlayerID getWinner()">
+      <created>1701111137038</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1701111137038</updated>
+    </task>
+    <task id="LOCAL-00079" summary="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()">
+      <created>1701117733981</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1701117733982</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public boolean hasNext(): now using equals() method" />
-    <MESSAGE value="add public Iterator&lt;Position&gt; positionIterator()" />
-    <MESSAGE value="fix public boolean isEmpty(Position position)" />
     <MESSAGE value="fix public boolean isOutOfBoard(Position position)" />
     <MESSAGE value="fix public T next(): add currentPosition value management" />
     <MESSAGE value="add public Position getCurrentPosition()&#10;add public Position getLastPosition()" />
@@ -552,17 +572,20 @@
     <MESSAGE value="fix public Position[][] getPositionMatrix()" />
     <MESSAGE value="add public Position getPosition()" />
     <MESSAGE value="add public Figure nextFigure(Position position)" />
-    <MESSAGE value="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator)" />
-    <MESSAGE value="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): change for loop with this assignments" />
-    <MESSAGE value="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): movableFiguresSet use" />
-    <MESSAGE value="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): movableFiguresSet used" />
-    <MESSAGE value="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): change the constructor for nextFigure()" />
-    <MESSAGE value="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): change the constructor for nextFigure()&#10;fix public Figure nextFigure(Position position): implementation processing" />
-    <MESSAGE value="fix public T next(): add tempPosition" />
-    <MESSAGE value="fix public boolean hasNext(): change return" />
-    <MESSAGE value="add private double calculateRandomProbability(List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator)" />
-    <MESSAGE value="fix private double calculateRandomProbability(List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, Iterator&lt;Position&gt; positionIterator)" />
-    <MESSAGE value="add public int getNumberOfColumns()&#10;add public int getNumberOfRows()&#10;fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): shuffle list&#10;add private int calculateRandomProbability(List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, Iterator&lt;Position&gt; positionIterator)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public int getNumberOfColumns()&#10;add public int getNumberOfRows()&#10;fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): shuffle list&#10;add private int calculateRandomProbability(List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, Iterator&lt;Position&gt; positionIterator)" />
+    <MESSAGE value="add public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; figures, Iterator&lt;Position&gt; positionIterator)" />
+    <MESSAGE value="fix public String toString()" />
+    <MESSAGE value="add public String toString()" />
+    <MESSAGE value="add public Position getAmazonStartPosition()&#10;add public Position getAmazonDstPosition()&#10;add public Position getArrowDstPosition()" />
+    <MESSAGE value="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)" />
+    <MESSAGE value="add public boolean equals(Move move)" />
+    <MESSAGE value="add public int hashCode()" />
+    <MESSAGE value="fix public Move play(Move opponentMove)" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;fix private List&lt;MovableFigure&gt; createPlayersFiguresWithDefaultPosition()" />
+    <MESSAGE value="add public void updateGame(Move move)&#10;add public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)&#10;add public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)" />
+    <MESSAGE value="add private boolean hasLost(PlayerID playerID)" />
+    <MESSAGE value="add public Board getBoard()" />
+    <MESSAGE value="add public PlayerID getWinner()" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()" />
   </component>
 </project>

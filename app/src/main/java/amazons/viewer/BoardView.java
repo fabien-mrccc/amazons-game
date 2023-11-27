@@ -42,8 +42,8 @@ public class BoardView extends GridPane{
         fieldMap.get(move.getAmazonStartPosition()).setFigureIcon();
         highlightAmazonMove(move.getAmazonStartPosition(),move.getAmazonDstPosition());
         fieldMap.get(move.getAmazonDstPosition()).setFigureIcon();
-        highlightArrowShoot(move.getAmazonDstPosition(), move.getArrowDestPosition());
-        fieldMap.get(move.getArrowDestPosition()).setFigureIcon();
+        highlightArrowShoot(move.getAmazonDstPosition(), move.getArrowDstPosition());
+        fieldMap.get(move.getArrowDstPosition()).setFigureIcon();
     }
 
     private void highlightAmazonMove(Position startPosition, Position destPosition){

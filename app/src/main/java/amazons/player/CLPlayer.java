@@ -14,15 +14,17 @@ public class CLPlayer implements Player {
         return false;
     }
 
-    // TODO complete the code of method play
+    // DONE
     @Override
     public Move play(Move opponentMove) {
         System.out.println(playerID + " select amazon? (enter X Y coordinate)");
+        Position amazonStartPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
         //use inputScanner.nextInt() to read user input as integer
         System.out.println(playerID + " select destination? (enter X Y coordinate)");
+        Position amazonDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
         System.out.println(playerID + " where to shoot arrow? (enter X Y coordinate)");
-        return null;
-        // TODO
+        Position arrowDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
+        return new Move(amazonStartPosition,amazonDstPosition,arrowDstPosition);
     }
 
     @Override
