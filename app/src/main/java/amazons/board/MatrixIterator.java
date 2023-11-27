@@ -3,11 +3,15 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class MatrixIterator<T> implements Iterator<T> {
+    private final int numberOfColumns;
+    private final int numberOfRows;
     private final Position lastPosition;
     private final T[][] matrix;
     private Position currentPosition = new Position(0, 0);
 
     public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix) {
+        this.numberOfColumns = numberOfColumns;
+        this.numberOfRows = numberOfRows;
         this.lastPosition = new Position(numberOfColumns - 1, numberOfRows - 1);
         this.matrix = matrix;
     }
@@ -42,6 +46,9 @@ public class MatrixIterator<T> implements Iterator<T> {
     public Position getCurrentPosition(){
         return currentPosition;
     }
+
+    public int getNumberOfColumns(){return numberOfColumns;}
+    public int getNumberOfRows(){return numberOfRows;}
 
     public Position getLastPosition(){
         return lastPosition;

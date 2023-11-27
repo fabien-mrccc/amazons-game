@@ -8,35 +8,52 @@ import amazons.figures.MovableFigure;
 public class RandomFigureGenerator implements FigureGenerator{
     private final List<MovableFigure> movableFigures;
     private final Random random;
-    private final double randomProbability; // 1/randomProbability to generate an amazon on the board
     private final Iterator<Position> positionIterator;
-    private Set<Figure> usedFigure;
+    private Set<Figure> usedFigures;
+    private int randomProbability; // 1/randomProbability to generate an amazon on the board
+
 
     public RandomFigureGenerator(Random random, List<MovableFigure> movableFigures, Iterator<Position> positionIterator){
         this.movableFigures = movableFigures;
+        Collections.shuffle(this.movableFigures);
+
         this.random = random;
         this.positionIterator = positionIterator;
-        usedFigure = new HashSet<>();
-        randomProbability = calculateRandomProbability(movableFigures, positionIterator);
-    }
-
-    private double calculateRandomProbability(List<MovableFigure> movableFigures, Iterator<Position> positionIterator){
-        MatrixIterator matrixIterator = (MatrixIterator) positionIterator;
-        return (matrixIterator.getLastPosition().getX() * matrixIterator.getLastPosition().getY()) / (double) movableFigures.size();
+        usedFigures = new HashSet<>();
     }
 
     @Override
     public Figure nextFigure(Position position) {
         try {
             positionIterator.next();
+            randomProbability = calculateRandomProbability(movableFigures, usedFigures, positionIterator);
 
-            if(movableFigures. || random.nextBoolean()){
-                return EmptyFigure.EMPTY_FIGURE;
+            if(random.nextInt() % randomProbability == 0){
+                return null;
             }
-            return movableFigures.;
+            return EmptyFigure.EMPTY_FIGURE;
         }
         catch (NoSuchElementException exception){
             return null;
         }
+    }
+
+    private int calculateRandomProbability(List<MovableFigure> movableFigures, Set<Figure> usedFigures, Iterator<Position> positionIterator){
+        MatrixIterator matrixIterator = (MatrixIterator) positionIterator;
+
+        // 3x3 for a board of 9 squares
+        // [2][2] (last square) -> 2x3 squares assigned + 2x1  = 8 squares assigned
+        // numberOfSquaresToAssign = 9 - 8 = 1
+
+        int numberOfSquaresToAssign =
+                matrixIterator.getNumberOfColumns() * matrixIterator.getNumberOfRows()
+                - (
+                        matrixIterator.getCurrentPosition().getX() * matrixIterator.getNumberOfColumns()
+                        + matrixIterator.getCurrentPosition().getY()
+                );
+
+        int numberOfFiguresToAssign = movableFigures.size() - usedFigures.size();
+
+        return numberOfSquaresToAssign / numberOfFiguresToAssign;
     }
 }
