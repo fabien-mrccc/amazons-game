@@ -12,7 +12,7 @@ public class Move {
     private Position arrowDstPosition;
 
 
-    // TODO complete the code of this class
+    // DONE
 
     public Position getAmazonStartPosition() {
         return amazonStartPosition;
