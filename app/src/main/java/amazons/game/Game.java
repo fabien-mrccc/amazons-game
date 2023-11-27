@@ -1,5 +1,6 @@
 package amazons.game;
 
+import amazons.IllegalMoveException;
 import amazons.board.*;
 import amazons.player.Move;
 import amazons.player.Player;
@@ -59,18 +60,21 @@ public class Game {
 
 
 
-    // TODO
+    // DONE
     public void updateGame(Move move){
-
+        updateGameAmazonMove(move.getAmazonStartPosition(),move.getAmazonDstPosition());
+        updateGameArrowShot(move.getAmazonDstPosition(), move.getArrowDstPosition());
     }
 
-    //TODO
+    //DONE
     public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition){
-
+        try{board.moveFigure(amazonStartPosition, amazonDstPosition);}
+        catch (IllegalMoveException exception) { winner = board.getFigure(amazonStartPosition).getPlayerID().opponent();}
     }
-    // TODO
+    // DONE
     public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition) {
-
+        try{board.shootArrow(amazonDstPosition, arrowDstPosition);}
+        catch (IllegalMoveException exception){ winner = board.getFigure(amazonDstPosition).getPlayerID().opponent();}
     }
 
     // TODO
