@@ -30,7 +30,7 @@ public class Game {
     private int turn = 0;
     private boolean isThisIsTheEnd = false;
     private Board board;
-
+    private PlayerID currentPlayer;
 
     // DONE
     public Game() {
@@ -40,7 +40,9 @@ public class Game {
     // DONE
     public void initializeGame(Player player0, Player player1){
         player0.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ZERO, new List[]{DEFAULT_PLAYER0_POSITIONS});
+        players[0] = player0;
         player1.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ONE, new List[]{DEFAULT_PLAYER1_POSITIONS});
+        players[1] = player1;
         createPlayersFiguresWithDefaultPosition();
     }
 
@@ -62,6 +64,7 @@ public class Game {
 
     // DONE
     public void updateGame(Move move){
+        currentPlayer = board.getFigure(move.getAmazonStartPosition()).getPlayerID();
         updateGameAmazonMove(move.getAmazonStartPosition(),move.getAmazonDstPosition());
         updateGameArrowShot(move.getAmazonDstPosition(), move.getArrowDstPosition());
     }
@@ -96,13 +99,13 @@ public class Game {
         return winner;
     }
 
-    // TODO
+    // DONE
     public PlayerID getPlayerID(){
-        return PlayerID.PLAYER_ONE;
+        return currentPlayer;
     }
 
-    // TODO
-    public Player getPlayer() {return null; }
+    // DONE
+    public Player getPlayer() {return players[currentPlayer.index];}
 
     // TODO
     public boolean hasEnded() {
