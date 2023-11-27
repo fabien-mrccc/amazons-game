@@ -25,7 +25,7 @@ public class Game {
 
     private final Player[] players = new Player[NUMBER_OF_PLAYERS];
 
-    private PlayerID winner;
+    private PlayerID winner = null;
 
     private int turn = 0;
     private boolean isThisIsTheEnd = false;
@@ -107,8 +107,11 @@ public class Game {
     // DONE
     public Player getPlayer() {return players[currentPlayer.index];}
 
-    // TODO
+    // DONE
     public boolean hasEnded() {
+        if(getWinner().equals(null)){
+            return isThisIsTheEnd;
+        }
         return true;
     }
 
@@ -118,13 +121,13 @@ public class Game {
 
     public int getTurn() {return turn; }
 
-    // TODO
+    // DONE
     public int getNumberOfColumns(){
-        return 0;
+        return DEFAULT_NUMBER_OF_COLUMNS;
     }
 
-    // TODO
+    // DONE
     public int getNumberOfRows(){
-        return 0;
+        return DEFAULT_NUMBER_OF_ROWS;
     }
 }
