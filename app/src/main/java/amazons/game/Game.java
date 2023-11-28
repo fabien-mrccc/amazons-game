@@ -15,7 +15,6 @@ public class Game {
     private static final int DEFAULT_NUMBER_OF_COLUMNS = 10;
     private static  final int DEFAULT_NUMBER_OF_ROWS = 10;
 
-    // TODO Complete the code of this class
     //Default positions of the amazons
     private static final List<Position> DEFAULT_PLAYER0_POSITIONS =
             List.of(new Position(0,6), new Position(9,6), new Position(3,9), new Position(6,9));
@@ -24,20 +23,16 @@ public class Game {
 
 
     private final Player[] players = new Player[NUMBER_OF_PLAYERS];
-
     private PlayerID winner = null;
-
     private int turn = 0;
     private boolean isThisIsTheEnd = false;
     private Board board;
     private PlayerID currentPlayer;
 
-    // DONE
     public Game() {
         this.board = new MapBoard(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS);
     }
 
-    // DONE
     public void initializeGame(Player player0, Player player1){
         player0.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ZERO, new List[]{DEFAULT_PLAYER0_POSITIONS});
         players[0] = player0;
@@ -45,8 +40,6 @@ public class Game {
         players[1] = player1;
         createPlayersFiguresWithDefaultPosition();
     }
-
-
 
     private List<MovableFigure> createPlayersFiguresWithDefaultPosition(){
         List<MovableFigure> allPlayersFigures = new ArrayList<>();
@@ -59,28 +52,22 @@ public class Game {
         return allPlayersFigures;
     }
 
-
-
-
-    // DONE
     public void updateGame(Move move){
         currentPlayer = board.getFigure(move.getAmazonStartPosition()).getPlayerID();
         updateGameAmazonMove(move.getAmazonStartPosition(),move.getAmazonDstPosition());
         updateGameArrowShot(move.getAmazonDstPosition(), move.getArrowDstPosition());
     }
 
-    // DONE
     public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition){
         try{board.moveFigure(amazonStartPosition, amazonDstPosition);}
         catch (IllegalMoveException exception) { winner = board.getFigure(amazonStartPosition).getPlayerID().opponent();}
     }
-    // DONE
+
     public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition) {
         try{board.shootArrow(amazonDstPosition, arrowDstPosition);}
         catch (IllegalMoveException exception){ winner = board.getFigure(amazonDstPosition).getPlayerID().opponent();}
     }
 
-    // DONE
     private boolean hasLost(PlayerID playerID) {
         if(playerID.equals(winner)){
             return false;
@@ -89,25 +76,20 @@ public class Game {
 
     }
 
-    // DONE
     public Board getBoard(){
          return board;
     }
 
-    // DONE
     public PlayerID getWinner(){
         return winner;
     }
 
-    // DONE
     public PlayerID getPlayerID(){
         return currentPlayer;
     }
 
-    // DONE
     public Player getPlayer() {return players[currentPlayer.index];}
 
-    // DONE
     public boolean hasEnded() {
         if(getWinner().equals(null)){
             return isThisIsTheEnd;
@@ -121,12 +103,10 @@ public class Game {
 
     public int getTurn() {return turn; }
 
-    // DONE
     public int getNumberOfColumns(){
         return DEFAULT_NUMBER_OF_COLUMNS;
     }
 
-    // DONE
     public int getNumberOfRows(){
         return DEFAULT_NUMBER_OF_ROWS;
     }
