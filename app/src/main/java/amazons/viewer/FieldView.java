@@ -97,15 +97,13 @@ public class FieldView extends Label {
     }
 
     private ImageView getImageView() {
-        // TODO Uncomment
-        // if(board.getFigure(position) == EMPTY_FIGURE) return null;
+        if(board.getFigure(position) == EMPTY_FIGURE) return null;
         return new ImageView(getImage());
     }
 
     private Image getImage() {
         Figure figure = board.getFigure(position);
-        // TODO uncomment
-        // if(figure == EMPTY_FIGURE) return null;
+        if(figure == EMPTY_FIGURE) return null;
         String imageName = getFigureImageName(figure);
         if (!figureImages.containsKey(imageName))
             figureImages.put(imageName,ImageUtil.loadImage(imageName,50,50));
