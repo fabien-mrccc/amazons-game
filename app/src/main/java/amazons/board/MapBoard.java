@@ -1,6 +1,8 @@
 package amazons.board;
 
 import amazons.figures.Figure;
+
+import java.util.HashMap;
 import java.util.Map;
 
 public class MapBoard extends AbstractBoard {
@@ -30,5 +32,10 @@ public class MapBoard extends AbstractBoard {
             }
         }
         return mapToMatrix.getFigureMatrix();
+    }
+
+    @Override
+    public void instantiateBoard() {
+        figures = new HashMap<>();
     }
 }
