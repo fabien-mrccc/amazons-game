@@ -3,10 +3,11 @@ package amazons.board;
 import amazons.IllegalMoveException;
 import amazons.figures.ArrowFigure;
 import amazons.figures.Amazon;
-import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 
 import java.util.Iterator;
+
+import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 
 public abstract class AbstractBoard implements Board{
     private final int numberOfColumns;
@@ -21,7 +22,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public boolean isEmpty(Position position) {
-        return getFigure(position) == EmptyFigure.EMPTY_FIGURE;
+        return getFigure(position) == EMPTY_FIGURE;
     }
 
     @Override
@@ -36,7 +37,7 @@ public abstract class AbstractBoard implements Board{
         Amazon playedAmazon = (Amazon) getFigure(startPosition);
         playedAmazon.moveTo(dstPosition, this);
         setFigure(dstPosition,playedAmazon);
-        setFigure(startPosition, EmptyFigure.EMPTY_FIGURE);
+        setFigure(startPosition, EMPTY_FIGURE);
     }
 
     @Override

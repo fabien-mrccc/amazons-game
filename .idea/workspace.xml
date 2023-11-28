@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix private ArrowFigure()&#10;fix private EmptyFigure()">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/RandomFigureGeneratorTest.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add int numberOfFiguresToAssign()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" afterDir="false" />
     </list>
@@ -212,13 +212,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00042" summary="fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException">
-      <created>1700683306977</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1700683306977</updated>
     </task>
     <task id="LOCAL-00043" summary="add NeutralFigure class and refactoring EmptyFigure and ArrowFigure classes&#10;fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException: previous exception manage in once">
       <created>1700684553164</created>
@@ -556,14 +549,20 @@
       <option name="project" value="LOCAL" />
       <updated>1701185531164</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="add int numberOfFiguresToAssign()">
+      <created>1701186544709</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1701186544709</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; figures, Iterator&lt;Position&gt; positionIterator)" />
     <MESSAGE value="fix public String toString()" />
     <MESSAGE value="add public String toString()" />
     <MESSAGE value="add public Position getAmazonStartPosition()&#10;add public Position getAmazonDstPosition()&#10;add public Position getArrowDstPosition()" />
@@ -588,6 +587,7 @@
     <MESSAGE value="fix public static final ArrowFigure ARROW_FIGURE = new ArrowFigure()" />
     <MESSAGE value="private ArrowFigure()" />
     <MESSAGE value="fix private ArrowFigure()&#10;fix private EmptyFigure()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix private ArrowFigure()&#10;fix private EmptyFigure()" />
+    <MESSAGE value="add int numberOfFiguresToAssign()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add int numberOfFiguresToAssign()" />
   </component>
 </project>
