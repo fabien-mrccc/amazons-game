@@ -17,8 +17,8 @@ public enum CardinalDirection {
 
 
     CardinalDirection(int deltaColumn, int deltaRow) {
-        this.deltaRow = deltaRow;
         this.deltaColumn = deltaColumn;
+        this.deltaRow = deltaRow;
     }
 
 

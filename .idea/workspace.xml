@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add int numberOfFiguresToAssign()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public boolean isEmpty(Position position): equals() used">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/CardinalDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/CardinalDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,48 +212,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00043" summary="add NeutralFigure class and refactoring EmptyFigure and ArrowFigure classes&#10;fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException: previous exception manage in once">
-      <created>1700684553164</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1700684553164</updated>
-    </task>
-    <task id="LOCAL-00044" summary="add Iterator&lt;Figure&gt; iterator();">
-      <created>1700729378482</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1700729378482</updated>
-    </task>
-    <task id="LOCAL-00045" summary="add public abstract Iterator&lt;Figure&gt; iterator();">
-      <created>1700729434620</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1700729434621</updated>
-    </task>
-    <task id="LOCAL-00046" summary="add public T[][] getMatrix()&#10;add public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)">
-      <created>1700731139849</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1700731139849</updated>
-    </task>
-    <task id="LOCAL-00047" summary="fix public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)&#10;fix public boolean hasNext()">
-      <created>1700731830677</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1700731830677</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fix public T next()">
-      <created>1700733825430</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1700733825430</updated>
     </task>
     <task id="LOCAL-00049" summary="fix public Iterator&lt;Figure&gt; iterator()">
       <created>1700734276605</created>
@@ -556,18 +514,55 @@
       <option name="project" value="LOCAL" />
       <updated>1701186544709</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="fix public boolean isEmpty(Position position): import constant properly">
+      <created>1701187014605</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1701187014605</updated>
+    </task>
+    <task id="LOCAL-00093" summary="fix public void shootArrow(Position startPosition, Position arrowDstPosition): import constant properly">
+      <created>1701187063354</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1701187063354</updated>
+    </task>
+    <task id="LOCAL-00094" summary="fix public void shootArrow(Position startPosition, Position arrowDstPosition): import constant properly">
+      <created>1701188247910</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1701188247910</updated>
+    </task>
+    <task id="LOCAL-00095" summary="fix void setUp(): dismiss modifications">
+      <created>1701188575132</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1701188575132</updated>
+    </task>
+    <task id="LOCAL-00096" summary="fix public boolean canMoveTo(Position position, Board board): getAccessiblePositions() used">
+      <created>1701189185097</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1701189185097</updated>
+    </task>
+    <task id="LOCAL-00097" summary="fix public boolean isEmpty(Position position): equals() used">
+      <created>1701190259397</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1701190259397</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public String toString()" />
-    <MESSAGE value="add public String toString()" />
-    <MESSAGE value="add public Position getAmazonStartPosition()&#10;add public Position getAmazonDstPosition()&#10;add public Position getArrowDstPosition()" />
-    <MESSAGE value="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)" />
-    <MESSAGE value="add public boolean equals(Move move)" />
     <MESSAGE value="add public int hashCode()" />
     <MESSAGE value="fix public Move play(Move opponentMove)" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;fix private List&lt;MovableFigure&gt; createPlayersFiguresWithDefaultPosition()" />
@@ -588,6 +583,11 @@
     <MESSAGE value="private ArrowFigure()" />
     <MESSAGE value="fix private ArrowFigure()&#10;fix private EmptyFigure()" />
     <MESSAGE value="add int numberOfFiguresToAssign()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add int numberOfFiguresToAssign()" />
+    <MESSAGE value="fix public boolean isEmpty(Position position): import constant properly" />
+    <MESSAGE value="fix public void shootArrow(Position startPosition, Position arrowDstPosition): import constant properly" />
+    <MESSAGE value="fix void setUp(): dismiss modifications" />
+    <MESSAGE value="fix public boolean canMoveTo(Position position, Board board): getAccessiblePositions() used" />
+    <MESSAGE value="fix public boolean isEmpty(Position position): equals() used" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public boolean isEmpty(Position position): equals() used" />
   </component>
 </project>

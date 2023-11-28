@@ -62,7 +62,8 @@ public class Amazon extends MovableFigure implements Figure{
         for(CardinalDirection direction : CardinalDirection.values()){
             Position positionCheck = this.position.next(direction);
 
-            while(board.isEmpty(positionCheck) && !board.isOutOfBoard(positionCheck)){
+            while(!board.isOutOfBoard(positionCheck)){
+                if(!board.isEmpty(positionCheck)){ break;}
                 reachablePositions.add(positionCheck);
                 positionCheck = positionCheck.next(direction);
             }
