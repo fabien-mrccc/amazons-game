@@ -6,6 +6,7 @@ import amazons.figures.Figure;
 
 import java.util.List;
 import amazons.figures.MovableFigure;
+import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 
 public class PresetFigureGenerator implements FigureGenerator{
     private List<MovableFigure> movableFigures;
@@ -19,6 +20,6 @@ public class PresetFigureGenerator implements FigureGenerator{
                 return (Figure) movableFigure;
             }
         }
-        return EmptyFigure.EMPTY_FIGURE;
+        return EMPTY_FIGURE;
     }
 }
