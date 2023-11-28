@@ -12,7 +12,6 @@ public class Move {
     private Position arrowDstPosition;
 
 
-    // DONE
 
     public Position getAmazonStartPosition() {
         return amazonStartPosition;
@@ -30,7 +29,6 @@ public class Move {
     private Move() {}
 
 
-    // DONE
     public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition) {
         this.amazonStartPosition = amazonStartPosition;
         this.amazonDstPosition = amazonDstPosition;
@@ -38,7 +36,6 @@ public class Move {
     }
 
 
-    // DONE
     public boolean equals(Move move){
         if(this.getAmazonStartPosition().equals(move.getAmazonStartPosition())
                 && this.getAmazonDstPosition().equals(move.getAmazonDstPosition())
@@ -47,12 +44,10 @@ public class Move {
         }
         return false;
     }
-    // DONE
     public String toString(){
         return getAmazonStartPosition().toString()+":"+getAmazonDstPosition().toString()
                 +"->"+getArrowDstPosition().toString();
     }
-    // DONE
     public int hashCode(){
         return Objects.hash(amazonStartPosition,amazonDstPosition,arrowDstPosition);
     }

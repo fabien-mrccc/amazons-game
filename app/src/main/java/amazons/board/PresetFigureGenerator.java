@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import amazons.figures.MovableFigure;
+import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 
 public class PresetFigureGenerator implements FigureGenerator{
     private final List<MovableFigure> movableFigures;
@@ -26,6 +27,6 @@ public class PresetFigureGenerator implements FigureGenerator{
                 return (Figure) movableFigure;
             }
         }
-        return EmptyFigure.EMPTY_FIGURE;
+        return EMPTY_FIGURE;
     }
 }

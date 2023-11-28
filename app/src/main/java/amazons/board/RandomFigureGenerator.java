@@ -4,7 +4,7 @@ import java.util.*;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 import amazons.figures.MovableFigure;
-
+import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 public class RandomFigureGenerator implements FigureGenerator{
     private final List<MovableFigure> movableFigures;
     private final Random random;
@@ -31,7 +31,7 @@ public class RandomFigureGenerator implements FigureGenerator{
                 usedFigures.add( (Figure) movableFigures.get(tempNumberOfFiguresToAssign) );
                 return (Figure) movableFigures.get(tempNumberOfFiguresToAssign);
             }
-            return EmptyFigure.EMPTY_FIGURE;
+            return EMPTY_FIGURE;
         }
         catch (NoSuchElementException exception){
             return null;

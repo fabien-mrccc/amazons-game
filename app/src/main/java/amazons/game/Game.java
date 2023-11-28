@@ -28,9 +28,11 @@ public class Game {
     private boolean isThisIsTheEnd = false;
     private Board board;
     private PlayerID currentPlayer;
+    private final int numberOfAmazons;
 
     public Game() {
         this.board = new MapBoard(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS);
+        this.numberOfAmazons = DEFAULT_NUMBER_OF_AMAZONS;
     }
 
     public void initializeGame(Player player0, Player player1){
