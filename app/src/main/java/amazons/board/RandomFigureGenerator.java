@@ -9,7 +9,7 @@ public class RandomFigureGenerator implements FigureGenerator{
     private final List<MovableFigure> movableFigures;
     private final Random random;
     private final Iterator<Position> positionIterator;
-    private Set<Figure> usedFigures;
+    private final Set<Figure> usedFigures;
 
     public RandomFigureGenerator(Random random, List<MovableFigure> movableFigures, Iterator<Position> positionIterator){
         this.movableFigures = movableFigures;

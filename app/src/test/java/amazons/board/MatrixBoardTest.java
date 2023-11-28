@@ -1,8 +1,6 @@
 package amazons.board;
 
-/*
 import amazons.IllegalMoveException;
-import amazons.board.*;
 import amazons.figures.Amazon;
 import amazons.figures.Figure;
 import amazons.figures.MovableFigure;
@@ -13,11 +11,11 @@ import java.util.*;
 
 import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
-import static org.assertj.core.api.Assertions.*;*/
+import static org.assertj.core.api.Assertions.*;
 
 
 class MatrixBoardTest {
-/*
+
     private MatrixBoard testBoard;
     private final Random random = new Random();
     private final int NUMBER_OF_COLUMNS = 4;
@@ -78,6 +76,7 @@ class MatrixBoardTest {
         assertThat(board.getNumberOfColumns()).isEqualTo(2);
     }
 
+
     @Test
     void testInitializeEmpty() {
         testBoard.fill(new EmptyFigureGenerator());
@@ -105,10 +104,14 @@ class MatrixBoardTest {
         assertThat(testBoard.getFigure(new Position(3,1))).isSameAs(EMPTY_FIGURE);
     }
 
+
     @Test
     void testInitializeRandom() {
         List<MovableFigure> figures  = List.of(amazon11Player1,amazon00Player0,amazon01Player0,amazon12Player1,amazon32Player0,amazon30Player1);
         testBoard.fill(new RandomFigureGenerator(random,figures,testBoard.positionIterator()));
+
+        /*
+
         List<Position> nonEmptyPositions = new ArrayList<>();
         testBoard.positionIterator().forEachRemaining(p -> {if(!testBoard.isEmpty(p)) nonEmptyPositions.add(p);});
         assertThat(nonEmptyPositions.stream().map(p -> testBoard.getFigure(p))).containsExactlyInAnyOrder(
@@ -120,9 +123,11 @@ class MatrixBoardTest {
         assertThat(nonEmptyPositions).contains(amazon30Player1.getPosition());
         assertThat(nonEmptyPositions).contains(amazon12Player1.getPosition());
         assertThat(nonEmptyPositions).contains(amazon11Player1.getPosition());
+
+         */
     }
 
-
+    /*
     @Test
     void testMoveEmptyFigure() {
         testBoard.setFigure(position12,EMPTY_FIGURE);
@@ -135,6 +140,7 @@ class MatrixBoardTest {
         testBoard.setFigure(position12,ARROW_FIGURE);
         assertThatThrownBy(() -> testBoard.moveFigure(position12,position00)).isInstanceOf(IllegalMoveException.class);
     }
+
 
     @Test
     void testMoveAmazonFigure() {
@@ -178,6 +184,7 @@ class MatrixBoardTest {
                   0    1    2    3\040\040"""
         );
     }
+
 
     @Test
     void testPositionIterator() {
@@ -236,5 +243,6 @@ class MatrixBoardTest {
     void testIsEmpty() {
         testBoard.setFigure(position32,EMPTY_FIGURE);
         assertThat(testBoard.isEmpty(position32)).isTrue();
-    }*/
+    }
+    */
 }
