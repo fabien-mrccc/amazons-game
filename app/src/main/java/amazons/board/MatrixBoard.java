@@ -7,7 +7,7 @@ import amazons.figures.Amazon;
 
 public class MatrixBoard extends AbstractBoard {
 
-    private Figure[][] figures ;
+    private Figure[][] figures;
 
     public MatrixBoard(int numberOfColumns, int numberOfRows){
         super(numberOfColumns, numberOfRows);
@@ -27,6 +27,12 @@ public class MatrixBoard extends AbstractBoard {
     public Figure[][] getFigureMatrix() {
         return figures;
     }
+
+    @Override
+    public void instantiateBoard() {
+        figures = new Figure[super.getNumberOfColumns()][super.getNumberOfRows()];
+    }
+
     public String toString(){
         String matrix = "";
         for(int r = 0; r < super.getNumberOfRows();r++){
