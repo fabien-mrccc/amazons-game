@@ -15,6 +15,7 @@ public abstract class AbstractBoard implements Board{
     public AbstractBoard(int numberOfColumns, int numberOfRows){
         this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
+        instantiateBoard();
         fill(new EmptyFigureGenerator());
     }
 
