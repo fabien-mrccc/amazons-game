@@ -1,7 +1,7 @@
 package amazons.figures;
 
 import amazons.board.Board;
-// import amazons.board.EmptyFigureGenerator;
+import amazons.board.EmptyFigureGenerator;
 import amazons.board.MatrixBoard;
 import amazons.board.Position;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-//import static amazons.figures.ArrowFigure.ARROW_FIGURE;
+import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class AmazonTest {
@@ -33,7 +33,7 @@ class AmazonTest {
                   0    1    2    3"""
     */
 
-    /*
+
     @BeforeEach
      void setUp(){
          for(int x=0; x<NUMBER_OF_COLUMNS; x++){
@@ -55,10 +55,6 @@ class AmazonTest {
          accessiblePositions.add(allPositions[3][1]);
      }
 
-     */
-
-
-/*
     @Test
     void testCanMoveTo() {
         for (int x = 0; x < NUMBER_OF_COLUMNS; x++) {
@@ -68,9 +64,7 @@ class AmazonTest {
             }
         }
     }
- */
 
-    /*
     @Test
     void testGetAccessiblePositions() {
          assertThat(amazon11.getAccessiblePositions(board))
@@ -78,5 +72,4 @@ class AmazonTest {
                  .hasSize(accessiblePositions.size());
     }
 
-     */
 }
