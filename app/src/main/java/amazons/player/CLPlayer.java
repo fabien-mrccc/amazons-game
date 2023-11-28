@@ -1,12 +1,17 @@
 package amazons.player;
 
+import amazons.board.FigureGenerator;
+import amazons.board.MatrixBoard;
 import amazons.board.Position;
+import amazons.figures.Amazon;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class CLPlayer implements Player {
     private PlayerID playerID;
+    private MatrixBoard board;
+    private FigureGenerator generator;
     private final static Scanner inputScanner = new Scanner(System.in);
 
     @Override
@@ -29,6 +34,13 @@ public class CLPlayer implements Player {
 
     @Override
     public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
+        this.board = new MatrixBoard(boardWidth,boardHeight);
+        for(Position position : initialPositions[0]) {
+            board.setFigure(position, new Amazon(position, PlayerID.PLAYER_ZERO.index));
+        }
+        for(Position position : initialPositions[1]) {
+            board.setFigure(position, new Amazon(position, PlayerID.PLAYER_ONE.index));
+        }
         this.playerID = playerID;
     }
 
