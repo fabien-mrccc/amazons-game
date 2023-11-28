@@ -4,13 +4,20 @@ import amazons.figures.Amazon;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import amazons.figures.MovableFigure;
 
 public class PresetFigureGenerator implements FigureGenerator{
-    private List<MovableFigure> movableFigures;
+    private final List<MovableFigure> movableFigures;
     public PresetFigureGenerator(List<MovableFigure> movableFigures){
         this.movableFigures = movableFigures;
+    }
+    public PresetFigureGenerator(Map<MovableFigure,Position> movableFigures){
+        this.movableFigures = new ArrayList<>();
+        this.movableFigures.addAll(movableFigures.keySet());
     }
     @Override
     public Figure nextFigure(Position position) {
