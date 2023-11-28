@@ -1,8 +1,8 @@
 package amazons.figures;
 
+import org.checkerframework.checker.units.qual.A;
+
 public class ArrowFigure extends NeutralFigure {
-    public static ArrowFigure ARROW_FIGURE;
-    private ArrowFigure(){
-        ARROW_FIGURE = new ArrowFigure();
-    }
+    public static final ArrowFigure ARROW_FIGURE = new ArrowFigure();
+    private ArrowFigure(){}
 }
