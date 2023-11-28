@@ -1,12 +1,12 @@
 package amazons.board;
 
 import amazons.IllegalMoveException;
-import amazons.figures.ArrowFigure;
 import amazons.figures.Amazon;
 import amazons.figures.Figure;
 
 import java.util.Iterator;
 
+import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 
 public abstract class AbstractBoard implements Board{
@@ -44,7 +44,7 @@ public abstract class AbstractBoard implements Board{
     public void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException {
         moveCheck(startPosition, arrowDstPosition);
 
-        setFigure(arrowDstPosition,ArrowFigure.ARROW_FIGURE);
+        setFigure(arrowDstPosition,ARROW_FIGURE);
     }
 
     /**
