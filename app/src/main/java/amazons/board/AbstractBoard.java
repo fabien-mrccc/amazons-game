@@ -113,4 +113,6 @@ public abstract class AbstractBoard implements Board{
      * @return a matrix that contains all figures on the board
      */
     public abstract Figure[][] getFigureMatrix();
+
+    public abstract void instantiateBoard();
 }
