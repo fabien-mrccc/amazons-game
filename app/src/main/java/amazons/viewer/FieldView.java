@@ -18,9 +18,8 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
-// TODO Uncomment
-// import static amazons.figures.ArrowFigure.ARROW_FIGURE;
-// import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
+ import static amazons.figures.ArrowFigure.ARROW_FIGURE;
+ import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 
 public class FieldView extends Label {
     private static final String defaultStyleBlack = "-fx-background-color: gray;";
@@ -122,9 +121,8 @@ public class FieldView extends Label {
 
     private String getFigureImageName(Figure figure){
         StringBuilder builder = new StringBuilder("images/");
-        // TODO uncomment
-        // if (figure == EMPTY_FIGURE) throw new IllegalArgumentException("Empty figure has no image");
-        // if (figure == ARROW_FIGURE) return builder.append("cross.png").toString();
+        if (figure == EMPTY_FIGURE) throw new IllegalArgumentException("Empty figure has no image");
+        if (figure == ARROW_FIGURE) return builder.append("cross.png").toString();
         builder.append(figure.getPlayerID().color);
         builder.append("_queen.png");
         return builder.toString();
