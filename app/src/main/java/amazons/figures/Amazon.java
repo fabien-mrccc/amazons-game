@@ -19,10 +19,7 @@ public class Amazon extends MovableFigure implements Figure{
     }
     @Override
     public boolean canMoveTo(Position position, Board board) {
-        if(board.isEmpty(position) && !board.isOutOfBoard(position)){
-            return true;
-        }
-        return false;
+        return getAccessiblePositions(board).contains(position);
     }
 
     @Override
@@ -55,7 +52,7 @@ public class Amazon extends MovableFigure implements Figure{
      * An Amazon moves at least one square in a straight line horizontally, vertically or diagonally through any number of squares.
      * They can only move through unoccupied squares.
      * This means that no square can be occupied (by an Amazon of any color or by an arrow) between the starting square and the Amazon's destination.
-     * @param board
+     * @param board the board used in the game
      * @return list of positions that the Amazon can reach from its current position
      */
     @Override
@@ -63,9 +60,9 @@ public class Amazon extends MovableFigure implements Figure{
         List<Position> reachablePositions = new ArrayList<>();
 
         for(CardinalDirection direction : CardinalDirection.values()){
-            Position positionCheck = this.position;
+            Position positionCheck = this.position.next(direction);
 
-            while(canMoveTo(positionCheck.next(direction), board)){
+            while(board.isEmpty(positionCheck) && !board.isOutOfBoard(positionCheck)){
                 reachablePositions.add(positionCheck);
                 positionCheck = positionCheck.next(direction);
             }
