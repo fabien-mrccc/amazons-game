@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix private ArrowFigure()&#10;fix private EmptyFigure()">
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/RandomFigureGeneratorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +96,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MatrixBoard">
+  <component name="RunManager" selected="Gradle.amazons-template [test]">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="amazons.App" />
       <module name="amazons-template.app.main" />
@@ -186,9 +188,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.MatrixBoard" />
-        <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Gradle.amazons-template [build]" />
         <item itemvalue="Gradle.amazons-template [run]" />
       </list>
@@ -210,83 +212,6 @@
       <workItem from="1700572641812" duration="5645000" />
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
-    </task>
-    <task id="LOCAL-00031" summary="add public boolean isEmpty(Position position)">
-      <created>1700671683059</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1700671683059</updated>
-    </task>
-    <task id="LOCAL-00032" summary="add public boolean isOutOfBoard(Position position)">
-      <created>1700672005411</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1700672005411</updated>
-    </task>
-    <task id="LOCAL-00033" summary="fix private final int x, y: add final keyword">
-      <created>1700677503341</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1700677503341</updated>
-    </task>
-    <task id="LOCAL-00034" summary="fix public MatrixBoard(int numberOfColumns, int numberOfRows): remove unnecessary variable">
-      <created>1700677814394</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1700677814394</updated>
-    </task>
-    <task id="LOCAL-00035" summary="fix: figures variable refactoring from squares name">
-      <created>1700678269018</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1700678269018</updated>
-    </task>
-    <task id="LOCAL-00036" summary="add public MatrixBoard(int numberOfColumns, int numberOfRows)">
-      <created>1700678682749</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1700678682749</updated>
-    </task>
-    <task id="LOCAL-00037" summary="fix public boolean isEmpty(Position position)">
-      <created>1700678782303</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1700678782303</updated>
-    </task>
-    <task id="LOCAL-00038" summary="fix public boolean isOutOfBoard(Position position)">
-      <created>1700678860948</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1700678860948</updated>
-    </task>
-    <task id="LOCAL-00039" summary="add public int getNumberOfColumns()&#10;add public int getNumberOfRows()">
-      <created>1700679059805</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1700679059805</updated>
-    </task>
-    <task id="LOCAL-00040" summary="fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException">
-      <created>1700679419188</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1700679419188</updated>
-    </task>
-    <task id="LOCAL-00041" summary="add AbstractBoard class and refactoring MatrixBoard and MapBoard classes">
-      <created>1700682609902</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1700682609902</updated>
     </task>
     <task id="LOCAL-00042" summary="fix public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException">
       <created>1700683306977</created>
@@ -554,24 +479,90 @@
       <option name="project" value="LOCAL" />
       <updated>1701117733982</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="add public PresetFigureGenerator(Map&lt;MovableFigure,Position&gt; movableFigures){">
+      <created>1701181356448</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1701181356448</updated>
+    </task>
+    <task id="LOCAL-00081" summary="add public abstract void instantiateBoard()">
+      <created>1701181452352</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1701181452352</updated>
+    </task>
+    <task id="LOCAL-00082" summary="add public void instantiateBoard()">
+      <created>1701181530483</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1701181530483</updated>
+    </task>
+    <task id="LOCAL-00083" summary="add public void instantiateBoard()">
+      <created>1701181585283</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1701181585283</updated>
+    </task>
+    <task id="LOCAL-00084" summary="fix public AbstractBoard(int numberOfColumns, int numberOfRows)">
+      <created>1701181630432</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1701181630432</updated>
+    </task>
+    <task id="LOCAL-00085" summary="add public IllegalSetPositionException(String message)">
+      <created>1701182204669</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1701182204669</updated>
+    </task>
+    <task id="LOCAL-00086" summary="fix public void setPosition(Position position): add IllegalSetPositionException">
+      <created>1701182459901</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1701182459901</updated>
+    </task>
+    <task id="LOCAL-00087" summary="fix delete unnecessary comments">
+      <created>1701184994967</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1701184994967</updated>
+    </task>
+    <task id="LOCAL-00088" summary="fix public static final EmptyFigure EMPTY_FIGURE = new EmptyFigure()">
+      <created>1701185404319</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1701185404319</updated>
+    </task>
+    <task id="LOCAL-00089" summary="private ArrowFigure()">
+      <created>1701185495176</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1701185495176</updated>
+    </task>
+    <task id="LOCAL-00090" summary="fix private ArrowFigure()&#10;fix private EmptyFigure()">
+      <created>1701185531164</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1701185531164</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public boolean isOutOfBoard(Position position)" />
-    <MESSAGE value="fix public T next(): add currentPosition value management" />
-    <MESSAGE value="add public Position getCurrentPosition()&#10;add public Position getLastPosition()" />
-    <MESSAGE value="fix public abstract Figure[][] getFigureMatrix(): name refactoring" />
-    <MESSAGE value="fix public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix): remove unnecessary attributes" />
-    <MESSAGE value="add public abstract Figure[][] getPositionMatrix()" />
-    <MESSAGE value="fix public abstract Position[][] getPositionMatrix(): fix array's type" />
-    <MESSAGE value="fix public Iterator&lt;Position&gt; positionIterator()" />
-    <MESSAGE value="fix public Position[][] getPositionMatrix()" />
-    <MESSAGE value="add public Position getPosition()" />
-    <MESSAGE value="add public Figure nextFigure(Position position)" />
     <MESSAGE value="add public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; figures, Iterator&lt;Position&gt; positionIterator)" />
     <MESSAGE value="fix public String toString()" />
     <MESSAGE value="add public String toString()" />
@@ -586,6 +577,17 @@
     <MESSAGE value="add public Board getBoard()" />
     <MESSAGE value="add public PlayerID getWinner()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()" />
+    <MESSAGE value="add public PresetFigureGenerator(Map&lt;MovableFigure,Position&gt; movableFigures){" />
+    <MESSAGE value="add public abstract void instantiateBoard()" />
+    <MESSAGE value="add public void instantiateBoard()" />
+    <MESSAGE value="fix public AbstractBoard(int numberOfColumns, int numberOfRows)" />
+    <MESSAGE value="add public IllegalSetPositionException(String message)" />
+    <MESSAGE value="fix public void setPosition(Position position): add IllegalSetPositionException" />
+    <MESSAGE value="fix delete unnecessary comments" />
+    <MESSAGE value="fix public static final EmptyFigure EMPTY_FIGURE = new EmptyFigure()" />
+    <MESSAGE value="fix public static final ArrowFigure ARROW_FIGURE = new ArrowFigure()" />
+    <MESSAGE value="private ArrowFigure()" />
+    <MESSAGE value="fix private ArrowFigure()&#10;fix private EmptyFigure()" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix private ArrowFigure()&#10;fix private EmptyFigure()" />
   </component>
 </project>
