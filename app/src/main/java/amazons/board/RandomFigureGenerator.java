@@ -1,7 +1,6 @@
 package amazons.board;
 import java.util.*;
 
-import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 import amazons.figures.MovableFigure;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
@@ -24,9 +23,9 @@ public class RandomFigureGenerator implements FigureGenerator{
     public Figure nextFigure(Position position) {
         try {
             positionIterator.next();
-            int randomProbability = calculateRandomProbability(movableFigures, usedFigures, positionIterator);
+            int randomProbability = calculateRandomProbability(random, movableFigures, usedFigures, (MatrixIterator<Position>) positionIterator);
 
-            if(random.nextInt() % randomProbability == 0){
+            if(randomProbability == 0){
                 int tempNumberOfFiguresToAssign = numberOfFiguresToAssign(movableFigures, usedFigures);
                 usedFigures.add( (Figure) movableFigures.get(tempNumberOfFiguresToAssign) );
                 return (Figure) movableFigures.get(tempNumberOfFiguresToAssign);
@@ -38,21 +37,24 @@ public class RandomFigureGenerator implements FigureGenerator{
         }
     }
 
-    private int calculateRandomProbability(List<MovableFigure> movableFigures, Set<Figure> usedFigures, Iterator<Position> positionIterator){
-        MatrixIterator matrixIterator = (MatrixIterator) positionIterator;
+    private int calculateRandomProbability(Random random, List<MovableFigure> movableFigures, Set<Figure> usedFigures, MatrixIterator<Position> matrixIterator){
+        int numberOfSquaresBoard = matrixIterator.getNumberOfColumns() * matrixIterator.getNumberOfRows(); // 3x3 for a board of 9 squares
 
-        // 3x3 for a board of 9 squares
-        // [2][2] (last square) -> 2x3 squares assigned + 2x1  = 8 squares assigned
-        // numberOfSquaresToAssign = 9 - 8 = 1
+        int numberOfSquaresAssigned = matrixIterator.getCurrentPosition().getY()
+                * matrixIterator.getNumberOfColumns()
+                + matrixIterator.getCurrentPosition().getX(); // [2][2] (last square) -> 2x3 squares assigned + 2x1  = 8 squares assigned
 
-        int numberOfSquaresToAssign =
-                matrixIterator.getNumberOfColumns() * matrixIterator.getNumberOfRows()
-                - (
-                        matrixIterator.getCurrentPosition().getX() * matrixIterator.getNumberOfColumns()
-                        + matrixIterator.getCurrentPosition().getY()
-                );
+        int numberOfSquaresToAssign = numberOfSquaresBoard - numberOfSquaresAssigned; // numberOfSquaresToAssign = 9 - 8 = 1
 
-        return numberOfSquaresToAssign / numberOfFiguresToAssign(movableFigures, usedFigures);
+        int numberOfFiguresToAssign = numberOfFiguresToAssign(movableFigures, usedFigures);
+
+        if(numberOfFiguresToAssign == 0){
+            return 1; // return 1 to inform that our next figure to assign is empty
+        }
+
+        int numberOfSquaresToAssignPerFigure = numberOfSquaresToAssign / numberOfFiguresToAssign(movableFigures, usedFigures);
+
+        return Math.abs(random.nextInt()) % numberOfSquaresToAssignPerFigure; // return value between 0 and numberOfSquaresToAssignPerFigure -1
     }
 
     private int numberOfFiguresToAssign(List<MovableFigure> movableFigures, Set<Figure> usedFigures){
