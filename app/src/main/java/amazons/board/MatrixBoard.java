@@ -3,7 +3,6 @@ package amazons.board;
 import amazons.figures.ArrowFigure;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
-import amazons.figures.Amazon;
 
 public class MatrixBoard extends AbstractBoard {
 
@@ -30,37 +29,33 @@ public class MatrixBoard extends AbstractBoard {
 
     @Override
     public void instantiateBoard() {
-        figures = new Figure[super.getNumberOfColumns()][super.getNumberOfRows()];
+        figures = new Figure[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
     }
     @Override
     public String toString(){
-        String matrix = "";
-        for(int r = 0; r < super.getNumberOfRows();r++){
-            matrix =matrix + "+";
-            for(int c = 0; c < super.getNumberOfColumns();c++){
-                matrix = matrix + "----+";
-            }
-            matrix = matrix + "\n" +"|";
-            for(int c = 0; c < super.getNumberOfColumns();c++){
+        StringBuilder matrix = new StringBuilder();
+        for(int r = 0; r < NUMBER_OF_ROWS;r++){
+            matrix.append("+");
+            matrix.append("----+".repeat(NUMBER_OF_COLUMNS));
+            matrix.append("\n").append("|");
+            for(int c = 0; c < NUMBER_OF_COLUMNS;c++){
                 if(getFigure(new Position(c,r))== EmptyFigure.EMPTY_FIGURE){
-                    matrix = matrix +"    |";
+                    matrix.append("    |");
                 } else if (getFigure(new Position(c,r))== ArrowFigure.ARROW_FIGURE) {
-                    matrix = matrix +" XX |";
+                    matrix.append(" XX |");
                 }
                 else{
-                    matrix = matrix +" A"+ getFigure(new Position(c,r)).getPlayerID().index + " |";
+                    matrix.append(" A").append(getFigure(new Position(c, r)).getPlayerID().index).append(" |");
                 }
             }
-            matrix = matrix +" " +r +"\n";
+            matrix.append(" ").append(r).append("\n");
         }
-        matrix = matrix + "+";
-        for(int c = 0; c < super.getNumberOfColumns(); c++){
-            matrix = matrix +"----+";
+        matrix.append("+");
+        matrix.append("----+".repeat(NUMBER_OF_COLUMNS));
+        matrix.append("\n");
+        for(int c = 0; c < NUMBER_OF_COLUMNS; c++){
+            matrix.append("  ").append(c).append("  ");
         }
-        matrix = matrix +"\n";
-        for(int c = 0; c < super.getNumberOfColumns(); c++){
-            matrix = matrix + "  "+ c+ "  ";
-        }
-        return matrix;
+        return matrix.toString();
     }
 }
