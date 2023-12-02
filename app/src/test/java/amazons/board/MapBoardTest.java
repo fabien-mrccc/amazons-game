@@ -1,6 +1,6 @@
 package amazons.board;
 
-/*
+
 import amazons.IllegalMoveException;
 import amazons.board.*;
 import amazons.figures.Amazon;
@@ -13,12 +13,12 @@ import java.util.*;
 
 import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
-import static org.assertj.core.api.Assertions.*;*/
+import static org.assertj.core.api.Assertions.*;
 
 //TODO Adapter les tests issus de la classe MatrixBoardTest à la classe MapBoardTest
 class MapBoardTest {
-/*
-    private MatrixBoard testBoard;
+
+    private MapBoard testBoard;
     private final Random random = new Random();
     private final int NUMBER_OF_COLUMNS = 4;
     private final int NUMBER_OF_ROWS = 3;
@@ -53,7 +53,7 @@ class MapBoardTest {
 
     @BeforeEach
     void setTestBoard(){
-        testBoard = new MatrixBoard(NUMBER_OF_COLUMNS, NUMBER_OF_ROWS);
+        testBoard = new MapBoard(NUMBER_OF_COLUMNS, NUMBER_OF_ROWS);
     }
 
     @Test
@@ -68,13 +68,13 @@ class MapBoardTest {
 
     @Test
     void testGetNumberOfRows() {
-        MatrixBoard board  = new MatrixBoard(2,3);
+        MapBoard board  = new MapBoard(2,3);
         assertThat(board.getNumberOfRows()).isEqualTo(3);
     }
 
     @Test
     void testGetNumberOfColumns() {
-        MatrixBoard board  = new MatrixBoard(2,3);
+        MapBoard board  = new MapBoard(2,3);
         assertThat(board.getNumberOfColumns()).isEqualTo(2);
     }
 
@@ -203,12 +203,13 @@ class MapBoardTest {
 
     @Test
     void testIterator() {
-        Iterator<Figure> iterator = testBoard.iterator();
         testBoard.setFigure(position00, amazon00Player0);
         testBoard.setFigure(position01, amazon01Player0);
         testBoard.setFigure(position32, amazon32Player0);
         testBoard.setFigure(position11,ARROW_FIGURE);
         testBoard.setFigure(position30, ARROW_FIGURE);
+        Iterator<Figure> iterator = testBoard.iterator();
+        System.out.println(testBoard.toString());
         List<Figure> figures = new ArrayList<>();
         int emptyFigureCount = 0;
         int arrowFigureCount = 0;
@@ -225,6 +226,9 @@ class MapBoardTest {
                 figures.add(figure);
             }
         }
+        System.out.println(emptyFigureCount);
+        System.out.println(arrowFigureCount);
+        System.out.println(amazonFigureCount);
         assertThat(emptyFigureCount).isEqualTo(NUMBER_OF_COLUMNS*NUMBER_OF_ROWS - 5);
         assertThat(arrowFigureCount).isEqualTo(2);
         assertThat(amazonFigureCount).isEqualTo(3);
@@ -236,5 +240,5 @@ class MapBoardTest {
     void testIsEmpty() {
         testBoard.setFigure(position32,EMPTY_FIGURE);
         assertThat(testBoard.isEmpty(position32)).isTrue();
-    }*/
+    }
 }
