@@ -51,20 +51,17 @@ public class RandomFigureGenerator implements FigureGenerator{
      * @return return 1 to inform that our next figure to assign is empty OR return value between 0 and numberOfSquaresToAssignPerFigure -1
      */
     private int calculateRandomProbability(Random random, List<MovableFigure> movableFigures, Set<Figure> usedFigures, MatrixIterator<Position> matrixIterator){
+
         int numberOfSquaresBoard = matrixIterator.getNumberOfColumns() * matrixIterator.getNumberOfRows();
-
-        int numberOfSquaresAssigned = matrixIterator.getCurrentPosition().getY()
-                * matrixIterator.getNumberOfColumns()
-                + matrixIterator.getCurrentPosition().getX();
-
+        int numberOfSquaresAssigned = numberOfSquaresAssigned(matrixIterator);
         int numberOfSquaresToAssign = numberOfSquaresBoard - numberOfSquaresAssigned;
-        int numberOfFiguresToAssign = numberOfFiguresToAssign(movableFigures, usedFigures);
 
+        int numberOfFiguresToAssign = numberOfFiguresToAssign(movableFigures, usedFigures);
         if(numberOfFiguresToAssign == 0){
             return 1;
         }
-        int numberOfSquaresToAssignPerFigure = numberOfSquaresToAssign / numberOfFiguresToAssign;
 
+        int numberOfSquaresToAssignPerFigure = numberOfSquaresToAssign / numberOfFiguresToAssign;
         if(numberOfSquaresToAssignPerFigure == 0) {
             return 1;
         }
@@ -73,5 +70,11 @@ public class RandomFigureGenerator implements FigureGenerator{
 
     private int numberOfFiguresToAssign(List<MovableFigure> movableFigures, Set<Figure> usedFigures){
         return movableFigures.size() - usedFigures.size();
+    }
+
+    private int numberOfSquaresAssigned(MatrixIterator<Position> matrixIterator){
+        return matrixIterator.getCurrentPosition().getY()
+                * matrixIterator.getNumberOfColumns()
+                + matrixIterator.getCurrentPosition().getX();
     }
 }
