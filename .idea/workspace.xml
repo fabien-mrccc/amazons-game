@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add Figure nextFigure(Position position)&#10;fix void setUp(): add randomFigureGenerator">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/RandomFigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/RandomFigureGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/RandomFigureGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/RandomFigureGeneratorTest.java" afterDir="false" />
@@ -213,14 +212,7 @@
       <workItem from="1700676341580" duration="303000" />
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
-      <workItem from="1701362909876" duration="6565000" />
-    </task>
-    <task id="LOCAL-00037" summary="fix public boolean isEmpty(Position position)">
-      <created>1700678782303</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1700678782303</updated>
+      <workItem from="1701362909876" duration="9807000" />
     </task>
     <task id="LOCAL-00038" summary="fix public boolean isOutOfBoard(Position position)">
       <created>1700678860948</created>
@@ -558,14 +550,20 @@
       <option name="project" value="LOCAL" />
       <updated>1701188932365</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator)">
+      <created>1701522730883</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1701522730883</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public abstract Position[][] getPositionMatrix(): fix array's type" />
     <MESSAGE value="fix public Iterator&lt;Position&gt; positionIterator()" />
     <MESSAGE value="fix public Position[][] getPositionMatrix()" />
     <MESSAGE value="add public Position getPosition()" />
@@ -590,6 +588,7 @@
     <MESSAGE value="fix FieldView : uncommented" />
     <MESSAGE value="fix application" />
     <MESSAGE value="add Figure nextFigure(Position position)&#10;fix void setUp(): add randomFigureGenerator" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Figure nextFigure(Position position)&#10;fix void setUp(): add randomFigureGenerator" />
+    <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator)" />
   </component>
 </project>

@@ -37,24 +37,33 @@ public class RandomFigureGenerator implements FigureGenerator{
         }
     }
 
+    /**
+     * Calculate the probability that the figure return is an EMPTY_FIGURE or a figure in movableFigures list.
+     * The method is based on two imporant value:
+     * - numberOfFiguresToAssign: returns 1 if it is equaled to 0 to inform that only EMPTY_FIGURE have to be assigned.
+     * - numberOfSquaresToAssignPerFigure: defines the number of chance that we have to generate a figure from movableFigures. For example,
+     * if numberOfSquaresToAssignPerFigure equals to 15, we have 1/15 chance of generate a specific figure, so a value between 0 and 14 (0 represents the
+     * case where the specific figure is generated).
+     * @param random the random object that we used to generate a random integer
+     * @param movableFigures the list of figures that we have to generate
+     * @param usedFigures the list of figures that have already been generated
+     * @param matrixIterator the matrixIterator that permits us to obtain the board configuration of the game
+     * @return return 1 to inform that our next figure to assign is empty OR return value between 0 and numberOfSquaresToAssignPerFigure -1
+     */
     private int calculateRandomProbability(Random random, List<MovableFigure> movableFigures, Set<Figure> usedFigures, MatrixIterator<Position> matrixIterator){
-        int numberOfSquaresBoard = matrixIterator.getNumberOfColumns() * matrixIterator.getNumberOfRows(); // 3x3 for a board of 9 squares
+        int numberOfSquaresBoard = matrixIterator.getNumberOfColumns() * matrixIterator.getNumberOfRows();
 
         int numberOfSquaresAssigned = matrixIterator.getCurrentPosition().getY()
                 * matrixIterator.getNumberOfColumns()
-                + matrixIterator.getCurrentPosition().getX(); // [2][2] (last square) -> 2x3 squares assigned + 2x1  = 8 squares assigned
+                + matrixIterator.getCurrentPosition().getX();
 
-        int numberOfSquaresToAssign = numberOfSquaresBoard - numberOfSquaresAssigned; // numberOfSquaresToAssign = 9 - 8 = 1
-
+        int numberOfSquaresToAssign = numberOfSquaresBoard - numberOfSquaresAssigned;
         int numberOfFiguresToAssign = numberOfFiguresToAssign(movableFigures, usedFigures);
 
-        if(numberOfFiguresToAssign == 0){
-            return 1; // return 1 to inform that our next figure to assign is empty
-        }
+        if(numberOfFiguresToAssign == 0){ return 1;}
 
-        int numberOfSquaresToAssignPerFigure = numberOfSquaresToAssign / numberOfFiguresToAssign(movableFigures, usedFigures);
-
-        return Math.abs(random.nextInt()) % numberOfSquaresToAssignPerFigure; // return value between 0 and numberOfSquaresToAssignPerFigure -1
+        int numberOfSquaresToAssignPerFigure = numberOfSquaresToAssign / numberOfFiguresToAssign;
+        return Math.abs(random.nextInt()) % numberOfSquaresToAssignPerFigure;
     }
 
     private int numberOfFiguresToAssign(List<MovableFigure> movableFigures, Set<Figure> usedFigures){
