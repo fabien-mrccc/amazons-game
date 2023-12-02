@@ -29,7 +29,7 @@ public class MapBoard extends AbstractBoard {
     }
 
     /**
-     * return the matrix version of the map 
+     * return the matrix version of the map
      * @return MatrixBoard
      */
     public MatrixBoard mapToMatrix(){

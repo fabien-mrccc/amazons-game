@@ -48,10 +48,18 @@ public class MatrixBoard extends AbstractBoard {
                     matrix = matrix +" XX |";
                 }
                 else{
-                    matrix = matrix +" A"+ getFigure(new Position(c,r)).getPlayerID() + " |";
+                    matrix = matrix +" A"+ getFigure(new Position(c,r)).getPlayerID().index + " |";
                 }
             }
-            matrix = matrix +"\n";
+            matrix = matrix +" " +r +"\n";
+        }
+        matrix = matrix + "+";
+        for(int c = 0; c < super.getNumberOfColumns(); c++){
+            matrix = matrix +"----+";
+        }
+        matrix = matrix +"\n";
+        for(int c = 0; c < super.getNumberOfColumns(); c++){
+            matrix = matrix + "  "+ c+ "  ";
         }
         return matrix;
     }
