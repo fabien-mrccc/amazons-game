@@ -27,7 +27,7 @@ public class RandomFigureGenerator implements FigureGenerator{
             int randomProbability = calculateRandomProbability(random, movableFigures, usedFigures, (MatrixIterator<Position>) positionIterator, currentPosition);
 
             if(randomProbability == 0){
-                int indexFigureToAssign = numberOfFiguresToAssign(movableFigures, usedFigures) -1;
+                int indexFigureToAssign = countNumberOfFiguresToAssign(movableFigures, usedFigures) -1;
                 if(movableFigures.get(indexFigureToAssign) instanceof Amazon amazon){
                     amazon.setPosition(position);
                 }
@@ -57,16 +57,16 @@ public class RandomFigureGenerator implements FigureGenerator{
      */
     private int calculateRandomProbability(Random random, List<MovableFigure> movableFigures, Set<Figure> usedFigures, MatrixIterator<Position> matrixIterator, Position currentPosition){
 
-        int numberOfSquaresBoard = matrixIterator.getNumberOfColumns() * matrixIterator.getNumberOfRows();
-        int numberOfSquaresAssigned = numberOfSquaresAssigned(matrixIterator, currentPosition);
-        int numberOfSquaresToAssign = numberOfSquaresBoard - numberOfSquaresAssigned;
+        int numberOfSquaresBoard = countNumberOfSquaresBoard(matrixIterator);
+        int numberOfSquaresAssigned = countNumberOfSquaresAssigned(matrixIterator, currentPosition);
+        int numberOfSquaresToAssign = calculateNumberOfSquaresToAssign(numberOfSquaresBoard, numberOfSquaresAssigned);
 
-        int numberOfFiguresToAssign = numberOfFiguresToAssign(movableFigures, usedFigures);
+        int numberOfFiguresToAssign = countNumberOfFiguresToAssign(movableFigures, usedFigures);
         if(numberOfFiguresToAssign == 0){
             return 1;
         }
 
-        int numberOfSquaresToAssignPerFigure = numberOfSquaresToAssign / numberOfFiguresToAssign;
+        int numberOfSquaresToAssignPerFigure = calculateNumberOfSquaresToAssignPerFigure(numberOfSquaresToAssign, numberOfFiguresToAssign);
         if(numberOfSquaresToAssignPerFigure == 0) {
             return 1;
         }
@@ -74,14 +74,26 @@ public class RandomFigureGenerator implements FigureGenerator{
         return Math.abs(random.nextInt()) % numberOfSquaresToAssignPerFigure;
     }
 
-    private int numberOfFiguresToAssign(List<MovableFigure> movableFigures, Set<Figure> usedFigures){
+    private int countNumberOfFiguresToAssign(List<MovableFigure> movableFigures, Set<Figure> usedFigures){
         return movableFigures.size() - usedFigures.size();
     }
 
-    private int numberOfSquaresAssigned(MatrixIterator<Position> matrixIterator, Position currentPosition){
+    private int countNumberOfSquaresAssigned(MatrixIterator<Position> matrixIterator, Position currentPosition){
         return currentPosition.getY()
                 * matrixIterator.getNumberOfColumns()
                 + currentPosition.getX();
+    }
+
+    private int countNumberOfSquaresBoard(MatrixIterator<Position> matrixIterator){
+        return matrixIterator.getNumberOfColumns() * matrixIterator.getNumberOfRows();
+    }
+
+    private int calculateNumberOfSquaresToAssign(int numberOfSquaresBoard, int numberOfSquaresAssigned){
+        return numberOfSquaresBoard - numberOfSquaresAssigned;
+    }
+
+    private int calculateNumberOfSquaresToAssignPerFigure(int numberOfSquaresToAssign, int numberOfFiguresToAssign){
+        return numberOfSquaresToAssign / numberOfFiguresToAssign;
     }
 
     public List<MovableFigure> getMovableFigures(){
