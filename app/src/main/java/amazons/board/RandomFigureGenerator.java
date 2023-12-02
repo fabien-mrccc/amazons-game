@@ -79,4 +79,8 @@ public class RandomFigureGenerator implements FigureGenerator{
                 * matrixIterator.getNumberOfColumns()
                 + currentPosition.getX();
     }
+
+    public List<MovableFigure> getMovableFigures(){
+        return movableFigures;
+    }
 }
