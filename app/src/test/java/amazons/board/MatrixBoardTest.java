@@ -110,7 +110,7 @@ class MatrixBoardTest {
         List<MovableFigure> figures  = List.of(amazon11Player1,amazon00Player0,amazon01Player0,amazon12Player1,amazon32Player0,amazon30Player1);
         testBoard.fill(new RandomFigureGenerator(random,figures,testBoard.positionIterator()));
 
-        /*
+
 
         List<Position> nonEmptyPositions = new ArrayList<>();
         testBoard.positionIterator().forEachRemaining(p -> {if(!testBoard.isEmpty(p)) nonEmptyPositions.add(p);});
@@ -124,10 +124,10 @@ class MatrixBoardTest {
         assertThat(nonEmptyPositions).contains(amazon12Player1.getPosition());
         assertThat(nonEmptyPositions).contains(amazon11Player1.getPosition());
 
-         */
+
     }
 
-    /*
+
     @Test
     void testMoveEmptyFigure() {
         testBoard.setFigure(position12,EMPTY_FIGURE);
@@ -244,5 +244,5 @@ class MatrixBoardTest {
         testBoard.setFigure(position32,EMPTY_FIGURE);
         assertThat(testBoard.isEmpty(position32)).isTrue();
     }
-    */
+
 }
