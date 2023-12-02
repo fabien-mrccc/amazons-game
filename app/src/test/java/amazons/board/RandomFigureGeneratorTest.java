@@ -77,23 +77,7 @@ public class RandomFigureGeneratorTest {
         assertThat(strangeFigureCount).isEqualTo(0);
     }
 
-    // test private methods
-    /*
-    @Test
-    void numberOfFiguresToAssign(){
-        assertThat(randomFigureGenerator.numberOfFiguresToAssign(movableFigures, usedFigures))
-                .isEqualTo(movableFigures.size());
-
-        usedFigures.add((Figure) movableFigures.get(0));
-        usedFigures.add((Figure) movableFigures.get(1));
-
-        assertThat(randomFigureGenerator.numberOfFiguresToAssign(movableFigures, usedFigures))
-                .isEqualTo(movableFigures.size() -2);
-
-    }
-     */
-
-    /*
+    /* Testing private methods
     @Test
     void calculateRandomProbability(){
         int randomProbability = randomFigureGenerator.calculateRandomProbability(random, movableFigures, usedFigures, iterator);
