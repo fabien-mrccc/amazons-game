@@ -1,6 +1,7 @@
 package amazons.board;
 import java.util.*;
 
+import amazons.figures.Amazon;
 import amazons.figures.Figure;
 import amazons.figures.MovableFigure;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
@@ -27,6 +28,9 @@ public class RandomFigureGenerator implements FigureGenerator{
 
             if(randomProbability == 0){
                 int indexFigureToAssign = numberOfFiguresToAssign(movableFigures, usedFigures) -1;
+                if(movableFigures.get(indexFigureToAssign) instanceof Amazon amazon){
+                    amazon.setPosition(position);
+                }
                 usedFigures.add( (Figure) movableFigures.get(indexFigureToAssign) );
                 return (Figure) movableFigures.get(indexFigureToAssign);
             }
