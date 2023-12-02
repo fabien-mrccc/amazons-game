@@ -117,4 +117,5 @@ public abstract class AbstractBoard implements Board{
     public abstract Figure[][] getFigureMatrix();
 
     public abstract void instantiateBoard();
+    public abstract String toString();
 }

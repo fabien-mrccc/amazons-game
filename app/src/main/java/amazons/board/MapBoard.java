@@ -38,4 +38,9 @@ public class MapBoard extends AbstractBoard {
     public void instantiateBoard() {
         figures = new HashMap<>();
     }
+
+    @Override
+    public String toString(){
+        return getFigureMatrix().toString();
+    }
 }

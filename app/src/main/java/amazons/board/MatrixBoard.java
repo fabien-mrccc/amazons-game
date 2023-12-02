@@ -32,7 +32,7 @@ public class MatrixBoard extends AbstractBoard {
     public void instantiateBoard() {
         figures = new Figure[super.getNumberOfColumns()][super.getNumberOfRows()];
     }
-
+    @Override
     public String toString(){
         String matrix = "";
         for(int r = 0; r < super.getNumberOfRows();r++){
