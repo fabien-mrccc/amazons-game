@@ -38,39 +38,24 @@ public class RandomFigureGeneratorTest {
     void nextFigure(){
         RandomFigureGenerator randomFigureGenerator = new RandomFigureGenerator(random, movableFigures, iterator);
 
-        // no loop below this comment because of index which as to be final in movablesFigures.get(index) (for the Assertions class)
+        for(int i=5; i>=0; i--){
+            Figure figure = (Figure) randomFigureGenerator.getMovableFigures().get(i);
 
-        assertThat(randomFigureGenerator.nextFigure(new Position(3,9))).satisfiesAnyOf(
-                value -> Assertions.assertThat(value).isEqualTo(EMPTY_FIGURE),
-                value -> Assertions.assertThat(value).isEqualTo(movableFigures.get(5)));
+            assertThat(randomFigureGenerator.nextFigure(new Position(3,9))).satisfiesAnyOf(
+                    value -> Assertions.assertThat(value).isEqualTo(EMPTY_FIGURE),
+                    value -> Assertions.assertThat(value).isEqualTo(figure));
+        }
 
-        assertThat(randomFigureGenerator.nextFigure(new Position(3,9))).satisfiesAnyOf(
-                value -> Assertions.assertThat(value).isEqualTo(EMPTY_FIGURE),
-                value -> Assertions.assertThat(value).isEqualTo(movableFigures.get(4)));
-
-        assertThat(randomFigureGenerator.nextFigure(new Position(3,9))).satisfiesAnyOf(
-                value -> Assertions.assertThat(value).isEqualTo(EMPTY_FIGURE),
-                value -> Assertions.assertThat(value).isEqualTo(movableFigures.get(3)));
-
-        assertThat(randomFigureGenerator.nextFigure(new Position(3,9))).satisfiesAnyOf(
-                value -> Assertions.assertThat(value).isEqualTo(EMPTY_FIGURE),
-                value -> Assertions.assertThat(value).isEqualTo(movableFigures.get(2)));
-
-        assertThat(randomFigureGenerator.nextFigure(new Position(3,9))).satisfiesAnyOf(
-                value -> Assertions.assertThat(value).isEqualTo(EMPTY_FIGURE),
-                value -> Assertions.assertThat(value).isEqualTo(movableFigures.get(1)));
-
-        assertThat(randomFigureGenerator.nextFigure(new Position(3,9))).satisfiesAnyOf(
-                value -> Assertions.assertThat(value).isEqualTo(movableFigures.get(0)));
 
         final MatrixBoard matrixBoard100x100 = new MatrixBoard(100,100);
         final Iterator<Position> iterator100x100 = matrixBoard100x100.positionIterator();
+        Figure figure;
 
         movableFigures.add(new Amazon(new Position(0,3),0));
         movableFigures.add(new Amazon(new Position(1,3),1));
 
+
         randomFigureGenerator = new RandomFigureGenerator(random, movableFigures, iterator100x100);
-        Figure figure;
         int emptyFigureCount = 0;
         int amazonFigureCount = 0;
         int strangeFigureCount = 0;
