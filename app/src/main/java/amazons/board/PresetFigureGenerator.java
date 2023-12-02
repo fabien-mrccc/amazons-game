@@ -1,7 +1,5 @@
 package amazons.board;
 
-import amazons.figures.Amazon;
-import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 
 import java.util.ArrayList;

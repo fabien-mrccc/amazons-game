@@ -10,12 +10,12 @@ import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 
 public abstract class AbstractBoard implements Board{
-    private final int numberOfColumns;
-    private final int numberOfRows;
+    public final int NUMBER_OF_COLUMNS;
+    public final int NUMBER_OF_ROWS;
 
     public AbstractBoard(int numberOfColumns, int numberOfRows){
-        this.numberOfColumns = numberOfColumns;
-        this.numberOfRows = numberOfRows;
+        this.NUMBER_OF_COLUMNS = numberOfColumns;
+        this.NUMBER_OF_ROWS = numberOfRows;
         instantiateBoard();
         fill(new EmptyFigureGenerator());
     }
@@ -27,7 +27,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public boolean isOutOfBoard(Position position) {
-        return position.isOutOfBounds(getNumberOfColumns(), getNumberOfRows());
+        return position.isOutOfBounds(NUMBER_OF_COLUMNS, NUMBER_OF_ROWS);
     }
 
     @Override
@@ -67,8 +67,8 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public void fill(FigureGenerator generator){
-        for(int x=0; x< getNumberOfColumns(); x++){
-            for(int y=0; y< getNumberOfRows(); y++){
+        for(int x=0; x< NUMBER_OF_COLUMNS; x++){
+            for(int y=0; y< NUMBER_OF_ROWS; y++){
                 setFigure(new Position(x,y), generator.nextFigure(new Position(x,y)));
                 System.out.println("Position: " + x + "," + y + ", getFigure()" + getFigure(new Position(x,y)));
             }
@@ -77,12 +77,12 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public Iterator<Figure> iterator(){
-        return new MatrixIterator<>(getNumberOfColumns(),getNumberOfRows(),getFigureMatrix());
+        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS,getFigureMatrix());
     }
 
     @Override
     public Iterator<Position> positionIterator(){
-        return new MatrixIterator<>(getNumberOfColumns(),getNumberOfRows(),getPositionMatrix());
+        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS,getPositionMatrix());
     }
 
     /**
@@ -90,21 +90,13 @@ public abstract class AbstractBoard implements Board{
      * @return a matrix that contains all positions on the board
      */
     public Position[][] getPositionMatrix() {
-        Position[][] boardPositions = new Position[getNumberOfColumns()][getNumberOfRows()];
+        Position[][] boardPositions = new Position[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
         for(int x=0; x< boardPositions.length; x++){
             for(int y=0; y< boardPositions[0].length; y++){
                 boardPositions[x][y] = new Position(x, y);
             }
         }
         return boardPositions;
-    }
-
-    public int getNumberOfColumns(){
-        return numberOfColumns;
-    }
-
-    public int getNumberOfRows(){
-        return numberOfRows;
     }
 
     public abstract void setFigure(Position position, Figure figure);
@@ -119,4 +111,12 @@ public abstract class AbstractBoard implements Board{
 
     public abstract void instantiateBoard();
     public abstract String toString();
+
+    public int getNumberOfColumns(){
+        return NUMBER_OF_COLUMNS;
+    }
+
+    public int getNumberOfRows(){
+        return NUMBER_OF_ROWS;
+    }
 }

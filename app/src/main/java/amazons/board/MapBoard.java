@@ -33,9 +33,9 @@ public class MapBoard extends AbstractBoard {
      * @return MatrixBoard
      */
     public MatrixBoard mapToMatrix(){
-        MatrixBoard mapToMatrix = new MatrixBoard(getNumberOfColumns(),getNumberOfRows());
-        for(int x=0; x< mapToMatrix.getNumberOfColumns();x++){
-            for(int y=0; y< mapToMatrix.getNumberOfRows();y++){
+        MatrixBoard mapToMatrix = new MatrixBoard(NUMBER_OF_COLUMNS, NUMBER_OF_ROWS);
+        for(int x=0; x< mapToMatrix.NUMBER_OF_COLUMNS; x++){
+            for(int y=0; y< mapToMatrix.NUMBER_OF_ROWS; y++){
                 mapToMatrix.setFigure(new Position(x,y), getFigure(new Position(x,y)));
             }
         }

@@ -3,16 +3,16 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class MatrixIterator<T> implements Iterator<T> {
-    private final int numberOfColumns;
-    private final int numberOfRows;
+    private final int NUMBER_OF_COLUMNS;
+    private final int NUMBER_OF_ROWS;
     private final Position lastPosition;
     private final T[][] matrix;
     private Position currentPosition = new Position(0, 0);
 
     public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix) {
-        this.numberOfColumns = numberOfColumns;
-        this.numberOfRows = numberOfRows;
-        this.lastPosition = new Position(numberOfColumns - 1, numberOfRows - 1);
+        this.NUMBER_OF_COLUMNS = numberOfColumns;
+        this.NUMBER_OF_ROWS = numberOfRows;
+        this.lastPosition = new Position(NUMBER_OF_COLUMNS - 1, NUMBER_OF_ROWS - 1);
         this.matrix = matrix;
     }
 
@@ -28,7 +28,7 @@ public class MatrixIterator<T> implements Iterator<T> {
             throw new NoSuchElementException();
         }
 
-        Position tempPosition = currentPosition;
+        Position returnPosition = currentPosition;
 
         if (getCurrentPosition().getX() == getLastPosition().getX()) {
             currentPosition = new Position(0, getCurrentPosition().getY() + 1);
@@ -36,7 +36,7 @@ public class MatrixIterator<T> implements Iterator<T> {
         else{
             currentPosition = new Position(getCurrentPosition().getX() + 1, getCurrentPosition().getY());
         }
-        return getTInMatrix(tempPosition);
+        return getTInMatrix(returnPosition);
     }
 
     public T getTInMatrix(Position position) {
@@ -47,8 +47,8 @@ public class MatrixIterator<T> implements Iterator<T> {
         return currentPosition;
     }
 
-    public int getNumberOfColumns(){return numberOfColumns;}
-    public int getNumberOfRows(){return numberOfRows;}
+    public int getNumberOfColumns(){return NUMBER_OF_COLUMNS;}
+    public int getNumberOfRows(){return NUMBER_OF_ROWS;}
 
     public Position getLastPosition(){
         return lastPosition;
