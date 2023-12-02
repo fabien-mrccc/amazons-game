@@ -60,9 +60,14 @@ public class RandomFigureGenerator implements FigureGenerator{
         int numberOfSquaresToAssign = numberOfSquaresBoard - numberOfSquaresAssigned;
         int numberOfFiguresToAssign = numberOfFiguresToAssign(movableFigures, usedFigures);
 
-        if(numberOfFiguresToAssign == 0){ return 1;}
-
+        if(numberOfFiguresToAssign == 0){
+            return 1;
+        }
         int numberOfSquaresToAssignPerFigure = numberOfSquaresToAssign / numberOfFiguresToAssign;
+
+        if(numberOfSquaresToAssignPerFigure == 0) {
+            return 1;
+        }
         return Math.abs(random.nextInt()) % numberOfSquaresToAssignPerFigure;
     }
 
