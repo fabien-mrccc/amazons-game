@@ -1,7 +1,7 @@
 package amazons.board;
 
-import amazons.figures.ArrowFigure;
-import amazons.figures.EmptyFigure;
+import static amazons.figures.ArrowFigure.ARROW_FIGURE;
+import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 import amazons.figures.Figure;
 
 public class MatrixBoard extends AbstractBoard {
@@ -34,27 +34,27 @@ public class MatrixBoard extends AbstractBoard {
     @Override
     public String toString(){
         StringBuilder matrix = new StringBuilder();
-        for(int r = 0; r < NUMBER_OF_ROWS;r++){
+        for(int row = 0; row < NUMBER_OF_ROWS;row++){
             matrix.append("+");
             matrix.append("----+".repeat(NUMBER_OF_COLUMNS));
             matrix.append("\n").append("|");
-            for(int c = 0; c < NUMBER_OF_COLUMNS;c++){
-                if(getFigure(new Position(c,r))== EmptyFigure.EMPTY_FIGURE){
+            for(int column = 0; column < NUMBER_OF_COLUMNS;column++){
+                if(getFigure(new Position(column,row))== EMPTY_FIGURE){
                     matrix.append("    |");
-                } else if (getFigure(new Position(c,r))== ArrowFigure.ARROW_FIGURE) {
-                    matrix.append(" XX |");
+                } else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
+                    matrix.append(" ").append(ARROW_FIGURE).append(" |");
                 }
                 else{
-                    matrix.append(" A").append(getFigure(new Position(c, r)).getPlayerID().index).append(" |");
+                    matrix.append(" ").append(getFigure(new Position(column, row))).append(" |");
                 }
             }
-            matrix.append(" ").append(r).append("\n");
+            matrix.append(" ").append(row).append("\n");
         }
         matrix.append("+");
         matrix.append("----+".repeat(NUMBER_OF_COLUMNS));
         matrix.append("\n");
-        for(int c = 0; c < NUMBER_OF_COLUMNS; c++){
-            matrix.append("  ").append(c).append("  ");
+        for(int column = 0; column < NUMBER_OF_COLUMNS; column++){
+            matrix.append("  ").append(column).append("  ");
         }
         return matrix.toString();
     }
