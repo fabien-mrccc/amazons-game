@@ -7,11 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public Move play(Move opponentMove): change playerID at the end of the method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/CLPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/CLPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,20 +218,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00070" summary="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)">
-      <created>1701081435053</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1701081435053</updated>
-    </task>
-    <task id="LOCAL-00071" summary="add public boolean equals(Move move)">
-      <created>1701081714693</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1701081714693</updated>
     </task>
     <task id="LOCAL-00072" summary="add public int hashCode()">
       <created>1701081914650</created>
@@ -565,7 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701607921168</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="add public void setPlayerID(PlayerID playerID)">
+      <created>1701609413786</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1701609413786</updated>
+    </task>
+    <task id="LOCAL-00120" summary="fix public Move play(Move opponentMove): change playerID at the end of the method">
+      <created>1701609596495</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1701609596495</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,8 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public Figure nextFigure(Position position): use the right currentPosition value and the right indexFigureToAssign&#10;&#10;fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): utilisation of the new currentPosition parameter&#10;&#10;fix private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator, Position currentPosition): utilisation of the new currentPosition parameter" />
-    <MESSAGE value="add void nextFigure()" />
     <MESSAGE value="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): recover the movableFigures argument by copy" />
     <MESSAGE value="add public List&lt;MovableFigure&gt; getMovableFigures()" />
     <MESSAGE value="fix void nextFigure()" />
@@ -608,6 +603,8 @@
     <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message" />
     <MESSAGE value="fix public void run(): change the final message" />
     <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message" />
+    <MESSAGE value="add public void setPlayerID(PlayerID playerID)" />
+    <MESSAGE value="fix public Move play(Move opponentMove): change playerID at the end of the method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public Move play(Move opponentMove): change playerID at the end of the method" />
   </component>
 </project>
