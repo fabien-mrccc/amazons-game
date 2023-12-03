@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void testEquals()&#10;add void testToString()&#10;add void testHashCode()">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/Greedy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public int getScore(Amazon amazon, Game game)">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/Greedy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/Greedy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,13 +218,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00064" summary="add public Position getPosition()">
-      <created>1700929321620</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1700929321620</updated>
     </task>
     <task id="LOCAL-00065" summary="add public Figure nextFigure(Position position)">
       <created>1700991099565</created>
@@ -563,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701604976015</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="add public int getScore(Amazon amazon, Game game)">
+      <created>1701614918047</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1701614918047</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator)" />
     <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): update comments" />
     <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): ensure that there is no division by zero" />
     <MESSAGE value="add private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator)" />
@@ -606,6 +604,7 @@
     <MESSAGE value="fix public void fill(FigureGenerator generator): remove System.out.println()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
     <MESSAGE value="add void testEquals()&#10;add void testToString()&#10;add void testHashCode()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add void testEquals()&#10;add void testToString()&#10;add void testHashCode()" />
+    <MESSAGE value="add public int getScore(Amazon amazon, Game game)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public int getScore(Amazon amazon, Game game)" />
   </component>
 </project>
