@@ -31,13 +31,10 @@ public class CLPlayer implements Player {
     @Override
     public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
         board = new MatrixBoard(boardWidth,boardHeight);
-        for(Position position : initialPositions[0]) {
-            board.setFigure(position, new Amazon(position, PlayerID.PLAYER_ZERO.index));
-        }
-        for(Position position : initialPositions[1]) {
-            board.setFigure(position, new Amazon(position, PlayerID.PLAYER_ONE.index));
-        }
         this.playerID = playerID;
+        for(Position position : initialPositions[playerID.index]) {
+            board.setFigure(position, new Amazon(position, playerID.index));
+        }
     }
 
     @Override
