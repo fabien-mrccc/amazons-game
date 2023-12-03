@@ -42,6 +42,10 @@ public class CLPlayer implements Player {
         return playerID;
     }
 
+    public void setPlayerID(PlayerID playerID){
+        this.playerID = playerID;
+    }
+
     public List<Position> getInitialPositions() {
         return initialPositions;
     }

@@ -152,14 +152,14 @@ public class GameController {
     }
 
     public void setPlayerBasic(PlayerID playerID){
-        // TODO
+        setPlayer(new GUIPLayer(), playerID);
     }
 
     public void setPlayerRandom(PlayerID playerID){
-        // TODO
+        setPlayer(new GUIPLayer(), playerID);
     }
     public void setPlayerGreedy(PlayerID playerID){
-        // TODO
+        setPlayer(new GUIPLayer(), playerID);
     }
 
 }
