@@ -39,7 +39,6 @@ public class GameController {
         initialize();
     }
 
-
     private void initialize(){
         game.initializeGame(players[0], players[1]);
         lastMove = Move.DUMMY_MOVE;
@@ -47,6 +46,7 @@ public class GameController {
         addEndPhaseListener();
         setPauseAnimation();
     }
+
     public void resetGame(){
        initialize();
        view.updateFields();
@@ -152,7 +152,7 @@ public class GameController {
     }
 
     public void setPlayerBasic(PlayerID playerID){
-        setPlayer(new GUIPLayer(), playerID);
+        setPlayer(new AIBasicPlayer(), playerID);
     }
 
     public void setPlayerRandom(PlayerID playerID){
