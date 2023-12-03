@@ -70,7 +70,6 @@ public abstract class AbstractBoard implements Board{
         for(int x=0; x< NUMBER_OF_COLUMNS; x++){
             for(int y=0; y< NUMBER_OF_ROWS; y++){
                 setFigure(new Position(x,y), generator.nextFigure(new Position(x,y)));
-                System.out.println("Position: " + x + "," + y + ", getFigure()" + getFigure(new Position(x,y)));
             }
         }
     }
