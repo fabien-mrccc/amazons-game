@@ -65,12 +65,18 @@ public class Game {
 
     public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition){
         try{board.moveFigure(amazonStartPosition, amazonDstPosition);}
-        catch (IllegalMoveException exception) { winner = board.getFigure(amazonStartPosition).getPlayerID().opponent();}
+        catch (IllegalMoveException exception) {
+            winner = board.getFigure(amazonStartPosition).getPlayerID().opponent();
+            isThisIsTheEnd = true;
+        }
     }
 
     public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition) {
         try{board.shootArrow(amazonDstPosition, arrowDstPosition);}
-        catch (IllegalMoveException exception){ winner = board.getFigure(amazonDstPosition).getPlayerID().opponent();}
+        catch (IllegalMoveException exception){
+            winner = board.getFigure(amazonDstPosition).getPlayerID().opponent();
+            isThisIsTheEnd = true;
+        }
     }
 
     private boolean hasLost(PlayerID playerID) {
@@ -95,10 +101,7 @@ public class Game {
     public Player getPlayer() {return players[currentPlayerID.index];}
 
     public boolean hasEnded() {
-        if(getWinner().equals(null)){
-            return isThisIsTheEnd;
-        }
-        return true;
+        return isThisIsTheEnd;
     }
 
     public void incrementTurn(){

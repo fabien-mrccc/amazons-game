@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void initializeGame(Player player0, Player player1)">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,13 +218,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00057" summary="fix public T next(): add currentPosition value management">
-      <created>1700766970071</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1700766970071</updated>
     </task>
     <task id="LOCAL-00058" summary="add public Position getCurrentPosition()&#10;add public Position getLastPosition()">
       <created>1700767503503</created>
@@ -563,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701596592830</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="fix public void initializeGame(Player player0, Player player1)">
+      <created>1701598003375</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1701598003375</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()" />
     <MESSAGE value="fix public Game()" />
     <MESSAGE value="fix BoardView and FieldView : uncommented" />
     <MESSAGE value="fix public Figure nextFigure(Position position)" />
@@ -606,6 +604,7 @@
     <MESSAGE value="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure" />
     <MESSAGE value="add public MatrixBoard getBoard()" />
     <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public void initializeGame(Player player0, Player player1)" />
   </component>
 </project>
