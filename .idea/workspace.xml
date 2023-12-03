@@ -7,12 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public boolean equals(Move move)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/CLPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/CLPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,27 +218,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00052" summary="fix public boolean hasNext()">
-      <created>1700764104305</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1700764104305</updated>
-    </task>
-    <task id="LOCAL-00053" summary="fix public boolean hasNext(): now using equals() method">
-      <created>1700764372277</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1700764372277</updated>
-    </task>
-    <task id="LOCAL-00054" summary="add public Iterator&lt;Position&gt; positionIterator()">
-      <created>1700764873056</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1700764873056</updated>
     </task>
     <task id="LOCAL-00055" summary="fix public boolean isEmpty(Position position)">
       <created>1700764916669</created>
@@ -567,7 +541,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701594652006</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="add public String toString()">
+      <created>1701595368975</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1701595368975</updated>
+    </task>
+    <task id="LOCAL-00102" summary="add public String toString()">
+      <created>1701595510409</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1701595510409</updated>
+    </task>
+    <task id="LOCAL-00103" summary="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure">
+      <created>1701595606626</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1701595606626</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,8 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public void updateGame(Move move)&#10;add public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)&#10;add public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)" />
-    <MESSAGE value="add private boolean hasLost(PlayerID playerID)" />
     <MESSAGE value="add public Board getBoard()" />
     <MESSAGE value="add public PlayerID getWinner()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()" />
@@ -610,6 +603,8 @@
     <MESSAGE value="refactoring primitive constants with UPPERCASE" />
     <MESSAGE value="remove void numberOfFiguresToAssign()" />
     <MESSAGE value="fix public boolean equals(Move move)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public boolean equals(Move move)" />
+    <MESSAGE value="add public String toString()" />
+    <MESSAGE value="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure" />
   </component>
 </project>
