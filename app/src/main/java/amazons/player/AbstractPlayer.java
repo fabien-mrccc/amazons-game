@@ -24,10 +24,12 @@ public abstract class AbstractPlayer implements Player{
     }
 
     @Override
-    public abstract Move play(Move opponentMove);
+    public boolean isGUIControlled() {
+        return false;
+    }
 
     @Override
-    public abstract boolean isGUIControlled();
+    public abstract Move play(Move opponentMove);
 
     public void setPlayerID(PlayerID playerID){
         this.playerID = playerID;
