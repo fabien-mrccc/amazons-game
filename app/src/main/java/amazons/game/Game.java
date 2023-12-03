@@ -68,7 +68,7 @@ public class Game {
     public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition){
         try{board.moveFigure(amazonStartPosition, amazonDstPosition);}
         catch (IllegalMoveException exception) {
-            winner = board.getFigure(amazonStartPosition).getPlayerID().opponent();
+            winner = currentPlayerID.opponent();
             isThisIsTheEnd = true;
         }
     }
@@ -76,7 +76,7 @@ public class Game {
     public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition) {
         try{board.shootArrow(amazonDstPosition, arrowDstPosition);}
         catch (IllegalMoveException exception){
-            winner = board.getFigure(amazonDstPosition).getPlayerID().opponent();
+            winner = currentPlayerID.opponent();
             isThisIsTheEnd = true;
         }
     }

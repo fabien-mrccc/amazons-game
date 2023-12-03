@@ -21,7 +21,6 @@ public class MatrixIterator<T> implements Iterator<T> {
         return getCurrentPosition().getY() <= getLastPosition().getY();
     }
 
-    //TODO Demander à notre chargée de TP si c'est normal que next() doive mettre à jour currentPosition alors que le commentaire dans l'interface demande un simple retour
     @Override
     public T next() {
         if (!hasNext()) {

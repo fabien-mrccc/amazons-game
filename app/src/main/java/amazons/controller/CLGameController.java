@@ -32,7 +32,7 @@ public class CLGameController {
             game.incrementTurn();
         }
         System.out.println(game.getBoard());
-        System.out.println("Player " + game.getWinner() + " wins!!! ");
+        System.out.println(game.getWinner() + " wins!!! ");
     }
 
 }

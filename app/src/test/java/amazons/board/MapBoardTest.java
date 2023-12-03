@@ -2,7 +2,6 @@ package amazons.board;
 
 
 import amazons.IllegalMoveException;
-import amazons.board.*;
 import amazons.figures.Amazon;
 import amazons.figures.Figure;
 import amazons.figures.MovableFigure;
@@ -15,7 +14,6 @@ import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 import static org.assertj.core.api.Assertions.*;
 
-//TODO Adapter les tests issus de la classe MatrixBoardTest à la classe MapBoardTest
 class MapBoardTest {
 
     private MapBoard testBoard;

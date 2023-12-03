@@ -7,8 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public int getScore(Amazon amazon, Game game)">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/Greedy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/Greedy.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public Move play(Move opponentMove)">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,97 +221,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00065" summary="add public Figure nextFigure(Position position)">
-      <created>1700991099565</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1700991099565</updated>
-    </task>
-    <task id="LOCAL-00066" summary="add public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; figures, Iterator&lt;Position&gt; positionIterator)">
-      <created>1701013455640</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1701013455644</updated>
-    </task>
-    <task id="LOCAL-00067" summary="fix public String toString()">
-      <created>1701079925080</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1701079925081</updated>
-    </task>
-    <task id="LOCAL-00068" summary="add public String toString()">
-      <created>1701080956259</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1701080956259</updated>
-    </task>
-    <task id="LOCAL-00069" summary="add public Position getAmazonStartPosition()&#10;add public Position getAmazonDstPosition()&#10;add public Position getArrowDstPosition()">
-      <created>1701081164337</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1701081164337</updated>
-    </task>
-    <task id="LOCAL-00070" summary="add public Move(Position amazonStartPosition, Position amazonDstPosition, Position arrowDstPosition)">
-      <created>1701081435053</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1701081435053</updated>
-    </task>
-    <task id="LOCAL-00071" summary="add public boolean equals(Move move)">
-      <created>1701081714693</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1701081714693</updated>
-    </task>
-    <task id="LOCAL-00072" summary="add public int hashCode()">
-      <created>1701081914650</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1701081914650</updated>
-    </task>
-    <task id="LOCAL-00073" summary="fix public Move play(Move opponentMove)">
-      <created>1701083554907</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1701083554908</updated>
-    </task>
-    <task id="LOCAL-00074" summary="fix public void initializeGame(Player player0, Player player1)&#10;fix private List&lt;MovableFigure&gt; createPlayersFiguresWithDefaultPosition()">
-      <created>1701097942775</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1701097942776</updated>
-    </task>
-    <task id="LOCAL-00075" summary="add public void updateGame(Move move)&#10;add public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)&#10;add public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)">
-      <created>1701110737913</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1701110737913</updated>
-    </task>
-    <task id="LOCAL-00076" summary="add private boolean hasLost(PlayerID playerID)">
-      <created>1701110931984</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1701110931984</updated>
-    </task>
-    <task id="LOCAL-00077" summary="add public Board getBoard()">
-      <created>1701111024637</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1701111024637</updated>
     </task>
     <task id="LOCAL-00078" summary="add public PlayerID getWinner()">
       <created>1701111137038</created>
@@ -555,14 +467,105 @@
       <option name="project" value="LOCAL" />
       <updated>1701604976015</updated>
     </task>
-    <task id="LOCAL-00113" summary="add public int getScore(Amazon amazon, Game game)">
-      <created>1701614918047</created>
+    <task id="LOCAL-00113" summary="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization">
+      <created>1701605757745</created>
       <option name="number" value="00113" />
       <option name="presentableId" value="LOCAL-00113" />
       <option name="project" value="LOCAL" />
-      <updated>1701614918047</updated>
+      <updated>1701605757745</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="fix public String toString(): process the case this = DUMMY_MOVE">
+      <created>1701605983220</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1701605983220</updated>
+    </task>
+    <task id="LOCAL-00115" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message">
+      <created>1701607154814</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1701607154814</updated>
+    </task>
+    <task id="LOCAL-00116" summary="fix public void run(): change the final message">
+      <created>1701607242858</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1701607242858</updated>
+    </task>
+    <task id="LOCAL-00117" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message">
+      <created>1701607572065</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1701607572065</updated>
+    </task>
+    <task id="LOCAL-00118" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message">
+      <created>1701607921168</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1701607921168</updated>
+    </task>
+    <task id="LOCAL-00119" summary="add public void setPlayerID(PlayerID playerID)">
+      <created>1701609413786</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1701609413786</updated>
+    </task>
+    <task id="LOCAL-00120" summary="fix public Move play(Move opponentMove): change playerID at the end of the method">
+      <created>1701609596495</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1701609596495</updated>
+    </task>
+    <task id="LOCAL-00121" summary="fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition): winner assignment&#10;&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition): winner assignment">
+      <created>1701611981242</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1701611981242</updated>
+    </task>
+    <task id="LOCAL-00122" summary="add AbstractPlayer class for refactoring">
+      <created>1701612554130</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1701612554130</updated>
+    </task>
+    <task id="LOCAL-00123" summary="fix public boolean isGUIControlled(): not abstract method anymore">
+      <created>1701612814977</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1701612814977</updated>
+    </task>
+    <task id="LOCAL-00124" summary="remove public boolean isGUIControlled()">
+      <created>1701612834450</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1701612834450</updated>
+    </task>
+    <task id="LOCAL-00125" summary="remove public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public PlayerID getPlayerID()">
+      <created>1701612888632</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1701612888632</updated>
+    </task>
+    <task id="LOCAL-00126" summary="add public Move play(Move opponentMove)">
+      <created>1701613782761</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1701613782761</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,17 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): update comments" />
-    <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): ensure that there is no division by zero" />
-    <MESSAGE value="add private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator)" />
-    <MESSAGE value="fix public Figure nextFigure(Position position): use the right currentPosition value and the right indexFigureToAssign&#10;&#10;fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): utilisation of the new currentPosition parameter&#10;&#10;fix private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator, Position currentPosition): utilisation of the new currentPosition parameter" />
-    <MESSAGE value="add void nextFigure()" />
-    <MESSAGE value="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): recover the movableFigures argument by copy" />
-    <MESSAGE value="add public List&lt;MovableFigure&gt; getMovableFigures()" />
-    <MESSAGE value="fix void nextFigure()" />
-    <MESSAGE value="add and refactor private int countNumberOfSquaresBoard(MatrixIterator&lt;Position&gt; matrixIterator)&#10;add and refactor private int calculateNumberOfSquaresToAssign(int numberOfSquaresBoard, int numberOfSquaresAssigned)&#10;add and refactor private int calculateNumberOfSquaresToAssignPerFigure(int numberOfSquaresToAssign, int numberOfFiguresToAssign)" />
-    <MESSAGE value="fix public String toString(): try to use StringBuilder class recommended by IntelliJ" />
-    <MESSAGE value="refactoring primitive constants with UPPERCASE" />
     <MESSAGE value="remove void numberOfFiguresToAssign()" />
     <MESSAGE value="fix public boolean equals(Move move)" />
     <MESSAGE value="add public String toString()" />
@@ -603,8 +595,19 @@
     <MESSAGE value="fix private boolean hasLost(PlayerID playerID)" />
     <MESSAGE value="fix public void fill(FigureGenerator generator): remove System.out.println()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
-    <MESSAGE value="add void testEquals()&#10;add void testToString()&#10;add void testHashCode()" />
-    <MESSAGE value="add public int getScore(Amazon amazon, Game game)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public int getScore(Amazon amazon, Game game)" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization" />
+    <MESSAGE value="fix public String toString(): process the case this = DUMMY_MOVE" />
+    <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message" />
+    <MESSAGE value="fix public void run(): change the final message" />
+    <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message" />
+    <MESSAGE value="add public void setPlayerID(PlayerID playerID)" />
+    <MESSAGE value="fix public Move play(Move opponentMove): change playerID at the end of the method" />
+    <MESSAGE value="fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition): winner assignment&#10;&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition): winner assignment" />
+    <MESSAGE value="add AbstractPlayer class for refactoring" />
+    <MESSAGE value="fix public boolean isGUIControlled(): not abstract method anymore" />
+    <MESSAGE value="remove public boolean isGUIControlled()" />
+    <MESSAGE value="remove public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public PlayerID getPlayerID()" />
+    <MESSAGE value="add public Move play(Move opponentMove)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public Move play(Move opponentMove)" />
   </component>
 </project>

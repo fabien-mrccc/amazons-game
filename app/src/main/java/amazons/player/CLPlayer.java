@@ -2,20 +2,11 @@ package amazons.player;
 
 import amazons.board.Position;
 
-import java.util.List;
 import java.util.Scanner;
 
-public class CLPlayer implements Player {
-    private PlayerID playerID;
-    private int boardWidth;
-    private int boardHeight;
-    private List<Position> initialPositions;
-    private final static Scanner inputScanner = new Scanner(System.in);
+public class CLPlayer extends AbstractPlayer {
 
-    @Override
-    public boolean isGUIControlled() {
-        return false;
-    }
+    private final static Scanner inputScanner = new Scanner(System.in);
 
     @Override
     public Move play(Move opponentMove) {
@@ -26,31 +17,7 @@ public class CLPlayer implements Player {
         Position amazonDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
         System.out.println(playerID + " where to shoot arrow? (enter X Y coordinate)");
         Position arrowDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
+        setPlayerID(getPlayerID().opponent());
         return new Move(amazonStartPosition,amazonDstPosition,arrowDstPosition);
-    }
-
-    @Override
-    public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
-        this.boardWidth = boardWidth;
-        this.boardHeight = boardHeight;
-        this.playerID = playerID;
-        this.initialPositions = initialPositions[playerID.index];
-    }
-
-    @Override
-    public PlayerID getPlayerID() {
-        return playerID;
-    }
-
-    public List<Position> getInitialPositions() {
-        return initialPositions;
-    }
-
-    public int getBoardHeight() {
-        return boardHeight;
-    }
-
-    public int getBoardWidth() {
-        return boardWidth;
     }
 }
