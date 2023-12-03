@@ -42,6 +42,8 @@ public class Game {
 
         player0.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ZERO, initialPositions);
         players[0] = player0;
+        currentPlayerID = players[0].getPlayerID();
+
         player1.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ONE, initialPositions);
         players[1] = player1;
     }
@@ -118,4 +120,5 @@ public class Game {
     public int getNumberOfAmazonsPerPlayer(){
         return numberOfAmazonsPerPlayer;
     }
+
 }

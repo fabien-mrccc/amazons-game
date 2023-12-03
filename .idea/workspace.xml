@@ -7,9 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void fill(FigureGenerator generator): remove System.out.println()">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void initializeGame(Player player0, Player player1)">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -220,13 +218,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00063" summary="fix public Iterator&lt;Position&gt; positionIterator()">
-      <created>1700769100665</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1700769100665</updated>
     </task>
     <task id="LOCAL-00064" summary="add public Position getPosition()">
       <created>1700929321620</created>
@@ -564,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701604619844</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="fix public void initializeGame(Player player0, Player player1)">
+      <created>1701604976015</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1701604976015</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,12 +599,12 @@
     <MESSAGE value="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure" />
     <MESSAGE value="add public MatrixBoard getBoard()" />
     <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
-    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
     <MESSAGE value="fix public boolean hasEnded()&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)&#10;fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)" />
     <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public MatrixBoard getBoard()&#10;add public List&lt;Position&gt; getInitialPositions()&#10;add public int getBoardHeight()&#10;add public int getBoardWidth()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;add public int getNumberOfAmazonsPerPlayer()" />
     <MESSAGE value="fix private boolean hasLost(PlayerID playerID)" />
     <MESSAGE value="fix public void fill(FigureGenerator generator): remove System.out.println()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void fill(FigureGenerator generator): remove System.out.println()" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public void initializeGame(Player player0, Player player1)" />
   </component>
 </project>
