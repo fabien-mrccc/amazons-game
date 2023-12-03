@@ -1,15 +1,15 @@
 package amazons.player;
 
-import amazons.board.MatrixBoard;
 import amazons.board.Position;
-import amazons.figures.Amazon;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class CLPlayer implements Player {
     private PlayerID playerID;
-    private MatrixBoard board;
+    private int boardWidth;
+    private int boardHeight;
+    private List<Position> initialPositions;
     private final static Scanner inputScanner = new Scanner(System.in);
 
     @Override
@@ -19,6 +19,7 @@ public class CLPlayer implements Player {
 
     @Override
     public Move play(Move opponentMove) {
+        System.out.println("Previous move of your opponent: " + opponentMove);
         System.out.println(playerID + " select amazon? (enter X Y coordinate)");
         Position amazonStartPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
         System.out.println(playerID + " select destination? (enter X Y coordinate)");
@@ -30,11 +31,10 @@ public class CLPlayer implements Player {
 
     @Override
     public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
-        board = new MatrixBoard(boardWidth,boardHeight);
+        this.boardWidth = boardWidth;
+        this.boardHeight = boardHeight;
         this.playerID = playerID;
-        for(Position position : initialPositions[playerID.index]) {
-            board.setFigure(position, new Amazon(position, playerID.index));
-        }
+        this.initialPositions = initialPositions[playerID.index];
     }
 
     @Override
@@ -42,7 +42,15 @@ public class CLPlayer implements Player {
         return playerID;
     }
 
-    public MatrixBoard getBoard(){
-        return board;
+    public List<Position> getInitialPositions() {
+        return initialPositions;
+    }
+
+    public int getBoardHeight() {
+        return boardHeight;
+    }
+
+    public int getBoardWidth() {
+        return boardWidth;
     }
 }
