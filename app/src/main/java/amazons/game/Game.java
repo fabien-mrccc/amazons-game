@@ -9,9 +9,10 @@ import java.util.List;
 import java.util.ArrayList;
 import amazons.figures.Amazon;
 import amazons.figures.MovableFigure;
+
 public class Game {
     public static final int NUMBER_OF_PLAYERS = 2;
-    public static final int DEFAULT_NUMBER_OF_AMAZONS = 4;
+    public static final int DEFAULT_NUMBER_OF_AMAZONS_PER_PLAYER = 4;
     private static final int DEFAULT_NUMBER_OF_COLUMNS = 10;
     private static  final int DEFAULT_NUMBER_OF_ROWS = 10;
 
@@ -24,17 +25,20 @@ public class Game {
     private PlayerID winner = null;
     private int turn = 0;
     private boolean isThisIsTheEnd = false;
-    private Board board;
+    private final Board board;
     private PlayerID currentPlayerID;
-    private final int numberOfAmazons;
+    private final int numberOfAmazonsPerPlayer;
 
     public Game() {
         this.board = new MapBoard(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS);
-        this.numberOfAmazons = DEFAULT_NUMBER_OF_AMAZONS;
+        this.numberOfAmazonsPerPlayer = DEFAULT_NUMBER_OF_AMAZONS_PER_PLAYER;
     }
 
     //@SuppressWarnings("unchecked")
     public void initializeGame(Player player0, Player player1){
+        PresetFigureGenerator figureGenerator = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition());
+        board.fill(figureGenerator);
+
         List<Position>[] initialPositions = new ArrayList[NUMBER_OF_PLAYERS];
         initialPositions[0] = DEFAULT_PLAYER0_POSITIONS;
         initialPositions[1] = DEFAULT_PLAYER1_POSITIONS;
@@ -43,7 +47,6 @@ public class Game {
         players[0] = player0;
         player1.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ONE, initialPositions);
         players[1] = player1;
-        createPlayersFiguresWithDefaultPosition();
     }
 
     private List<MovableFigure> createPlayersFiguresWithDefaultPosition(){
@@ -116,5 +119,9 @@ public class Game {
 
     public int getNumberOfRows(){
         return DEFAULT_NUMBER_OF_ROWS;
+    }
+
+    public int getNumberOfAmazonsPerPlayer(){
+        return numberOfAmazonsPerPlayer;
     }
 }
