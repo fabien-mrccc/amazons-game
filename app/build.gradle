@@ -32,8 +32,8 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    // mainClass = 'amazons.App'
-    mainClass = 'amazons.AppGUI'
+    mainClass = 'amazons.App'
+    //mainClass = 'amazons.AppGUI'
 }
 
 tasks.named('test') {

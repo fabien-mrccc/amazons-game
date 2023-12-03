@@ -38,9 +38,7 @@ public class Game {
         PresetFigureGenerator figureGenerator = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition());
         board.fill(figureGenerator);
 
-        List<Position>[] initialPositions = new ArrayList[NUMBER_OF_PLAYERS];
-        initialPositions[0] = DEFAULT_PLAYER0_POSITIONS;
-        initialPositions[1] = DEFAULT_PLAYER1_POSITIONS;
+        List<Position>[] initialPositions = new List[]{DEFAULT_PLAYER0_POSITIONS, DEFAULT_PLAYER1_POSITIONS};
 
         player0.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ZERO, initialPositions);
         players[0] = player0;
