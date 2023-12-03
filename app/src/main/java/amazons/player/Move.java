@@ -42,6 +42,9 @@ public class Move {
                 && this.getArrowDstPosition().equals(move.getArrowDstPosition());
     }
     public String toString(){
+        if(getAmazonStartPosition() == null){
+            return "You are doing the first move.";
+        }
         return getAmazonStartPosition().toString()+":"+getAmazonDstPosition().toString()
                 +"->"+getArrowDstPosition().toString();
     }
