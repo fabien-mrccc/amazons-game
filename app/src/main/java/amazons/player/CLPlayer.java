@@ -2,14 +2,10 @@ package amazons.player;
 
 import amazons.board.Position;
 
-import java.util.List;
 import java.util.Scanner;
 
-public class CLPlayer implements Player {
-    private PlayerID playerID;
-    private int boardWidth;
-    private int boardHeight;
-    private List<Position> initialPositions;
+public class CLPlayer extends AbstractPlayer {
+
     private final static Scanner inputScanner = new Scanner(System.in);
 
     @Override
@@ -28,34 +24,5 @@ public class CLPlayer implements Player {
         Position arrowDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
         setPlayerID(getPlayerID().opponent());
         return new Move(amazonStartPosition,amazonDstPosition,arrowDstPosition);
-    }
-
-    @Override
-    public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
-        this.boardWidth = boardWidth;
-        this.boardHeight = boardHeight;
-        this.playerID = playerID;
-        this.initialPositions = initialPositions[playerID.index];
-    }
-
-    @Override
-    public PlayerID getPlayerID() {
-        return playerID;
-    }
-
-    public void setPlayerID(PlayerID playerID){
-        this.playerID = playerID;
-    }
-
-    public List<Position> getInitialPositions() {
-        return initialPositions;
-    }
-
-    public int getBoardHeight() {
-        return boardHeight;
-    }
-
-    public int getBoardWidth() {
-        return boardWidth;
     }
 }
