@@ -34,7 +34,6 @@ public class Game {
         this.numberOfAmazonsPerPlayer = DEFAULT_NUMBER_OF_AMAZONS_PER_PLAYER;
     }
 
-    //@SuppressWarnings("unchecked")
     public void initializeGame(Player player0, Player player1){
         PresetFigureGenerator figureGenerator = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition());
         board.fill(figureGenerator);
@@ -83,10 +82,7 @@ public class Game {
     }
 
     private boolean hasLost(PlayerID playerID) {
-        if(playerID.equals(winner)){
-            return false;
-        }
-        return true;
+        return !playerID.equals(winner);
     }
 
     public Board getBoard(){
