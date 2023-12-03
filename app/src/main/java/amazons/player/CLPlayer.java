@@ -26,6 +26,7 @@ public class CLPlayer implements Player {
         Position amazonDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
         System.out.println(playerID + " where to shoot arrow? (enter X Y coordinate)");
         Position arrowDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
+        setPlayerID(getPlayerID().opponent());
         return new Move(amazonStartPosition,amazonDstPosition,arrowDstPosition);
     }
 
