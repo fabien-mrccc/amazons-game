@@ -71,4 +71,9 @@ public class Amazon extends MovableFigure implements Figure{
 
         return reachablePositions;
     }
+
+    @Override
+    public String toString(){
+        return "A"+getPlayerID().index;
+    }
 }
