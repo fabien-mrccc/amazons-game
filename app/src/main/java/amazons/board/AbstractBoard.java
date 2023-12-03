@@ -56,7 +56,7 @@ public abstract class AbstractBoard implements Board{
      */
     private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException{
         if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
-            throw new IllegalMoveException("Your move/shoot is forbidden or your moving/shooting figure is neutral!");
+            throw new IllegalMoveException("Your move/shoot is forbidden!");
         }
 
         Amazon amazonOrArrow = (Amazon) getFigure(startPosition);

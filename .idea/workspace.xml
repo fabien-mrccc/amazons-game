@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void initializeGame(Player player0, Player player1)">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public String toString(): process the case this = DUMMY_MOVE">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/CLGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/CLGameController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,20 +218,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00064" summary="add public Position getPosition()">
-      <created>1700929321620</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1700929321620</updated>
-    </task>
-    <task id="LOCAL-00065" summary="add public Figure nextFigure(Position position)">
-      <created>1700991099565</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1700991099565</updated>
     </task>
     <task id="LOCAL-00066" summary="add public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; figures, Iterator&lt;Position&gt; positionIterator)">
       <created>1701013455640</created>
@@ -562,7 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701604976015</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization">
+      <created>1701605757745</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1701605757745</updated>
+    </task>
+    <task id="LOCAL-00114" summary="fix public String toString(): process the case this = DUMMY_MOVE">
+      <created>1701605983220</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1701605983220</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,8 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Figure nextFigure(Position position)&#10;fix void setUp(): add randomFigureGenerator" />
-    <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator)" />
     <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): update comments" />
     <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): ensure that there is no division by zero" />
     <MESSAGE value="add private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator)" />
@@ -605,6 +603,8 @@
     <MESSAGE value="fix private boolean hasLost(PlayerID playerID)" />
     <MESSAGE value="fix public void fill(FigureGenerator generator): remove System.out.println()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void initializeGame(Player player0, Player player1)" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization" />
+    <MESSAGE value="fix public String toString(): process the case this = DUMMY_MOVE" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public String toString(): process the case this = DUMMY_MOVE" />
   </component>
 </project>
