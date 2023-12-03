@@ -7,14 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="refactoring primitive constants with UPPERCASE">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/PresetFigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/PresetFigureGenerator.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public boolean equals(Move move)">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/CLPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/CLPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/Move.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +70,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Xz3Lh3NyAVjxEMBcr3DpLWsRrk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -221,34 +219,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00047" summary="fix public MatrixIterator(int numberOfColumns, int numberOfRows, T[][] matrix)&#10;fix public boolean hasNext()">
-      <created>1700731830677</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1700731830677</updated>
-    </task>
-    <task id="LOCAL-00048" summary="fix public T next()">
-      <created>1700733825430</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1700733825430</updated>
-    </task>
-    <task id="LOCAL-00049" summary="fix public Iterator&lt;Figure&gt; iterator()">
-      <created>1700734276605</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1700734276605</updated>
-    </task>
-    <task id="LOCAL-00050" summary="add public void setCurrentPosition(Position position)">
-      <created>1700763714288</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1700763714289</updated>
     </task>
     <task id="LOCAL-00051" summary="fix public Figure[][] getMatrix()">
       <created>1700763883689</created>
@@ -565,7 +535,35 @@
       <option name="project" value="LOCAL" />
       <updated>1701545356669</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="fix public String toString(): try to use StringBuilder class recommended by IntelliJ">
+      <created>1701547239186</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1701547239187</updated>
+    </task>
+    <task id="LOCAL-00097" summary="refactoring primitive constants with UPPERCASE">
+      <created>1701547332827</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1701547332827</updated>
+    </task>
+    <task id="LOCAL-00098" summary="remove void numberOfFiguresToAssign()">
+      <created>1701547532499</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1701547532500</updated>
+    </task>
+    <task id="LOCAL-00099" summary="fix public boolean equals(Move move)">
+      <created>1701594067132</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1701594067132</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,9 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public int hashCode()" />
-    <MESSAGE value="fix public Move play(Move opponentMove)" />
-    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;fix private List&lt;MovableFigure&gt; createPlayersFiguresWithDefaultPosition()" />
     <MESSAGE value="add public void updateGame(Move move)&#10;add public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)&#10;add public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)" />
     <MESSAGE value="add private boolean hasLost(PlayerID playerID)" />
     <MESSAGE value="add public Board getBoard()" />
@@ -607,7 +602,10 @@
     <MESSAGE value="add public List&lt;MovableFigure&gt; getMovableFigures()" />
     <MESSAGE value="fix void nextFigure()" />
     <MESSAGE value="add and refactor private int countNumberOfSquaresBoard(MatrixIterator&lt;Position&gt; matrixIterator)&#10;add and refactor private int calculateNumberOfSquaresToAssign(int numberOfSquaresBoard, int numberOfSquaresAssigned)&#10;add and refactor private int calculateNumberOfSquaresToAssignPerFigure(int numberOfSquaresToAssign, int numberOfFiguresToAssign)" />
+    <MESSAGE value="fix public String toString(): try to use StringBuilder class recommended by IntelliJ" />
     <MESSAGE value="refactoring primitive constants with UPPERCASE" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring primitive constants with UPPERCASE" />
+    <MESSAGE value="remove void numberOfFiguresToAssign()" />
+    <MESSAGE value="fix public boolean equals(Move move)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public boolean equals(Move move)" />
   </component>
 </project>

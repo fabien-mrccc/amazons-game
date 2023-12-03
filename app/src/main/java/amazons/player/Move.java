@@ -37,12 +37,9 @@ public class Move {
 
 
     public boolean equals(Move move){
-        if(this.getAmazonStartPosition().equals(move.getAmazonStartPosition())
+        return this.getAmazonStartPosition().equals(move.getAmazonStartPosition())
                 && this.getAmazonDstPosition().equals(move.getAmazonDstPosition())
-                && this.getArrowDstPosition().equals(move.getArrowDstPosition())){
-            return true;
-        }
-        return false;
+                && this.getArrowDstPosition().equals(move.getArrowDstPosition());
     }
     public String toString(){
         return getAmazonStartPosition().toString()+":"+getAmazonDstPosition().toString()
