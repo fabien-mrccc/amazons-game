@@ -7,9 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public String toString(): process the case this = DUMMY_MOVE">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/CLGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/CLGameController.java" afterDir="false" />
-    </list>
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void run(): change the final message" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,20 +216,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00066" summary="add public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; figures, Iterator&lt;Position&gt; positionIterator)">
-      <created>1701013455640</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1701013455644</updated>
-    </task>
-    <task id="LOCAL-00067" summary="fix public String toString()">
-      <created>1701079925080</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1701079925081</updated>
     </task>
     <task id="LOCAL-00068" summary="add public String toString()">
       <created>1701080956259</created>
@@ -562,7 +546,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701605983220</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message">
+      <created>1701607154814</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1701607154814</updated>
+    </task>
+    <task id="LOCAL-00116" summary="fix public void run(): change the final message">
+      <created>1701607242858</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1701607242858</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,8 +578,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): update comments" />
-    <MESSAGE value="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): ensure that there is no division by zero" />
     <MESSAGE value="add private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator)" />
     <MESSAGE value="fix public Figure nextFigure(Position position): use the right currentPosition value and the right indexFigureToAssign&#10;&#10;fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): utilisation of the new currentPosition parameter&#10;&#10;fix private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator, Position currentPosition): utilisation of the new currentPosition parameter" />
     <MESSAGE value="add void nextFigure()" />
@@ -605,6 +601,8 @@
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization" />
     <MESSAGE value="fix public String toString(): process the case this = DUMMY_MOVE" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public String toString(): process the case this = DUMMY_MOVE" />
+    <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message" />
+    <MESSAGE value="fix public void run(): change the final message" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public void run(): change the final message" />
   </component>
 </project>
