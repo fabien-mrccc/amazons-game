@@ -9,11 +9,6 @@ public class CLPlayer extends AbstractPlayer {
     private final static Scanner inputScanner = new Scanner(System.in);
 
     @Override
-    public boolean isGUIControlled() {
-        return false;
-    }
-
-    @Override
     public Move play(Move opponentMove) {
         System.out.println("Previous move of your opponent: " + opponentMove);
         System.out.println(playerID + " select amazon? (enter X Y coordinate)");
