@@ -62,7 +62,7 @@ public class FieldView extends Label {
         return position;
     }
     private Color getColor() {
-        return ((position.getX() + position.getY()) % 2) == 0 ? Color.WHITE : Color.BLACK;
+        return ((position.columnIndex() + position.rowIndex()) % 2) == 0 ? Color.WHITE : Color.BLACK;
     }
 
     private void setBackGroundColor(){

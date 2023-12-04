@@ -79,9 +79,9 @@ public class RandomFigureGenerator implements FigureGenerator{
     }
 
     private int countNumberOfSquaresAssigned(MatrixIterator<Position> matrixIterator, Position currentPosition){
-        return currentPosition.getY()
+        return currentPosition.rowIndex()
                 * matrixIterator.getNumberOfColumns()
-                + currentPosition.getX();
+                + currentPosition.columnIndex();
     }
 
     private int countNumberOfSquaresBoard(MatrixIterator<Position> matrixIterator){

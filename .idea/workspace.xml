@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix void testToString()&#10;add void testOpponent()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="switch from public class Position implements Serializable to public record Position(int columnIndex, int rowIndex) implements Serializable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/Greedy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/player/PlayerIDTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/player/PlayerIDTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,26 +101,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.PlayerIDTest">
+  <component name="RunManager" selected="Gradle.PositionTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="amazons.App" />
       <module name="amazons-template.app.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="amazons.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatrixBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="amazons.board.MatrixBoard" />
-      <module name="amazons-template.app.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="amazons.board.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,6 +129,29 @@
             <option value=":app:test" />
             <option value="--tests" />
             <option value="&quot;amazons.player.PlayerIDTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PositionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;amazons.board.PositionTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -196,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PositionTest" />
         <item itemvalue="Gradle.PlayerIDTest" />
         <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Gradle.amazons-template [run]" />
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.MatrixBoard" />
       </list>
     </recent_temporary>
   </component>
@@ -222,20 +231,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00080" summary="fix public Game()">
-      <created>1701186582620</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1701186582620</updated>
-    </task>
-    <task id="LOCAL-00081" summary="fix BoardView and FieldView : uncommented">
-      <created>1701187284600</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1701187284600</updated>
     </task>
     <task id="LOCAL-00082" summary="fix public Figure nextFigure(Position position)">
       <created>1701187378594</created>
@@ -566,7 +561,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701684716355</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="add void testGetPlayerIDFromIndex()">
+      <created>1701685009620</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1701685009620</updated>
+    </task>
+    <task id="LOCAL-00130" summary="switch from public class Position implements Serializable to public record Position(int columnIndex, int rowIndex) implements Serializable">
+      <created>1701687148244</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1701687148244</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,8 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public String toString()" />
-    <MESSAGE value="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure" />
     <MESSAGE value="add public MatrixBoard getBoard()" />
     <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="fix public boolean hasEnded()&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)&#10;fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)" />
@@ -609,6 +616,8 @@
     <MESSAGE value="add public Move play(Move opponentMove)" />
     <MESSAGE value="add void testToString()" />
     <MESSAGE value="fix void testToString()&#10;add void testOpponent()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix void testToString()&#10;add void testOpponent()" />
+    <MESSAGE value="add void testGetPlayerIDFromIndex()" />
+    <MESSAGE value="switch from public class Position implements Serializable to public record Position(int columnIndex, int rowIndex) implements Serializable" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch from public class Position implements Serializable to public record Position(int columnIndex, int rowIndex) implements Serializable" />
   </component>
 </project>

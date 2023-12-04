@@ -1,7 +1,5 @@
 package amazons.board;
 
-import amazons.board.CardinalDirection;
-import amazons.board.Position;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
@@ -23,15 +21,15 @@ class PositionTest {
     private final Position position21 = new Position(2,1);
 
     @Test
-    void testGetX() {
-        assertThat(position00.getX()).isEqualTo(0);
-        assertThat(position12.getX()).isEqualTo(1);
+    void testColumnIndex() {
+        assertThat(position00.columnIndex()).isEqualTo(0);
+        assertThat(position12.columnIndex()).isEqualTo(1);
     }
 
     @Test
-    void testGetY() {
-        assertThat(position00.getY()).isEqualTo(0);
-        assertThat(position12.getY()).isEqualTo(2);
+    void testRowIndex() {
+        assertThat(position00.rowIndex()).isEqualTo(0);
+        assertThat(position12.rowIndex()).isEqualTo(2);
     }
 
     @Test
