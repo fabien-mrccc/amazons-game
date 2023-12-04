@@ -21,7 +21,7 @@ public class BoardView extends GridPane{
         for (Iterator<Position> it = board.positionIterator(); it.hasNext(); ) {
             Position position = it.next();
             FieldView field = new FieldView(position,controller);
-            add(field, position.getX(), position.getY());
+            add(field, position.columnIndex(), position.rowIndex());
             fieldMap.put(position,field);
         }
 
