@@ -1,6 +1,6 @@
 package amazons.board;
 
-import amazons.IllegalMoveException;
+import amazons.figures.IllegalMoveException;
 import amazons.figures.Figure;
 
 import java.util.Iterator;
