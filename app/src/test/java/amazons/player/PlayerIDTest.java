@@ -15,4 +15,10 @@ public class PlayerIDTest {
         assertThat(PLAYER_ONE.opponent()).isEqualTo(PLAYER_ZERO);
         assertThat(NONE.opponent()).isEqualTo(NONE);
     }
+    @Test
+    void testGetPlayerIDFromIndex(){
+        assertThat(getPlayerIDFromIndex(0)).isEqualTo(PLAYER_ZERO);
+        assertThat(getPlayerIDFromIndex(-1)).isEqualTo(NONE);
+        assertThat(getPlayerIDFromIndex(1)).isEqualTo(PLAYER_ONE);
+    }
 }

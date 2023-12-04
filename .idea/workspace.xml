@@ -7,10 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public Move play(Move opponentMove)">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/player/PlayerIDTest.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix void testToString()&#10;add void testOpponent()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/Greedy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/player/PlayerIDTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/player/PlayerIDTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +102,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.amazons-template [test]">
+  <component name="RunManager" selected="Gradle.PlayerIDTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="amazons.App" />
       <module name="amazons-template.app.main" />
@@ -129,23 +129,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="amazons-template [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PlayerIDTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;amazons.player.PlayerIDTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -194,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PlayerIDTest" />
         <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Gradle.amazons-template [run]" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.MatrixBoard" />
-        <item itemvalue="Gradle.amazons-template [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -220,20 +222,6 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00078" summary="add public PlayerID getWinner()">
-      <created>1701111137038</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1701111137038</updated>
-    </task>
-    <task id="LOCAL-00079" summary="fix public void initializeGame(Player player0, Player player1)&#10;fix public void updateGame(Move move)&#10;add public PlayerID getPlayerID()&#10;add public Player getPlayer()">
-      <created>1701117733981</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1701117733982</updated>
     </task>
     <task id="LOCAL-00080" summary="fix public Game()">
       <created>1701186582620</created>
@@ -564,7 +552,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701613782761</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="add void testToString()">
+      <created>1701684238549</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1701684238549</updated>
+    </task>
+    <task id="LOCAL-00128" summary="fix void testToString()&#10;add void testOpponent()">
+      <created>1701684716355</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1701684716355</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,8 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove void numberOfFiguresToAssign()" />
-    <MESSAGE value="fix public boolean equals(Move move)" />
     <MESSAGE value="add public String toString()" />
     <MESSAGE value="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure" />
     <MESSAGE value="add public MatrixBoard getBoard()" />
@@ -607,6 +607,8 @@
     <MESSAGE value="remove public boolean isGUIControlled()" />
     <MESSAGE value="remove public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public PlayerID getPlayerID()" />
     <MESSAGE value="add public Move play(Move opponentMove)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public Move play(Move opponentMove)" />
+    <MESSAGE value="add void testToString()" />
+    <MESSAGE value="fix void testToString()&#10;add void testOpponent()" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix void testToString()&#10;add void testOpponent()" />
   </component>
 </project>
