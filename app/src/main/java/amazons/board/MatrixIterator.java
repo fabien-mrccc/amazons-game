@@ -18,7 +18,7 @@ public class MatrixIterator<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
-        return getCurrentPosition().getY() <= getLastPosition().getY();
+        return getCurrentPosition().rowIndex() <= getLastPosition().rowIndex();
     }
 
     @Override
@@ -29,17 +29,17 @@ public class MatrixIterator<T> implements Iterator<T> {
 
         Position returnPosition = currentPosition;
 
-        if (getCurrentPosition().getX() == getLastPosition().getX()) {
-            currentPosition = new Position(0, getCurrentPosition().getY() + 1);
+        if (getCurrentPosition().columnIndex() == getLastPosition().columnIndex()) {
+            currentPosition = new Position(0, getCurrentPosition().rowIndex() + 1);
         }
         else{
-            currentPosition = new Position(getCurrentPosition().getX() + 1, getCurrentPosition().getY());
+            currentPosition = new Position(getCurrentPosition().columnIndex() + 1, getCurrentPosition().rowIndex());
         }
         return getTInMatrix(returnPosition);
     }
 
     public T getTInMatrix(Position position) {
-        return matrix[position.getX()][position.getY()];
+        return matrix[position.columnIndex()][position.rowIndex()];
     }
 
     public Position getCurrentPosition(){

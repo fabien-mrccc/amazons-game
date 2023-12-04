@@ -14,12 +14,12 @@ public class MatrixBoard extends AbstractBoard {
 
     @Override
     public void setFigure(Position position, Figure figure) {
-        figures[position.getX()][position.getY()] = figure;
+        figures[position.columnIndex()][position.rowIndex()] = figure;
     }
 
     @Override
     public Figure getFigure(Position position) {
-        return figures[position.getX()][position.getY()];
+        return figures[position.columnIndex()][position.rowIndex()];
     }
 
     @Override
