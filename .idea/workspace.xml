@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void testGetMessage()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void setPosition(Position position): print message from exception">
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/IllegalSetPositionExceptionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/IllegalSetPositionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/IllegalSetPositionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/NeutralFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/NeutralFigure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,21 +220,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="7776000" />
-    </task>
-    <task id="LOCAL-00089" summary="add private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator)">
-      <created>1701530580797</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1701530580797</updated>
-    </task>
-    <task id="LOCAL-00090" summary="fix public Figure nextFigure(Position position): use the right currentPosition value and the right indexFigureToAssign&#10;&#10;fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): utilisation of the new currentPosition parameter&#10;&#10;fix private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator, Position currentPosition): utilisation of the new currentPosition parameter">
-      <created>1701535687989</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1701535687989</updated>
+      <workItem from="1701682674385" duration="9831000" />
     </task>
     <task id="LOCAL-00091" summary="add void nextFigure()">
       <created>1701535799373</created>
@@ -566,7 +551,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701692300673</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="fix public IllegalSetPositionException(String message): change extension and using parent constructor">
+      <created>1701693067401</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1701693067401</updated>
+    </task>
+    <task id="LOCAL-00139" summary="fix public void setPosition(Position position): print message from exception">
+      <created>1701693196294</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1701693196294</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,8 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix private boolean hasLost(PlayerID playerID)" />
-    <MESSAGE value="fix public void fill(FigureGenerator generator): remove System.out.println()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization" />
     <MESSAGE value="fix public String toString(): process the case this = DUMMY_MOVE" />
@@ -609,6 +606,8 @@
     <MESSAGE value="add public String getMessage()&#10;fix public IllegalMoveException(String message)" />
     <MESSAGE value="fix refactoring IllegalMoveException from amazons package to amazons.figure package" />
     <MESSAGE value="add void testGetMessage()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add void testGetMessage()" />
+    <MESSAGE value="fix public IllegalSetPositionException(String message): change extension and using parent constructor" />
+    <MESSAGE value="fix public void setPosition(Position position): print message from exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public void setPosition(Position position): print message from exception" />
   </component>
 </project>
