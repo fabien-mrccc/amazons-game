@@ -1,8 +1,7 @@
 package amazons.figures;
 
-public class IllegalSetPositionException extends RuntimeException{
+public final class IllegalSetPositionException extends IllegalMoveException{
     public IllegalSetPositionException(String message){
-        System.out.println(message);
+        super(message);
     }
-
 }
