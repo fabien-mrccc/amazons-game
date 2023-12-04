@@ -19,11 +19,11 @@ public interface  Figure extends Serializable {
     boolean canMoveTo(Position position, Board board);
 
     /**
-     * Move this to the given position. An exception is thrown if the move
-     * is illegal according to the rules of the game.
+     * Move this to the given position. An exception is thrown if the move is illegal according to the rules of the game.
      * @param position: the position to which this should be moved
+     * @throws IllegalMoveException if the move is illegal according to the rules of the game
      */
-    void moveTo (Position position, Board board) throws IllegalMoveException;
+    void moveTo(Position position, Board board) throws IllegalMoveException;
 
     /**
      * Set the position of this figure to the given position.
@@ -31,10 +31,8 @@ public interface  Figure extends Serializable {
      */
     void setPosition(Position position);
 
-
-
     /**
-     * Get the ID of the player who owns this figure (maybe NONE if this figure is an arrow or empty)
+     * Get the ID of the player who owns this figure (maybe NONE if this figure is an arrow or an empty figure).
      * @return the PlayerID of the player who owns this figure
      */
     PlayerID getPlayerID();
