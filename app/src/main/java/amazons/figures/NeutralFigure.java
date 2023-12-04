@@ -1,12 +1,11 @@
 package amazons.figures;
 
-import amazons.IllegalMoveException;
-import amazons.IllegalSetPositionException;
 import amazons.board.Board;
 import amazons.board.Position;
 import amazons.player.PlayerID;
 
 public abstract class NeutralFigure implements Figure {
+
     @Override
     public boolean canMoveTo(Position position, Board board) {
         return false;
@@ -19,7 +18,12 @@ public abstract class NeutralFigure implements Figure {
 
     @Override
     public void setPosition(Position position){
-        throw new IllegalSetPositionException("A neutral figure can't set a position");
+        try{
+            throw new IllegalSetPositionException("A neutral figure can't set a position");
+        }
+        catch(IllegalSetPositionException exception){
+            System.out.println(exception.getMessage());
+        }
     }
 
     @Override
