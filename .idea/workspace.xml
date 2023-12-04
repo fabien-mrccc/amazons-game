@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIRandomPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix comments of the interface methods">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,20 +219,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00080" summary="fix public Game()">
-      <created>1701186582620</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1701186582620</updated>
-    </task>
-    <task id="LOCAL-00081" summary="fix BoardView and FieldView : uncommented">
-      <created>1701187284600</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1701187284600</updated>
+      <workItem from="1701682674385" duration="2181000" />
     </task>
     <task id="LOCAL-00082" summary="fix public Figure nextFigure(Position position)">
       <created>1701187378594</created>
@@ -564,7 +550,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701617834014</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="add AIRandomPlayer class">
+      <created>1701621445144</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1701621445144</updated>
+    </task>
+    <task id="LOCAL-00130" summary="fix comments of the interface methods">
+      <created>1701684722111</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1701684722111</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,8 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public String toString()" />
-    <MESSAGE value="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure" />
     <MESSAGE value="add public MatrixBoard getBoard()" />
     <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="fix public boolean hasEnded()&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)&#10;fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)" />
@@ -607,6 +605,8 @@
     <MESSAGE value="add public Move play(Move opponentMove)" />
     <MESSAGE value="add public abstract Move play(Move opponentMove)" />
     <MESSAGE value="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
+    <MESSAGE value="add AIRandomPlayer class" />
+    <MESSAGE value="fix comments of the interface methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix comments of the interface methods" />
   </component>
 </project>
