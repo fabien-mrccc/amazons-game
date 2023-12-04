@@ -7,19 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix void testCanMoveTo(): add limit case and normal case testing">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/IllegalMoveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/IllegalMoveException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/IllegalSetPositionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/IllegalSetPositionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Figure.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix refactoring IllegalMoveException from amazons package to amazons.figure package">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/NeutralFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/NeutralFigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixBoardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,21 +219,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="6487000" />
-    </task>
-    <task id="LOCAL-00086" summary="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator)">
-      <created>1701522730883</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1701522730883</updated>
-    </task>
-    <task id="LOCAL-00087" summary="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): update comments">
-      <created>1701525928582</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1701525928582</updated>
+      <workItem from="1701682674385" duration="6796000" />
     </task>
     <task id="LOCAL-00088" summary="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): ensure that there is no division by zero">
       <created>1701526984653</created>
@@ -575,7 +550,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701688792144</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="add public String getMessage()&#10;fix public IllegalMoveException(String message)">
+      <created>1701691802438</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1701691802438</updated>
+    </task>
+    <task id="LOCAL-00136" summary="fix refactoring IllegalMoveException from amazons package to amazons.figure package">
+      <created>1701691909986</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1701691909986</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,8 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public boolean hasEnded()&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)&#10;fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)" />
-    <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public MatrixBoard getBoard()&#10;add public List&lt;Position&gt; getInitialPositions()&#10;add public int getBoardHeight()&#10;add public int getBoardWidth()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;add public int getNumberOfAmazonsPerPlayer()" />
     <MESSAGE value="fix private boolean hasLost(PlayerID playerID)" />
     <MESSAGE value="fix public void fill(FigureGenerator generator): remove System.out.println()" />
@@ -618,6 +605,8 @@
     <MESSAGE value="fix comments of the interface methods" />
     <MESSAGE value="fix void nextFigure(): remove Assertions class import" />
     <MESSAGE value="fix void testCanMoveTo(): add limit case and normal case testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix void testCanMoveTo(): add limit case and normal case testing" />
+    <MESSAGE value="add public String getMessage()&#10;fix public IllegalMoveException(String message)" />
+    <MESSAGE value="fix refactoring IllegalMoveException from amazons package to amazons.figure package" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix refactoring IllegalMoveException from amazons package to amazons.figure package" />
   </component>
 </project>
