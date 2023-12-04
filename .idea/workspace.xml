@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix comments of the interface methods">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix void nextFigure(): remove Assertions class import">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/NeutralFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/NeutralFigure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,14 +220,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="3812000" />
-    </task>
-    <task id="LOCAL-00084" summary="fix FieldView : uncommented">
-      <created>1701187852164</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1701187852164</updated>
+      <workItem from="1701682674385" duration="4865000" />
     </task>
     <task id="LOCAL-00085" summary="fix application">
       <created>1701188932365</created>
@@ -564,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701685400750</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="fix void nextFigure(): remove Assertions class import">
+      <created>1701687705320</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1701687705320</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public MatrixBoard getBoard()" />
     <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="fix public boolean hasEnded()&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)&#10;fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)" />
     <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public MatrixBoard getBoard()&#10;add public List&lt;Position&gt; getInitialPositions()&#10;add public int getBoardHeight()&#10;add public int getBoardWidth()" />
@@ -607,6 +607,7 @@
     <MESSAGE value="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="add AIRandomPlayer class" />
     <MESSAGE value="fix comments of the interface methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix comments of the interface methods" />
+    <MESSAGE value="fix void nextFigure(): remove Assertions class import" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix void nextFigure(): remove Assertions class import" />
   </component>
 </project>
