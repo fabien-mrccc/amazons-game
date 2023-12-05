@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()">
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixIteratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,13 +221,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00117" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message">
-      <created>1701607572065</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1701607572065</updated>
     </task>
     <task id="LOCAL-00118" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message">
       <created>1701607921168</created>
@@ -565,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701805183356</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()">
+      <created>1701805493042</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1701805493042</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix void testCanMoveTo(): add limit case and normal case testing" />
     <MESSAGE value="add public String getMessage()&#10;fix public IllegalMoveException(String message)" />
     <MESSAGE value="fix refactoring IllegalMoveException from amazons package to amazons.figure package" />
     <MESSAGE value="fix public IllegalSetPositionException(String message): change extension and using parent constructor" />
@@ -608,6 +607,7 @@
     <MESSAGE value="add private void getASpaceToPrint(StringBuilder displayableMatrix)&#10;fix private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)&#10;fix public String toString()" />
     <MESSAGE value="add private void updateCurrentPosition()" />
     <MESSAGE value="fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public" />
+    <MESSAGE value="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()" />
   </component>
 </project>
