@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class">
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void testSetPosition()">
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/ArrowFigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/ArrowFigureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,21 +218,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="12548000" />
-    </task>
-    <task id="LOCAL-00094" summary="fix void nextFigure()">
-      <created>1701539694781</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1701539694782</updated>
-    </task>
-    <task id="LOCAL-00095" summary="add and refactor private int countNumberOfSquaresBoard(MatrixIterator&lt;Position&gt; matrixIterator)&#10;add and refactor private int calculateNumberOfSquaresToAssign(int numberOfSquaresBoard, int numberOfSquaresAssigned)&#10;add and refactor private int calculateNumberOfSquaresToAssignPerFigure(int numberOfSquaresToAssign, int numberOfFiguresToAssign)">
-      <created>1701545356669</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1701545356669</updated>
+      <workItem from="1701682674385" duration="12926000" />
     </task>
     <task id="LOCAL-00096" summary="fix public String toString(): try to use StringBuilder class recommended by IntelliJ">
       <created>1701547239186</created>
@@ -563,7 +549,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701785024004</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="add void testSetPosition()">
+      <created>1701785171123</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785171123</updated>
+    </task>
+    <task id="LOCAL-00144" summary="add void testSetPosition()">
+      <created>1701785184352</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785184352</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public String toString(): process the case this = DUMMY_MOVE" />
     <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message" />
     <MESSAGE value="fix public void run(): change the final message" />
     <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message" />
@@ -606,6 +605,7 @@
     <MESSAGE value="add void testGetMessage()" />
     <MESSAGE value="add void testMoveTo()" />
     <MESSAGE value="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class" />
+    <MESSAGE value="add void testSetPosition()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add void testSetPosition()" />
   </component>
 </project>
