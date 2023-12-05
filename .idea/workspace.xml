@@ -7,9 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void updateCurrentPosition()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/MovableFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/MovableFigure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,13 +223,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00115" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message">
-      <created>1701607154814</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1701607154814</updated>
     </task>
     <task id="LOCAL-00116" summary="fix public void run(): change the final message">
       <created>1701607242858</created>
@@ -566,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701799616033</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="add private void updateCurrentPosition()">
+      <created>1701803961778</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1701803961778</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix comments of the interface methods" />
     <MESSAGE value="fix void nextFigure(): remove Assertions class import" />
     <MESSAGE value="fix void testCanMoveTo(): add limit case and normal case testing" />
     <MESSAGE value="add public String getMessage()&#10;fix public IllegalMoveException(String message)" />
@@ -609,6 +609,7 @@
     <MESSAGE value="add private void getALineToPrint(StringBuilder displayableMatrix)" />
     <MESSAGE value="add private void getAPipeToPrint(StringBuilder displayableMatrix)&#10;add private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)" />
     <MESSAGE value="add private void getASpaceToPrint(StringBuilder displayableMatrix)&#10;fix private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)&#10;fix public String toString()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add private void getASpaceToPrint(StringBuilder displayableMatrix)&#10;fix private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)&#10;fix public String toString()" />
+    <MESSAGE value="add private void updateCurrentPosition()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add private void updateCurrentPosition()" />
   </component>
 </project>
