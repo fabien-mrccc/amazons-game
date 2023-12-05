@@ -46,8 +46,8 @@ public class MatrixBoard extends AbstractBoard {
                 getASpaceToPrint(displayableMatrix);
                 getAPipeToPrint(displayableMatrix);
             }
-
-            displayableMatrix.append(" ").append(row).append("\n");
+            getASpaceToPrint(displayableMatrix);
+            getRowNumberToPrint(displayableMatrix, row);
         }
 
         displayableMatrix.append("+");
@@ -86,4 +86,7 @@ public class MatrixBoard extends AbstractBoard {
         displayableMatrix.append(" ");
     }
 
+    private void getRowNumberToPrint(StringBuilder displayableMatrix, int row){
+        displayableMatrix.append(row).append("\n");
+    }
 }
