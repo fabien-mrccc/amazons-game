@@ -100,5 +100,11 @@ class AmazonTest {
                  .hasSameElementsAs(accessiblePositions)
                  .hasSize(accessiblePositions.size());
     }
+    @Test
+    void testToString(){
+        assertThat(amazon12.toString()).isEqualTo("A0");
+        assertThat(amazon20.toString()).isEqualTo("A1");
+
+    }
 
 }
