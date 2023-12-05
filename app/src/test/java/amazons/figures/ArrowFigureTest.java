@@ -38,4 +38,9 @@ public class ArrowFigureTest {
         assertThat(ARROW_FIGURE.getPlayerID()).isEqualTo(PlayerID.NONE);
     }
 
+    @Test
+    void testToString(){
+        assertThat(ARROW_FIGURE.toString()).isEqualTo("XX");
+    }
+
 }

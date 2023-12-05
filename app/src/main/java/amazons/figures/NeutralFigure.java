@@ -12,7 +12,7 @@ public abstract class NeutralFigure implements Figure {
     }
 
     @Override
-    public void moveTo (Position position, Board board) throws IllegalMoveException {
+    public void moveTo(Position position, Board board) throws IllegalMoveException {
         throw new IllegalMoveException("A neutral figure can't be moved");
     }
 
