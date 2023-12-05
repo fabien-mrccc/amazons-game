@@ -32,7 +32,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
-        moveCheck(startPosition, dstPosition);
+        checkMovingOrShootingOperation(startPosition, dstPosition);
 
         Amazon playedAmazon = (Amazon) getFigure(startPosition);
         playedAmazon.moveTo(dstPosition, this);
@@ -42,18 +42,18 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException {
-        moveCheck(startPosition, arrowDstPosition);
+        checkMovingOrShootingOperation(startPosition, arrowDstPosition);
 
         setFigure(arrowDstPosition,ARROW_FIGURE);
     }
 
     /**
-     * Common method for checking the validity of a move/shoot operation.
+     * Check the validity of a movement and shooting operation in accordance with the rules of the game.
      * @param startPosition: the starting position of the figure
      * @param dstPosition: the destination position of the figure
      * @throws IllegalMoveException: thrown if the move is invalid or the destination is unreachable
      */
-    private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException{
+    private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException{
         if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
             throw new IllegalMoveException("Your move/shoot is forbidden! You have chosen the wrong figure to move OR the destination position is occupied!");
         }

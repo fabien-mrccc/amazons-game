@@ -7,7 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,14 +219,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="16024000" />
-    </task>
-    <task id="LOCAL-00101" summary="add public String toString()">
-      <created>1701595368975</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1701595368975</updated>
+      <workItem from="1701682674385" duration="16710000" />
     </task>
     <task id="LOCAL-00102" summary="add public String toString()">
       <created>1701595510409</created>
@@ -563,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701791450961</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method">
+      <created>1701791986180</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1701791986180</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public void setPlayerID(PlayerID playerID)" />
     <MESSAGE value="fix public Move play(Move opponentMove): change playerID at the end of the method" />
     <MESSAGE value="fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition): winner assignment&#10;&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition): winner assignment" />
     <MESSAGE value="add AbstractPlayer class for refactoring" />
@@ -606,6 +606,7 @@
     <MESSAGE value="fix void testCanMoveTo()&#10;add void testMoveTo()&#10;add void testSetPosition()" />
     <MESSAGE value="add void testToString()" />
     <MESSAGE value="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method" />
+    <MESSAGE value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method" />
   </component>
 </project>
