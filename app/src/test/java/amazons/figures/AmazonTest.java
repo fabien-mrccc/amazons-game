@@ -81,6 +81,11 @@ class AmazonTest {
         assertThat(amazon11.getPosition()).isEqualTo(allPositions[2][1]).isEqualTo(allPositions[2][1]);
     }
     @Test
+    void testSetPosition(){
+        amazon11.setPosition(allPositions[1][1]);
+        assertThat(amazon11.getPosition()).isEqualTo(allPositions[1][1]);
+    }
+    @Test
     void testGetPosition(){
         assertThat(amazon12.getPosition()).isEqualTo(allPositions[1][2]);
         assertThat(amazon20.getPosition()).isEqualTo(allPositions[2][0]);

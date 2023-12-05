@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix AIGreedyPlayer : it extends AbstractAIPlayer instead of implementing Player">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_12_2023__17_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_12_2023__17_59__Changes_.xml" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void testGetPosition()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/AmazonTest.java" afterDir="false" />
     </list>
@@ -102,32 +101,29 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.AmazonTest.testMoveTo">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="amazons.App" />
-      <module name="amazons-template.app.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="amazons.figures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatrixBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="amazons.board.MatrixBoard" />
-      <module name="amazons-template.app.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="amazons.board.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.AmazonTest.testSetPosition">
+    <configuration name="AmazonTest.testGetPosition" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;amazons.figures.AmazonTest.testGetPosition&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="AmazonTest.testMoveTo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -143,6 +139,29 @@
             <option value=":app:test" />
             <option value="--tests" />
             <option value="&quot;amazons.figures.AmazonTest.testMoveTo&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="AmazonTest.testSetPosition" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;amazons.figures.AmazonTest.testSetPosition&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -196,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AmazonTest.testSetPosition" />
+        <item itemvalue="Gradle.AmazonTest.testGetPosition" />
         <item itemvalue="Gradle.AmazonTest.testMoveTo" />
         <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Gradle.amazons-template [run]" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="Application.MatrixBoard" />
       </list>
     </recent_temporary>
   </component>
@@ -223,20 +242,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="17149000" />
-    </task>
-    <task id="LOCAL-00103" summary="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure">
-      <created>1701595606626</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1701595606626</updated>
-    </task>
-    <task id="LOCAL-00104" summary="add public MatrixBoard getBoard()">
-      <created>1701596175206</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1701596175206</updated>
     </task>
     <task id="LOCAL-00105" summary="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
       <created>1701596592830</created>
@@ -567,7 +572,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701792647581</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="add void testMoveTo() throws IllegalMoveException">
+      <created>1701795481612</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1701795481612</updated>
+    </task>
+    <task id="LOCAL-00153" summary="add void testGetPosition()">
+      <created>1701795858490</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1701795858491</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,8 +604,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition): winner assignment&#10;&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition): winner assignment" />
-    <MESSAGE value="add AbstractPlayer class for refactoring" />
     <MESSAGE value="fix public boolean isGUIControlled(): not abstract method anymore" />
     <MESSAGE value="remove public boolean isGUIControlled()" />
     <MESSAGE value="remove public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public PlayerID getPlayerID()" />
@@ -610,6 +627,8 @@
     <MESSAGE value="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method" />
     <MESSAGE value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method" />
     <MESSAGE value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
+    <MESSAGE value="add void testMoveTo() throws IllegalMoveException" />
+    <MESSAGE value="add void testGetPosition()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add void testGetPosition()" />
   </component>
 </project>
