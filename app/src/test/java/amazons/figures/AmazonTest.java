@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static amazons.figures.ArrowFigure.ARROW_FIGURE;
-import amazons.figures.Amazon;
-import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
+import static amazons.player.PlayerID.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -89,6 +88,11 @@ class AmazonTest {
     void testGetPosition(){
         assertThat(amazon12.getPosition()).isEqualTo(allPositions[1][2]);
         assertThat(amazon20.getPosition()).isEqualTo(allPositions[2][0]);
+    }
+    @Test
+    void testGetPlayerID(){
+        assertThat(amazon12.getPlayerID()).isEqualTo(PLAYER_ZERO);
+        assertThat(amazon20.getPlayerID()).isEqualTo(PLAYER_ONE);
     }
     @Test
     void testGetAccessiblePositions() {
