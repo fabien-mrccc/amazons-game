@@ -84,13 +84,13 @@ public abstract class AbstractBoard implements Board{
     }
     
     public Position[][] getMatrixOfAllPositionsOnBoard() {
-        Position[][] boardPositions = new Position[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
-        for(int x=0; x< boardPositions.length; x++){
-            for(int y=0; y< boardPositions[0].length; y++){
-                boardPositions[x][y] = new Position(x, y);
+        Position[][] positionsOnBoard = new Position[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
+        for(int x=0; x< positionsOnBoard.length; x++){
+            for(int y=0; y< positionsOnBoard[0].length; y++){
+                positionsOnBoard[x][y] = new Position(x, y);
             }
         }
-        return boardPositions;
+        return positionsOnBoard;
     }
 
     public abstract void setFigure(Position position, Figure figure);
