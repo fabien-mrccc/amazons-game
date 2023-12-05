@@ -80,14 +80,10 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public Iterator<Position> positionIterator(){
-        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS,getPositionMatrix());
+        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS, getMatrixOfAllPositionsOnBoard());
     }
-
-    /**
-     * Make a matrix that contains all the positions on the board depending on number of columns and rows.
-     * @return a matrix that contains all positions on the board
-     */
-    public Position[][] getPositionMatrix() {
+    
+    public Position[][] getMatrixOfAllPositionsOnBoard() {
         Position[][] boardPositions = new Position[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
         for(int x=0; x< boardPositions.length; x++){
             for(int y=0; y< boardPositions[0].length; y++){
@@ -100,7 +96,6 @@ public abstract class AbstractBoard implements Board{
     public abstract void setFigure(Position position, Figure figure);
 
     public abstract Figure getFigure(Position position);
-
     public abstract Figure[][] getMatrixOfFigures();
     public abstract void instantiateBoard();
     public abstract String toString();
