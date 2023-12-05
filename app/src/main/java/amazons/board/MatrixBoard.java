@@ -38,16 +38,16 @@ public class MatrixBoard extends AbstractBoard {
 
         for(int row = 0; row < NUMBER_OF_ROWS; row++){
             getALineToPrint(displayableMatrix);
-            getAPipeToPrint(displayableMatrix);
+            concatPipe(displayableMatrix);
 
             for(int column = 0; column < NUMBER_OF_COLUMNS;column++){
-                getASpaceToPrint(displayableMatrix);
-                getAFigureToPrint(displayableMatrix, column, row);
-                getASpaceToPrint(displayableMatrix);
-                getAPipeToPrint(displayableMatrix);
+                concatSpace(displayableMatrix);
+                concatFigure(displayableMatrix, column, row);
+                concatSpace(displayableMatrix);
+                concatPipe(displayableMatrix);
             }
-            getASpaceToPrint(displayableMatrix);
-            getRowNumberToPrint(displayableMatrix, row);
+            concatSpace(displayableMatrix);
+            concatRowNumber(displayableMatrix, row);
         }
 
         displayableMatrix.append("+");
@@ -67,7 +67,7 @@ public class MatrixBoard extends AbstractBoard {
         displayableMatrix.append("\n");
     }
 
-    private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row){
+    private void concatFigure(StringBuilder displayableMatrix, int column, int row){
         if(getFigure(new Position(column,row))== EMPTY_FIGURE){
             displayableMatrix.append("  ");
         } else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
@@ -78,15 +78,19 @@ public class MatrixBoard extends AbstractBoard {
         }
     }
 
-    private void getAPipeToPrint(StringBuilder displayableMatrix){
+    private void concatPipe(StringBuilder displayableMatrix){
         displayableMatrix.append("|");
     }
 
-    private void getASpaceToPrint(StringBuilder displayableMatrix){
+    private void concatSpace(StringBuilder displayableMatrix){
         displayableMatrix.append(" ");
     }
 
-    private void getRowNumberToPrint(StringBuilder displayableMatrix, int row){
-        displayableMatrix.append(row).append("\n");
+    private void concatRowNumber(StringBuilder displayableMatrix, int row){
+        displayableMatrix.append(row);
+    }
+
+    private void carriageReturn(StringBuilder displayableMatrix){
+        displayableMatrix.append("\n");
     }
 }
