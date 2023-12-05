@@ -18,12 +18,7 @@ public abstract class NeutralFigure implements Figure {
 
     @Override
     public void setPosition(Position position){
-        try{
-            throw new IllegalSetPositionException("A neutral figure can't set a position");
-        }
-        catch(IllegalSetPositionException exception){
-            System.out.println(exception.getMessage());
-        }
+        System.out.println("A neutral figure can't set a position");
     }
 
     @Override
