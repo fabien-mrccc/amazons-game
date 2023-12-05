@@ -2,7 +2,7 @@ package amazons.board;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class MatrixIterator<T> implements Iterator<T> {
+public final class MatrixIterator<T> implements Iterator<T> {
     private final int NUMBER_OF_COLUMNS;
     private final int NUMBER_OF_ROWS;
     private final Position lastPosition;
@@ -26,19 +26,21 @@ public class MatrixIterator<T> implements Iterator<T> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-
         Position returnPosition = currentPosition;
+        updateCurrentPosition();
+        return getObjectInMatrix(returnPosition);
+    }
 
+    private void updateCurrentPosition(){
         if (getCurrentPosition().columnIndex() == getLastPosition().columnIndex()) {
             currentPosition = new Position(0, getCurrentPosition().rowIndex() + 1);
         }
         else{
             currentPosition = new Position(getCurrentPosition().columnIndex() + 1, getCurrentPosition().rowIndex());
         }
-        return getTInMatrix(returnPosition);
     }
 
-    public T getTInMatrix(Position position) {
+    public T getObjectInMatrix(Position position) {
         return matrix[position.columnIndex()][position.rowIndex()];
     }
 
