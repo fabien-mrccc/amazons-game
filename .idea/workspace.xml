@@ -7,9 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
-    </list>
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,28 +216,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="23987000" />
-    </task>
-    <task id="LOCAL-00121" summary="fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition): winner assignment&#10;&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition): winner assignment">
-      <created>1701611981242</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1701611981242</updated>
-    </task>
-    <task id="LOCAL-00122" summary="add AbstractPlayer class for refactoring">
-      <created>1701612554130</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1701612554130</updated>
-    </task>
-    <task id="LOCAL-00123" summary="fix public boolean isGUIControlled(): not abstract method anymore">
-      <created>1701612814977</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1701612814977</updated>
+      <workItem from="1701682674385" duration="25077000" />
     </task>
     <task id="LOCAL-00124" summary="remove public boolean isGUIControlled()">
       <created>1701612834450</created>
@@ -563,7 +540,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701801545043</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
+      <created>1701801668442</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1701801668442</updated>
+    </task>
+    <task id="LOCAL-00171" summary="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
+      <created>1701802262431</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1701802262431</updated>
+    </task>
+    <task id="LOCAL-00172" summary="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
+      <created>1701802618392</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1701802618392</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

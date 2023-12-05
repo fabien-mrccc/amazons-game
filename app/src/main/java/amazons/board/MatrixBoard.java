@@ -4,7 +4,7 @@ import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 import amazons.figures.Figure;
 
-public class MatrixBoard extends AbstractBoard {
+public final class MatrixBoard extends AbstractBoard {
 
     private Figure[][] figures;
 
@@ -34,7 +34,7 @@ public class MatrixBoard extends AbstractBoard {
 
     @Override
     public String toString(){
-        StringBuilder displayableMatrix = new StringBuilder();
+        final StringBuilder displayableMatrix = new StringBuilder();
 
         for(int row = 0; row < NUMBER_OF_ROWS; row++){
             concatALine(displayableMatrix);

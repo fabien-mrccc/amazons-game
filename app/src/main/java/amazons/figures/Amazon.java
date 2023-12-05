@@ -8,7 +8,7 @@ import amazons.player.PlayerID;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Amazon extends MovableFigure implements Figure{
+public final class Amazon extends MovableFigure implements Figure{
     private Position position;
     private final PlayerID playerID;
 
