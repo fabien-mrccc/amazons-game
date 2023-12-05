@@ -31,31 +31,38 @@ public class MatrixBoard extends AbstractBoard {
     public void instantiateBoard() {
         figures = new Figure[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
     }
+
     @Override
     public String toString(){
-        StringBuilder matrix = new StringBuilder();
+        StringBuilder displayableMatrix = new StringBuilder();
+
         for(int row = 0; row < NUMBER_OF_ROWS;row++){
-            matrix.append("+");
-            matrix.append("----+".repeat(NUMBER_OF_COLUMNS));
-            matrix.append("\n").append("|");
+            displayableMatrix.append("+");
+            displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
+            displayableMatrix.append("\n").append("|");
+
             for(int column = 0; column < NUMBER_OF_COLUMNS;column++){
                 if(getFigure(new Position(column,row))== EMPTY_FIGURE){
-                    matrix.append("    |");
+                    displayableMatrix.append("    |");
                 } else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
-                    matrix.append(" ").append(ARROW_FIGURE).append(" |");
+                    displayableMatrix.append(" ").append(ARROW_FIGURE).append(" |");
                 }
                 else{
-                    matrix.append(" ").append(getFigure(new Position(column, row))).append(" |");
+                    displayableMatrix.append(" ").append(getFigure(new Position(column, row))).append(" |");
                 }
             }
-            matrix.append(" ").append(row).append("\n");
+
+            displayableMatrix.append(" ").append(row).append("\n");
         }
-        matrix.append("+");
-        matrix.append("----+".repeat(NUMBER_OF_COLUMNS));
-        matrix.append("\n");
+
+        displayableMatrix.append("+");
+        displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
+        displayableMatrix.append("\n");
+
         for(int column = 0; column < NUMBER_OF_COLUMNS; column++){
-            matrix.append("  ").append(column).append("  ");
+            displayableMatrix.append("  ").append(column).append("  ");
         }
-        return matrix.toString();
+
+        return displayableMatrix.toString();
     }
 }
