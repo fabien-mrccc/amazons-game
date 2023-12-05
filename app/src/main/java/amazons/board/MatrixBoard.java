@@ -23,7 +23,7 @@ public class MatrixBoard extends AbstractBoard {
     }
 
     @Override
-    public Figure[][] getFigureMatrix() {
+    public Figure[][] getMatrixOfFigures() {
         return figures;
     }
 

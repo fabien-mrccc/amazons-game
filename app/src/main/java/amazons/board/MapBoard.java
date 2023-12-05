@@ -24,8 +24,8 @@ public class MapBoard extends AbstractBoard {
     }
 
     @Override
-    public Figure[][] getFigureMatrix(){
-        return mapToMatrix().getFigureMatrix();
+    public Figure[][] getMatrixOfFigures(){
+        return mapToMatrix().getMatrixOfFigures();
     }
 
     /**

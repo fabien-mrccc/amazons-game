@@ -48,11 +48,10 @@ public abstract class AbstractBoard implements Board{
     }
 
     /**
-     * Common method for checking the validity of a move/shoot operation
-     * (factor moveFigure() and shootArrow() methods).
-     * @param startPosition The starting position of the figure.
-     * @param dstPosition The destination position of the figure.
-     * @throws IllegalMoveException Thrown if the move is invalid or the destination is unreachable.
+     * Common method for checking the validity of a move/shoot operation.
+     * @param startPosition: the starting position of the figure
+     * @param dstPosition: the destination position of the figure
+     * @throws IllegalMoveException: thrown if the move is invalid or the destination is unreachable
      */
     private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException{
         if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
@@ -76,7 +75,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public Iterator<Figure> iterator(){
-        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS,getFigureMatrix());
+        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS, getMatrixOfFigures());
     }
 
     @Override
@@ -85,7 +84,7 @@ public abstract class AbstractBoard implements Board{
     }
 
     /**
-     * Make a matrix that contains all the positions on the board depending on number of columns and rows
+     * Make a matrix that contains all the positions on the board depending on number of columns and rows.
      * @return a matrix that contains all positions on the board
      */
     public Position[][] getPositionMatrix() {
@@ -102,12 +101,7 @@ public abstract class AbstractBoard implements Board{
 
     public abstract Figure getFigure(Position position);
 
-    /**
-     * Make an optional conversion to return a matrix that contains all figures on the board
-     * @return a matrix that contains all figures on the board
-     */
-    public abstract Figure[][] getFigureMatrix();
-
+    public abstract Figure[][] getMatrixOfFigures();
     public abstract void instantiateBoard();
     public abstract String toString();
 

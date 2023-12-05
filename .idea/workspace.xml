@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void testToString()">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/ArrowFigure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/NeutralFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/NeutralFigure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,14 +221,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="13241000" />
-    </task>
-    <task id="LOCAL-00098" summary="remove void numberOfFiguresToAssign()">
-      <created>1701547532499</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1701547532500</updated>
+      <workItem from="1701682674385" duration="15719000" />
     </task>
     <task id="LOCAL-00099" summary="fix public boolean equals(Move move)">
       <created>1701594067132</created>
@@ -564,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701785539536</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="add void testToString()">
+      <created>1701785756838</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785756838</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
