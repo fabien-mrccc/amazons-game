@@ -10,8 +10,8 @@ import static amazons.figures.ArrowFigure.ARROW_FIGURE;
 import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 
 public abstract class AbstractBoard implements Board{
-    public final int NUMBER_OF_COLUMNS;
-    public final int NUMBER_OF_ROWS;
+    protected final int NUMBER_OF_COLUMNS;
+    protected final int NUMBER_OF_ROWS;
 
     public AbstractBoard(int numberOfColumns, int numberOfRows){
         this.NUMBER_OF_COLUMNS = numberOfColumns;
@@ -83,7 +83,7 @@ public abstract class AbstractBoard implements Board{
         return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS, getMatrixOfAllPositionsOnBoard());
     }
     
-    public Position[][] getMatrixOfAllPositionsOnBoard() {
+    private Position[][] getMatrixOfAllPositionsOnBoard() {
         Position[][] positionsOnBoard = new Position[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
         for(int x=0; x< positionsOnBoard.length; x++){
             for(int y=0; y< positionsOnBoard[0].length; y++){
@@ -95,14 +95,13 @@ public abstract class AbstractBoard implements Board{
 
     public abstract void setFigure(Position position, Figure figure);
     public abstract Figure getFigure(Position position);
-    public abstract Figure[][] getMatrixOfFiguresOnBoard();
-    public abstract void instantiateBoard();
+    protected abstract Figure[][] getMatrixOfFiguresOnBoard();
+    protected abstract void instantiateBoard();
     public abstract String toString();
 
     public int getNumberOfColumns(){
         return NUMBER_OF_COLUMNS;
     }
-
     public int getNumberOfRows(){
         return NUMBER_OF_ROWS;
     }

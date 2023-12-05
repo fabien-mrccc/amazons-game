@@ -31,31 +31,62 @@ public class MatrixBoard extends AbstractBoard {
     public void instantiateBoard() {
         figures = new Figure[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
     }
+
     @Override
     public String toString(){
-        StringBuilder matrix = new StringBuilder();
-        for(int row = 0; row < NUMBER_OF_ROWS;row++){
-            matrix.append("+");
-            matrix.append("----+".repeat(NUMBER_OF_COLUMNS));
-            matrix.append("\n").append("|");
+        StringBuilder displayableMatrix = new StringBuilder();
+
+        for(int row = 0; row < NUMBER_OF_ROWS; row++){
+            getALineToPrint(displayableMatrix);
+            getAPipeToPrint(displayableMatrix);
+
             for(int column = 0; column < NUMBER_OF_COLUMNS;column++){
-                if(getFigure(new Position(column,row))== EMPTY_FIGURE){
-                    matrix.append("    |");
-                } else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
-                    matrix.append(" ").append(ARROW_FIGURE).append(" |");
-                }
-                else{
-                    matrix.append(" ").append(getFigure(new Position(column, row))).append(" |");
-                }
+                getASpaceToPrint(displayableMatrix);
+                getAFigureToPrint(displayableMatrix, column, row);
+                getASpaceToPrint(displayableMatrix);
+                getAPipeToPrint(displayableMatrix);
             }
-            matrix.append(" ").append(row).append("\n");
+            getASpaceToPrint(displayableMatrix);
+            getRowNumberToPrint(displayableMatrix, row);
         }
-        matrix.append("+");
-        matrix.append("----+".repeat(NUMBER_OF_COLUMNS));
-        matrix.append("\n");
+
+        displayableMatrix.append("+");
+        displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
+        displayableMatrix.append("\n");
+
         for(int column = 0; column < NUMBER_OF_COLUMNS; column++){
-            matrix.append("  ").append(column).append("  ");
+            displayableMatrix.append("  ").append(column).append("  ");
         }
-        return matrix.toString();
+
+        return displayableMatrix.toString();
+    }
+
+    private void getALineToPrint(StringBuilder displayableMatrix){
+        displayableMatrix.append("+");
+        displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
+        displayableMatrix.append("\n");
+    }
+
+    private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row){
+        if(getFigure(new Position(column,row))== EMPTY_FIGURE){
+            displayableMatrix.append("  ");
+        } else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
+            displayableMatrix.append(ARROW_FIGURE);
+        }
+        else{
+            displayableMatrix.append(getFigure(new Position(column, row)));
+        }
+    }
+
+    private void getAPipeToPrint(StringBuilder displayableMatrix){
+        displayableMatrix.append("|");
+    }
+
+    private void getASpaceToPrint(StringBuilder displayableMatrix){
+        displayableMatrix.append(" ");
+    }
+
+    private void getRowNumberToPrint(StringBuilder displayableMatrix, int row){
+        displayableMatrix.append(row).append("\n");
     }
 }
