@@ -7,9 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void setPosition(Position position): print message from exception">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/IllegalSetPositionExceptionTest.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void testGetMessage()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/EmptyFigure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -220,14 +220,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="9831000" />
-    </task>
-    <task id="LOCAL-00091" summary="add void nextFigure()">
-      <created>1701535799373</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1701535799373</updated>
+      <workItem from="1701682674385" duration="11574000" />
     </task>
     <task id="LOCAL-00092" summary="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): recover the movableFigures argument by copy">
       <created>1701538486279</created>
@@ -565,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701693196294</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="add void testGetMessage()">
+      <created>1701709137633</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1701709137633</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,9 +605,9 @@
     <MESSAGE value="fix void testCanMoveTo(): add limit case and normal case testing" />
     <MESSAGE value="add public String getMessage()&#10;fix public IllegalMoveException(String message)" />
     <MESSAGE value="fix refactoring IllegalMoveException from amazons package to amazons.figure package" />
-    <MESSAGE value="add void testGetMessage()" />
     <MESSAGE value="fix public IllegalSetPositionException(String message): change extension and using parent constructor" />
     <MESSAGE value="fix public void setPosition(Position position): print message from exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void setPosition(Position position): print message from exception" />
+    <MESSAGE value="add void testGetMessage()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add void testGetMessage()" />
   </component>
 </project>
