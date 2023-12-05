@@ -38,15 +38,10 @@ public class MatrixBoard extends AbstractBoard {
 
         for(int row = 0; row < NUMBER_OF_ROWS; row++){
             getALineToPrint(displayableMatrix);
+
             for(int column = 0; column < NUMBER_OF_COLUMNS;column++){
-                if(getFigure(new Position(column,row))== EMPTY_FIGURE){
-                    displayableMatrix.append("    |");
-                } else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
-                    displayableMatrix.append(" ").append(ARROW_FIGURE).append(" |");
-                }
-                else{
-                    displayableMatrix.append(" ").append(getFigure(new Position(column, row))).append(" |");
-                }
+                getAPipeToPrint(displayableMatrix);
+                getAFigureToPrint(displayableMatrix, column, row);
             }
 
             displayableMatrix.append(" ").append(row).append("\n");
@@ -66,7 +61,22 @@ public class MatrixBoard extends AbstractBoard {
     private void getALineToPrint(StringBuilder displayableMatrix){
         displayableMatrix.append("+");
         displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
-        displayableMatrix.append("\n").append("|");
+        displayableMatrix.append("\n");
+    }
+
+    private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row){
+        if(getFigure(new Position(column,row))== EMPTY_FIGURE){
+            displayableMatrix.append("    |");
+        } else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
+            displayableMatrix.append(" ").append(ARROW_FIGURE).append(" |");
+        }
+        else{
+            displayableMatrix.append(" ").append(getFigure(new Position(column, row))).append(" |");
+        }
+    }
+
+    private void getAPipeToPrint(StringBuilder displayableMatrix){
+        displayableMatrix.append("|");
     }
 
 }

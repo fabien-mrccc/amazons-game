@@ -7,7 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public String toString(): refactoring local variable names">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void getALineToPrint(StringBuilder displayableMatrix)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +101,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.amazons-template [run]">
+  <component name="RunManager" selected="Gradle.amazons-template [test]">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="amazons.App" />
       <module name="amazons-template.app.main" />
@@ -192,8 +193,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.amazons-template [run]" />
         <item itemvalue="Gradle.amazons-template [test]" />
+        <item itemvalue="Gradle.amazons-template [run]" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.MatrixBoard" />
         <item itemvalue="Gradle.amazons-template [build]" />
@@ -218,28 +219,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="19525000" />
-    </task>
-    <task id="LOCAL-00110" summary="fix private boolean hasLost(PlayerID playerID)">
-      <created>1701604300980</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1701604300980</updated>
-    </task>
-    <task id="LOCAL-00111" summary="fix public void fill(FigureGenerator generator): remove System.out.println()">
-      <created>1701604619844</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1701604619844</updated>
-    </task>
-    <task id="LOCAL-00112" summary="fix public void initializeGame(Player player0, Player player1)">
-      <created>1701604976015</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1701604976015</updated>
+      <workItem from="1701682674385" duration="20354000" />
     </task>
     <task id="LOCAL-00113" summary="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization">
       <created>1701605757745</created>
@@ -563,7 +543,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701795144389</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="fix public String toString(): refactoring local variable names">
+      <created>1701795193299</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1701795193299</updated>
+    </task>
+    <task id="LOCAL-00160" summary="add private void getALine(StringBuilder displayableMatrix)">
+      <created>1701795616346</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1701795616346</updated>
+    </task>
+    <task id="LOCAL-00161" summary="add private void getALineToPrint(StringBuilder displayableMatrix)">
+      <created>1701795680160</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1701795680160</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,8 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public Move play(Move opponentMove)" />
-    <MESSAGE value="add public abstract Move play(Move opponentMove)" />
     <MESSAGE value="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="add AIRandomPlayer class" />
     <MESSAGE value="fix comments of the interface methods" />
@@ -606,6 +605,8 @@
     <MESSAGE value="fix protected abstract List&lt;Position&gt; getAccessiblePositions(Board board);" />
     <MESSAGE value="fix several access modifiers" />
     <MESSAGE value="fix public String toString(): refactoring local variable names" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public String toString(): refactoring local variable names" />
+    <MESSAGE value="add private void getALine(StringBuilder displayableMatrix)" />
+    <MESSAGE value="add private void getALineToPrint(StringBuilder displayableMatrix)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add private void getALineToPrint(StringBuilder displayableMatrix)" />
   </component>
 </project>
