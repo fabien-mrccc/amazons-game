@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring local variable names">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,28 +219,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="17149000" />
-    </task>
-    <task id="LOCAL-00103" summary="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure">
-      <created>1701595606626</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1701595606626</updated>
-    </task>
-    <task id="LOCAL-00104" summary="add public MatrixBoard getBoard()">
-      <created>1701596175206</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1701596175206</updated>
-    </task>
-    <task id="LOCAL-00105" summary="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
-      <created>1701596592830</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1701596592830</updated>
+      <workItem from="1701682674385" duration="18732000" />
     </task>
     <task id="LOCAL-00106" summary="fix public void initializeGame(Player player0, Player player1)">
       <created>1701598003375</created>
@@ -565,7 +543,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701792647581</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="fix public abstract Figure[][] getMatrixOfFiguresOnBoard(): refactoring name of the method">
+      <created>1701792819405</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1701792819405</updated>
+    </task>
+    <task id="LOCAL-00153" summary="fix public abstract Figure[][] getMatrixOfFiguresOnBoard(): refactoring name of the method">
+      <created>1701792976117</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1701792976117</updated>
+    </task>
+    <task id="LOCAL-00154" summary="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring local variable names">
+      <created>1701793097639</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1701793097639</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,8 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition): winner assignment&#10;&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition): winner assignment" />
-    <MESSAGE value="add AbstractPlayer class for refactoring" />
     <MESSAGE value="fix public boolean isGUIControlled(): not abstract method anymore" />
     <MESSAGE value="remove public boolean isGUIControlled()" />
     <MESSAGE value="remove public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public PlayerID getPlayerID()" />
@@ -608,6 +605,8 @@
     <MESSAGE value="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method" />
     <MESSAGE value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method" />
     <MESSAGE value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
+    <MESSAGE value="fix public abstract Figure[][] getMatrixOfFiguresOnBoard(): refactoring name of the method" />
+    <MESSAGE value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring local variable names" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring local variable names" />
   </component>
 </project>
