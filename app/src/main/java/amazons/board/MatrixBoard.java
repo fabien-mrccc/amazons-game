@@ -36,11 +36,8 @@ public class MatrixBoard extends AbstractBoard {
     public String toString(){
         StringBuilder displayableMatrix = new StringBuilder();
 
-        for(int row = 0; row < NUMBER_OF_ROWS;row++){
-            displayableMatrix.append("+");
-            displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
-            displayableMatrix.append("\n").append("|");
-
+        for(int row = 0; row < NUMBER_OF_ROWS; row++){
+            getALineToPrint(displayableMatrix);
             for(int column = 0; column < NUMBER_OF_COLUMNS;column++){
                 if(getFigure(new Position(column,row))== EMPTY_FIGURE){
                     displayableMatrix.append("    |");
@@ -65,4 +62,11 @@ public class MatrixBoard extends AbstractBoard {
 
         return displayableMatrix.toString();
     }
+
+    private void getALineToPrint(StringBuilder displayableMatrix){
+        displayableMatrix.append("+");
+        displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
+        displayableMatrix.append("\n").append("|");
+    }
+
 }
