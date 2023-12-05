@@ -2,39 +2,14 @@ package amazons.player;
 
 import amazons.board.Position;
 import amazons.figures.Amazon;
-import amazons.figures.MovableFigure;
 import amazons.game.Game;
 
 import java.util.List;
 
-public class Greedy implements Player {
-    private PlayerID playerID;
-    private int boardWidth;
-    private int boardHeight;
-    private List<Position>[] initialPositions;
-    private Game game;
+public class AIGreedyPlayer extends AbstractAIPlayer {
     @Override
     public Move play(Move opponentMove) {
         return null;
-    }
-
-    @Override
-    public void initialize(int boardHeight, int boardWidth, PlayerID playerID, List<Position>[] initialPositions) {
-        game = new Game();
-        this.boardHeight = boardHeight;
-        this.boardWidth = boardWidth;
-        this.playerID = playerID;
-        this.initialPositions = initialPositions;
-    }
-
-    @Override
-    public boolean isGUIControlled() {
-        return false;
-    }
-
-    @Override
-    public PlayerID getPlayerID() {
-        return playerID;
     }
     /* maximiser la possibilité de gagner: si l'une de mes amazones est ent
     entourer par une ou plusieurs flèche ou amazones adverses la faire bouger à
@@ -71,7 +46,7 @@ public class Greedy implements Player {
     public Position bestShootPosition(){
         return null;
     }
-    public List<Amazon> getPlayerAmazons(PlayerID playerID, Game game){
+    public List<Amazon> getPlayerAmazons(PlayerID playerID){
         return null;
     }
 }
