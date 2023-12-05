@@ -48,7 +48,7 @@ public abstract class AbstractBoard implements Board{
     }
 
     /**
-     * Check the validity of a movement and shooting operation in accordance with the rules of the game.
+     * Check the validity of a move and shooting operation in accordance with the rules of the game.
      * @param startPosition: the starting position of the figure
      * @param dstPosition: the destination position of the figure
      * @throws IllegalMoveException: thrown if the move is invalid or the destination is unreachable
@@ -75,7 +75,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public Iterator<Figure> iterator(){
-        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS, getMatrixOfFigures());
+        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS, getMatrixOfFiguresOnBoard());
     }
 
     @Override
@@ -94,9 +94,8 @@ public abstract class AbstractBoard implements Board{
     }
 
     public abstract void setFigure(Position position, Figure figure);
-
     public abstract Figure getFigure(Position position);
-    public abstract Figure[][] getMatrixOfFigures();
+    public abstract Figure[][] getMatrixOfFiguresOnBoard();
     public abstract void instantiateBoard();
     public abstract String toString();
 
