@@ -5,7 +5,7 @@ import amazons.figures.Figure;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapBoard extends AbstractBoard {
+public final class MapBoard extends AbstractBoard {
 
     private Map<Position,Figure> figures;
 
@@ -32,8 +32,8 @@ public class MapBoard extends AbstractBoard {
      * return the matrix version of the map
      * @return MatrixBoard
      */
-    public MatrixBoard mapToMatrix(){
-        MatrixBoard mapToMatrix = new MatrixBoard(NUMBER_OF_COLUMNS, NUMBER_OF_ROWS);
+    private MatrixBoard mapToMatrix(){
+        final MatrixBoard mapToMatrix = new MatrixBoard(NUMBER_OF_COLUMNS, NUMBER_OF_ROWS);
         for(int x=0; x< mapToMatrix.NUMBER_OF_COLUMNS; x++){
             for(int y=0; y< mapToMatrix.NUMBER_OF_ROWS; y++){
                 mapToMatrix.setFigure(new Position(x,y), getFigure(new Position(x,y)));
