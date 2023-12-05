@@ -18,7 +18,7 @@ public final class MatrixIterator<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
-        return getCurrentPosition().rowIndex() <= getLastPosition().rowIndex();
+        return currentPosition.rowIndex() <= lastPosition.rowIndex();
     }
 
     @Override
@@ -26,32 +26,24 @@ public final class MatrixIterator<T> implements Iterator<T> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        Position returnPosition = currentPosition;
+        final Position returnPosition = currentPosition;
         updateCurrentPosition();
         return getObjectInMatrix(returnPosition);
     }
 
     private void updateCurrentPosition(){
-        if (getCurrentPosition().columnIndex() == getLastPosition().columnIndex()) {
-            currentPosition = new Position(0, getCurrentPosition().rowIndex() + 1);
+        if (currentPosition.columnIndex() == lastPosition.columnIndex()) {
+            currentPosition = new Position(0, currentPosition.rowIndex() + 1);
         }
         else{
-            currentPosition = new Position(getCurrentPosition().columnIndex() + 1, getCurrentPosition().rowIndex());
+            currentPosition = new Position(currentPosition.columnIndex() + 1, currentPosition.rowIndex());
         }
     }
 
-    public T getObjectInMatrix(Position position) {
+    private T getObjectInMatrix(Position position) {
         return matrix[position.columnIndex()][position.rowIndex()];
-    }
-
-    public Position getCurrentPosition(){
-        return currentPosition;
     }
 
     public int getNumberOfColumns(){return NUMBER_OF_COLUMNS;}
     public int getNumberOfRows(){return NUMBER_OF_ROWS;}
-
-    public Position getLastPosition(){
-        return lastPosition;
-    }
 }
