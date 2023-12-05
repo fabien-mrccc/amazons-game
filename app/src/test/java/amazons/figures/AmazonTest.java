@@ -11,7 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static amazons.figures.ArrowFigure.ARROW_FIGURE;
+import amazons.figures.Amazon;
+import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class AmazonTest {
 
@@ -64,7 +67,14 @@ class AmazonTest {
             }
         }
     }
-
+    @Test
+    void testMoveTo() throws IllegalMoveException {
+        assertThatThrownBy(() -> amazon11.moveTo(null, board))
+                .isInstanceOf(IllegalMoveException.class)
+                .hasMessage("Amazon can't be moved");
+        amazon11.moveTo(allPositions[2][1],board);
+        assertThat(amazon11.getPosition()).isEqualTo(allPositions[2][1]).isEqualTo(allPositions[2][1]);
+    }
     @Test
     void testGetAccessiblePositions() {
          assertThat(amazon11.getAccessiblePositions(board))
