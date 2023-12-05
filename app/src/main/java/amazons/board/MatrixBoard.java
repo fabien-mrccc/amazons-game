@@ -23,12 +23,12 @@ public class MatrixBoard extends AbstractBoard {
     }
 
     @Override
-    public Figure[][] getMatrixOfFiguresOnBoard() {
+    protected Figure[][] getMatrixOfFiguresOnBoard() {
         return figures;
     }
 
     @Override
-    public void instantiateBoard() {
+    protected void instantiateBoard() {
         figures = new Figure[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
     }
 
@@ -37,7 +37,8 @@ public class MatrixBoard extends AbstractBoard {
         StringBuilder displayableMatrix = new StringBuilder();
 
         for(int row = 0; row < NUMBER_OF_ROWS; row++){
-            getALineToPrint(displayableMatrix);
+            concatALine(displayableMatrix);
+            carriageReturn(displayableMatrix);
             concatPipe(displayableMatrix);
 
             for(int column = 0; column < NUMBER_OF_COLUMNS;column++){
@@ -48,29 +49,33 @@ public class MatrixBoard extends AbstractBoard {
             }
             concatSpace(displayableMatrix);
             concatRowNumber(displayableMatrix, row);
+            carriageReturn(displayableMatrix);
         }
 
-        displayableMatrix.append("+");
-        displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
-        displayableMatrix.append("\n");
+        concatALine(displayableMatrix);
+        carriageReturn(displayableMatrix);
 
         for(int column = 0; column < NUMBER_OF_COLUMNS; column++){
-            displayableMatrix.append("  ").append(column).append("  ");
+            concatSpace(displayableMatrix);
+            concatSpace(displayableMatrix);
+            concatColumnNumber(displayableMatrix, column);
+            concatSpace(displayableMatrix);
+            concatSpace(displayableMatrix);
         }
 
         return displayableMatrix.toString();
     }
 
-    private void getALineToPrint(StringBuilder displayableMatrix){
+    private void concatALine(StringBuilder displayableMatrix){
         displayableMatrix.append("+");
         displayableMatrix.append("----+".repeat(NUMBER_OF_COLUMNS));
-        displayableMatrix.append("\n");
     }
 
     private void concatFigure(StringBuilder displayableMatrix, int column, int row){
         if(getFigure(new Position(column,row))== EMPTY_FIGURE){
             displayableMatrix.append("  ");
-        } else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
+        }
+        else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
             displayableMatrix.append(ARROW_FIGURE);
         }
         else{
@@ -88,6 +93,10 @@ public class MatrixBoard extends AbstractBoard {
 
     private void concatRowNumber(StringBuilder displayableMatrix, int row){
         displayableMatrix.append(row);
+    }
+
+    private void concatColumnNumber(StringBuilder displayableMatrix, int column){
+        displayableMatrix.append(column);
     }
 
     private void carriageReturn(StringBuilder displayableMatrix){

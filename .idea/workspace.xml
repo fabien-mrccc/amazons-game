@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void getASpaceToPrint(StringBuilder displayableMatrix)&#10;fix private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)&#10;fix public String toString()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,49 +218,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00115" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message">
-      <created>1701607154814</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1701607154814</updated>
-    </task>
-    <task id="LOCAL-00116" summary="fix public void run(): change the final message">
-      <created>1701607242858</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1701607242858</updated>
-    </task>
-    <task id="LOCAL-00117" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message">
-      <created>1701607572065</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1701607572065</updated>
-    </task>
-    <task id="LOCAL-00118" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message">
-      <created>1701607921168</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1701607921168</updated>
-    </task>
-    <task id="LOCAL-00119" summary="add public void setPlayerID(PlayerID playerID)">
-      <created>1701609413786</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1701609413786</updated>
-    </task>
-    <task id="LOCAL-00120" summary="fix public Move play(Move opponentMove): change playerID at the end of the method">
-      <created>1701609596495</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1701609596495</updated>
+      <workItem from="1701682674385" duration="23987000" />
     </task>
     <task id="LOCAL-00121" summary="fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition): winner assignment&#10;&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition): winner assignment">
       <created>1701611981242</created>
@@ -563,7 +521,49 @@
       <option name="project" value="LOCAL" />
       <updated>1701799616033</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="fix public String toString()&#10;add private void getRowNumberToPrint(StringBuilder displayableMatrix, int row)">
+      <created>1701799904354</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1701799904354</updated>
+    </task>
+    <task id="LOCAL-00165" summary="add private void carriageReturn(StringBuilder displayableMatrix)">
+      <created>1701800157390</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1701800157390</updated>
+    </task>
+    <task id="LOCAL-00166" summary="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
+      <created>1701800900523</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1701800900523</updated>
+    </task>
+    <task id="LOCAL-00167" summary="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
+      <created>1701801334850</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1701801334850</updated>
+    </task>
+    <task id="LOCAL-00168" summary="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
+      <created>1701801434704</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1701801434704</updated>
+    </task>
+    <task id="LOCAL-00169" summary="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()">
+      <created>1701801545043</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1701801545043</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,9 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix comments of the interface methods" />
-    <MESSAGE value="fix void nextFigure(): remove Assertions class import" />
-    <MESSAGE value="fix void testCanMoveTo(): add limit case and normal case testing" />
     <MESSAGE value="add public String getMessage()&#10;fix public IllegalMoveException(String message)" />
     <MESSAGE value="fix refactoring IllegalMoveException from amazons package to amazons.figure package" />
     <MESSAGE value="fix public IllegalSetPositionException(String message): change extension and using parent constructor" />
@@ -606,6 +603,9 @@
     <MESSAGE value="add private void getALineToPrint(StringBuilder displayableMatrix)" />
     <MESSAGE value="add private void getAPipeToPrint(StringBuilder displayableMatrix)&#10;add private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)" />
     <MESSAGE value="add private void getASpaceToPrint(StringBuilder displayableMatrix)&#10;fix private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)&#10;fix public String toString()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add private void getASpaceToPrint(StringBuilder displayableMatrix)&#10;fix private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)&#10;fix public String toString()" />
+    <MESSAGE value="fix public String toString()&#10;add private void getRowNumberToPrint(StringBuilder displayableMatrix, int row)" />
+    <MESSAGE value="add private void carriageReturn(StringBuilder displayableMatrix)" />
+    <MESSAGE value="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add private void concatColumnNumber(StringBuilder displayableMatrix, int column)&#10;fix public String toString()" />
   </component>
 </project>
