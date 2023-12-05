@@ -1,7 +1,6 @@
 package amazons.board;
 
-
-import amazons.IllegalMoveException;
+import amazons.figures.IllegalMoveException;
 import amazons.figures.Figure;
 
 import java.util.Iterator;
@@ -16,16 +15,16 @@ public interface Board extends Iterable<Figure>{
     void setFigure(Position position, Figure figure);
 
     /**
-     * Returns the figure at the specified position in the board.
+     * Return the figure at the specified position in the board.
      * @param position: position of the figure to return
      * @return : the figure at the specified position in the board
      */
     Figure getFigure(Position position);
 
     /**
-     * Return {@code true} if the specified position is empty (i.e., contains EMPTY_FIGURE)
+     * Return {@code true} if the specified position is empty (i.e., contains EMPTY_FIGURE).
      * @param position: position to test
-     * @return {@code true} if the specified position is empty in the board.
+     * @return {@code true} if the specified position is empty in the board
      */
     boolean isEmpty(Position position);
 
@@ -41,13 +40,13 @@ public interface Board extends Iterable<Figure>{
      * Updates also the position of this figure.
      * @param startPosition: the position of the figure to move
      * @param dstPosition: the destination position of the figure
-     * @throws IllegalMoveException: if position {@code startPosition} is empty, or the figure
+     * @throws IllegalMoveException: if position {@code startPosition} is not occupied by an amazon, or the figure
      * at position {@code startPosition} cannot move to {@code dstPosition}
      */
     void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException;
 
     /**
-     * Place an arrow at  {@code dstPosition}. The arrow originates from {@code startPosition}
+     * Place an arrow at {@code dstPosition}. The arrow originates from {@code startPosition}.
      * @param startPosition: the origin of the arrow shot
      * @param arrowDstPosition: the destination of the arrow
      * @throws IllegalMoveException: if {@code dstPosition} is not empty occupied or there is no amazon
@@ -56,19 +55,19 @@ public interface Board extends Iterable<Figure>{
     void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException;
 
     /***
-     * fill the board with the chosen figure generator
+     * Fill the board with the chosen figure generator.
      * @param generator: the chosen figure generator
      */
    void fill(FigureGenerator generator);
 
     /**
-     * return an instance of MatrixIterator<Figure>
+     * Return an instance of MatrixIterator<Figure>.
      * @return MatrixIterator<Figure>
      */
     Iterator<Figure> iterator();
 
     /**
-     * return an instance of MatrixIterator<Position>
+     * Return an instance of MatrixIterator<Position>.
      * @return MatrixIterator<Position>
      */
     Iterator<Position> positionIterator();

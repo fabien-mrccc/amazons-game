@@ -6,7 +6,6 @@ import static amazons.figures.EmptyFigure.EMPTY_FIGURE;
 import amazons.figures.EmptyFigure;
 import amazons.figures.Figure;
 import amazons.figures.MovableFigure;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -42,8 +41,8 @@ public class RandomFigureGeneratorTest {
             Figure figure = (Figure) randomFigureGenerator.getMovableFigures().get(i);
 
             assertThat(randomFigureGenerator.nextFigure(new Position(3,9))).satisfiesAnyOf(
-                    value -> Assertions.assertThat(value).isEqualTo(EMPTY_FIGURE),
-                    value -> Assertions.assertThat(value).isEqualTo(figure));
+                    value -> assertThat(value).isEqualTo(EMPTY_FIGURE),
+                    value -> assertThat(value).isEqualTo(figure));
         }
 
 

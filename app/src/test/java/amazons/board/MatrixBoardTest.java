@@ -1,6 +1,6 @@
 package amazons.board;
 
-import amazons.IllegalMoveException;
+import amazons.figures.IllegalMoveException;
 import amazons.figures.Amazon;
 import amazons.figures.Figure;
 import amazons.figures.MovableFigure;

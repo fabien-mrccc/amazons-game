@@ -1,6 +1,6 @@
 package amazons.game;
 
-import amazons.IllegalMoveException;
+import amazons.figures.IllegalMoveException;
 import amazons.board.*;
 import amazons.player.Move;
 import amazons.player.Player;

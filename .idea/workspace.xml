@@ -7,9 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="switch from public class Position implements Serializable to public record Position(int columnIndex, int rowIndex) implements Serializable">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/Greedy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/AbstractBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MapBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/MatrixBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +102,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.PositionTest">
+  <component name="RunManager" selected="Gradle.amazons-template [test]">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="amazons.App" />
       <module name="amazons-template.app.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="amazons.*" />
+          <option name="PATTERN" value="amazons.figures.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,48 +116,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerIDTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;amazons.player.PlayerIDTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="MatrixBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="amazons.board.MatrixBoard" />
+      <module name="amazons-template.app.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="amazons.board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="PositionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="amazons-template [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":app:test" />
-            <option value="--tests" />
-            <option value="&quot;amazons.board.PositionTest&quot;" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -205,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PositionTest" />
-        <item itemvalue="Gradle.PlayerIDTest" />
         <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Gradle.amazons-template [run]" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.MatrixBoard" />
+        <item itemvalue="Gradle.amazons-template [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -231,153 +220,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-    </task>
-    <task id="LOCAL-00082" summary="fix public Figure nextFigure(Position position)">
-      <created>1701187378594</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1701187378594</updated>
-    </task>
-    <task id="LOCAL-00083" summary="fix public Figure nextFigure(Position position)">
-      <created>1701187474893</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1701187474893</updated>
-    </task>
-    <task id="LOCAL-00084" summary="fix FieldView : uncommented">
-      <created>1701187852164</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1701187852164</updated>
-    </task>
-    <task id="LOCAL-00085" summary="fix application">
-      <created>1701188932365</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1701188932365</updated>
-    </task>
-    <task id="LOCAL-00086" summary="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator)">
-      <created>1701522730883</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1701522730883</updated>
-    </task>
-    <task id="LOCAL-00087" summary="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): update comments">
-      <created>1701525928582</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1701525928582</updated>
-    </task>
-    <task id="LOCAL-00088" summary="fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): ensure that there is no division by zero">
-      <created>1701526984653</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1701526984653</updated>
-    </task>
-    <task id="LOCAL-00089" summary="add private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator)">
-      <created>1701530580797</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1701530580797</updated>
-    </task>
-    <task id="LOCAL-00090" summary="fix public Figure nextFigure(Position position): use the right currentPosition value and the right indexFigureToAssign&#10;&#10;fix private int calculateRandomProbability(Random random, List&lt;MovableFigure&gt; movableFigures, Set&lt;Figure&gt; usedFigures, MatrixIterator&lt;Position&gt; matrixIterator): utilisation of the new currentPosition parameter&#10;&#10;fix private int numberOfSquaresAssigned(MatrixIterator&lt;Position&gt; matrixIterator, Position currentPosition): utilisation of the new currentPosition parameter">
-      <created>1701535687989</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1701535687989</updated>
-    </task>
-    <task id="LOCAL-00091" summary="add void nextFigure()">
-      <created>1701535799373</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1701535799373</updated>
-    </task>
-    <task id="LOCAL-00092" summary="fix public RandomFigureGenerator(Random random, List&lt;MovableFigure&gt; movableFigures, Iterator&lt;Position&gt; positionIterator): recover the movableFigures argument by copy">
-      <created>1701538486279</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1701538486279</updated>
-    </task>
-    <task id="LOCAL-00093" summary="add public List&lt;MovableFigure&gt; getMovableFigures()">
-      <created>1701539668227</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1701539668227</updated>
-    </task>
-    <task id="LOCAL-00094" summary="fix void nextFigure()">
-      <created>1701539694781</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1701539694782</updated>
-    </task>
-    <task id="LOCAL-00095" summary="add and refactor private int countNumberOfSquaresBoard(MatrixIterator&lt;Position&gt; matrixIterator)&#10;add and refactor private int calculateNumberOfSquaresToAssign(int numberOfSquaresBoard, int numberOfSquaresAssigned)&#10;add and refactor private int calculateNumberOfSquaresToAssignPerFigure(int numberOfSquaresToAssign, int numberOfFiguresToAssign)">
-      <created>1701545356669</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1701545356669</updated>
-    </task>
-    <task id="LOCAL-00096" summary="fix public String toString(): try to use StringBuilder class recommended by IntelliJ">
-      <created>1701547239186</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1701547239187</updated>
-    </task>
-    <task id="LOCAL-00097" summary="refactoring primitive constants with UPPERCASE">
-      <created>1701547332827</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1701547332827</updated>
-    </task>
-    <task id="LOCAL-00098" summary="remove void numberOfFiguresToAssign()">
-      <created>1701547532499</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1701547532500</updated>
-    </task>
-    <task id="LOCAL-00099" summary="fix public boolean equals(Move move)">
-      <created>1701594067132</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1701594067132</updated>
-    </task>
-    <task id="LOCAL-00100" summary="fix public boolean equals(Move move)">
-      <created>1701594652005</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1701594652006</updated>
-    </task>
-    <task id="LOCAL-00101" summary="add public String toString()">
-      <created>1701595368975</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1701595368975</updated>
-    </task>
-    <task id="LOCAL-00102" summary="add public String toString()">
-      <created>1701595510409</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1701595510409</updated>
+      <workItem from="1701682674385" duration="17149000" />
     </task>
     <task id="LOCAL-00103" summary="fix public String toString(): utilisation of toString() method for ARROW_FIGURE and amazon figure">
       <created>1701595606626</created>
@@ -547,35 +390,182 @@
       <option name="project" value="LOCAL" />
       <updated>1701613782761</updated>
     </task>
-    <task id="LOCAL-00127" summary="add void testToString()">
-      <created>1701684238549</created>
+    <task id="LOCAL-00127" summary="add public abstract Move play(Move opponentMove)">
+      <created>1701617570736</created>
       <option name="number" value="00127" />
       <option name="presentableId" value="LOCAL-00127" />
       <option name="project" value="LOCAL" />
-      <updated>1701684238549</updated>
+      <updated>1701617570736</updated>
     </task>
-    <task id="LOCAL-00128" summary="fix void testToString()&#10;add void testOpponent()">
-      <created>1701684716355</created>
+    <task id="LOCAL-00128" summary="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
+      <created>1701617834014</created>
       <option name="number" value="00128" />
       <option name="presentableId" value="LOCAL-00128" />
       <option name="project" value="LOCAL" />
-      <updated>1701684716355</updated>
+      <updated>1701617834014</updated>
     </task>
-    <task id="LOCAL-00129" summary="add void testGetPlayerIDFromIndex()">
-      <created>1701685009620</created>
+    <task id="LOCAL-00129" summary="add AIRandomPlayer class">
+      <created>1701621445144</created>
       <option name="number" value="00129" />
       <option name="presentableId" value="LOCAL-00129" />
       <option name="project" value="LOCAL" />
-      <updated>1701685009620</updated>
+      <updated>1701621445144</updated>
     </task>
-    <task id="LOCAL-00130" summary="switch from public class Position implements Serializable to public record Position(int columnIndex, int rowIndex) implements Serializable">
-      <created>1701687148244</created>
+    <task id="LOCAL-00130" summary="fix comments of the interface methods">
+      <created>1701684722111</created>
       <option name="number" value="00130" />
       <option name="presentableId" value="LOCAL-00130" />
       <option name="project" value="LOCAL" />
-      <updated>1701687148244</updated>
+      <updated>1701684722111</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="fix comments of the interface methods">
+      <created>1701684887081</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1701684887081</updated>
+    </task>
+    <task id="LOCAL-00132" summary="fix comments of the interface methods">
+      <created>1701685400750</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1701685400750</updated>
+    </task>
+    <task id="LOCAL-00133" summary="fix void nextFigure(): remove Assertions class import">
+      <created>1701687705320</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1701687705320</updated>
+    </task>
+    <task id="LOCAL-00134" summary="fix void testCanMoveTo(): add limit case and normal case testing">
+      <created>1701688792143</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1701688792144</updated>
+    </task>
+    <task id="LOCAL-00135" summary="add public String getMessage()&#10;fix public IllegalMoveException(String message)">
+      <created>1701691802438</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1701691802438</updated>
+    </task>
+    <task id="LOCAL-00136" summary="fix refactoring IllegalMoveException from amazons package to amazons.figure package">
+      <created>1701691909986</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1701691909986</updated>
+    </task>
+    <task id="LOCAL-00137" summary="add void testGetMessage()">
+      <created>1701692300673</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1701692300673</updated>
+    </task>
+    <task id="LOCAL-00138" summary="fix public IllegalSetPositionException(String message): change extension and using parent constructor">
+      <created>1701693067401</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1701693067401</updated>
+    </task>
+    <task id="LOCAL-00139" summary="fix public void setPosition(Position position): print message from exception">
+      <created>1701693196294</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1701693196294</updated>
+    </task>
+    <task id="LOCAL-00140" summary="add void testGetMessage()">
+      <created>1701709137633</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1701709137633</updated>
+    </task>
+    <task id="LOCAL-00141" summary="add void testMoveTo()">
+      <created>1701784168212</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1701784168212</updated>
+    </task>
+    <task id="LOCAL-00142" summary="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class">
+      <created>1701785024004</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785024004</updated>
+    </task>
+    <task id="LOCAL-00143" summary="add void testSetPosition()">
+      <created>1701785171123</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785171123</updated>
+    </task>
+    <task id="LOCAL-00144" summary="add void testSetPosition()">
+      <created>1701785184352</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785184352</updated>
+    </task>
+    <task id="LOCAL-00145" summary="fix void testCanMoveTo()&#10;add void testMoveTo()&#10;add void testSetPosition()">
+      <created>1701785472663</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785472663</updated>
+    </task>
+    <task id="LOCAL-00146" summary="add void testToString()">
+      <created>1701785539536</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785539536</updated>
+    </task>
+    <task id="LOCAL-00147" summary="add void testToString()">
+      <created>1701785756838</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785756838</updated>
+    </task>
+    <task id="LOCAL-00148" summary="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method">
+      <created>1701791416143</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1701791416143</updated>
+    </task>
+    <task id="LOCAL-00149" summary="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method">
+      <created>1701791450961</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1701791450961</updated>
+    </task>
+    <task id="LOCAL-00150" summary="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method">
+      <created>1701791986180</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1701791986180</updated>
+    </task>
+    <task id="LOCAL-00151" summary="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method">
+      <created>1701792647580</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1701792647581</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,31 +583,31 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public MatrixBoard getBoard()" />
-    <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
-    <MESSAGE value="fix public boolean hasEnded()&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition)&#10;fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition)" />
-    <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public MatrixBoard getBoard()&#10;add public List&lt;Position&gt; getInitialPositions()&#10;add public int getBoardHeight()&#10;add public int getBoardWidth()" />
-    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;add public int getNumberOfAmazonsPerPlayer()" />
-    <MESSAGE value="fix private boolean hasLost(PlayerID playerID)" />
-    <MESSAGE value="fix public void fill(FigureGenerator generator): remove System.out.println()" />
-    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
-    <MESSAGE value="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization" />
-    <MESSAGE value="fix public String toString(): process the case this = DUMMY_MOVE" />
-    <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message" />
-    <MESSAGE value="fix public void run(): change the final message" />
-    <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message" />
-    <MESSAGE value="add public void setPlayerID(PlayerID playerID)" />
-    <MESSAGE value="fix public Move play(Move opponentMove): change playerID at the end of the method" />
     <MESSAGE value="fix public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition): winner assignment&#10;&#10;fix public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition): winner assignment" />
     <MESSAGE value="add AbstractPlayer class for refactoring" />
     <MESSAGE value="fix public boolean isGUIControlled(): not abstract method anymore" />
     <MESSAGE value="remove public boolean isGUIControlled()" />
     <MESSAGE value="remove public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List&lt;Position&gt;[] initialPositions)&#10;remove public PlayerID getPlayerID()" />
     <MESSAGE value="add public Move play(Move opponentMove)" />
+    <MESSAGE value="add public abstract Move play(Move opponentMove)" />
+    <MESSAGE value="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
+    <MESSAGE value="add AIRandomPlayer class" />
+    <MESSAGE value="fix comments of the interface methods" />
+    <MESSAGE value="fix void nextFigure(): remove Assertions class import" />
+    <MESSAGE value="fix void testCanMoveTo(): add limit case and normal case testing" />
+    <MESSAGE value="add public String getMessage()&#10;fix public IllegalMoveException(String message)" />
+    <MESSAGE value="fix refactoring IllegalMoveException from amazons package to amazons.figure package" />
+    <MESSAGE value="fix public IllegalSetPositionException(String message): change extension and using parent constructor" />
+    <MESSAGE value="fix public void setPosition(Position position): print message from exception" />
+    <MESSAGE value="add void testGetMessage()" />
+    <MESSAGE value="add void testMoveTo()" />
+    <MESSAGE value="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class" />
+    <MESSAGE value="add void testSetPosition()" />
+    <MESSAGE value="fix void testCanMoveTo()&#10;add void testMoveTo()&#10;add void testSetPosition()" />
     <MESSAGE value="add void testToString()" />
-    <MESSAGE value="fix void testToString()&#10;add void testOpponent()" />
-    <MESSAGE value="add void testGetPlayerIDFromIndex()" />
-    <MESSAGE value="switch from public class Position implements Serializable to public record Position(int columnIndex, int rowIndex) implements Serializable" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch from public class Position implements Serializable to public record Position(int columnIndex, int rowIndex) implements Serializable" />
+    <MESSAGE value="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method" />
+    <MESSAGE value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method" />
+    <MESSAGE value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
   </component>
 </project>

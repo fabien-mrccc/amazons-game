@@ -1,6 +1,6 @@
 package amazons.board;
 
-import amazons.IllegalMoveException;
+import amazons.figures.IllegalMoveException;
 import amazons.figures.Amazon;
 import amazons.figures.Figure;
 
@@ -32,7 +32,7 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public void moveFigure(Position startPosition, Position dstPosition) throws IllegalMoveException {
-        moveCheck(startPosition, dstPosition);
+        checkMovingOrShootingOperation(startPosition, dstPosition);
 
         Amazon playedAmazon = (Amazon) getFigure(startPosition);
         playedAmazon.moveTo(dstPosition, this);
@@ -42,19 +42,18 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public void shootArrow(Position startPosition, Position arrowDstPosition) throws IllegalMoveException {
-        moveCheck(startPosition, arrowDstPosition);
+        checkMovingOrShootingOperation(startPosition, arrowDstPosition);
 
         setFigure(arrowDstPosition,ARROW_FIGURE);
     }
 
     /**
-     * Common method for checking the validity of a move/shoot operation
-     * (factor moveFigure() and shootArrow() methods).
-     * @param startPosition The starting position of the figure.
-     * @param dstPosition The destination position of the figure.
-     * @throws IllegalMoveException Thrown if the move is invalid or the destination is unreachable.
+     * Check the validity of a move and shooting operation in accordance with the rules of the game.
+     * @param startPosition: the starting position of the figure
+     * @param dstPosition: the destination position of the figure
+     * @throws IllegalMoveException: thrown if the move is invalid or the destination is unreachable
      */
-    private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException{
+    private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException{
         if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
             throw new IllegalMoveException("Your move/shoot is forbidden! You have chosen the wrong figure to move OR the destination position is occupied!");
         }
@@ -76,38 +75,27 @@ public abstract class AbstractBoard implements Board{
 
     @Override
     public Iterator<Figure> iterator(){
-        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS,getFigureMatrix());
+        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS, getMatrixOfFiguresOnBoard());
     }
 
     @Override
     public Iterator<Position> positionIterator(){
-        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS,getPositionMatrix());
+        return new MatrixIterator<>(NUMBER_OF_COLUMNS,NUMBER_OF_ROWS, getMatrixOfAllPositionsOnBoard());
     }
-
-    /**
-     * Make a matrix that contains all the positions on the board depending on number of columns and rows
-     * @return a matrix that contains all positions on the board
-     */
-    public Position[][] getPositionMatrix() {
-        Position[][] boardPositions = new Position[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
-        for(int x=0; x< boardPositions.length; x++){
-            for(int y=0; y< boardPositions[0].length; y++){
-                boardPositions[x][y] = new Position(x, y);
+    
+    public Position[][] getMatrixOfAllPositionsOnBoard() {
+        Position[][] positionsOnBoard = new Position[NUMBER_OF_COLUMNS][NUMBER_OF_ROWS];
+        for(int x=0; x< positionsOnBoard.length; x++){
+            for(int y=0; y< positionsOnBoard[0].length; y++){
+                positionsOnBoard[x][y] = new Position(x, y);
             }
         }
-        return boardPositions;
+        return positionsOnBoard;
     }
 
     public abstract void setFigure(Position position, Figure figure);
-
     public abstract Figure getFigure(Position position);
-
-    /**
-     * Make an optional conversion to return a matrix that contains all figures on the board
-     * @return a matrix that contains all figures on the board
-     */
-    public abstract Figure[][] getFigureMatrix();
-
+    public abstract Figure[][] getMatrixOfFiguresOnBoard();
     public abstract void instantiateBoard();
     public abstract String toString();
 
