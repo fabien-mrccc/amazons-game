@@ -30,6 +30,10 @@ public class EmptyFigureTest {
     }
 
     @Test
+    void testSetPosition(){
+    }
+
+    @Test
     void testGetPlayerID(){
         assertThat(EMPTY_FIGURE.getPlayerID()).isEqualTo(PlayerID.NONE);
     }

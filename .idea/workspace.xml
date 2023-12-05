@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void testMoveTo()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class">
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/figures/EmptyFigureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,14 +218,7 @@
       <workItem from="1700676649531" duration="8847000" />
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
-      <workItem from="1701682674385" duration="12086000" />
-    </task>
-    <task id="LOCAL-00093" summary="add public List&lt;MovableFigure&gt; getMovableFigures()">
-      <created>1701539668227</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1701539668227</updated>
+      <workItem from="1701682674385" duration="12548000" />
     </task>
     <task id="LOCAL-00094" summary="fix void nextFigure()">
       <created>1701539694781</created>
@@ -563,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701784168212</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class">
+      <created>1701785024004</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785024004</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public void initializeGame(Player player0, Player player1): give a value to currentPlayerId at initialization" />
     <MESSAGE value="fix public String toString(): process the case this = DUMMY_MOVE" />
     <MESSAGE value="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: changing the Exception message" />
     <MESSAGE value="fix public void run(): change the final message" />
@@ -606,6 +605,7 @@
     <MESSAGE value="fix public void setPosition(Position position): print message from exception" />
     <MESSAGE value="add void testGetMessage()" />
     <MESSAGE value="add void testMoveTo()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add void testMoveTo()" />
+    <MESSAGE value="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class" />
   </component>
 </project>
