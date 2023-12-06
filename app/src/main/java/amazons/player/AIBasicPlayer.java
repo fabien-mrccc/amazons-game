@@ -20,7 +20,7 @@ public class AIBasicPlayer extends AbstractAIPlayer{
     }
 
     @Override
-    protected Position destPositionOfArrowToShoot(Position startPosition) {
-        return null;
+    protected Position destPositionOfArrowToShoot(Position arrowStartPosition) {
+        return destPositionOfAmazonToMove(arrowStartPosition);
     }
 }
