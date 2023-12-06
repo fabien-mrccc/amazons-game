@@ -223,13 +223,6 @@
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
     </task>
-    <task id="LOCAL-00127" summary="add public abstract Move play(Move opponentMove)">
-      <created>1701617570736</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1701617570736</updated>
-    </task>
     <task id="LOCAL-00128" summary="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
       <created>1701617834014</created>
       <option name="number" value="00128" />
@@ -566,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701851209998</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)">
+      <created>1701851628364</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1701851628364</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method" />
     <MESSAGE value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method" />
     <MESSAGE value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
     <MESSAGE value="fix public abstract Figure[][] getMatrixOfFiguresOnBoard(): refactoring name of the method" />
@@ -608,6 +607,7 @@
     <MESSAGE value="fix void testHasNext()&#10;fix void testNext()&#10;add void testGetNumberOfColumns()&#10;add void testGetNumberOfRows()" />
     <MESSAGE value="add public Game(int numberOfColumns, int numberOfRows)&#10;fix public Game()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1): replace constants utilisation by attributes&#10;fix public int getNumberOfColumns()&#10;fix public int getNumberOfRows()" />
+    <MESSAGE value="add private void instantiateAIBoard(List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)" />
     <option name="LAST_COMMIT_MESSAGE" value="add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)" />
   </component>
