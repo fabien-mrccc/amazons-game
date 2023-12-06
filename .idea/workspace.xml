@@ -7,11 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()">
       <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/player/AIBasicPlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,20 +222,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00130" summary="fix comments of the interface methods">
-      <created>1701684722111</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1701684722111</updated>
-    </task>
-    <task id="LOCAL-00131" summary="fix comments of the interface methods">
-      <created>1701684887081</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1701684887081</updated>
     </task>
     <task id="LOCAL-00132" summary="fix comments of the interface methods">
       <created>1701685400750</created>
@@ -568,7 +552,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701852231169</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="add protected abstract Amazon getAmazonToMove()">
+      <created>1701853613825</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1701853613825</updated>
+    </task>
+    <task id="LOCAL-00180" summary="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()">
+      <created>1701853777514</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1701853777514</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,8 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
-    <MESSAGE value="fix public abstract Figure[][] getMatrixOfFiguresOnBoard(): refactoring name of the method" />
     <MESSAGE value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring local variable names" />
     <MESSAGE value="fix protected abstract List&lt;Position&gt; getAccessiblePositions(Board board);" />
     <MESSAGE value="fix several access modifiers" />
@@ -611,6 +607,8 @@
     <MESSAGE value="add private void instantiateAIBoard(List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
+    <MESSAGE value="add protected abstract Amazon getAmazonToMove()" />
+    <MESSAGE value="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()" />
   </component>
 </project>
