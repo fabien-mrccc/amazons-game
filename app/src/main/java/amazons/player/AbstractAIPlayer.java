@@ -7,11 +7,12 @@ import java.util.List;
 
 public abstract class AbstractAIPlayer extends AbstractPlayer{
 
-    protected Game game;
+    private Game aiGameRepresentation;
+
     @Override
     public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
         super.initialize(boardWidth, boardHeight, playerID, initialPositions);
-        game = new Game();
+        aiGameRepresentation = new Game(boardWidth, boardHeight);
     }
     @Override
     public abstract Move play(Move opponentMove);
