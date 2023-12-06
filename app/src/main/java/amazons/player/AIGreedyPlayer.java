@@ -7,15 +7,22 @@ import amazons.game.Game;
 import java.util.List;
 
 public class AIGreedyPlayer extends AbstractAIPlayer {
+
     @Override
-    public Move play(Move opponentMove) {
+    protected Position startPositionOfAmazonToMove() {
         return null;
     }
 
     @Override
-    protected Position getPositionOfAmazonToMove() {
+    protected Position destPositionOfAmazonToMove(Position startPosition) {
         return null;
     }
+
+    @Override
+    protected Position destPositionOfArrowToShoot(Position startPosition) {
+        return null;
+    }
+
     /* maximiser la possibilité de gagner: si l'une de mes amazones est ent
     entourer par une ou plusieurs flèche ou amazones adverses la faire bouger à
     une case vide et entourer de cases vide, sinon aller dans la case la moins entourer.
