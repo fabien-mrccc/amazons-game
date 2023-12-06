@@ -7,12 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="refactoring getPositionOfAmazonToMove() method">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,34 +222,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00146" summary="add void testToString()">
-      <created>1701785539536</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1701785539536</updated>
-    </task>
-    <task id="LOCAL-00147" summary="add void testToString()">
-      <created>1701785756838</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1701785756838</updated>
-    </task>
-    <task id="LOCAL-00148" summary="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method">
-      <created>1701791416143</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1701791416143</updated>
-    </task>
-    <task id="LOCAL-00149" summary="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method">
-      <created>1701791450961</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1701791450961</updated>
     </task>
     <task id="LOCAL-00150" summary="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method">
       <created>1701791986180</created>
@@ -569,7 +538,35 @@
       <option name="project" value="LOCAL" />
       <updated>1701863480406</updated>
     </task>
-    <option name="localTasksCounter" value="195" />
+    <task id="LOCAL-00195" summary="add public final Move play(Move opponentMove) &#10;add protected List&lt;Amazon&gt; getMovableAmazons()">
+      <created>1701864395824</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1701864395824</updated>
+    </task>
+    <task id="LOCAL-00196" summary="remove public Move play(Move opponentMove)">
+      <created>1701864455861</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1701864455861</updated>
+    </task>
+    <task id="LOCAL-00197" summary="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()">
+      <created>1701864502329</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1701864502329</updated>
+    </task>
+    <task id="LOCAL-00198" summary="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)">
+      <created>1701864535274</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1701864535274</updated>
+    </task>
+    <option name="localTasksCounter" value="199" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,10 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()" />
-    <MESSAGE value="add void hasNext()" />
-    <MESSAGE value="add void hasNext()&#10;fix void setUp()" />
-    <MESSAGE value="fix void setUp()&#10;add void next()" />
     <MESSAGE value="fix void setUp()&#10;fix void hasNext()" />
     <MESSAGE value="fix void next()" />
     <MESSAGE value="fix void testHasNext()&#10;fix void testNext()&#10;add void testGetNumberOfColumns()&#10;add void testGetNumberOfRows()" />
@@ -612,6 +605,10 @@
     <MESSAGE value="fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)" />
     <MESSAGE value="remove private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)&#10;fix public Move play(Move opponentMove)&#10;fix protected Amazon getAmazonToMove()" />
     <MESSAGE value="refactoring getPositionOfAmazonToMove() method" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring getPositionOfAmazonToMove() method" />
+    <MESSAGE value="add public final Move play(Move opponentMove) &#10;add protected List&lt;Amazon&gt; getMovableAmazons()" />
+    <MESSAGE value="remove public Move play(Move opponentMove)" />
+    <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()" />
+    <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
   </component>
 </project>
