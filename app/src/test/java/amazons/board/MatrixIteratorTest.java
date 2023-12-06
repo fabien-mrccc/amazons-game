@@ -33,22 +33,22 @@ public class MatrixIteratorTest {
     }
 
     @Test
-    void hasNext(){
+    void testHasNext(){
 
         for(int i = 0; i < numberOfColumns * numberOfRows ; i++) {
             assertThat(positionsIterator.hasNext()).isTrue();
             positionsIterator.next();
             assertThat(figuresIterator.hasNext()).isTrue();
             figuresIterator.next();
+            assertThat(nullIterator.hasNext()).isFalse();
         }
 
         assertThat(positionsIterator.hasNext()).isFalse();
         assertThat(figuresIterator.hasNext()).isFalse();
-        assertThat(nullIterator.hasNext()).isFalse();
     }
 
     @Test
-    void next(){
+    void testNext(){
 
         for(int y = 0; y < numberOfColumns; y++) {
             for (int x = 0; x < numberOfRows; x++) {
@@ -57,6 +57,30 @@ public class MatrixIteratorTest {
                 assertThat(amazon.getPosition().equals(new Position(x,y))).isTrue();
                 assertThatThrownBy(() -> nullIterator.next()).isInstanceOf(NoSuchElementException.class);
             }
+        }
+    }
+
+    @Test
+    void testGetNumberOfColumns(){
+
+        for(int i = 0; i < numberOfColumns * numberOfRows ; i++) {
+            assertThat(positionsIterator.getNumberOfColumns() == numberOfColumns).isTrue();
+            positionsIterator.next();
+            assertThat(figuresIterator.getNumberOfColumns() == numberOfColumns).isTrue();
+            figuresIterator.next();
+            assertThat(nullIterator.getNumberOfColumns() == 0).isTrue();
+        }
+    }
+
+    @Test
+    void testGetNumberOfRows(){
+
+        for(int i = 0; i < numberOfColumns * numberOfRows ; i++) {
+            assertThat(positionsIterator.getNumberOfRows() == numberOfRows).isTrue();
+            positionsIterator.next();
+            assertThat(figuresIterator.getNumberOfRows() == numberOfRows).isTrue();
+            figuresIterator.next();
+            assertThat(nullIterator.getNumberOfRows() == 0).isTrue();
         }
     }
 }
