@@ -72,8 +72,9 @@ public final class Amazon extends MovableFigure implements Figure{
     }
     public List<Position> getAccessiblePositions(Board board, List<Position> positions){
         List<Position> reachablePositions = new ArrayList<>();
+
         for(Position position: positions){
-            while(!board.isOutOfBoard(position)){
+            if(!board.isOutOfBoard(position)){
                 if(!board.isEmpty(position)){ break;}
                 reachablePositions.add(position);
             }

@@ -94,15 +94,17 @@ class AmazonTest {
         assertThat(amazon12.getPlayerID()).isEqualTo(PLAYER_ZERO);
         assertThat(amazon20.getPlayerID()).isEqualTo(PLAYER_ONE);
     }
+    //TODO Complete the test with other cases
     @Test
     void testGetAccessiblePositions() {
+        assertThat(amazon11.getAccessiblePositions(board))
+                 .hasSameElementsAs(accessiblePositions)
+                 .hasSize(accessiblePositions.size());
+
         List<Position> positions = new ArrayList<>();
         positions.add(allPositions[1][0]);
         positions.add(allPositions[2][1]);
-         assertThat(amazon11.getAccessiblePositions(board))
-                 .hasSameElementsAs(accessiblePositions)
-                 .hasSize(accessiblePositions.size());
-         assertThat(amazon11.getAccessiblePositions(board, positions)).isEqualTo(positions);
+        assertThat(amazon11.getAccessiblePositions(board, positions)).containsExactlyInAnyOrderElementsOf(positions);
     }
     @Test
     void testToString(){
