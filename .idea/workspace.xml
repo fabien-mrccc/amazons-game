@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void hasNext()">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void hasNext()&#10;fix void setUp()">
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixIteratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixIteratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,13 +221,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00119" summary="add public void setPlayerID(PlayerID playerID)">
-      <created>1701609413786</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1701609413786</updated>
     </task>
     <task id="LOCAL-00120" summary="fix public Move play(Move opponentMove): change playerID at the end of the method">
       <created>1701609596495</created>
@@ -566,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701806059147</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="add void hasNext()&#10;fix void setUp()">
+      <created>1701840289050</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1701840289050</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public IllegalSetPositionException(String message): change extension and using parent constructor" />
     <MESSAGE value="fix public void setPosition(Position position): print message from exception" />
     <MESSAGE value="add void testGetMessage()" />
     <MESSAGE value="add void testMoveTo()" />
@@ -609,6 +607,7 @@
     <MESSAGE value="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()" />
     <MESSAGE value="add void setUp()" />
     <MESSAGE value="add void hasNext()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add void hasNext()" />
+    <MESSAGE value="add void hasNext()&#10;fix void setUp()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add void hasNext()&#10;fix void setUp()" />
   </component>
 </project>
