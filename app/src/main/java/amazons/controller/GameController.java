@@ -63,7 +63,6 @@ public class GameController {
         });
     }
 
-
     private void endTurn(){
         if(!game.hasEnded()) {
             game.incrementTurn();
@@ -75,11 +74,9 @@ public class GameController {
         }
     }
 
-
     public void setPlayer(Player player, PlayerID playerID){
         players[playerID.index] = player;
     }
-
 
     public void setView(BoardView view){
         this.view = view;
@@ -111,7 +108,6 @@ public class GameController {
     public Player getCurrentPlayer(){
         return game.getPlayer();
     }
-
 
     public void setPhase(TurnPhase turnPhase){
         this.phase.setValue(turnPhase);

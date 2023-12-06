@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="remove public int getNumberOfAmazonsPerPlayer()" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +98,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.amazons-template [test]">
+  <component name="RunManager" selected="Gradle.amazons-template [run]">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="amazons.App" />
       <module name="amazons-template.app.main" />
@@ -192,9 +192,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.amazons-template [run]" />
         <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Gradle.EmptyFigureGeneratorTest.testNextFigure" />
-        <item itemvalue="Gradle.amazons-template [run]" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.MatrixBoard" />
       </list>
@@ -219,34 +219,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00151" summary="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method">
-      <created>1701792647580</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1701792647581</updated>
-    </task>
-    <task id="LOCAL-00152" summary="fix public abstract Figure[][] getMatrixOfFiguresOnBoard(): refactoring name of the method">
-      <created>1701792819405</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1701792819405</updated>
-    </task>
-    <task id="LOCAL-00153" summary="fix public abstract Figure[][] getMatrixOfFiguresOnBoard(): refactoring name of the method">
-      <created>1701792976117</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1701792976117</updated>
-    </task>
-    <task id="LOCAL-00154" summary="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring local variable names">
-      <created>1701793097639</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1701793097639</updated>
     </task>
     <task id="LOCAL-00155" summary="fix protected abstract List&lt;Position&gt; getAccessiblePositions(Board board);">
       <created>1701794662923</created>
@@ -563,7 +535,35 @@
       <option name="project" value="LOCAL" />
       <updated>1701865167271</updated>
     </task>
-    <option name="localTasksCounter" value="200" />
+    <task id="LOCAL-00200" summary="fix public final Move play(Move opponentMove)">
+      <created>1701865256371</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865256371</updated>
+    </task>
+    <task id="LOCAL-00201" summary="fix protected Position destPositionOfArrowToShoot(Position startPosition)">
+      <created>1701865317888</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865317888</updated>
+    </task>
+    <task id="LOCAL-00202" summary="fix protected Position destPositionOfArrowToShoot(Position startPosition)">
+      <created>1701865342204</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865342204</updated>
+    </task>
+    <task id="LOCAL-00203" summary="remove public int getNumberOfAmazonsPerPlayer()">
+      <created>1701865689978</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865689978</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,9 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix void next()" />
-    <MESSAGE value="fix void testHasNext()&#10;fix void testNext()&#10;add void testGetNumberOfColumns()&#10;add void testGetNumberOfRows()" />
-    <MESSAGE value="add public Game(int numberOfColumns, int numberOfRows)&#10;fix public Game()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1): replace constants utilisation by attributes&#10;fix public int getNumberOfColumns()&#10;fix public int getNumberOfRows()" />
     <MESSAGE value="add private void instantiateAIBoard(List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)" />
@@ -606,6 +603,9 @@
     <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
     <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
+    <MESSAGE value="fix public final Move play(Move opponentMove)" />
+    <MESSAGE value="fix protected Position destPositionOfArrowToShoot(Position startPosition)" />
+    <MESSAGE value="remove public int getNumberOfAmazonsPerPlayer()" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove public int getNumberOfAmazonsPerPlayer()" />
   </component>
 </project>

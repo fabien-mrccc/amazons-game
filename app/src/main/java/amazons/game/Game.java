@@ -125,9 +125,4 @@ public class Game {
     public int getNumberOfRows(){
         return numberOfRows;
     }
-
-    public int getNumberOfAmazonsPerPlayer(){
-        return numberOfAmazonsPerPlayer;
-    }
-
 }
