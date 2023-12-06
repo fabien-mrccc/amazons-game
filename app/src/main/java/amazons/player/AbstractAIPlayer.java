@@ -5,23 +5,34 @@ import amazons.board.Position;
 import amazons.board.Board;
 import amazons.board.PresetFigureGenerator;
 import amazons.game.Game;
+import amazons.figures.Amazon;
 
 import java.util.List;
 
 public abstract class AbstractAIPlayer extends AbstractPlayer{
 
     protected Board aiBoardRepresentation;
+    protected List<Amazon> aiPLayerAmazons;
 
     @Override
     public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
         super.initialize(boardWidth, boardHeight, playerID, initialPositions);
         instantiateAIBoard(initialPositions);
+        fillAIPlayerAmazonsList(this.initialPositions);
     }
 
     private void instantiateAIBoard(List<Position>[] initialPositions){
         aiBoardRepresentation = new MatrixBoard(boardWidth,boardHeight);
         PresetFigureGenerator generator = new PresetFigureGenerator(Game.createPlayersFiguresWithDefaultPosition(initialPositions));
         aiBoardRepresentation.fill(generator);
+    }
+
+    protected void fillAIPlayerAmazonsList(List<Position> initialPositions){
+        Amazon amazonToAdd;
+        for(Position position : initialPositions){
+            amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
+            aiPLayerAmazons.add(amazonToAdd);
+        }
     }
 
     @Override
