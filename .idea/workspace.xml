@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void initializeGame(Player player0, Player player1): replace constants utilisation by attributes&#10;fix public int getNumberOfColumns()&#10;fix public int getNumberOfRows()">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,20 +224,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00126" summary="add public Move play(Move opponentMove)">
-      <created>1701613782761</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1701613782761</updated>
-    </task>
-    <task id="LOCAL-00127" summary="add public abstract Move play(Move opponentMove)">
-      <created>1701617570736</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1701617570736</updated>
     </task>
     <task id="LOCAL-00128" summary="add public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
       <created>1701617834014</created>
@@ -569,7 +554,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701848480918</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="fix public void initializeGame(Player player0, Player player1)&#10;fix public static List&lt;MovableFigure&gt; createPlayersFiguresWithDefaultPosition(List&lt;Position&gt;[] initialPositions)">
+      <created>1701850596618</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1701850596618</updated>
+    </task>
+    <task id="LOCAL-00176" summary="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
+      <created>1701850786170</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1701850786170</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,8 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add void testToString()" />
-    <MESSAGE value="fix public abstract Figure[][] getMatrixOfFigures(): refactoring name of the method" />
     <MESSAGE value="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method" />
     <MESSAGE value="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method" />
     <MESSAGE value="fix public abstract Figure[][] getMatrixOfFiguresOnBoard(): refactoring name of the method" />
@@ -612,6 +609,8 @@
     <MESSAGE value="fix void testHasNext()&#10;fix void testNext()&#10;add void testGetNumberOfColumns()&#10;add void testGetNumberOfRows()" />
     <MESSAGE value="add public Game(int numberOfColumns, int numberOfRows)&#10;fix public Game()" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1): replace constants utilisation by attributes&#10;fix public int getNumberOfColumns()&#10;fix public int getNumberOfRows()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void initializeGame(Player player0, Player player1): replace constants utilisation by attributes&#10;fix public int getNumberOfColumns()&#10;fix public int getNumberOfRows()" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)&#10;fix public static List&lt;MovableFigure&gt; createPlayersFiguresWithDefaultPosition(List&lt;Position&gt;[] initialPositions)" />
+    <MESSAGE value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
   </component>
 </project>
