@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixIteratorTest.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void hasNext()">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixIteratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MatrixIteratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,13 +222,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00118" summary="fix private void moveCheck(Position startPosition, Position dstPosition) throws IllegalMoveException: change the first Exception message">
-      <created>1701607921168</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1701607921168</updated>
     </task>
     <task id="LOCAL-00119" summary="add public void setPlayerID(PlayerID playerID)">
       <created>1701609413786</created>
@@ -565,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701805493042</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="add void setUp()">
+      <created>1701806059147</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1701806059147</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,8 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add public String getMessage()&#10;fix public IllegalMoveException(String message)" />
-    <MESSAGE value="fix refactoring IllegalMoveException from amazons package to amazons.figure package" />
     <MESSAGE value="fix public IllegalSetPositionException(String message): change extension and using parent constructor" />
     <MESSAGE value="fix public void setPosition(Position position): print message from exception" />
     <MESSAGE value="add void testGetMessage()" />
@@ -608,6 +607,8 @@
     <MESSAGE value="add private void updateCurrentPosition()" />
     <MESSAGE value="fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public" />
     <MESSAGE value="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()" />
+    <MESSAGE value="add void setUp()" />
+    <MESSAGE value="add void hasNext()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add void hasNext()" />
   </component>
 </project>
