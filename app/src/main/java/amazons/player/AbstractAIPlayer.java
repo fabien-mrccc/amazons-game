@@ -27,7 +27,8 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
     @Override
     public final Move play(Move opponentMove) {
         Position startPosition = startPositionOfAmazonToMove();
-        return new Move(startPosition, destPositionOfAmazonToMove(startPosition), destPositionOfArrowToShoot(startPosition));
+        Position destinationPosition = destPositionOfAmazonToMove(startPosition);
+        return new Move(startPosition, destinationPosition, destPositionOfArrowToShoot(destinationPosition));
     }
 
     private void instantiateAIBoard(List<Position>[] initialPositions){

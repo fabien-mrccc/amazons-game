@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
-    </list>
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -222,13 +219,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00150" summary="fix public Position[][] getMatrixOfAllPositionsOnBoard(): refactoring name of the method">
-      <created>1701791986180</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1701791986180</updated>
     </task>
     <task id="LOCAL-00151" summary="fix     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException: refactoring name of the method">
       <created>1701792647580</created>
@@ -566,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701864535274</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="fix protected Position destPositionOfAmazonToMove(Position startPosition)">
+      <created>1701865167271</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865167271</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix void setUp()&#10;fix void hasNext()" />
     <MESSAGE value="fix void next()" />
     <MESSAGE value="fix void testHasNext()&#10;fix void testNext()&#10;add void testGetNumberOfColumns()&#10;add void testGetNumberOfRows()" />
     <MESSAGE value="add public Game(int numberOfColumns, int numberOfRows)&#10;fix public Game()" />
@@ -609,6 +605,7 @@
     <MESSAGE value="remove public Move play(Move opponentMove)" />
     <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
+    <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
   </component>
 </project>
