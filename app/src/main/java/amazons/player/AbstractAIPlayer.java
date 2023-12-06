@@ -13,12 +13,14 @@ public abstract class AbstractAIPlayer extends AbstractPlayer{
 
     protected Board aiBoardRepresentation;
     protected List<Amazon> aiPLayerAmazons;
+    protected List<Amazon> opponentAmazons;
 
     @Override
     public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
         super.initialize(boardWidth, boardHeight, playerID, initialPositions);
         instantiateAIBoard(initialPositions);
         fillAIPlayerAmazonsList(this.initialPositions);
+        fillOpponentAmazonsList(initialPositions[playerID.opponent().index]);
     }
 
     private void instantiateAIBoard(List<Position>[] initialPositions){
@@ -32,6 +34,13 @@ public abstract class AbstractAIPlayer extends AbstractPlayer{
         for(Position position : initialPositions){
             amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
             aiPLayerAmazons.add(amazonToAdd);
+        }
+    }
+    protected void fillOpponentAmazonsList(List<Position> initialPositions){
+        Amazon amazonToAdd;
+        for(Position position : initialPositions){
+            amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
+            opponentAmazons.add(amazonToAdd);
         }
     }
 
