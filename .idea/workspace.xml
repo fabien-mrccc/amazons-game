@@ -7,11 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/player/AIBasicPlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/player/AIBasicPlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,13 +223,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00134" summary="fix void testCanMoveTo(): add limit case and normal case testing">
-      <created>1701688792143</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1701688792144</updated>
     </task>
     <task id="LOCAL-00135" summary="add public String getMessage()&#10;fix public IllegalMoveException(String message)">
       <created>1701691802438</created>
@@ -569,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701854926040</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)">
+      <created>1701857078451</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1701857078451</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix protected abstract List&lt;Position&gt; getAccessiblePositions(Board board);" />
     <MESSAGE value="fix several access modifiers" />
     <MESSAGE value="fix public String toString(): refactoring local variable names" />
     <MESSAGE value="add private void getALine(StringBuilder displayableMatrix)" />
@@ -612,6 +609,7 @@
     <MESSAGE value="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="add void setUp()" />
     <MESSAGE value="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)" />
+    <MESSAGE value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
   </component>
 </project>

@@ -11,7 +11,7 @@ public class AIBasicPlayer extends AbstractAIPlayer{
     @Override
     public Move play(Move opponentMove) {
         Amazon amazonToMove = getAmazonToMove();
-        return null;
+        return new Move(amazonToMove.getPosition(), null, null);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class AIBasicPlayer extends AbstractAIPlayer{
 
     private Amazon getRandomAmazon(List<Amazon> amazons){
         Random random = new Random();
-        int randomAmazonIndex = random.nextInt() % amazons.size();
+        int randomAmazonIndex = Math.abs(random.nextInt()) % amazons.size();
         return amazons.get(randomAmazonIndex);
     }
 
