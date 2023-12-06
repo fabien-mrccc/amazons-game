@@ -13,7 +13,7 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
     }
 
     @Override
-    protected Amazon getAmazonToMove() {
+    protected Position getPositionOfAmazonToMove() {
         return null;
     }
     /* maximiser la possibilité de gagner: si l'une de mes amazones est ent

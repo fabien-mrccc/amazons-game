@@ -13,14 +13,14 @@ public class AIBasicPlayer extends AbstractAIPlayer{
 
     @Override
     public Move play(Move opponentMove) {
-        Position startPosition = getAmazonToMove().getPosition();
+        Position startPosition = getPositionOfAmazonToMove();
         Position destinationPosition = getRandomElement(new Random(), getAdjacentPositions(startPosition));
         return new Move(startPosition, destinationPosition, null);
     }
 
     @Override
-    protected Amazon getAmazonToMove() {
-        return getRandomElement(new Random(), getMovableAmazons());
+    protected Position getPositionOfAmazonToMove() {
+        return getRandomElement(new Random(), getMovableAmazons()).getPosition();
     }
 
     private List<Amazon> getMovableAmazons(){

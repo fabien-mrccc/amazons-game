@@ -17,7 +17,7 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
     protected List<Amazon> opponentAmazons;
 
     @Override
-    public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List<Position>[] initialPositions) {
+    public final void initialize(int boardWidth, int boardHeight, PlayerID playerID, List<Position>[] initialPositions) {
         super.initialize(boardWidth, boardHeight, playerID, initialPositions);
         instantiateAIBoard(initialPositions);
         fillAIPlayerAmazonsList(this.initialPositions);
@@ -58,5 +58,5 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
     }
     @Override
     public abstract Move play(Move opponentMove);
-    protected abstract Amazon getAmazonToMove();
+    protected abstract Position getPositionOfAmazonToMove();
 }

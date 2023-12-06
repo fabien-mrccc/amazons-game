@@ -19,7 +19,7 @@ public abstract class AbstractPlayer implements Player{
     }
 
     @Override
-    public PlayerID getPlayerID() {
+    public final PlayerID getPlayerID() {
         return playerID;
     }
 
@@ -31,7 +31,7 @@ public abstract class AbstractPlayer implements Player{
     @Override
     public abstract Move play(Move opponentMove);
 
-    public void setPlayerID(PlayerID playerID){
+    public final void setPlayerID(PlayerID playerID){
         this.playerID = playerID;
     }
 }
