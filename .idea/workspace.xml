@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,13 +221,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00141" summary="add void testMoveTo()">
-      <created>1701784168212</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1701784168212</updated>
     </task>
     <task id="LOCAL-00142" summary="fix public void setPosition(Position position)&#10;remove IllegalSetPositionException class&#10;remove IllegalSetPositionExceptionTest class">
       <created>1701785024004</created>
@@ -566,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701859416739</updated>
     </task>
-    <option name="localTasksCounter" value="190" />
+    <task id="LOCAL-00190" summary="fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)">
+      <created>1701862311940</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1701862311940</updated>
+    </task>
+    <option name="localTasksCounter" value="191" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add private void getASpaceToPrint(StringBuilder displayableMatrix)&#10;fix private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)&#10;fix public String toString()" />
     <MESSAGE value="add private void updateCurrentPosition()" />
     <MESSAGE value="fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public" />
     <MESSAGE value="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()" />
@@ -609,6 +607,7 @@
     <MESSAGE value="add void testPlay()" />
     <MESSAGE value="add protected Amazon getAmazonToMove()" />
     <MESSAGE value="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove" />
+    <MESSAGE value="fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)" />
   </component>
 </project>

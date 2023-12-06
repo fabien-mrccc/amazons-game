@@ -1,28 +1,26 @@
 package amazons.player;
 
 import amazons.figures.Amazon;
+import amazons.board.Position;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static amazons.util.RandomUtil.*;
+
 public class AIBasicPlayer extends AbstractAIPlayer{
 
     @Override
     public Move play(Move opponentMove) {
-        Amazon amazonToMove = getAmazonToMove();
-        return new Move(amazonToMove.getPosition(), null, null);
+        Position startPosition = getAmazonToMove().getPosition();
+        Position destinationPosition = getRandomElement(new Random(), getAdjacentPositions(startPosition));
+        return new Move(startPosition, destinationPosition, null);
     }
 
     @Override
     protected Amazon getAmazonToMove() {
-        return getRandomAmazon(getMovableAmazons());
-    }
-
-    private Amazon getRandomAmazon(List<Amazon> amazons){
-        Random random = new Random();
-        int randomAmazonIndex = Math.abs(random.nextInt()) % amazons.size();
-        return amazons.get(randomAmazonIndex);
+        return getRandomElement(new Random(), getMovableAmazons());
     }
 
     private List<Amazon> getMovableAmazons(){
