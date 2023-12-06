@@ -75,7 +75,15 @@ class MapBoardTest {
         MapBoard board  = new MapBoard(2,3);
         assertThat(board.getNumberOfColumns()).isEqualTo(2);
     }
-
+    @Test
+    void testMatrixOfFiguresOnBoard(){
+        Figure[][] matrixOfFigures = testBoard.getMatrixOfFiguresOnBoard();
+        for(int x = 0; x< NUMBER_OF_COLUMNS;x++){
+            for(int y = 0; y< NUMBER_OF_ROWS;y++){
+                assertThat(testBoard.getFigure(new Position(x,y))).isEqualTo(matrixOfFigures[x][y]);
+            }
+        }
+    }
     @Test
     void testInitializeEmpty() {
         testBoard.fill(new EmptyFigureGenerator());
