@@ -16,13 +16,13 @@ public class AIBasicPlayer extends AbstractAIPlayer{
 
     @Override
     protected Amazon getAmazonToMove() {
-        return null;
+        return getRandomAmazon(getMovableAmazons());
     }
 
-    private Amazon getRandomAmazonOfAIPlayer(List<Amazon> movableAmazons){
+    private Amazon getRandomAmazon(List<Amazon> amazons){
         Random random = new Random();
-        int randomAmazonIndex = random.nextInt() % aiPLayerAmazons.size();
-        return aiPLayerAmazons.get(randomAmazonIndex);
+        int randomAmazonIndex = random.nextInt() % amazons.size();
+        return amazons.get(randomAmazonIndex);
     }
 
     private List<Amazon> getMovableAmazons(){
