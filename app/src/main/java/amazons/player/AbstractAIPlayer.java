@@ -10,14 +10,14 @@ import amazons.figures.Amazon;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractAIPlayer extends AbstractPlayer{
+public abstract class AbstractAIPlayer extends AbstractPlayer {
 
     protected Board aiBoardRepresentation;
-    protected List<Amazon> aiPLayerAmazons;
+    protected List<Amazon> aiPlayerAmazons;
     protected List<Amazon> opponentAmazons;
 
     @Override
-    public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
+    public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List<Position>[] initialPositions) {
         super.initialize(boardWidth, boardHeight, playerID, initialPositions);
         instantiateAIBoard(initialPositions);
         fillAIPlayerAmazonsList(this.initialPositions);
@@ -30,11 +30,12 @@ public abstract class AbstractAIPlayer extends AbstractPlayer{
         aiBoardRepresentation.fill(generator);
     }
 
-    protected void fillAIPlayerAmazonsList(List<Position> initialPositions){
+    protected void fillAIPlayerAmazonsList(List<Position> initialPositions) {
+        aiPlayerAmazons = new ArrayList<>();
         Amazon amazonToAdd;
         for(Position position : initialPositions){
             amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
-            aiPLayerAmazons.add(amazonToAdd);
+            aiPlayerAmazons.add(amazonToAdd);
         }
     }
     protected void fillOpponentAmazonsList(List<Position> initialPositions){
@@ -56,4 +57,5 @@ public abstract class AbstractAIPlayer extends AbstractPlayer{
     }
     @Override
     public abstract Move play(Move opponentMove);
+    protected abstract Amazon getAmazonToMove();
 }
