@@ -39,6 +39,7 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
         }
     }
     protected void fillOpponentAmazonsList(List<Position> initialPositions){
+        opponentAmazons = new ArrayList<>();
         Amazon amazonToAdd;
         for(Position position : initialPositions){
             amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
