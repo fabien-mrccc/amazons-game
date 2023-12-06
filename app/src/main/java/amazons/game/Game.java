@@ -49,11 +49,11 @@ public class Game {
 
         List<Position>[] initialPositions = new List[]{DEFAULT_PLAYER0_POSITIONS, DEFAULT_PLAYER1_POSITIONS};
 
-        player0.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ZERO, initialPositions);
+        player0.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ZERO, initialPositions);
         players[0] = player0;
         currentPlayerID = players[0].getPlayerID();
 
-        player1.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ONE, initialPositions);
+        player1.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ONE, initialPositions);
         players[1] = player1;
     }
 
@@ -119,11 +119,11 @@ public class Game {
     public int getTurn() {return turn; }
 
     public int getNumberOfColumns(){
-        return DEFAULT_NUMBER_OF_COLUMNS;
+        return numberOfColumns;
     }
 
     public int getNumberOfRows(){
-        return DEFAULT_NUMBER_OF_ROWS;
+        return numberOfRows;
     }
 
     public int getNumberOfAmazonsPerPlayer(){
