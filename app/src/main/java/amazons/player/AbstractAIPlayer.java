@@ -7,6 +7,7 @@ import amazons.board.PresetFigureGenerator;
 import amazons.game.Game;
 import amazons.figures.Amazon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractAIPlayer extends AbstractPlayer {
@@ -28,6 +29,7 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
     }
 
     protected void fillAIPlayerAmazonsList(List<Position> initialPositions) {
+        aiPLayerAmazons = new ArrayList<>();
         Amazon amazonToAdd;
         for (Position position : initialPositions) {
             amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
