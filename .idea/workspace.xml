@@ -7,8 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="refactoring aiPlayerAmazons">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/player/AIBasicPlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/player/AIBasicPlayerTest.java" afterDir="false" />
     </list>
@@ -223,20 +222,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00135" summary="add public String getMessage()&#10;fix public IllegalMoveException(String message)">
-      <created>1701691802438</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1701691802438</updated>
-    </task>
-    <task id="LOCAL-00136" summary="fix refactoring IllegalMoveException from amazons package to amazons.figure package">
-      <created>1701691909986</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1701691909986</updated>
     </task>
     <task id="LOCAL-00137" summary="add void testGetMessage()">
       <created>1701692300673</created>
@@ -567,7 +552,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701857078451</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)">
+      <created>1701857455936</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1701857455936</updated>
+    </task>
+    <task id="LOCAL-00185" summary="refactoring aiPlayerAmazons">
+      <created>1701857696045</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1701857696045</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,8 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix several access modifiers" />
-    <MESSAGE value="fix public String toString(): refactoring local variable names" />
     <MESSAGE value="add private void getALine(StringBuilder displayableMatrix)" />
     <MESSAGE value="add private void getALineToPrint(StringBuilder displayableMatrix)" />
     <MESSAGE value="add private void getAPipeToPrint(StringBuilder displayableMatrix)&#10;add private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)" />
@@ -610,6 +607,8 @@
     <MESSAGE value="add void setUp()" />
     <MESSAGE value="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)" />
     <MESSAGE value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
+    <MESSAGE value="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)" />
+    <MESSAGE value="refactoring aiPlayerAmazons" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring aiPlayerAmazons" />
   </component>
 </project>
