@@ -21,6 +21,9 @@ public class Game {
     private static final List<Position> DEFAULT_PLAYER1_POSITIONS =
             List.of(new Position(3,0), new Position(6,0), new Position(0,3), new Position(9,3));
 
+    private final int numberOfColumns;
+    private final int numberOfRows;
+
     private final Player[] players = new Player[NUMBER_OF_PLAYERS];
     private PlayerID winner = null;
     private int turn = 0;
@@ -30,7 +33,13 @@ public class Game {
     private final int numberOfAmazonsPerPlayer;
 
     public Game() {
-        this.board = new MapBoard(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS);
+        this(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS);
+    }
+
+    public Game(int numberOfColumns, int numberOfRows){
+        this.numberOfColumns = numberOfColumns;
+        this.numberOfRows = numberOfRows;
+        this.board = new MapBoard(numberOfColumns,numberOfRows);
         this.numberOfAmazonsPerPlayer = DEFAULT_NUMBER_OF_AMAZONS_PER_PLAYER;
     }
 
@@ -40,11 +49,11 @@ public class Game {
 
         List<Position>[] initialPositions = new List[]{DEFAULT_PLAYER0_POSITIONS, DEFAULT_PLAYER1_POSITIONS};
 
-        player0.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ZERO, initialPositions);
+        player0.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ZERO, initialPositions);
         players[0] = player0;
         currentPlayerID = players[0].getPlayerID();
 
-        player1.initialize(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS,PlayerID.PLAYER_ONE, initialPositions);
+        player1.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ONE, initialPositions);
         players[1] = player1;
     }
 
@@ -110,11 +119,11 @@ public class Game {
     public int getTurn() {return turn; }
 
     public int getNumberOfColumns(){
-        return DEFAULT_NUMBER_OF_COLUMNS;
+        return numberOfColumns;
     }
 
     public int getNumberOfRows(){
-        return DEFAULT_NUMBER_OF_ROWS;
+        return numberOfRows;
     }
 
     public int getNumberOfAmazonsPerPlayer(){
