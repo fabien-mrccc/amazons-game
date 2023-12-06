@@ -2,7 +2,6 @@ package amazons.board;
 
 import amazons.figures.Amazon;
 import amazons.figures.Figure;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,8 +21,8 @@ public class MatrixIteratorTest {
         Position[][] positions = new Position[numberOfColumns][numberOfRows];
         Figure[][] figures = new Figure[numberOfColumns][numberOfRows];
 
-        for(int x = 0; x < numberOfColumns; x++) {
-            for (int y = 0; y < numberOfRows; y++) {
+        for(int y = 0; y < numberOfRows; y++) {
+            for (int x = 0; x < numberOfColumns; x++) {
                 positions[x][y] = new Position(x,y);
                 figures[x][y] = new Amazon(positions[x][y],0);
             }
@@ -51,15 +50,13 @@ public class MatrixIteratorTest {
     @Test
     void next(){
 
-/*
-        for(int x = 0; x < numberOfColumns; x++) {
-            for (int y = 0; y < numberOfRows; y++) {
+        for(int y = 0; y < numberOfColumns; y++) {
+            for (int x = 0; x < numberOfRows; x++) {
                 assertThat(positionsIterator.next().equals(new Position(x,y))).isTrue();
-                assertThat(figuresIterator.next().equals(new Amazon(new Position(x,y),0))).isTrue();
+                Amazon amazon = (Amazon) figuresIterator.next();
+                assertThat(amazon.getPosition().equals(new Position(x,y))).isTrue();
                 assertThatThrownBy(() -> nullIterator.next()).isInstanceOf(NoSuchElementException.class);
             }
         }
-
- */
     }
 }
