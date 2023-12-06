@@ -13,7 +13,7 @@ import java.util.List;
 public abstract class AbstractAIPlayer extends AbstractPlayer {
 
     protected Board aiBoardRepresentation;
-    protected List<Amazon> aiPLayerAmazons;
+    protected List<Amazon> aiPlayerAmazons;
 
     @Override
     public void initialize(int boardWidth, int boardHeight, PlayerID playerID, List<Position>[] initialPositions) {
@@ -29,11 +29,11 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
     }
 
     protected void fillAIPlayerAmazonsList(List<Position> initialPositions) {
-        aiPLayerAmazons = new ArrayList<>();
+        aiPlayerAmazons = new ArrayList<>();
         Amazon amazonToAdd;
         for (Position position : initialPositions) {
             amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
-            aiPLayerAmazons.add(amazonToAdd);
+            aiPlayerAmazons.add(amazonToAdd);
         }
     }
 

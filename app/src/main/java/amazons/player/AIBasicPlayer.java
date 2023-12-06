@@ -27,7 +27,7 @@ public class AIBasicPlayer extends AbstractAIPlayer{
 
     private List<Amazon> getMovableAmazons(){
         List<Amazon> movableAmazons = new ArrayList<>();
-        for(Amazon amazon : aiPLayerAmazons){
+        for(Amazon amazon : aiPlayerAmazons){
             if(amazon.getAccessiblePositions(aiBoardRepresentation).size() > 0){
                 movableAmazons.add(amazon);
             }
