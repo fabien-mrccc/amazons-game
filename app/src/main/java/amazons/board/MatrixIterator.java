@@ -2,7 +2,7 @@ package amazons.board;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class MatrixIterator<T> implements Iterator<T> {
+public final class MatrixIterator<T> implements Iterator<T> {
     private final int NUMBER_OF_COLUMNS;
     private final int NUMBER_OF_ROWS;
     private final Position lastPosition;
@@ -18,7 +18,7 @@ public class MatrixIterator<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
-        return getCurrentPosition().rowIndex() <= getLastPosition().rowIndex();
+        return currentPosition.rowIndex() <= lastPosition.rowIndex();
     }
 
     @Override
@@ -26,30 +26,24 @@ public class MatrixIterator<T> implements Iterator<T> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
+        final Position returnPosition = currentPosition;
+        updateCurrentPosition();
+        return getObjectInMatrix(returnPosition);
+    }
 
-        Position returnPosition = currentPosition;
-
-        if (getCurrentPosition().columnIndex() == getLastPosition().columnIndex()) {
-            currentPosition = new Position(0, getCurrentPosition().rowIndex() + 1);
+    private void updateCurrentPosition(){
+        if (currentPosition.columnIndex() == lastPosition.columnIndex()) {
+            currentPosition = new Position(0, currentPosition.rowIndex() + 1);
         }
         else{
-            currentPosition = new Position(getCurrentPosition().columnIndex() + 1, getCurrentPosition().rowIndex());
+            currentPosition = new Position(currentPosition.columnIndex() + 1, currentPosition.rowIndex());
         }
-        return getTInMatrix(returnPosition);
     }
 
-    public T getTInMatrix(Position position) {
+    private T getObjectInMatrix(Position position) {
         return matrix[position.columnIndex()][position.rowIndex()];
-    }
-
-    public Position getCurrentPosition(){
-        return currentPosition;
     }
 
     public int getNumberOfColumns(){return NUMBER_OF_COLUMNS;}
     public int getNumberOfRows(){return NUMBER_OF_ROWS;}
-
-    public Position getLastPosition(){
-        return lastPosition;
-    }
 }
