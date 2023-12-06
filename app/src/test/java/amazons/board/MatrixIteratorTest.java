@@ -2,24 +2,28 @@ package amazons.board;
 
 import amazons.figures.Amazon;
 import amazons.figures.Figure;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.NoSuchElementException;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class MatrixIteratorTest {
     private MatrixIterator<Position> positionsIterator;
     private MatrixIterator<Figure> figuresIterator;
     private MatrixIterator<Position> nullIterator;
+    private final int numberOfColumns = 3;
+    private final int numberOfRows = 3;
 
     @BeforeEach
     void setUp(){
-        final int numberOfColumns = 3;
-        final int numberOfRows = 3;
-        final Position[][] positions = new Position[numberOfColumns][numberOfRows];
-        final Figure[][] figures = new Figure[numberOfColumns][numberOfRows];
+        Position[][] positions = new Position[numberOfColumns][numberOfRows];
+        Figure[][] figures = new Figure[numberOfColumns][numberOfRows];
 
-        for(int x = 0; x < 3; x++) {
-            for (int y = 0; y < 3; y++) {
+        for(int x = 0; x < numberOfColumns; x++) {
+            for (int y = 0; y < numberOfRows; y++) {
                 positions[x][y] = new Position(x,y);
                 figures[x][y] = new Amazon(positions[x][y],0);
             }
@@ -31,50 +35,31 @@ public class MatrixIteratorTest {
 
     @Test
     void hasNext(){
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
-        assertThat(positionsIterator.hasNext()).isTrue();
-        positionsIterator.next();
+
+        for(int i = 0; i < numberOfColumns * numberOfRows ; i++) {
+            assertThat(positionsIterator.hasNext()).isTrue();
+            positionsIterator.next();
+            assertThat(figuresIterator.hasNext()).isTrue();
+            figuresIterator.next();
+        }
+
         assertThat(positionsIterator.hasNext()).isFalse();
-
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
-        assertThat(figuresIterator.hasNext()).isTrue();
-        figuresIterator.next();
         assertThat(figuresIterator.hasNext()).isFalse();
-
         assertThat(nullIterator.hasNext()).isFalse();
     }
 
     @Test
     void next(){
+
+/*
+        for(int x = 0; x < numberOfColumns; x++) {
+            for (int y = 0; y < numberOfRows; y++) {
+                assertThat(positionsIterator.next().equals(new Position(x,y))).isTrue();
+                assertThat(figuresIterator.next().equals(new Amazon(new Position(x,y),0))).isTrue();
+                assertThatThrownBy(() -> nullIterator.next()).isInstanceOf(NoSuchElementException.class);
+            }
+        }
+
+ */
     }
 }
