@@ -5,6 +5,7 @@ import amazons.board.Position;
 import java.util.List;
 
 public abstract class AbstractPlayer implements Player{
+
     protected PlayerID playerID;
     protected int boardWidth;
     protected int boardHeight;
@@ -19,9 +20,7 @@ public abstract class AbstractPlayer implements Player{
     }
 
     @Override
-    public final PlayerID getPlayerID() {
-        return playerID;
-    }
+    public abstract Move play(Move opponentMove);
 
     @Override
     public boolean isGUIControlled() {
@@ -29,7 +28,9 @@ public abstract class AbstractPlayer implements Player{
     }
 
     @Override
-    public abstract Move play(Move opponentMove);
+    public final PlayerID getPlayerID() {
+        return playerID;
+    }
 
     public final void setPlayerID(PlayerID playerID){
         this.playerID = playerID;

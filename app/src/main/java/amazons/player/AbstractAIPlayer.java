@@ -24,13 +24,19 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
         fillOpponentAmazonsList(initialPositions[playerID.opponent().index]);
     }
 
+    @Override
+    public final Move play(Move opponentMove) {
+        Position startPosition = startPositionOfAmazonToMove();
+        return new Move(startPosition, destPositionOfAmazonToMove(startPosition), destPositionOfArrowToShoot(startPosition));
+    }
+
     private void instantiateAIBoard(List<Position>[] initialPositions){
         aiBoardRepresentation = new MatrixBoard(boardWidth,boardHeight);
         PresetFigureGenerator generator = new PresetFigureGenerator(Game.createPlayersFiguresWithDefaultPosition(initialPositions));
         aiBoardRepresentation.fill(generator);
     }
 
-    protected void fillAIPlayerAmazonsList(List<Position> initialPositions) {
+    private void fillAIPlayerAmazonsList(List<Position> initialPositions) {
         aiPlayerAmazons = new ArrayList<>();
         Amazon amazonToAdd;
         for(Position position : initialPositions){
@@ -38,7 +44,8 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
             aiPlayerAmazons.add(amazonToAdd);
         }
     }
-    protected void fillOpponentAmazonsList(List<Position> initialPositions){
+
+    private void fillOpponentAmazonsList(List<Position> initialPositions){
         opponentAmazons = new ArrayList<>();
         Amazon amazonToAdd;
         for(Position position : initialPositions){
@@ -56,7 +63,18 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
         adjacentPositions.remove(position);
         return adjacentPositions;
     }
-    @Override
-    public abstract Move play(Move opponentMove);
-    protected abstract Position getPositionOfAmazonToMove();
+
+    protected List<Amazon> getMovableAmazons(){
+        List<Amazon> movableAmazons = new ArrayList<>();
+        for(Amazon amazon : aiPlayerAmazons){
+            if(amazon.getAccessiblePositions(aiBoardRepresentation).size() > 0){
+                movableAmazons.add(amazon);
+            }
+        }
+        return movableAmazons;
+    }
+
+    protected abstract Position startPositionOfAmazonToMove();
+    protected abstract Position destPositionOfAmazonToMove(Position startPosition);
+    protected abstract Position destPositionOfArrowToShoot(Position startPosition);
 }
