@@ -11,6 +11,11 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
     public Move play(Move opponentMove) {
         return null;
     }
+
+    @Override
+    protected Amazon getAmazonToMove() {
+        return null;
+    }
     /* maximiser la possibilité de gagner: si l'une de mes amazones est ent
     entourer par une ou plusieurs flèche ou amazones adverses la faire bouger à
     une case vide et entourer de cases vide, sinon aller dans la case la moins entourer.
