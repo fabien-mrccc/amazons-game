@@ -44,10 +44,10 @@ public class Game {
     }
 
     public void initializeGame(Player player0, Player player1){
-        PresetFigureGenerator figureGenerator = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition());
-        board.fill(figureGenerator);
-
         List<Position>[] initialPositions = new List[]{DEFAULT_PLAYER0_POSITIONS, DEFAULT_PLAYER1_POSITIONS};
+
+        PresetFigureGenerator figureGenerator = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition(initialPositions));
+        board.fill(figureGenerator);
 
         player0.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ZERO, initialPositions);
         players[0] = player0;
@@ -57,12 +57,12 @@ public class Game {
         players[1] = player1;
     }
 
-    private List<MovableFigure> createPlayersFiguresWithDefaultPosition(){
+    public static List<MovableFigure> createPlayersFiguresWithDefaultPosition(List<Position>[] initialPositions){
         List<MovableFigure> allPlayersFigures = new ArrayList<>();
-        for(Position position: DEFAULT_PLAYER0_POSITIONS){
+        for(Position position: initialPositions[0]){
             allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ZERO.index));
         }
-        for(Position position: DEFAULT_PLAYER1_POSITIONS){
+        for(Position position: initialPositions[1]){
             allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ONE.index));
         }
         return allPlayersFigures;
