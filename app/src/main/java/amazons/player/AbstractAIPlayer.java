@@ -7,6 +7,7 @@ import amazons.board.PresetFigureGenerator;
 import amazons.game.Game;
 import amazons.figures.Amazon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractAIPlayer extends AbstractPlayer{
@@ -43,7 +44,16 @@ public abstract class AbstractAIPlayer extends AbstractPlayer{
             opponentAmazons.add(amazonToAdd);
         }
     }
-
+    protected List<Position> getAdjacentPositions(Position position){
+        List<Position> adjacentPositions = new ArrayList<>();
+        for(int i= position.columnIndex()-1; i< position.columnIndex()+2;i++){
+            for(int j= position.rowIndex()-1; j< position.rowIndex()+2;j++){
+                adjacentPositions.add(new Position(i,j));
+            }
+        }
+        adjacentPositions.remove(position);
+        return adjacentPositions;
+    }
     @Override
     public abstract Move play(Move opponentMove);
 }
