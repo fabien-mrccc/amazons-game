@@ -96,9 +96,13 @@ class AmazonTest {
     }
     @Test
     void testGetAccessiblePositions() {
+        List<Position> positions = new ArrayList<>();
+        positions.add(allPositions[1][0]);
+        positions.add(allPositions[2][1]);
          assertThat(amazon11.getAccessiblePositions(board))
                  .hasSameElementsAs(accessiblePositions)
                  .hasSize(accessiblePositions.size());
+         assertThat(amazon11.getAccessiblePositions(board, positions)).isEqualTo(positions);
     }
     @Test
     void testToString(){
