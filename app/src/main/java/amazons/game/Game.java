@@ -71,7 +71,7 @@ public class Game {
     public void updateGame(Move move){
         updateGameAmazonMove(move.getAmazonStartPosition(),move.getAmazonDstPosition());
         updateGameArrowShot(move.getAmazonDstPosition(), move.getArrowDstPosition());
-        currentPlayerID = getPlayerID().opponent();
+        currentPlayerID = getPlayerID();
     }
 
     public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition){
@@ -103,17 +103,22 @@ public class Game {
     }
 
     public PlayerID getPlayerID(){
-        return currentPlayerID;
+        return getPlayer().getPlayerID();
     }
 
-    public Player getPlayer() {return players[currentPlayerID.index];}
+    public Player getPlayer() {return players[getTurn()];}
 
     public boolean hasEnded() {
         return isThisIsTheEnd;
     }
 
     public void incrementTurn(){
-        turn++;
+        if(getTurn() == 1){
+            turn--;
+        }
+        else{
+            turn++;
+        }
     }
 
     public int getTurn() {return turn; }
