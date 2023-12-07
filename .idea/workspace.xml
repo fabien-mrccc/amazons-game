@@ -7,9 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="refactoring accessiblePositions local variable">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" afterDir="false" />
     </list>
@@ -224,13 +227,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00165" summary="fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public">
-      <created>1701805183356</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1701805183356</updated>
     </task>
     <task id="LOCAL-00166" summary="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()">
       <created>1701805493042</created>
@@ -568,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701946235445</updated>
     </task>
-    <option name="localTasksCounter" value="214" />
+    <task id="LOCAL-00214" summary="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)">
+      <created>1701946592287</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1701946592287</updated>
+    </task>
+    <option name="localTasksCounter" value="215" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)" />
     <MESSAGE value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
     <MESSAGE value="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)" />
     <MESSAGE value="refactoring aiPlayerAmazons" />
@@ -611,6 +613,7 @@
     <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
     <MESSAGE value="refactoring accessiblePositions local variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring accessiblePositions local variable" />
+    <MESSAGE value="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)" />
   </component>
 </project>

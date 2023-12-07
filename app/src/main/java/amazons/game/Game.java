@@ -26,8 +26,8 @@ public class Game {
 
     private final Player[] players = new Player[NUMBER_OF_PLAYERS];
     private PlayerID winner = null;
-    private int turn = 0;
-    private boolean isThisIsTheEnd = false;
+    private int turn;
+    private boolean isThisIsTheEnd;
     private final Board board;
     private PlayerID currentPlayerID;
     private final int numberOfAmazonsPerPlayer;
@@ -44,6 +44,8 @@ public class Game {
     }
 
     public void initializeGame(Player player0, Player player1){
+        isThisIsTheEnd = false;
+        turn = 0;
         List<Position>[] initialPositions = new List[]{DEFAULT_PLAYER0_POSITIONS, DEFAULT_PLAYER1_POSITIONS};
 
         PresetFigureGenerator figureGenerator = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition(initialPositions));
@@ -88,7 +90,7 @@ public class Game {
         }
     }
 
-    private void hasLost(PlayerID playerID) {
+    public void hasLost(PlayerID playerID) {
         winner = playerID.opponent();
         isThisIsTheEnd = true;
     }
