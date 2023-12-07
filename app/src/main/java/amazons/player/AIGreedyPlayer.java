@@ -2,8 +2,9 @@ package amazons.player;
 
 import amazons.board.Position;
 import amazons.figures.Amazon;
-import amazons.game.Game;
+import amazons.util.RandomUtil.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AIGreedyPlayer extends AbstractAIPlayer {
@@ -35,9 +36,9 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
      * @param amazon
      * @return numberOfAvailablePositions
      */
-    public int getScore(Amazon amazon, Game game){
+    public int getScore(Amazon amazon){
         int score = 0;
-        for(Position position:amazon.getAccessiblePositions(game.getBoard())){
+        for(Position position:amazon.getAccessiblePositions(aiBoardRepresentation)){
             score = score + 1;
         }
         return score;
@@ -46,19 +47,36 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
      * return the best position to move at depending on the bestShootPosition and the number of arrows arround the position
      * @return bestMovePosition
      */
-    public Position bestMovePosition(){
-
-        return null;
+    public Amazon bestAmazonToMove(){
+        int smallerPlayerScore = 0;
+        Amazon amazonToMove = null;
+        for(Amazon playerAmazon: aiPlayerAmazons){
+            if(smallerPlayerScore> getScore(playerAmazon)){
+                if(playerAmazon.getAccessiblePositions(aiBoardRepresentation).size() != 0) {
+                    smallerPlayerScore = getScore(playerAmazon);
+                    amazonToMove = playerAmazon;
+                }
+            }
+        }
+        return amazonToMove;
     }
 
     /**
      * return the best shoot position to reduce the opponent playing choices
      * @return bestShootPosition
      */
-    public Position bestShootPosition(){
-        return null;
+    public List<Position> bestShootPositions(Amazon playerAmazon){
+        int biggerOpponentScore = 0;
+        List<Position> positionsToChooseFrom = new ArrayList<>();
+        for(Amazon opponentAmazon: opponentAmazons){
+            if (biggerOpponentScore < getScore(opponentAmazon)) {
+                if (playerAmazon.getAccessiblePositions(aiBoardRepresentation,getAdjacentPositions(opponentAmazon.getPosition())).size() != 0) {
+                    biggerOpponentScore = getScore(opponentAmazon);
+                    positionsToChooseFrom = playerAmazon.getAccessiblePositions(aiBoardRepresentation,getAdjacentPositions(opponentAmazon.getPosition()));
+                }
+            }
+        }
+        return positionsToChooseFrom;
     }
-    public List<Amazon> getPlayerAmazons(PlayerID playerID){
-        return null;
-    }
+
 }
