@@ -13,7 +13,8 @@ public class AIRandomPlayer extends AbstractAIPlayer {
 
     @Override
     protected Position destPositionOfAmazonToMove(Position startPosition) {
-        return null;
+        Amazon amazonToMove = (Amazon) boardRepresentation.getFigure(startPosition);
+        return getRandomElement(new Random(), amazonToMove.getAccessiblePositions(boardRepresentation));
     }
 
     @Override
