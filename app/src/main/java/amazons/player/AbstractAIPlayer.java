@@ -38,6 +38,7 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
         List<Position> adjacentPositions = new ArrayList<>();
         for(int i= position.columnIndex()-1; i< position.columnIndex()+2;i++){
             for(int j= position.rowIndex()-1; j< position.rowIndex()+2;j++){
+                if(new Position(i,j).isOutOfBounds(boardWidth,boardHeight)){continue;}
                 adjacentPositions.add(new Position(i,j));
             }
         }
