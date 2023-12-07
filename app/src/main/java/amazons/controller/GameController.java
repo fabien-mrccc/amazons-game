@@ -24,7 +24,7 @@ public class GameController {
     private Move lastMove = Move.DUMMY_MOVE;
 
     private final SimpleObjectProperty<TurnPhase> phase = new SimpleObjectProperty<>(TurnPhase.AMAZON_PHASE);
-    private static final int PAUSE_MILLISECONDS = 100;
+    private static final int PAUSE_MILLISECONDS = 1500;
     private final PauseTransition pause = new PauseTransition(Duration.millis(PAUSE_MILLISECONDS));
 
     private final Player[] players = new Player[Game.NUMBER_OF_PLAYERS];

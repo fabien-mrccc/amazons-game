@@ -7,12 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void playComputerTurn()">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void updatePlayersBoardRepresentation()&#10;fix public void playComputerTurn()&#10;remove private boolean checkLastMoveNullValue(Move lastMove)">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,34 +227,6 @@
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
       <workItem from="1701971041271" duration="2129000" />
-    </task>
-    <task id="LOCAL-00181" summary="add void setUp()">
-      <created>1701854641796</created>
-      <option name="number" value="00181" />
-      <option name="presentableId" value="LOCAL-00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1701854641796</updated>
-    </task>
-    <task id="LOCAL-00182" summary="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)">
-      <created>1701854926040</created>
-      <option name="number" value="00182" />
-      <option name="presentableId" value="LOCAL-00182" />
-      <option name="project" value="LOCAL" />
-      <updated>1701854926040</updated>
-    </task>
-    <task id="LOCAL-00183" summary="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)">
-      <created>1701857078451</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1701857078451</updated>
-    </task>
-    <task id="LOCAL-00184" summary="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)">
-      <created>1701857455936</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1701857455936</updated>
     </task>
     <task id="LOCAL-00185" summary="refactoring aiPlayerAmazons">
       <created>1701857696045</created>
@@ -575,7 +543,35 @@
       <option name="project" value="LOCAL" />
       <updated>1701969595838</updated>
     </task>
-    <option name="localTasksCounter" value="230" />
+    <task id="LOCAL-00230" summary="fix public final Move play(Move opponentMove): using hasMovableAmazons flag to determine if the player lose">
+      <created>1701989248731</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1701989248731</updated>
+    </task>
+    <task id="LOCAL-00231" summary="fix protected Position destPositionOfAmazonToMove(Position startPosition)">
+      <created>1701989280223</created>
+      <option name="number" value="00231" />
+      <option name="presentableId" value="LOCAL-00231" />
+      <option name="project" value="LOCAL" />
+      <updated>1701989280224</updated>
+    </task>
+    <task id="LOCAL-00232" summary="fix protected Position destPositionOfAmazonToMove(Position startPosition)">
+      <created>1701989292970</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1701989292970</updated>
+    </task>
+    <task id="LOCAL-00233" summary="add private void updatePlayersBoardRepresentation()&#10;fix public void playComputerTurn()&#10;remove private boolean checkLastMoveNullValue(Move lastMove)">
+      <created>1701989433581</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1701989433581</updated>
+    </task>
+    <option name="localTasksCounter" value="234" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,10 +589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
-    <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
-    <MESSAGE value="fix public final Move play(Move opponentMove)" />
-    <MESSAGE value="fix protected Position destPositionOfArrowToShoot(Position startPosition)" />
     <MESSAGE value="remove public int getNumberOfAmazonsPerPlayer()" />
     <MESSAGE value="fix public void updateGame(Move move): set new current player ID at the end of the method" />
     <MESSAGE value="fix public Move play(Move opponentMove): remove player ID setter" />
@@ -619,7 +611,10 @@
     <MESSAGE value="add void testIsOutOfBoard()" />
     <MESSAGE value="fix public Amazon bestAmazonToMove()" />
     <MESSAGE value="fix public Position bestShootPosition(Amazon playerAmazon)&#10;fix public Position bestAmazonDestination(Amazon playerAmazon)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public Position bestShootPosition(Amazon playerAmazon)&#10;fix public Position bestAmazonDestination(Amazon playerAmazon)" />
+    <MESSAGE value="fix public final Move play(Move opponentMove): using hasMovableAmazons flag to determine if the player lose" />
+    <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
+    <MESSAGE value="add private void updatePlayersBoardRepresentation()&#10;fix public void playComputerTurn()&#10;remove private boolean checkLastMoveNullValue(Move lastMove)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add private void updatePlayersBoardRepresentation()&#10;fix public void playComputerTurn()&#10;remove private boolean checkLastMoveNullValue(Move lastMove)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
