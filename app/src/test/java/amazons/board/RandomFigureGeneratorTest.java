@@ -20,9 +20,6 @@ public class RandomFigureGeneratorTest {
     private final List<MovableFigure> movableFigures = new ArrayList<>();
     private final MatrixBoard matrixBoard = new MatrixBoard(2,3);
     private final Iterator<Position> iterator = matrixBoard.positionIterator();
-
-    //private final Set<Figure> usedFigures = new HashSet<>();
-
     @BeforeEach
     void setUp(){
         movableFigures.add(new Amazon(new Position(0,0),0));
@@ -75,39 +72,5 @@ public class RandomFigureGeneratorTest {
         assertThat(amazonFigureCount).isEqualTo(8);
         assertThat(strangeFigureCount).isEqualTo(0);
     }
-
-    /* Testing private methods
-    @Test
-    void calculateRandomProbability(){
-        int randomProbability = randomFigureGenerator.calculateRandomProbability(random, movableFigures, usedFigures, iterator);
-        assertThat(randomProbability).isBetween(0, 15);
-
-        usedFigures.add((Figure)movableFigures.get(0));
-        usedFigures.add((Figure)movableFigures.get(1));
-
-        randomProbability = randomFigureGenerator.calculateRandomProbability(random, movableFigures, usedFigures, iterator);
-        assertThat(randomProbability).isBetween(0, 25);
-
-        final MatrixBoard matrixBoardTwoByThree = new MatrixBoard(2,3);
-        iterator = matrixBoardTwoByThree.positionIterator();
-        iterator.next();
-        iterator.next();
-        iterator.next();
-        iterator.next();
-        iterator.next();
-
-        usedFigures.add((Figure)movableFigures.get(2));
-        usedFigures.add((Figure)movableFigures.get(3));
-        usedFigures.add((Figure)movableFigures.get(4));
-
-        randomProbability = randomFigureGenerator.calculateRandomProbability(random, movableFigures, usedFigures, iterator);
-        assertThat(randomProbability).isEqualTo(0);
-
-        usedFigures.add((Figure)movableFigures.get(5));
-
-        randomProbability = randomFigureGenerator.calculateRandomProbability(random, movableFigures, usedFigures, iterator);
-        assertThat(randomProbability).isEqualTo(1);
-    }
-     */
 
 }

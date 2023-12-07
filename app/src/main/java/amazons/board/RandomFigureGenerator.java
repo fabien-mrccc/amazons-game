@@ -42,9 +42,9 @@ public class RandomFigureGenerator implements FigureGenerator{
     }
 
     /**
-     * Calculate the probability that the figure return is an EMPTY_FIGURE or a figure in movableFigures list.
+     * Calculate the probability that the figure returned is an EMPTY_FIGURE or a figure belonging to movableFigures list.
      * The method is based on two important value:
-     * - numberOfFiguresToAssign: returns 1 if it is equaled to 0 to inform that only EMPTY_FIGURE have to be assigned.
+     * - numberOfFiguresToAssign: returns 1 if it is equal to 0 to inform that only EMPTY_FIGURE have to be assigned.
      * - numberOfSquaresToAssignPerFigure: defines the number of chance that we have to generate a figure from movableFigures. For example,
      * if numberOfSquaresToAssignPerFigure equals to 15, we have 1/15 chance of generate a specific figure, so a value between 0 and 14 (0 represents the
      * case where the specific figure is generated).
