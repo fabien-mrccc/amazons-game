@@ -4,6 +4,7 @@ import amazons.board.MatrixBoard;
 import amazons.board.Position;
 import amazons.board.Board;
 import amazons.board.PresetFigureGenerator;
+import amazons.figures.IllegalMoveException;
 import amazons.game.Game;
 import amazons.figures.Amazon;
 
@@ -28,6 +29,7 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
     public final Move play(Move opponentMove) {
         Position startPosition = startPositionOfAmazonToMove();
         Position destinationPosition = destPositionOfAmazonToMove(startPosition);
+        updateBoard(startPosition,destinationPosition);
         return new Move(startPosition, destinationPosition, destPositionOfArrowToShoot(destinationPosition));
     }
 
@@ -35,6 +37,14 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
         aiBoardRepresentation = new MatrixBoard(boardWidth,boardHeight);
         PresetFigureGenerator generator = new PresetFigureGenerator(Game.createPlayersFiguresWithDefaultPosition(initialPositions));
         aiBoardRepresentation.fill(generator);
+    }
+
+    private void updateBoard(Position startPosition, Position destPosition){
+        try{
+            aiBoardRepresentation.moveFigure(startPosition,destPosition);
+        }
+        catch(IllegalMoveException e){
+        }
     }
 
     private void fillAIPlayerAmazonsList(List<Position> initialPositions) {

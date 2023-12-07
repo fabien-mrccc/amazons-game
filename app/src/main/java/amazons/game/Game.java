@@ -69,7 +69,7 @@ public class Game {
     }
 
     public void updateGame(Move move){
-        updateGameAmazonMove(move.getAmazonStartPosition(),move.getAmazonDstPosition());
+        updateGameAmazonMove(move.getAmazonStartPosition(), move.getAmazonDstPosition());
         updateGameArrowShot(move.getAmazonDstPosition(), move.getArrowDstPosition());
         currentPlayerID = getPlayerID();
     }
