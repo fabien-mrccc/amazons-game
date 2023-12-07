@@ -1,11 +1,6 @@
 package amazons.player;
 
-import amazons.board.MatrixBoard;
 import amazons.board.Position;
-import amazons.board.Board;
-import amazons.board.PresetFigureGenerator;
-import amazons.figures.IllegalMoveException;
-import amazons.game.Game;
 import amazons.figures.Amazon;
 
 import java.util.ArrayList;
@@ -13,54 +8,29 @@ import java.util.List;
 
 public abstract class AbstractAIPlayer extends AbstractPlayer {
 
-    protected Board aiBoardRepresentation;
-    protected List<Amazon> aiPlayerAmazons;
     protected List<Amazon> opponentAmazons;
 
     @Override
     public final void initialize(int boardWidth, int boardHeight, PlayerID playerID, List<Position>[] initialPositions) {
         super.initialize(boardWidth, boardHeight, playerID, initialPositions);
-        instantiateAIBoard(initialPositions);
-        fillAIPlayerAmazonsList(this.initialPositions);
         fillOpponentAmazonsList(initialPositions[playerID.opponent().index]);
     }
 
     @Override
     public final Move play(Move opponentMove) {
-        Position startPosition = startPositionOfAmazonToMove();
-        Position destinationPosition = destPositionOfAmazonToMove(startPosition);
-        updateBoard(startPosition,destinationPosition);
-        return new Move(startPosition, destinationPosition, destPositionOfArrowToShoot(destinationPosition));
-    }
-
-    private void instantiateAIBoard(List<Position>[] initialPositions){
-        aiBoardRepresentation = new MatrixBoard(boardWidth,boardHeight);
-        PresetFigureGenerator generator = new PresetFigureGenerator(Game.createPlayersFiguresWithDefaultPosition(initialPositions));
-        aiBoardRepresentation.fill(generator);
-    }
-
-    private void updateBoard(Position startPosition, Position destPosition){
-        try{
-            aiBoardRepresentation.moveFigure(startPosition,destPosition);
-        }
-        catch(IllegalMoveException e){
-        }
-    }
-
-    private void fillAIPlayerAmazonsList(List<Position> initialPositions) {
-        aiPlayerAmazons = new ArrayList<>();
-        Amazon amazonToAdd;
-        for(Position position : initialPositions){
-            amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
-            aiPlayerAmazons.add(amazonToAdd);
-        }
+        Position amazonStartPosition = startPositionOfAmazonToMove();
+        Position amazonDestPosition = destPositionOfAmazonToMove(amazonStartPosition);
+        updateBoardAmazonCase(amazonStartPosition,amazonDestPosition);
+        Position arrowDestinationPosition = destPositionOfArrowToShoot(amazonDestPosition);
+        updateBoardArrowCase(amazonDestPosition, arrowDestinationPosition);
+        return new Move(amazonStartPosition, amazonDestPosition, arrowDestinationPosition);
     }
 
     private void fillOpponentAmazonsList(List<Position> initialPositions){
         opponentAmazons = new ArrayList<>();
         Amazon amazonToAdd;
         for(Position position : initialPositions){
-            amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
+            amazonToAdd = (Amazon) boardRepresentation.getFigure(position);
             opponentAmazons.add(amazonToAdd);
         }
     }
@@ -73,16 +43,6 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
         }
         adjacentPositions.remove(position);
         return adjacentPositions;
-    }
-
-    protected List<Amazon> getMovableAmazons(){
-        List<Amazon> movableAmazons = new ArrayList<>();
-        for(Amazon amazon : aiPlayerAmazons){
-            if(amazon.getAccessiblePositions(aiBoardRepresentation).size() > 0){
-                movableAmazons.add(amazon);
-            }
-        }
-        return movableAmazons;
     }
 
     protected abstract Position startPositionOfAmazonToMove();
