@@ -51,7 +51,7 @@ public class Game {
 
         player0.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ZERO, initialPositions);
         players[0] = player0;
-        currentPlayerID = players[0].getPlayerID();
+        currentPlayerID = getPlayerID();
 
         player1.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ONE, initialPositions);
         players[1] = player1;
