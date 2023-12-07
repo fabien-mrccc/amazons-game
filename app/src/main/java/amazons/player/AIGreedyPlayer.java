@@ -4,7 +4,6 @@ import amazons.board.Position;
 import amazons.figures.Amazon;
 import static amazons.util.RandomUtil.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -88,7 +87,7 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
      */
     public List<Position> bestShootPositions(Amazon playerAmazon){
         int biggerOpponentScore = 0;
-        List<Position> positionsToChooseFrom = new ArrayList<>();
+        List<Position> positionsToChooseFrom = playerAmazon.getAccessiblePositions(boardRepresentation);
         for(Amazon opponentAmazon: opponentAmazons){
             if (biggerOpponentScore < getScore(opponentAmazon)) {
                 if (playerAmazon.getAccessiblePositions(boardRepresentation,getAdjacentPositions(opponentAmazon.getPosition())).size() != 0) {
@@ -96,9 +95,6 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
                     positionsToChooseFrom = playerAmazon.getAccessiblePositions(boardRepresentation,getAdjacentPositions(opponentAmazon.getPosition()));
                 }
             }
-        }
-        if(positionsToChooseFrom.isEmpty()){
-            positionsToChooseFrom = playerAmazon.getAccessiblePositions(boardRepresentation);
         }
         return positionsToChooseFrom;
     }
