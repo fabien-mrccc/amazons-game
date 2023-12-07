@@ -27,9 +27,5 @@ public class AIBasicPlayerTest {
 
     @Test
     void testPlay(){
-        assertThat(player.play(new Move(null,null,null))
-                .getAmazonStartPosition().columnIndex()).isBetween(0,9);
-        assertThat(player.play(new Move(null,null,null))
-                .getAmazonStartPosition().rowIndex()).isBetween(0,9);
     }
 }

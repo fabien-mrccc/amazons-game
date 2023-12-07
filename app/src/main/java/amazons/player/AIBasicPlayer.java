@@ -19,13 +19,16 @@ public class AIBasicPlayer extends AbstractAIPlayer{
         Amazon amazon = (Amazon) boardRepresentation.getFigure(startPosition);
         List<Position> accessibleDestinationsPositions = amazon.getAccessiblePositions(boardRepresentation, getAdjacentPositions(startPosition));
         if(accessibleDestinationsPositions.size() == 0){
-            return startPosition;
+            return null;
         }
         return getRandomElement(new Random(), accessibleDestinationsPositions);
     }
 
     @Override
     protected Position destPositionOfArrowToShoot(Position arrowStartPosition) {
+        if(arrowStartPosition == null){
+            return null;
+        }
         return destPositionOfAmazonToMove(arrowStartPosition);
     }
 }
