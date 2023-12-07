@@ -62,22 +62,28 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
     }
     public List<Position> bestAmazonDestinations(Amazon playerAmazon){
         List<Position> bestPositions = new ArrayList<>();
-        int biggerOpponentAdjacentPositionsNum = 0;
+        int biggerAccessibleOpponentAdjacentPositionsNum = 0;
         for(Position position: playerAmazon.getAccessiblePositions(aiBoardRepresentation)){
             for(Amazon opponentAmazon: opponentAmazons) {
-                int opponentAdjacentPositions =0;
-                for(Position adjacentPosition: getAdjacentPositions(opponentAmazon.getPosition())) {
-                    if (new Amazon(position, playerID.index).getAccessiblePositions(aiBoardRepresentation).contains(adjacentPosition)) {
-                        opponentAdjacentPositions = opponentAdjacentPositions +1;
-                    }
-                }
-                if(biggerOpponentAdjacentPositionsNum < opponentAdjacentPositions){
-                    biggerOpponentAdjacentPositionsNum = opponentAdjacentPositions;
+                int accessibleOpponentAdjacentPositionsNum = getAccessibleOpponentAdjacentPositionsNum(new Amazon(position, playerID.index), getAdjacentPositions(opponentAmazon.getPosition()));
+
+                if(biggerAccessibleOpponentAdjacentPositionsNum < accessibleOpponentAdjacentPositionsNum){
+                    biggerAccessibleOpponentAdjacentPositionsNum = accessibleOpponentAdjacentPositionsNum;
                     bestPositions = new Amazon(position, playerID.index).getAccessiblePositions(aiBoardRepresentation, getAdjacentPositions(opponentAmazon.getPosition()));
                 }
+
             }
         }
         return bestPositions;
+    }
+    public int getAccessibleOpponentAdjacentPositionsNum(Amazon amazon,List<Position> opponentAdjacentPositions){
+        int accessibleOpponentAdjacentPositionsNum =0;
+        for(Position adjacentPosition: opponentAdjacentPositions) {
+            if (amazon.getAccessiblePositions(aiBoardRepresentation).contains(adjacentPosition)) {
+                accessibleOpponentAdjacentPositionsNum = accessibleOpponentAdjacentPositionsNum +1;
+            }
+        }
+        return accessibleOpponentAdjacentPositionsNum;
     }
     /**
      * return the best shoot position to reduce the opponent playing choices
