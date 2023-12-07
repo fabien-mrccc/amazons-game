@@ -7,6 +7,7 @@ import amazons.player.Player;
 import amazons.player.PlayerID;
 import java.util.List;
 import java.util.ArrayList;
+
 import amazons.figures.Amazon;
 import amazons.figures.MovableFigure;
 
@@ -48,8 +49,8 @@ public class Game {
         turn = 0;
         List<Position>[] initialPositions = new List[]{DEFAULT_PLAYER0_POSITIONS, DEFAULT_PLAYER1_POSITIONS};
 
-        PresetFigureGenerator figureGenerator = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition(initialPositions));
-        board.fill(figureGenerator);
+        PresetFigureGenerator figureGeneratorOnlyWithAmazons = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition(initialPositions));
+        board.fill(figureGeneratorOnlyWithAmazons);
 
         player0.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ZERO, initialPositions);
         players[0] = player0;
@@ -59,7 +60,7 @@ public class Game {
         players[1] = player1;
     }
 
-    public static List<MovableFigure> createPlayersFiguresWithDefaultPosition(List<Position>[] initialPositions){
+    public List<MovableFigure> createPlayersFiguresWithDefaultPosition(List<Position>[] initialPositions){
         List<MovableFigure> allPlayersFigures = new ArrayList<>();
         for(Position position: initialPositions[0]){
             allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ZERO.index));
@@ -120,7 +121,6 @@ public class Game {
         else{
             turn++;
         }
-        System.out.println(turn);
     }
 
     public int getTurn() {return turn; }
