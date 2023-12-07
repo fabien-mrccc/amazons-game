@@ -17,7 +17,6 @@ public class CLPlayer extends AbstractPlayer {
         Position amazonDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
         System.out.println(playerID + " where to shoot arrow? (enter X Y coordinate)");
         Position arrowDstPosition = new Position(inputScanner.nextInt(),inputScanner.nextInt());
-        setPlayerID(getPlayerID().opponent());
         return new Move(amazonStartPosition,amazonDstPosition,arrowDstPosition);
     }
 }

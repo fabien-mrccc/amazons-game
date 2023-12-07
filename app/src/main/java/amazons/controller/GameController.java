@@ -113,11 +113,11 @@ public class GameController {
         this.phase.setValue(turnPhase);
     }
 
-    public TurnPhase  getPhase(){
+    public TurnPhase getPhase(){
         return phase.getValue();
     }
 
-    public void  resetPhase() {
+    public void resetPhase() {
         setPhase(TurnPhase.AMAZON_PHASE);
     }
 
