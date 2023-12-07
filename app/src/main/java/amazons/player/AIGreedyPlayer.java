@@ -32,10 +32,7 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
      * @return numberOfAvailablePositions
      */
     public int getScore(Amazon amazon){
-        int score = 0;
-        for(Position position:amazon.getAccessiblePositions(boardRepresentation)){
-            score = score + 1;
-        }
+        int score = amazon.getAccessiblePositions(boardRepresentation).size();
         return score;
     }
     /**
