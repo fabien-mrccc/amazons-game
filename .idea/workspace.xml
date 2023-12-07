@@ -7,12 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="attribute names refactoring">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" afterDir="false" />
     </list>
@@ -227,27 +223,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00166" summary="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()">
-      <created>1701805493042</created>
-      <option name="number" value="00166" />
-      <option name="presentableId" value="LOCAL-00166" />
-      <option name="project" value="LOCAL" />
-      <updated>1701805493042</updated>
-    </task>
-    <task id="LOCAL-00167" summary="add void setUp()">
-      <created>1701806059147</created>
-      <option name="number" value="00167" />
-      <option name="presentableId" value="LOCAL-00167" />
-      <option name="project" value="LOCAL" />
-      <updated>1701806059147</updated>
-    </task>
-    <task id="LOCAL-00168" summary="add void hasNext()&#10;fix void setUp()">
-      <created>1701840289050</created>
-      <option name="number" value="00168" />
-      <option name="presentableId" value="LOCAL-00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1701840289050</updated>
     </task>
     <task id="LOCAL-00169" summary="fix void setUp()&#10;add void next()">
       <created>1701840641204</created>
@@ -571,7 +546,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701946592287</updated>
     </task>
-    <option name="localTasksCounter" value="215" />
+    <task id="LOCAL-00215" summary="fix public void initializeGame(Player player0, Player player1): initialize turn number and isThisIsTheEnd">
+      <created>1701957491271</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
+      <option name="project" value="LOCAL" />
+      <updated>1701957491271</updated>
+    </task>
+    <task id="LOCAL-00216" summary="attribute names refactoring">
+      <created>1701957554639</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1701957554639</updated>
+    </task>
+    <task id="LOCAL-00217" summary="attribute names refactoring">
+      <created>1701957631919</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1701957631919</updated>
+    </task>
+    <option name="localTasksCounter" value="218" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,8 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
-    <MESSAGE value="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)" />
     <MESSAGE value="refactoring aiPlayerAmazons" />
     <MESSAGE value="add void testPlay()" />
     <MESSAGE value="add protected Amazon getAmazonToMove()" />
@@ -614,6 +608,8 @@
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
     <MESSAGE value="refactoring accessiblePositions local variable" />
     <MESSAGE value="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1): initialize turn number and isThisIsTheEnd" />
+    <MESSAGE value="attribute names refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="attribute names refactoring" />
   </component>
 </project>

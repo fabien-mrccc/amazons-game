@@ -1,0 +1,363 @@
+Index: app/src/main/java/amazons/player/AIBasicPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package amazons.player;\n\nimport amazons.board.Position;\nimport amazons.figures.Amazon;\n\nimport java.util.List;\nimport java.util.Random;\nimport static amazons.util.RandomUtil.*;\n\npublic class AIBasicPlayer extends AbstractAIPlayer{\n\n    @Override\n    protected Position startPositionOfAmazonToMove() {\n        return getRandomElement(new Random(), getMovableAmazons()).getPosition();\n    }\n\n    @Override\n    protected Position destPositionOfAmazonToMove(Position startPosition) {\n        Amazon amazon = (Amazon) aiBoardRepresentation.getFigure(startPosition);\n        List<Position> accessibleDestinationsPositions = amazon.getAccessiblePositions(aiBoardRepresentation, getAdjacentPositions(startPosition));\n        if(accessibleDestinationsPositions.size() == 0){\n            return startPosition;\n        }\n        return getRandomElement(new Random(), accessibleDestinationsPositions);\n    }\n\n    @Override\n    protected Position destPositionOfArrowToShoot(Position arrowStartPosition) {\n        return destPositionOfAmazonToMove(arrowStartPosition);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/amazons/player/AIBasicPlayer.java b/app/src/main/java/amazons/player/AIBasicPlayer.java
+--- a/app/src/main/java/amazons/player/AIBasicPlayer.java	(revision 3cd5179d0de47bf61850e6126ca5cc1345e2138b)
++++ b/app/src/main/java/amazons/player/AIBasicPlayer.java	(date 1701951170959)
+@@ -16,8 +16,8 @@
+ 
+     @Override
+     protected Position destPositionOfAmazonToMove(Position startPosition) {
+-        Amazon amazon = (Amazon) aiBoardRepresentation.getFigure(startPosition);
+-        List<Position> accessibleDestinationsPositions = amazon.getAccessiblePositions(aiBoardRepresentation, getAdjacentPositions(startPosition));
++        Amazon amazon = (Amazon) boardRepresentation.getFigure(startPosition);
++        List<Position> accessibleDestinationsPositions = amazon.getAccessiblePositions(boardRepresentation, getAdjacentPositions(startPosition));
+         if(accessibleDestinationsPositions.size() == 0){
+             return startPosition;
+         }
+Index: app/src/main/java/amazons/figures/Amazon.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package amazons.figures;\n\nimport amazons.board.Board;\nimport amazons.board.CardinalDirection;\nimport amazons.board.Position;\nimport amazons.player.PlayerID;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic final class Amazon extends MovableFigure implements Figure{\n    private Position position;\n    private final PlayerID playerID;\n\n    public Amazon(Position position, int playerIDIndex){\n        setPosition(position);\n        this.playerID = PlayerID.getPlayerIDFromIndex(playerIDIndex);\n    }\n    @Override\n    public boolean canMoveTo(Position position, Board board) {\n        return getAccessiblePositions(board).contains(position);\n    }\n\n    @Override\n    public void moveTo(Position position, Board board) throws IllegalMoveException {\n        if(canMoveTo(position, board)){\n            setPosition(position);\n        }\n        else{\n            throw new IllegalMoveException(\"Amazon can't be moved\");\n        }\n    }\n\n    @Override\n    public void setPosition(Position position) {\n        this.position = position;\n    }\n\n   @Override\n    public Position getPosition(){\n        return position;\n    }\n\n    @Override\n    public PlayerID getPlayerID() {\n        return playerID;\n    }\n\n    /**\n     * Returns the list of positions that the Amazon can reach from its current position and according to the pieces already on the board.\n     * An Amazon moves at least one square in a straight line horizontally, vertically or diagonally through any number of squares.\n     * They can only move through unoccupied squares.\n     * This means that no square can be occupied (by an Amazon of any color or by an arrow) between the starting square and the Amazon's destination.\n     * @param board the board used in the game\n     * @return list of positions that the Amazon can reach from its current position\n     */\n    @Override\n    public List<Position> getAccessiblePositions(Board board) {\n        List<Position> accessiblePositions = new ArrayList<>();\n\n        for(CardinalDirection direction : CardinalDirection.values()){\n            Position positionCheck = this.position.next(direction);\n\n            while(!board.isOutOfBoard(positionCheck)){\n                if(!board.isEmpty(positionCheck)){ break;}\n                accessiblePositions.add(positionCheck);\n                positionCheck = positionCheck.next(direction);\n            }\n        }\n\n        return accessiblePositions;\n    }\n    public List<Position> getAccessiblePositions(Board board, List<Position> positions){\n        List<Position> accessiblePositions = new ArrayList<>();\n\n        for(Position position: positions){\n            if(!board.isOutOfBoard(position)){\n                if(!board.isEmpty(position)){ break;}\n                accessiblePositions.add(position);\n            }\n        }\n        return accessiblePositions;\n    }\n    @Override\n    public String toString(){\n        return \"A\"+getPlayerID().index;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/amazons/figures/Amazon.java b/app/src/main/java/amazons/figures/Amazon.java
+--- a/app/src/main/java/amazons/figures/Amazon.java	(revision 3cd5179d0de47bf61850e6126ca5cc1345e2138b)
++++ b/app/src/main/java/amazons/figures/Amazon.java	(date 1701953676009)
+@@ -63,6 +63,7 @@
+ 
+             while(!board.isOutOfBoard(positionCheck)){
+                 if(!board.isEmpty(positionCheck)){ break;}
++                System.out.println(positionCheck + " " + board.getFigure(this.position).getPlayerID().color);
+                 accessiblePositions.add(positionCheck);
+                 positionCheck = positionCheck.next(direction);
+             }
+Index: app/src/main/java/amazons/game/Game.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package amazons.game;\n\nimport amazons.figures.IllegalMoveException;\nimport amazons.board.*;\nimport amazons.player.Move;\nimport amazons.player.Player;\nimport amazons.player.PlayerID;\nimport java.util.List;\nimport java.util.ArrayList;\nimport amazons.figures.Amazon;\nimport amazons.figures.MovableFigure;\n\npublic class Game {\n    public static final int NUMBER_OF_PLAYERS = 2;\n    public static final int DEFAULT_NUMBER_OF_AMAZONS_PER_PLAYER = 4;\n    private static final int DEFAULT_NUMBER_OF_COLUMNS = 10;\n    private static  final int DEFAULT_NUMBER_OF_ROWS = 10;\n\n    private static final List<Position> DEFAULT_PLAYER0_POSITIONS =\n            List.of(new Position(0,6), new Position(9,6), new Position(3,9), new Position(6,9));\n    private static final List<Position> DEFAULT_PLAYER1_POSITIONS =\n            List.of(new Position(3,0), new Position(6,0), new Position(0,3), new Position(9,3));\n\n    private final int numberOfColumns;\n    private final int numberOfRows;\n\n    private final Player[] players = new Player[NUMBER_OF_PLAYERS];\n    private PlayerID winner = null;\n    private int turn = 0;\n    private boolean isThisIsTheEnd = false;\n    private final Board board;\n    private PlayerID currentPlayerID;\n    private final int numberOfAmazonsPerPlayer;\n\n    public Game() {\n        this(DEFAULT_NUMBER_OF_COLUMNS,DEFAULT_NUMBER_OF_ROWS);\n    }\n\n    public Game(int numberOfColumns, int numberOfRows){\n        this.numberOfColumns = numberOfColumns;\n        this.numberOfRows = numberOfRows;\n        this.board = new MapBoard(numberOfColumns,numberOfRows);\n        this.numberOfAmazonsPerPlayer = DEFAULT_NUMBER_OF_AMAZONS_PER_PLAYER;\n    }\n\n    public void initializeGame(Player player0, Player player1){\n        List<Position>[] initialPositions = new List[]{DEFAULT_PLAYER0_POSITIONS, DEFAULT_PLAYER1_POSITIONS};\n\n        PresetFigureGenerator figureGenerator = new PresetFigureGenerator(createPlayersFiguresWithDefaultPosition(initialPositions));\n        board.fill(figureGenerator);\n\n        player0.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ZERO, initialPositions);\n        players[0] = player0;\n        currentPlayerID = getPlayerID();\n\n        player1.initialize(numberOfColumns,numberOfRows,PlayerID.PLAYER_ONE, initialPositions);\n        players[1] = player1;\n    }\n\n    public static List<MovableFigure> createPlayersFiguresWithDefaultPosition(List<Position>[] initialPositions){\n        List<MovableFigure> allPlayersFigures = new ArrayList<>();\n        for(Position position: initialPositions[0]){\n            allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ZERO.index));\n        }\n        for(Position position: initialPositions[1]){\n            allPlayersFigures.add(new Amazon(position, PlayerID.PLAYER_ONE.index));\n        }\n        return allPlayersFigures;\n    }\n\n    public void updateGame(Move move){\n        updateGameAmazonMove(move.getAmazonStartPosition(), move.getAmazonDstPosition());\n        updateGameArrowShot(move.getAmazonDstPosition(), move.getArrowDstPosition());\n        currentPlayerID = getPlayerID();\n    }\n\n    public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition){\n        try{board.moveFigure(amazonStartPosition, amazonDstPosition);}\n        catch (IllegalMoveException exception) {\n            hasLost(currentPlayerID);\n        }\n    }\n\n    public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition) {\n        try{board.shootArrow(amazonDstPosition, arrowDstPosition);}\n        catch (IllegalMoveException exception){\n            hasLost(currentPlayerID);\n        }\n    }\n\n    private void hasLost(PlayerID playerID) {\n        winner = playerID.opponent();\n        isThisIsTheEnd = true;\n    }\n\n    public Board getBoard(){\n         return board;\n    }\n\n    public PlayerID getWinner(){\n        return winner;\n    }\n\n    public PlayerID getPlayerID(){\n        return getPlayer().getPlayerID();\n    }\n\n    public Player getPlayer() {return players[getTurn()];}\n\n    public boolean hasEnded() {\n        return isThisIsTheEnd;\n    }\n\n    public void incrementTurn(){\n        if(getTurn() == 1){\n            turn--;\n        }\n        else{\n            turn++;\n        }\n    }\n\n    public int getTurn() {return turn; }\n\n    public int getNumberOfColumns(){\n        return numberOfColumns;\n    }\n\n    public int getNumberOfRows(){\n        return numberOfRows;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/amazons/game/Game.java b/app/src/main/java/amazons/game/Game.java
+--- a/app/src/main/java/amazons/game/Game.java	(revision 3cd5179d0de47bf61850e6126ca5cc1345e2138b)
++++ b/app/src/main/java/amazons/game/Game.java	(date 1701951170969)
+@@ -88,7 +88,7 @@
+         }
+     }
+ 
+-    private void hasLost(PlayerID playerID) {
++    public void hasLost(PlayerID playerID) {
+         winner = playerID.opponent();
+         isThisIsTheEnd = true;
+     }
+Index: app/src/main/java/amazons/player/AbstractAIPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package amazons.player;\n\nimport amazons.board.MatrixBoard;\nimport amazons.board.Position;\nimport amazons.board.Board;\nimport amazons.board.PresetFigureGenerator;\nimport amazons.figures.IllegalMoveException;\nimport amazons.game.Game;\nimport amazons.figures.Amazon;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic abstract class AbstractAIPlayer extends AbstractPlayer {\n\n    protected Board aiBoardRepresentation;\n    protected List<Amazon> aiPlayerAmazons;\n    protected List<Amazon> opponentAmazons;\n\n    @Override\n    public final void initialize(int boardWidth, int boardHeight, PlayerID playerID, List<Position>[] initialPositions) {\n        super.initialize(boardWidth, boardHeight, playerID, initialPositions);\n        instantiateAIBoard(initialPositions);\n        fillAIPlayerAmazonsList(this.initialPositions);\n        fillOpponentAmazonsList(initialPositions[playerID.opponent().index]);\n    }\n\n    @Override\n    public final Move play(Move opponentMove) {\n        Position startPosition = startPositionOfAmazonToMove();\n        Position destinationPosition = destPositionOfAmazonToMove(startPosition);\n        updateBoard(startPosition,destinationPosition);\n        return new Move(startPosition, destinationPosition, destPositionOfArrowToShoot(destinationPosition));\n    }\n\n    private void instantiateAIBoard(List<Position>[] initialPositions){\n        aiBoardRepresentation = new MatrixBoard(boardWidth,boardHeight);\n        PresetFigureGenerator generator = new PresetFigureGenerator(Game.createPlayersFiguresWithDefaultPosition(initialPositions));\n        aiBoardRepresentation.fill(generator);\n    }\n\n    private void updateBoard(Position startPosition, Position destPosition){\n        try{\n            aiBoardRepresentation.moveFigure(startPosition,destPosition);\n        }\n        catch(IllegalMoveException e){\n        }\n    }\n\n    private void fillAIPlayerAmazonsList(List<Position> initialPositions) {\n        aiPlayerAmazons = new ArrayList<>();\n        Amazon amazonToAdd;\n        for(Position position : initialPositions){\n            amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);\n            aiPlayerAmazons.add(amazonToAdd);\n        }\n    }\n\n    private void fillOpponentAmazonsList(List<Position> initialPositions){\n        opponentAmazons = new ArrayList<>();\n        Amazon amazonToAdd;\n        for(Position position : initialPositions){\n            amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);\n            opponentAmazons.add(amazonToAdd);\n        }\n    }\n    protected List<Position> getAdjacentPositions(Position position){\n        List<Position> adjacentPositions = new ArrayList<>();\n        for(int i= position.columnIndex()-1; i< position.columnIndex()+2;i++){\n            for(int j= position.rowIndex()-1; j< position.rowIndex()+2;j++){\n                adjacentPositions.add(new Position(i,j));\n            }\n        }\n        adjacentPositions.remove(position);\n        return adjacentPositions;\n    }\n\n    protected List<Amazon> getMovableAmazons(){\n        List<Amazon> movableAmazons = new ArrayList<>();\n        for(Amazon amazon : aiPlayerAmazons){\n            if(amazon.getAccessiblePositions(aiBoardRepresentation).size() > 0){\n                movableAmazons.add(amazon);\n            }\n        }\n        return movableAmazons;\n    }\n\n    protected abstract Position startPositionOfAmazonToMove();\n    protected abstract Position destPositionOfAmazonToMove(Position startPosition);\n    protected abstract Position destPositionOfArrowToShoot(Position startPosition);\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/amazons/player/AbstractAIPlayer.java b/app/src/main/java/amazons/player/AbstractAIPlayer.java
+--- a/app/src/main/java/amazons/player/AbstractAIPlayer.java	(revision 3cd5179d0de47bf61850e6126ca5cc1345e2138b)
++++ b/app/src/main/java/amazons/player/AbstractAIPlayer.java	(date 1701951538676)
+@@ -13,54 +13,29 @@
+ 
+ public abstract class AbstractAIPlayer extends AbstractPlayer {
+ 
+-    protected Board aiBoardRepresentation;
+-    protected List<Amazon> aiPlayerAmazons;
+     protected List<Amazon> opponentAmazons;
+ 
+     @Override
+     public final void initialize(int boardWidth, int boardHeight, PlayerID playerID, List<Position>[] initialPositions) {
+         super.initialize(boardWidth, boardHeight, playerID, initialPositions);
+-        instantiateAIBoard(initialPositions);
+-        fillAIPlayerAmazonsList(this.initialPositions);
+         fillOpponentAmazonsList(initialPositions[playerID.opponent().index]);
+     }
+ 
+     @Override
+     public final Move play(Move opponentMove) {
+-        Position startPosition = startPositionOfAmazonToMove();
+-        Position destinationPosition = destPositionOfAmazonToMove(startPosition);
+-        updateBoard(startPosition,destinationPosition);
+-        return new Move(startPosition, destinationPosition, destPositionOfArrowToShoot(destinationPosition));
+-    }
+-
+-    private void instantiateAIBoard(List<Position>[] initialPositions){
+-        aiBoardRepresentation = new MatrixBoard(boardWidth,boardHeight);
+-        PresetFigureGenerator generator = new PresetFigureGenerator(Game.createPlayersFiguresWithDefaultPosition(initialPositions));
+-        aiBoardRepresentation.fill(generator);
+-    }
+-
+-    private void updateBoard(Position startPosition, Position destPosition){
+-        try{
+-            aiBoardRepresentation.moveFigure(startPosition,destPosition);
+-        }
+-        catch(IllegalMoveException e){
+-        }
+-    }
+-
+-    private void fillAIPlayerAmazonsList(List<Position> initialPositions) {
+-        aiPlayerAmazons = new ArrayList<>();
+-        Amazon amazonToAdd;
+-        for(Position position : initialPositions){
+-            amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
+-            aiPlayerAmazons.add(amazonToAdd);
+-        }
++        Position amazonStartPosition = startPositionOfAmazonToMove();
++        Position amazonDestPosition = destPositionOfAmazonToMove(amazonStartPosition);
++        updateBoardAmazonCase(amazonStartPosition,amazonDestPosition);
++        Position arrowDestinationPosition = destPositionOfArrowToShoot(amazonDestPosition);
++        updateBoardArrowCase(amazonDestPosition, arrowDestinationPosition);
++        return new Move(amazonStartPosition, amazonDestPosition, arrowDestinationPosition);
+     }
+ 
+     private void fillOpponentAmazonsList(List<Position> initialPositions){
+         opponentAmazons = new ArrayList<>();
+         Amazon amazonToAdd;
+         for(Position position : initialPositions){
+-            amazonToAdd = (Amazon) aiBoardRepresentation.getFigure(position);
++            amazonToAdd = (Amazon) boardRepresentation.getFigure(position);
+             opponentAmazons.add(amazonToAdd);
+         }
+     }
+@@ -75,16 +50,6 @@
+         return adjacentPositions;
+     }
+ 
+-    protected List<Amazon> getMovableAmazons(){
+-        List<Amazon> movableAmazons = new ArrayList<>();
+-        for(Amazon amazon : aiPlayerAmazons){
+-            if(amazon.getAccessiblePositions(aiBoardRepresentation).size() > 0){
+-                movableAmazons.add(amazon);
+-            }
+-        }
+-        return movableAmazons;
+-    }
+-
+     protected abstract Position startPositionOfAmazonToMove();
+     protected abstract Position destPositionOfAmazonToMove(Position startPosition);
+     protected abstract Position destPositionOfArrowToShoot(Position startPosition);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AnalysisUIOptions\">\n    <option name=\"ANALYZE_INJECTED_CODE\" value=\"false\" />\n  </component>\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5\" name=\"Changes\" comment=\"refactoring accessiblePositions local variable\">\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"$PROJECT_DIR$\">\n          <activation />\n        </task>\n        <projects_view>\n          <tree_state>\n            <expand>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"amazons-template\" type=\"f1a62948:ProjectNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"amazons-template\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"amazons-template\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n                <item name=\"application\" type=\"c8890929:TasksNode$1\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"amazons-template\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n                <item name=\"verification\" type=\"c8890929:TasksNode$1\" />\n              </path>\n            </expand>\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProblemsViewState\">\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2Xz3Lh3NyAVjxEMBcr3DpLWsRrk\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/ctravers/AMU/Prog2/amazons-template&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RunManager\" selected=\"Gradle.amazons-template [run]\">\n    <configuration name=\"App\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"amazons.App\" />\n      <module name=\"amazons-template.app.main\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"amazons.figures.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"MatrixBoard\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"amazons.board.MatrixBoard\" />\n      <module name=\"amazons-template.app.main\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"amazons.board.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"EmptyFigureGeneratorTest.testNextFigure\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\":app:test\" />\n            <option value=\"--tests\" />\n            <option value=\"&quot;amazons.board.EmptyFigureGeneratorTest.testNextFigure&quot;\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"amazons-template [run]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"--scan --info\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"run\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"amazons-template [test]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"test\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Gradle.amazons-template [run]\" />\n        <item itemvalue=\"Gradle.amazons-template [test]\" />\n        <item itemvalue=\"Gradle.EmptyFigureGeneratorTest.testNextFigure\" />\n        <item itemvalue=\"Application.App\" />\n        <item itemvalue=\"Application.MatrixBoard\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5\" name=\"Changes\" comment=\"\" />\n      <created>1699618027902</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1699618027902</updated>\n      <workItem from=\"1699618029568\" duration=\"29000\" />\n      <workItem from=\"1699618245081\" duration=\"4361000\" />\n      <workItem from=\"1699622689482\" duration=\"14966000\" />\n      <workItem from=\"1700063484378\" duration=\"3042000\" />\n      <workItem from=\"1700226215293\" duration=\"7224000\" />\n      <workItem from=\"1700572641812\" duration=\"5645000\" />\n      <workItem from=\"1700676341580\" duration=\"303000\" />\n      <workItem from=\"1700676649531\" duration=\"8847000\" />\n      <workItem from=\"1701184810804\" duration=\"5802000\" />\n      <workItem from=\"1701362909876\" duration=\"21283000\" />\n      <workItem from=\"1701682674385\" duration=\"22208000\" />\n    </task>\n    <task id=\"LOCAL-00165\" summary=\"fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public\">\n      <created>1701805183356</created>\n      <option name=\"number\" value=\"00165\" />\n      <option name=\"presentableId\" value=\"LOCAL-00165\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701805183356</updated>\n    </task>\n    <task id=\"LOCAL-00166\" summary=\"fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()\">\n      <created>1701805493042</created>\n      <option name=\"number\" value=\"00166\" />\n      <option name=\"presentableId\" value=\"LOCAL-00166\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701805493042</updated>\n    </task>\n    <task id=\"LOCAL-00167\" summary=\"add void setUp()\">\n      <created>1701806059147</created>\n      <option name=\"number\" value=\"00167\" />\n      <option name=\"presentableId\" value=\"LOCAL-00167\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701806059147</updated>\n    </task>\n    <task id=\"LOCAL-00168\" summary=\"add void hasNext()&#10;fix void setUp()\">\n      <created>1701840289050</created>\n      <option name=\"number\" value=\"00168\" />\n      <option name=\"presentableId\" value=\"LOCAL-00168\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701840289050</updated>\n    </task>\n    <task id=\"LOCAL-00169\" summary=\"fix void setUp()&#10;add void next()\">\n      <created>1701840641204</created>\n      <option name=\"number\" value=\"00169\" />\n      <option name=\"presentableId\" value=\"LOCAL-00169\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701840641204</updated>\n    </task>\n    <task id=\"LOCAL-00170\" summary=\"fix void setUp()&#10;fix void hasNext()\">\n      <created>1701842773192</created>\n      <option name=\"number\" value=\"00170\" />\n      <option name=\"presentableId\" value=\"LOCAL-00170\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701842773192</updated>\n    </task>\n    <task id=\"LOCAL-00171\" summary=\"fix void next()\">\n      <created>1701844053008</created>\n      <option name=\"number\" value=\"00171\" />\n      <option name=\"presentableId\" value=\"LOCAL-00171\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701844053008</updated>\n    </task>\n    <task id=\"LOCAL-00172\" summary=\"fix void testHasNext()&#10;fix void testNext()&#10;add void testGetNumberOfColumns()&#10;add void testGetNumberOfRows()\">\n      <created>1701844727192</created>\n      <option name=\"number\" value=\"00172\" />\n      <option name=\"presentableId\" value=\"LOCAL-00172\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701844727192</updated>\n    </task>\n    <task id=\"LOCAL-00173\" summary=\"add public Game(int numberOfColumns, int numberOfRows)&#10;fix public Game()\">\n      <created>1701848370012</created>\n      <option name=\"number\" value=\"00173\" />\n      <option name=\"presentableId\" value=\"LOCAL-00173\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701848370012</updated>\n    </task>\n    <task id=\"LOCAL-00174\" summary=\"fix public void initializeGame(Player player0, Player player1): replace constants utilisation by attributes&#10;fix public int getNumberOfColumns()&#10;fix public int getNumberOfRows()\">\n      <created>1701848480918</created>\n      <option name=\"number\" value=\"00174\" />\n      <option name=\"presentableId\" value=\"LOCAL-00174\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701848480918</updated>\n    </task>\n    <task id=\"LOCAL-00175\" summary=\"add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)\">\n      <created>1701851209998</created>\n      <option name=\"number\" value=\"00175\" />\n      <option name=\"presentableId\" value=\"LOCAL-00175\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701851209998</updated>\n    </task>\n    <task id=\"LOCAL-00176\" summary=\"add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)\">\n      <created>1701851628364</created>\n      <option name=\"number\" value=\"00176\" />\n      <option name=\"presentableId\" value=\"LOCAL-00176\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701851628364</updated>\n    </task>\n    <task id=\"LOCAL-00177\" summary=\"add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)\">\n      <created>1701852072217</created>\n      <option name=\"number\" value=\"00177\" />\n      <option name=\"presentableId\" value=\"LOCAL-00177\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701852072217</updated>\n    </task>\n    <task id=\"LOCAL-00178\" summary=\"add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)\">\n      <created>1701852231169</created>\n      <option name=\"number\" value=\"00178\" />\n      <option name=\"presentableId\" value=\"LOCAL-00178\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701852231169</updated>\n    </task>\n    <task id=\"LOCAL-00179\" summary=\"add protected abstract Amazon getAmazonToMove()\">\n      <created>1701853613825</created>\n      <option name=\"number\" value=\"00179\" />\n      <option name=\"presentableId\" value=\"LOCAL-00179\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701853613825</updated>\n    </task>\n    <task id=\"LOCAL-00180\" summary=\"add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()\">\n      <created>1701853777514</created>\n      <option name=\"number\" value=\"00180\" />\n      <option name=\"presentableId\" value=\"LOCAL-00180\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701853777514</updated>\n    </task>\n    <task id=\"LOCAL-00181\" summary=\"add void setUp()\">\n      <created>1701854641796</created>\n      <option name=\"number\" value=\"00181\" />\n      <option name=\"presentableId\" value=\"LOCAL-00181\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701854641796</updated>\n    </task>\n    <task id=\"LOCAL-00182\" summary=\"fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)\">\n      <created>1701854926040</created>\n      <option name=\"number\" value=\"00182\" />\n      <option name=\"presentableId\" value=\"LOCAL-00182\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701854926040</updated>\n    </task>\n    <task id=\"LOCAL-00183\" summary=\"fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)\">\n      <created>1701857078451</created>\n      <option name=\"number\" value=\"00183\" />\n      <option name=\"presentableId\" value=\"LOCAL-00183\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701857078451</updated>\n    </task>\n    <task id=\"LOCAL-00184\" summary=\"fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)\">\n      <created>1701857455936</created>\n      <option name=\"number\" value=\"00184\" />\n      <option name=\"presentableId\" value=\"LOCAL-00184\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701857455936</updated>\n    </task>\n    <task id=\"LOCAL-00185\" summary=\"refactoring aiPlayerAmazons\">\n      <created>1701857696045</created>\n      <option name=\"number\" value=\"00185\" />\n      <option name=\"presentableId\" value=\"LOCAL-00185\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701857696045</updated>\n    </task>\n    <task id=\"LOCAL-00186\" summary=\"add void testPlay()\">\n      <created>1701857792747</created>\n      <option name=\"number\" value=\"00186\" />\n      <option name=\"presentableId\" value=\"LOCAL-00186\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701857792747</updated>\n    </task>\n    <task id=\"LOCAL-00187\" summary=\"add protected Amazon getAmazonToMove()\">\n      <created>1701857988992</created>\n      <option name=\"number\" value=\"00187\" />\n      <option name=\"presentableId\" value=\"LOCAL-00187\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701857988992</updated>\n    </task>\n    <task id=\"LOCAL-00188\" summary=\"fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove\">\n      <created>1701859405726</created>\n      <option name=\"number\" value=\"00188\" />\n      <option name=\"presentableId\" value=\"LOCAL-00188\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701859405726</updated>\n    </task>\n    <task id=\"LOCAL-00189\" summary=\"fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove\">\n      <created>1701859416739</created>\n      <option name=\"number\" value=\"00189\" />\n      <option name=\"presentableId\" value=\"LOCAL-00189\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701859416739</updated>\n    </task>\n    <task id=\"LOCAL-00190\" summary=\"fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)\">\n      <created>1701862311940</created>\n      <option name=\"number\" value=\"00190\" />\n      <option name=\"presentableId\" value=\"LOCAL-00190\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701862311940</updated>\n    </task>\n    <task id=\"LOCAL-00191\" summary=\"remove private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)&#10;fix public Move play(Move opponentMove)&#10;fix protected Amazon getAmazonToMove()\">\n      <created>1701863168803</created>\n      <option name=\"number\" value=\"00191\" />\n      <option name=\"presentableId\" value=\"LOCAL-00191\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701863168803</updated>\n    </task>\n    <task id=\"LOCAL-00192\" summary=\"refactoring getPositionOfAmazonToMove() method\">\n      <created>1701863227869</created>\n      <option name=\"number\" value=\"00192\" />\n      <option name=\"presentableId\" value=\"LOCAL-00192\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701863227869</updated>\n    </task>\n    <task id=\"LOCAL-00193\" summary=\"refactoring getPositionOfAmazonToMove() method\">\n      <created>1701863339347</created>\n      <option name=\"number\" value=\"00193\" />\n      <option name=\"presentableId\" value=\"LOCAL-00193\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701863339347</updated>\n    </task>\n    <task id=\"LOCAL-00194\" summary=\"refactoring getPositionOfAmazonToMove() method\">\n      <created>1701863480405</created>\n      <option name=\"number\" value=\"00194\" />\n      <option name=\"presentableId\" value=\"LOCAL-00194\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701863480406</updated>\n    </task>\n    <task id=\"LOCAL-00195\" summary=\"add public final Move play(Move opponentMove) &#10;add protected List&lt;Amazon&gt; getMovableAmazons()\">\n      <created>1701864395824</created>\n      <option name=\"number\" value=\"00195\" />\n      <option name=\"presentableId\" value=\"LOCAL-00195\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701864395824</updated>\n    </task>\n    <task id=\"LOCAL-00196\" summary=\"remove public Move play(Move opponentMove)\">\n      <created>1701864455861</created>\n      <option name=\"number\" value=\"00196\" />\n      <option name=\"presentableId\" value=\"LOCAL-00196\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701864455861</updated>\n    </task>\n    <task id=\"LOCAL-00197\" summary=\"remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()\">\n      <created>1701864502329</created>\n      <option name=\"number\" value=\"00197\" />\n      <option name=\"presentableId\" value=\"LOCAL-00197\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701864502329</updated>\n    </task>\n    <task id=\"LOCAL-00198\" summary=\"remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)\">\n      <created>1701864535274</created>\n      <option name=\"number\" value=\"00198\" />\n      <option name=\"presentableId\" value=\"LOCAL-00198\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701864535274</updated>\n    </task>\n    <task id=\"LOCAL-00199\" summary=\"fix protected Position destPositionOfAmazonToMove(Position startPosition)\">\n      <created>1701865167271</created>\n      <option name=\"number\" value=\"00199\" />\n      <option name=\"presentableId\" value=\"LOCAL-00199\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701865167271</updated>\n    </task>\n    <task id=\"LOCAL-00200\" summary=\"fix public final Move play(Move opponentMove)\">\n      <created>1701865256371</created>\n      <option name=\"number\" value=\"00200\" />\n      <option name=\"presentableId\" value=\"LOCAL-00200\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701865256371</updated>\n    </task>\n    <task id=\"LOCAL-00201\" summary=\"fix protected Position destPositionOfArrowToShoot(Position startPosition)\">\n      <created>1701865317888</created>\n      <option name=\"number\" value=\"00201\" />\n      <option name=\"presentableId\" value=\"LOCAL-00201\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701865317888</updated>\n    </task>\n    <task id=\"LOCAL-00202\" summary=\"fix protected Position destPositionOfArrowToShoot(Position startPosition)\">\n      <created>1701865342204</created>\n      <option name=\"number\" value=\"00202\" />\n      <option name=\"presentableId\" value=\"LOCAL-00202\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701865342204</updated>\n    </task>\n    <task id=\"LOCAL-00203\" summary=\"remove public int getNumberOfAmazonsPerPlayer()\">\n      <created>1701865689978</created>\n      <option name=\"number\" value=\"00203\" />\n      <option name=\"presentableId\" value=\"LOCAL-00203\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701865689978</updated>\n    </task>\n    <task id=\"LOCAL-00204\" summary=\"remove public int getNumberOfAmazonsPerPlayer()\">\n      <created>1701866100776</created>\n      <option name=\"number\" value=\"00204\" />\n      <option name=\"presentableId\" value=\"LOCAL-00204\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701866100776</updated>\n    </task>\n    <task id=\"LOCAL-00205\" summary=\"fix public void updateGame(Move move): set new current player ID at the end of the method\">\n      <created>1701933678428</created>\n      <option name=\"number\" value=\"00205\" />\n      <option name=\"presentableId\" value=\"LOCAL-00205\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701933678428</updated>\n    </task>\n    <task id=\"LOCAL-00206\" summary=\"fix public Move play(Move opponentMove): remove player ID setter\">\n      <created>1701933701657</created>\n      <option name=\"number\" value=\"00206\" />\n      <option name=\"presentableId\" value=\"LOCAL-00206\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701933701657</updated>\n    </task>\n    <task id=\"LOCAL-00207\" summary=\"fix public void updateGame(Move move)&#10;fix public PlayerID getPlayerID()&#10;fix public Player getPlayer()&#10;fix public void incrementTurn()\">\n      <created>1701936431266</created>\n      <option name=\"number\" value=\"00207\" />\n      <option name=\"presentableId\" value=\"LOCAL-00207\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701936431266</updated>\n    </task>\n    <task id=\"LOCAL-00208\" summary=\"fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)\">\n      <created>1701937985877</created>\n      <option name=\"number\" value=\"00208\" />\n      <option name=\"presentableId\" value=\"LOCAL-00208\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701937985877</updated>\n    </task>\n    <task id=\"LOCAL-00209\" summary=\"fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)\">\n      <created>1701938004595</created>\n      <option name=\"number\" value=\"00209\" />\n      <option name=\"presentableId\" value=\"LOCAL-00209\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701938004595</updated>\n    </task>\n    <task id=\"LOCAL-00210\" summary=\"fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions\">\n      <created>1701939364508</created>\n      <option name=\"number\" value=\"00210\" />\n      <option name=\"presentableId\" value=\"LOCAL-00210\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701939364508</updated>\n    </task>\n    <task id=\"LOCAL-00211\" summary=\"fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions\">\n      <created>1701946140781</created>\n      <option name=\"number\" value=\"00211\" />\n      <option name=\"presentableId\" value=\"LOCAL-00211\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701946140781</updated>\n    </task>\n    <task id=\"LOCAL-00212\" summary=\"fix public void initializeGame(Player player0, Player player1)\">\n      <created>1701946189696</created>\n      <option name=\"number\" value=\"00212\" />\n      <option name=\"presentableId\" value=\"LOCAL-00212\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701946189696</updated>\n    </task>\n    <task id=\"LOCAL-00213\" summary=\"refactoring accessiblePositions local variable\">\n      <created>1701946235445</created>\n      <option name=\"number\" value=\"00213\" />\n      <option name=\"presentableId\" value=\"LOCAL-00213\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1701946235445</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"214\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)\" />\n    <MESSAGE value=\"fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)\" />\n    <MESSAGE value=\"fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)\" />\n    <MESSAGE value=\"refactoring aiPlayerAmazons\" />\n    <MESSAGE value=\"add void testPlay()\" />\n    <MESSAGE value=\"add protected Amazon getAmazonToMove()\" />\n    <MESSAGE value=\"fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove\" />\n    <MESSAGE value=\"fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)\" />\n    <MESSAGE value=\"remove private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)&#10;fix public Move play(Move opponentMove)&#10;fix protected Amazon getAmazonToMove()\" />\n    <MESSAGE value=\"refactoring getPositionOfAmazonToMove() method\" />\n    <MESSAGE value=\"add public final Move play(Move opponentMove) &#10;add protected List&lt;Amazon&gt; getMovableAmazons()\" />\n    <MESSAGE value=\"remove public Move play(Move opponentMove)\" />\n    <MESSAGE value=\"remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()\" />\n    <MESSAGE value=\"remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)\" />\n    <MESSAGE value=\"fix protected Position destPositionOfAmazonToMove(Position startPosition)\" />\n    <MESSAGE value=\"fix public final Move play(Move opponentMove)\" />\n    <MESSAGE value=\"fix protected Position destPositionOfArrowToShoot(Position startPosition)\" />\n    <MESSAGE value=\"remove public int getNumberOfAmazonsPerPlayer()\" />\n    <MESSAGE value=\"fix public void updateGame(Move move): set new current player ID at the end of the method\" />\n    <MESSAGE value=\"fix public Move play(Move opponentMove): remove player ID setter\" />\n    <MESSAGE value=\"fix public void updateGame(Move move)&#10;fix public PlayerID getPlayerID()&#10;fix public Player getPlayer()&#10;fix public void incrementTurn()\" />\n    <MESSAGE value=\"fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)\" />\n    <MESSAGE value=\"fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions\" />\n    <MESSAGE value=\"fix public void initializeGame(Player player0, Player player1)\" />\n    <MESSAGE value=\"refactoring accessiblePositions local variable\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"refactoring accessiblePositions local variable\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3cd5179d0de47bf61850e6126ca5cc1345e2138b)
++++ b/.idea/workspace.xml	(date 1701953679570)
+@@ -7,9 +7,12 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="refactoring accessiblePositions local variable">
++    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" afterDir="false" />
+     </list>
+@@ -224,13 +227,6 @@
+       <workItem from="1701184810804" duration="5802000" />
+       <workItem from="1701362909876" duration="21283000" />
+       <workItem from="1701682674385" duration="22208000" />
+-    </task>
+-    <task id="LOCAL-00165" summary="fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public">
+-      <created>1701805183356</created>
+-      <option name="number" value="00165" />
+-      <option name="presentableId" value="LOCAL-00165" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1701805183356</updated>
+     </task>
+     <task id="LOCAL-00166" summary="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()">
+       <created>1701805493042</created>
+@@ -568,7 +564,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1701946235445</updated>
+     </task>
+-    <option name="localTasksCounter" value="214" />
++    <task id="LOCAL-00214" summary="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)">
++      <created>1701946592287</created>
++      <option name="number" value="00214" />
++      <option name="presentableId" value="LOCAL-00214" />
++      <option name="project" value="LOCAL" />
++      <updated>1701946592287</updated>
++    </task>
++    <option name="localTasksCounter" value="215" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -586,7 +589,6 @@
+     </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+-    <MESSAGE value="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)" />
+     <MESSAGE value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
+     <MESSAGE value="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)" />
+     <MESSAGE value="refactoring aiPlayerAmazons" />
+@@ -611,6 +613,7 @@
+     <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions" />
+     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
+     <MESSAGE value="refactoring accessiblePositions local variable" />
+-    <option name="LAST_COMMIT_MESSAGE" value="refactoring accessiblePositions local variable" />
++    <MESSAGE value="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)" />
++    <option name="LAST_COMMIT_MESSAGE" value="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: app/src/main/java/amazons/controller/GameController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package amazons.controller;\n\nimport amazons.board.Board;\nimport amazons.board.Position;\nimport amazons.game.Game;\nimport amazons.game.TurnPhase;\nimport amazons.player.*;\nimport amazons.viewer.BoardView;\nimport amazons.viewer.MenuView;\nimport javafx.animation.PauseTransition;\nimport javafx.beans.property.SimpleObjectProperty;\nimport javafx.util.Duration;\n\nimport java.util.Random;\n\n\npublic class GameController {\n    private final Game game;\n    private static final Random random = new Random();\n\n    private Position lastAmazonStartPosition;\n    private Position lastAmazonDstPosition;\n    private Position lastArrowDstPosition;\n    private Move lastMove = Move.DUMMY_MOVE;\n\n    private final SimpleObjectProperty<TurnPhase> phase = new SimpleObjectProperty<>(TurnPhase.AMAZON_PHASE);\n    private static final int PAUSE_MILLISECONDS = 1500;\n    private final PauseTransition pause = new PauseTransition(Duration.millis(PAUSE_MILLISECONDS));\n\n    private final Player[] players = new Player[Game.NUMBER_OF_PLAYERS];\n    private  BoardView view;\n    private MenuView menu;\n\n\n    public GameController(Game game, Player player0, Player player1){\n        this.game = game;\n        setPlayer(player0, PlayerID.PLAYER_ZERO);\n        setPlayer(player1, PlayerID.PLAYER_ONE);\n        initialize();\n    }\n\n    private void initialize(){\n        game.initializeGame(players[0], players[1]);\n        lastMove = Move.DUMMY_MOVE;\n        resetPhase();\n        addEndPhaseListener();\n        setPauseAnimation();\n    }\n\n    public void resetGame(){\n       initialize();\n       view.updateFields();\n       menu.setStatusText(\"\");\n       startGame();\n    }\n    private void setPauseAnimation(){\n        pause.setOnFinished(e -> setPhase(TurnPhase.END_PHASE));\n    }\n\n    private void addEndPhaseListener(){\n        getPhaseProperty().addListener((observable, oldValue, newValue) ->{\n            if (newValue == TurnPhase.END_PHASE) endTurn();\n        });\n    }\n\n    private void endTurn(){\n        if(!game.hasEnded()) {\n            game.incrementTurn();\n            resetPhase();\n            if(!getCurrentPlayer().isGUIControlled()) playComputerTurn();\n        }\n        else {\n            menu.setStatusText(game.getWinner() + \" wins!!!\");\n        }\n    }\n\n    public void setPlayer(Player player, PlayerID playerID){\n        players[playerID.index] = player;\n    }\n\n    public void setView(BoardView view){\n        this.view = view;\n    }\n\n    public void setMenu(MenuView menu){\n        this.menu = menu;\n    }\n    public void playComputerTurn(){\n        Player currentPlayer = getCurrentPlayer();\n        lastMove = currentPlayer.play(lastMove);\n        game.updateGame(lastMove);\n        view.showMove(lastMove);\n        pause.play();\n    }\n\n    public void startGame(){\n        if(!getCurrentPlayer().isGUIControlled()) playComputerTurn();\n    }\n\n    public Board getBoard(){\n        return game.getBoard();\n    }\n\n    public PlayerID getCurrentPlayerID(){\n        return game.getPlayerID();\n    }\n\n    public Player getCurrentPlayer(){\n        return game.getPlayer();\n    }\n\n    public void setPhase(TurnPhase turnPhase){\n        this.phase.setValue(turnPhase);\n    }\n\n    public TurnPhase getPhase(){\n        return phase.getValue();\n    }\n\n    public void resetPhase() {\n        setPhase(TurnPhase.AMAZON_PHASE);\n    }\n\n    public SimpleObjectProperty<TurnPhase> getPhaseProperty(){\n        return phase;\n    }\n\n    public void nextPhase(){\n        setPhase(getPhase().next());\n    }\n\n    // call by the view\n    public void moveFigure(Position amazonStartPosition, Position amazonDstPosition){\n        game.updateGameAmazonMove(amazonStartPosition, amazonDstPosition);\n        lastAmazonStartPosition = amazonStartPosition;\n        lastAmazonDstPosition = amazonDstPosition;\n    }\n\n    // call by the view\n    public void shootArrow(Position startPosition, Position arrowDstPosition){\n        game.updateGameArrowShot(startPosition, arrowDstPosition);\n        lastArrowDstPosition = arrowDstPosition;\n        lastMove = new Move(lastAmazonStartPosition, lastAmazonDstPosition, lastArrowDstPosition);\n    }\n\n    public void setPlayerGUI(PlayerID playerID){\n        setPlayer(new GUIPLayer(), playerID);\n    }\n\n    public void setPlayerBasic(PlayerID playerID){\n        setPlayer(new AIBasicPlayer(), playerID);\n    }\n\n    public void setPlayerRandom(PlayerID playerID){\n        setPlayer(new GUIPLayer(), playerID);\n    }\n    public void setPlayerGreedy(PlayerID playerID){\n        setPlayer(new GUIPLayer(), playerID);\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/amazons/controller/GameController.java b/app/src/main/java/amazons/controller/GameController.java
+--- a/app/src/main/java/amazons/controller/GameController.java	(revision 3cd5179d0de47bf61850e6126ca5cc1345e2138b)
++++ b/app/src/main/java/amazons/controller/GameController.java	(date 1701953756210)
+@@ -24,7 +24,7 @@
+     private Move lastMove = Move.DUMMY_MOVE;
+ 
+     private final SimpleObjectProperty<TurnPhase> phase = new SimpleObjectProperty<>(TurnPhase.AMAZON_PHASE);
+-    private static final int PAUSE_MILLISECONDS = 1500;
++    private static final int PAUSE_MILLISECONDS = 30000;
+     private final PauseTransition pause = new PauseTransition(Duration.millis(PAUSE_MILLISECONDS));
+ 
+     private final Player[] players = new Player[Game.NUMBER_OF_PLAYERS];
+@@ -64,6 +64,14 @@
+     }
+ 
+     private void endTurn(){
++        AbstractPlayer abstractPlayer = (AbstractPlayer) players[getCurrentPlayerID().opponent().index];
++        System.out.println(abstractPlayer.hasPlayableAmazons());
++        /*
++        if(!abstractPlayer.hasPlayableAmazons()){
++            game.hasLost(abstractPlayer.getPlayerID());
++        }
++
++         */
+         if(!game.hasEnded()) {
+             game.incrementTurn();
+             resetPhase();
+@@ -138,8 +146,11 @@
+ 
+     // call by the view
+     public void shootArrow(Position startPosition, Position arrowDstPosition){
++        AbstractPlayer abstractPlayer = (AbstractPlayer) getCurrentPlayer();
++        abstractPlayer.updateBoardAmazonCase(lastAmazonStartPosition, lastAmazonDstPosition);
+         game.updateGameArrowShot(startPosition, arrowDstPosition);
+         lastArrowDstPosition = arrowDstPosition;
++        abstractPlayer.updateBoardArrowCase(lastAmazonDstPosition, lastArrowDstPosition);
+         lastMove = new Move(lastAmazonStartPosition, lastAmazonDstPosition, lastArrowDstPosition);
+     }
+ 
+Index: app/src/main/java/amazons/player/AbstractPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package amazons.player;\n\nimport amazons.board.Position;\n\nimport java.util.List;\n\npublic abstract class AbstractPlayer implements Player{\n\n    protected PlayerID playerID;\n    protected int boardWidth;\n    protected int boardHeight;\n    protected List<Position> initialPositions;\n\n    @Override\n    public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {\n        this.boardWidth = boardWidth;\n        this.boardHeight = boardHeight;\n        this.playerID = playerID;\n        this.initialPositions = initialPositions[playerID.index];\n    }\n\n    @Override\n    public abstract Move play(Move opponentMove);\n\n    @Override\n    public boolean isGUIControlled() {\n        return false;\n    }\n\n    @Override\n    public final PlayerID getPlayerID() {\n        return playerID;\n    }\n\n    public final void setPlayerID(PlayerID playerID){\n        this.playerID = playerID;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/amazons/player/AbstractPlayer.java b/app/src/main/java/amazons/player/AbstractPlayer.java
+--- a/app/src/main/java/amazons/player/AbstractPlayer.java	(revision 3cd5179d0de47bf61850e6126ca5cc1345e2138b)
++++ b/app/src/main/java/amazons/player/AbstractPlayer.java	(date 1701953452564)
+@@ -1,7 +1,14 @@
+ package amazons.player;
+ 
++import amazons.board.Board;
++import amazons.board.MatrixBoard;
+ import amazons.board.Position;
++import amazons.board.PresetFigureGenerator;
++import amazons.figures.Amazon;
++import amazons.figures.IllegalMoveException;
++import amazons.game.Game;
+ 
++import java.util.ArrayList;
+ import java.util.List;
+ 
+ public abstract class AbstractPlayer implements Player{
+@@ -9,7 +16,9 @@
+     protected PlayerID playerID;
+     protected int boardWidth;
+     protected int boardHeight;
++    protected Board boardRepresentation;
+     protected List<Position> initialPositions;
++    protected List<Amazon> playerAmazons;
+ 
+     @Override
+     public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List<Position>[] initialPositions) {
+@@ -17,6 +26,8 @@
+         this.boardHeight = boardHeight;
+         this.playerID = playerID;
+         this.initialPositions = initialPositions[playerID.index];
++        instantiateBoard(initialPositions);
++        fillAIPlayerAmazonsList(this.initialPositions);
+     }
+ 
+     @Override
+@@ -32,7 +43,53 @@
+         return playerID;
+     }
+ 
++    public boolean hasPlayableAmazons(){
++        System.out.println("hasPlayableAmazons: ");
++        return !getMovableAmazons().isEmpty();
++    }
++
+     public final void setPlayerID(PlayerID playerID){
+         this.playerID = playerID;
+     }
++
++    private void fillAIPlayerAmazonsList(List<Position> initialPositions) {
++        playerAmazons = new ArrayList<>();
++        Amazon amazonToAdd;
++        for(Position position : initialPositions){
++            amazonToAdd = (Amazon) boardRepresentation.getFigure(position);
++            playerAmazons.add(amazonToAdd);
++        }
++    }
++
++    private void instantiateBoard(List<Position>[] initialPositions){
++        boardRepresentation = new MatrixBoard(boardWidth,boardHeight);
++        PresetFigureGenerator generator = new PresetFigureGenerator(Game.createPlayersFiguresWithDefaultPosition(initialPositions));
++        boardRepresentation.fill(generator);
++    }
++
++    protected List<Amazon> getMovableAmazons(){
++        List<Amazon> movableAmazons = new ArrayList<>();
++        for(Amazon amazon : playerAmazons){
++            if(amazon.getAccessiblePositions(boardRepresentation).size() > 0){
++                movableAmazons.add(amazon);
++            }
++        }
++        return movableAmazons;
++    }
++
++    public void updateBoardAmazonCase(Position amazonStartPosition, Position amazonDestPosition){
++        try{
++            boardRepresentation.moveFigure(amazonStartPosition,amazonDestPosition);
++        }
++        catch(IllegalMoveException e){
++        }
++    }
++
++    public void updateBoardArrowCase(Position amazonDestPosition, Position arrowDestinationPosition){
++        try{
++            boardRepresentation.shootArrow(amazonDestPosition, arrowDestinationPosition);
++        }
++        catch(IllegalMoveException e){
++        }
++    }
+ }
