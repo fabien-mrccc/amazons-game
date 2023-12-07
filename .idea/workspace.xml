@@ -7,11 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void updateGame(Move move)&#10;fix public PlayerID getPlayerID()&#10;fix public Player getPlayer()&#10;fix public void incrementTurn()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/viewer/FieldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/viewer/FieldView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,27 +228,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00159" summary="fix public String toString(): refactoring local variable names">
-      <created>1701795193299</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1701795193299</updated>
-    </task>
-    <task id="LOCAL-00160" summary="add private void getALine(StringBuilder displayableMatrix)">
-      <created>1701795616346</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1701795616346</updated>
-    </task>
-    <task id="LOCAL-00161" summary="add private void getALineToPrint(StringBuilder displayableMatrix)">
-      <created>1701795680160</created>
-      <option name="number" value="00161" />
-      <option name="presentableId" value="LOCAL-00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1701795680160</updated>
     </task>
     <task id="LOCAL-00162" summary="add private void getAPipeToPrint(StringBuilder displayableMatrix)&#10;add private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)">
       <created>1701796334246</created>
@@ -568,7 +551,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701936431266</updated>
     </task>
-    <option name="localTasksCounter" value="208" />
+    <task id="LOCAL-00208" summary="fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)">
+      <created>1701937985877</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
+      <option name="project" value="LOCAL" />
+      <updated>1701937985877</updated>
+    </task>
+    <task id="LOCAL-00209" summary="fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)">
+      <created>1701938004595</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
+      <option name="project" value="LOCAL" />
+      <updated>1701938004595</updated>
+    </task>
+    <task id="LOCAL-00210" summary="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions">
+      <created>1701939364508</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1701939364508</updated>
+    </task>
+    <option name="localTasksCounter" value="211" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,8 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
-    <MESSAGE value="add protected abstract Amazon getAmazonToMove()" />
     <MESSAGE value="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="add void setUp()" />
     <MESSAGE value="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)" />
@@ -611,6 +613,8 @@
     <MESSAGE value="fix public void updateGame(Move move): set new current player ID at the end of the method" />
     <MESSAGE value="fix public Move play(Move opponentMove): remove player ID setter" />
     <MESSAGE value="fix public void updateGame(Move move)&#10;fix public PlayerID getPlayerID()&#10;fix public Player getPlayer()&#10;fix public void incrementTurn()" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public void updateGame(Move move)&#10;fix public PlayerID getPlayerID()&#10;fix public Player getPlayer()&#10;fix public void incrementTurn()" />
+    <MESSAGE value="fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)" />
+    <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions" />
   </component>
 </project>
