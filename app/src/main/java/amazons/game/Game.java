@@ -77,21 +77,20 @@ public class Game {
     public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition){
         try{board.moveFigure(amazonStartPosition, amazonDstPosition);}
         catch (IllegalMoveException exception) {
-            winner = currentPlayerID.opponent();
-            isThisIsTheEnd = true;
+            hasLost(currentPlayerID);
         }
     }
 
     public void updateGameArrowShot(Position amazonDstPosition, Position arrowDstPosition) {
         try{board.shootArrow(amazonDstPosition, arrowDstPosition);}
         catch (IllegalMoveException exception){
-            winner = currentPlayerID.opponent();
-            isThisIsTheEnd = true;
+            hasLost(currentPlayerID);
         }
     }
 
-    private boolean hasLost(PlayerID playerID) {
-        return !playerID.equals(winner);
+    private void hasLost(PlayerID playerID) {
+        winner = playerID.opponent();
+        isThisIsTheEnd = true;
     }
 
     public Board getBoard(){

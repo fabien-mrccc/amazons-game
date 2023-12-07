@@ -7,15 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="refactoring accessiblePositions local variable">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/figures/Amazon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/viewer/FieldView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/viewer/FieldView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,27 +224,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00162" summary="add private void getAPipeToPrint(StringBuilder displayableMatrix)&#10;add private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)">
-      <created>1701796334246</created>
-      <option name="number" value="00162" />
-      <option name="presentableId" value="LOCAL-00162" />
-      <option name="project" value="LOCAL" />
-      <updated>1701796334246</updated>
-    </task>
-    <task id="LOCAL-00163" summary="add private void getASpaceToPrint(StringBuilder displayableMatrix)&#10;fix private void getAFigureToPrint(StringBuilder displayableMatrix, int column, int row)&#10;fix public String toString()">
-      <created>1701799616033</created>
-      <option name="number" value="00163" />
-      <option name="presentableId" value="LOCAL-00163" />
-      <option name="project" value="LOCAL" />
-      <updated>1701799616033</updated>
-    </task>
-    <task id="LOCAL-00164" summary="add private void updateCurrentPosition()">
-      <created>1701803961778</created>
-      <option name="number" value="00164" />
-      <option name="presentableId" value="LOCAL-00164" />
-      <option name="project" value="LOCAL" />
-      <updated>1701803961778</updated>
     </task>
     <task id="LOCAL-00165" summary="fix public abstract List&lt;Position&gt; getAccessiblePositions(Board board): remove protected access modifier to public">
       <created>1701805183356</created>
@@ -572,7 +547,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701939364508</updated>
     </task>
-    <option name="localTasksCounter" value="211" />
+    <task id="LOCAL-00211" summary="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions">
+      <created>1701946140781</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
+      <option name="project" value="LOCAL" />
+      <updated>1701946140781</updated>
+    </task>
+    <task id="LOCAL-00212" summary="fix public void initializeGame(Player player0, Player player1)">
+      <created>1701946189696</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
+      <option name="project" value="LOCAL" />
+      <updated>1701946189696</updated>
+    </task>
+    <task id="LOCAL-00213" summary="refactoring accessiblePositions local variable">
+      <created>1701946235445</created>
+      <option name="number" value="00213" />
+      <option name="presentableId" value="LOCAL-00213" />
+      <option name="project" value="LOCAL" />
+      <updated>1701946235445</updated>
+    </task>
+    <option name="localTasksCounter" value="214" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,8 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()" />
-    <MESSAGE value="add void setUp()" />
     <MESSAGE value="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)" />
     <MESSAGE value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
     <MESSAGE value="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)" />
@@ -615,6 +609,8 @@
     <MESSAGE value="fix public void updateGame(Move move)&#10;fix public PlayerID getPlayerID()&#10;fix public Player getPlayer()&#10;fix public void incrementTurn()" />
     <MESSAGE value="fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)" />
     <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
+    <MESSAGE value="refactoring accessiblePositions local variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring accessiblePositions local variable" />
   </component>
 </project>
