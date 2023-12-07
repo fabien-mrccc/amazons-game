@@ -28,15 +28,16 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
 
     /**
      * return the number of available positions in the board of the game for an amazon given in parameters
-     * @param amazon
+     * @param amazon for which the score is calculated
      * @return numberOfAvailablePositions
      */
     public int getScore(Amazon amazon){
-        int score = amazon.getAccessiblePositions(boardRepresentation).size();
+        int score;
+        score = amazon.getAccessiblePositions(boardRepresentation).size();
         return score;
     }
     /**
-     * return the best position to move at depending on the bestShootPosition and the number of arrows arround the position
+     * return the best position to move at depending on the bestShootPosition and the number of arrows around the position
      * @return bestMovePosition
      */
     public Amazon bestAmazonToMove() {
@@ -55,7 +56,7 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
     }
     public List<Position> bestAmazonDestinations(Amazon playerAmazon){
 
-        List<Position> bestPositionsToMoveIn = new ArrayList<>();
+        List<Position> bestPositionsToMoveIn = playerAmazon.getAccessiblePositions(boardRepresentation);
         int biggerAccessibleOpponentAdjacentPositionsNum = 0;
 
         for(Position position: playerAmazon.getAccessiblePositions(boardRepresentation)){
@@ -68,9 +69,6 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
                     bestPositionsToMoveIn = amazon.getAccessiblePositions(boardRepresentation, opponentAdjacentPositions);
                 }
             }
-        }
-        if(bestPositionsToMoveIn.isEmpty()){
-            bestPositionsToMoveIn = playerAmazon.getAccessiblePositions(boardRepresentation);
         }
         return bestPositionsToMoveIn;
     }
