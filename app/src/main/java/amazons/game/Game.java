@@ -69,9 +69,9 @@ public class Game {
     }
 
     public void updateGame(Move move){
-        currentPlayerID = board.getFigure(move.getAmazonStartPosition()).getPlayerID();
         updateGameAmazonMove(move.getAmazonStartPosition(),move.getAmazonDstPosition());
         updateGameArrowShot(move.getAmazonDstPosition(), move.getArrowDstPosition());
+        currentPlayerID = getPlayerID().opponent();
     }
 
     public void updateGameAmazonMove(Position amazonStartPosition, Position amazonDstPosition){
