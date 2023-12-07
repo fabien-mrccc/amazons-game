@@ -56,30 +56,30 @@ public final class Amazon extends MovableFigure implements Figure{
      */
     @Override
     public List<Position> getAccessiblePositions(Board board) {
-        List<Position> reachablePositions = new ArrayList<>();
+        List<Position> accessiblePositions = new ArrayList<>();
 
         for(CardinalDirection direction : CardinalDirection.values()){
             Position positionCheck = this.position.next(direction);
 
             while(!board.isOutOfBoard(positionCheck)){
                 if(!board.isEmpty(positionCheck)){ break;}
-                reachablePositions.add(positionCheck);
+                accessiblePositions.add(positionCheck);
                 positionCheck = positionCheck.next(direction);
             }
         }
 
-        return reachablePositions;
+        return accessiblePositions;
     }
     public List<Position> getAccessiblePositions(Board board, List<Position> positions){
-        List<Position> reachablePositions = new ArrayList<>();
+        List<Position> accessiblePositions = new ArrayList<>();
 
         for(Position position: positions){
             if(!board.isOutOfBoard(position)){
                 if(!board.isEmpty(position)){ break;}
-                reachablePositions.add(position);
+                accessiblePositions.add(position);
             }
         }
-        return reachablePositions;
+        return accessiblePositions;
     }
     @Override
     public String toString(){
