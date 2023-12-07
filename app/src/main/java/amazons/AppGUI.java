@@ -23,7 +23,7 @@ public class AppGUI extends Application {
     @Override
     public void start(Stage primaryStage) {
         Game game = new Game();
-        GameController controller = new GameController(game, new GUIPLayer(), new GUIPLayer());
+        GameController controller = new GameController(game, new GUIPLayer(), new AIBasicPlayer());
         int numberOfColumns =  game.getNumberOfColumns();
         int numberOfRows =  game.getNumberOfRows();
 

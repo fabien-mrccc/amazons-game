@@ -7,14 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIBasicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractPlayer.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public Player getOpponentPlayer()&#10;fix public void shootArrow(Position startPosition, Position arrowDstPosition)&#10;add private PlayerID checkForLosers()">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,55 +221,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00166" summary="fix public T next()&#10;remove public Position getCurrentPosition()&#10;remove public Position getLastPosition()">
-      <created>1701805493042</created>
-      <option name="number" value="00166" />
-      <option name="presentableId" value="LOCAL-00166" />
-      <option name="project" value="LOCAL" />
-      <updated>1701805493042</updated>
-    </task>
-    <task id="LOCAL-00167" summary="add void setUp()">
-      <created>1701806059147</created>
-      <option name="number" value="00167" />
-      <option name="presentableId" value="LOCAL-00167" />
-      <option name="project" value="LOCAL" />
-      <updated>1701806059147</updated>
-    </task>
-    <task id="LOCAL-00168" summary="add void hasNext()&#10;fix void setUp()">
-      <created>1701840289050</created>
-      <option name="number" value="00168" />
-      <option name="presentableId" value="LOCAL-00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1701840289050</updated>
-    </task>
-    <task id="LOCAL-00169" summary="fix void setUp()&#10;add void next()">
-      <created>1701840641204</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1701840641204</updated>
-    </task>
-    <task id="LOCAL-00170" summary="fix void setUp()&#10;fix void hasNext()">
-      <created>1701842773192</created>
-      <option name="number" value="00170" />
-      <option name="presentableId" value="LOCAL-00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1701842773192</updated>
-    </task>
-    <task id="LOCAL-00171" summary="fix void next()">
-      <created>1701844053008</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1701844053008</updated>
-    </task>
-    <task id="LOCAL-00172" summary="fix void testHasNext()&#10;fix void testNext()&#10;add void testGetNumberOfColumns()&#10;add void testGetNumberOfRows()">
-      <created>1701844727192</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1701844727192</updated>
     </task>
     <task id="LOCAL-00173" summary="add public Game(int numberOfColumns, int numberOfRows)&#10;fix public Game()">
       <created>1701848370012</created>
@@ -571,7 +516,56 @@
       <option name="project" value="LOCAL" />
       <updated>1701946592287</updated>
     </task>
-    <option name="localTasksCounter" value="215" />
+    <task id="LOCAL-00215" summary="fix public void initializeGame(Player player0, Player player1): initialize turn number and isThisIsTheEnd">
+      <created>1701957491271</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
+      <option name="project" value="LOCAL" />
+      <updated>1701957491271</updated>
+    </task>
+    <task id="LOCAL-00216" summary="attribute names refactoring">
+      <created>1701957554639</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1701957554639</updated>
+    </task>
+    <task id="LOCAL-00217" summary="attribute names refactoring">
+      <created>1701957631919</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1701957631919</updated>
+    </task>
+    <task id="LOCAL-00218" summary="add public boolean hasPlayableAmazons()&#10;add private void fillPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;add private void instantiateBoard(List&lt;Position&gt;[] initialPositions)&#10;add protected List&lt;Amazon&gt; getMovableAmazons()&#10;add public void updateBoardAmazonCase(Position amazonStartPosition, Position amazonDestPosition)&#10;add public void updateBoardArrowCase(Position amazonDestPosition, Position arrowDestinationPosition)">
+      <created>1701957892361</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1701957892361</updated>
+    </task>
+    <task id="LOCAL-00219" summary="fix public final Move play(Move opponentMove)&#10;remove private void instantiateAIBoard(List&lt;Position&gt;[] initialPositions){&#10;remove private void updateBoard(Position startPosition, Position destPosition)&#10;remove private void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;remove protected List&lt;Amazon&gt; getMovableAmazons()">
+      <created>1701957999190</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1701957999190</updated>
+    </task>
+    <task id="LOCAL-00220" summary="add public Player getOpponentPlayer()&#10;fix public void shootArrow(Position startPosition, Position arrowDstPosition)&#10;add private PlayerID checkForLosers()">
+      <created>1701958054060</created>
+      <option name="number" value="00220" />
+      <option name="presentableId" value="LOCAL-00220" />
+      <option name="project" value="LOCAL" />
+      <updated>1701958054060</updated>
+    </task>
+    <task id="LOCAL-00221" summary="add public Player getOpponentPlayer()&#10;fix public void shootArrow(Position startPosition, Position arrowDstPosition)&#10;add private PlayerID checkForLosers()">
+      <created>1701958059222</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1701958059222</updated>
+    </task>
+    <option name="localTasksCounter" value="222" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,11 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)" />
-    <MESSAGE value="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)" />
-    <MESSAGE value="refactoring aiPlayerAmazons" />
-    <MESSAGE value="add void testPlay()" />
-    <MESSAGE value="add protected Amazon getAmazonToMove()" />
     <MESSAGE value="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove" />
     <MESSAGE value="fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)" />
     <MESSAGE value="remove private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)&#10;fix public Move play(Move opponentMove)&#10;fix protected Amazon getAmazonToMove()" />
@@ -614,6 +603,11 @@
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
     <MESSAGE value="refactoring accessiblePositions local variable" />
     <MESSAGE value="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add private void hasLost(PlayerID playerID)&#10;remove private boolean hasLost(PlayerID playerID)" />
+    <MESSAGE value="fix public void initializeGame(Player player0, Player player1): initialize turn number and isThisIsTheEnd" />
+    <MESSAGE value="attribute names refactoring" />
+    <MESSAGE value="add public boolean hasPlayableAmazons()&#10;add private void fillPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;add private void instantiateBoard(List&lt;Position&gt;[] initialPositions)&#10;add protected List&lt;Amazon&gt; getMovableAmazons()&#10;add public void updateBoardAmazonCase(Position amazonStartPosition, Position amazonDestPosition)&#10;add public void updateBoardArrowCase(Position amazonDestPosition, Position arrowDestinationPosition)" />
+    <MESSAGE value="fix public final Move play(Move opponentMove)&#10;remove private void instantiateAIBoard(List&lt;Position&gt;[] initialPositions){&#10;remove private void updateBoard(Position startPosition, Position destPosition)&#10;remove private void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;remove protected List&lt;Amazon&gt; getMovableAmazons()" />
+    <MESSAGE value="add public Player getOpponentPlayer()&#10;fix public void shootArrow(Position startPosition, Position arrowDstPosition)&#10;add private PlayerID checkForLosers()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add public Player getOpponentPlayer()&#10;fix public void shootArrow(Position startPosition, Position arrowDstPosition)&#10;add private PlayerID checkForLosers()" />
   </component>
 </project>

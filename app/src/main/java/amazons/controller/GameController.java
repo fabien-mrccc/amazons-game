@@ -24,7 +24,7 @@ public class GameController {
     private Move lastMove = Move.DUMMY_MOVE;
 
     private final SimpleObjectProperty<TurnPhase> phase = new SimpleObjectProperty<>(TurnPhase.AMAZON_PHASE);
-    private static final int PAUSE_MILLISECONDS = 1500;
+    private static final int PAUSE_MILLISECONDS = 30000;
     private final PauseTransition pause = new PauseTransition(Duration.millis(PAUSE_MILLISECONDS));
 
     private final Player[] players = new Player[Game.NUMBER_OF_PLAYERS];
@@ -109,6 +109,10 @@ public class GameController {
         return game.getPlayer();
     }
 
+    public Player getOpponentPlayer() {
+        return players[getCurrentPlayerID().opponent().index];
+    }
+
     public void setPhase(TurnPhase turnPhase){
         this.phase.setValue(turnPhase);
     }
@@ -138,9 +142,31 @@ public class GameController {
 
     // call by the view
     public void shootArrow(Position startPosition, Position arrowDstPosition){
+        AbstractPlayer player = (AbstractPlayer) getCurrentPlayer();
+        AbstractPlayer opponentPlayer = (AbstractPlayer) getOpponentPlayer();
+        player.updateBoardAmazonCase(lastAmazonStartPosition, lastAmazonDstPosition);
+        opponentPlayer.updateBoardAmazonCase(lastAmazonStartPosition, lastAmazonDstPosition);
         game.updateGameArrowShot(startPosition, arrowDstPosition);
         lastArrowDstPosition = arrowDstPosition;
+        player.updateBoardArrowCase(lastAmazonDstPosition, lastArrowDstPosition);
+        opponentPlayer.updateBoardArrowCase(lastAmazonDstPosition, lastArrowDstPosition);
+        PlayerID loser = checkForLosers();
+        if(loser != null){
+            game.hasLost(loser);
+        }
         lastMove = new Move(lastAmazonStartPosition, lastAmazonDstPosition, lastArrowDstPosition);
+    }
+
+    private PlayerID checkForLosers(){
+        AbstractPlayer player = (AbstractPlayer) getCurrentPlayer();
+        AbstractPlayer opponentPlayer = (AbstractPlayer) getOpponentPlayer();
+        if(!player.hasPlayableAmazons()){
+            return player.getPlayerID();
+        }
+        if (!opponentPlayer.hasPlayableAmazons()){
+            return opponentPlayer.getPlayerID();
+        }
+        return null;
     }
 
     public void setPlayerGUI(PlayerID playerID){
