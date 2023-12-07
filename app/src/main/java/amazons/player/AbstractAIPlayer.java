@@ -10,14 +10,21 @@ public abstract class AbstractAIPlayer extends AbstractPlayer {
 
     protected List<Amazon> opponentAmazons;
 
+    public boolean hasMovableAmazons;
+
     @Override
     public final void initialize(int boardWidth, int boardHeight, PlayerID playerID, List<Position>[] initialPositions) {
         super.initialize(boardWidth, boardHeight, playerID, initialPositions);
         fillOpponentAmazonsList(initialPositions[playerID.opponent().index]);
+        hasMovableAmazons = true;
     }
 
     @Override
     public final Move play(Move opponentMove) {
+        if(getMovableAmazons().size() == 0){
+            hasMovableAmazons = false;
+            return Move.DUMMY_MOVE;
+        }
         Position amazonStartPosition = startPositionOfAmazonToMove();
         Position amazonDestPosition = destPositionOfAmazonToMove(amazonStartPosition);
         updateBoardAmazonCase(amazonStartPosition,amazonDestPosition);
