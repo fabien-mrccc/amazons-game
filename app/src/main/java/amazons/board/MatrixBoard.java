@@ -73,7 +73,7 @@ public final class MatrixBoard extends AbstractBoard {
 
     private void concatFigure(StringBuilder displayableMatrix, int column, int row){
         if(getFigure(new Position(column,row))== EMPTY_FIGURE){
-            displayableMatrix.append("  ");
+            displayableMatrix.append(EMPTY_FIGURE);
         }
         else if (getFigure(new Position(column,row))== ARROW_FIGURE) {
             displayableMatrix.append(ARROW_FIGURE);

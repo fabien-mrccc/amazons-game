@@ -3,10 +3,8 @@ package amazons.player;
 import amazons.board.Board;
 import amazons.board.MatrixBoard;
 import amazons.board.Position;
-import amazons.board.PresetFigureGenerator;
 import amazons.figures.Amazon;
 import amazons.figures.IllegalMoveException;
-import amazons.game.Game;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,8 +60,16 @@ public abstract class AbstractPlayer implements Player{
 
     private void instantiateBoard(List<Position>[] initialPositions){
         boardRepresentation = new MatrixBoard(boardWidth,boardHeight);
-        PresetFigureGenerator generator = new PresetFigureGenerator(Game.createPlayersFiguresWithDefaultPosition(initialPositions));
-        boardRepresentation.fill(generator);
+        addStartingAmazons(initialPositions);
+    }
+
+    private void addStartingAmazons(List<Position>[] initialPositions){
+        for(Position position: initialPositions[0]){
+            boardRepresentation.setFigure(position, new Amazon(position, PlayerID.PLAYER_ZERO.index));
+        }
+        for(Position position: initialPositions[1]){
+            boardRepresentation.setFigure(position, new Amazon(position, PlayerID.PLAYER_ONE.index));
+        }
     }
 
     protected List<Amazon> getMovableAmazons(){
@@ -90,5 +96,9 @@ public abstract class AbstractPlayer implements Player{
         }
         catch(IllegalMoveException e){
         }
+    }
+
+    public Board getBoard(){
+        return boardRepresentation;
     }
 }
