@@ -5,6 +5,7 @@ import amazons.controller.GameController;
 import amazons.game.Game;
 import amazons.player.AIBasicPlayer;
 import amazons.player.AIGreedyPlayer;
+import amazons.player.AIRandomPlayer;
 import amazons.player.GUIPLayer;
 import amazons.util.ImageUtil;
 import amazons.viewer.BoardView;
@@ -24,7 +25,7 @@ public class AppGUI extends Application {
     @Override
     public void start(Stage primaryStage) {
         Game game = new Game();
-        GameController controller = new GameController(game, new GUIPLayer(), new AIBasicPlayer());
+        GameController controller = new GameController(game, new GUIPLayer(), new GUIPLayer());
         int numberOfColumns =  game.getNumberOfColumns();
         int numberOfRows =  game.getNumberOfRows();
 
