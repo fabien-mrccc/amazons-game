@@ -22,7 +22,8 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
 
     @Override
     protected Position destPositionOfArrowToShoot(Position startPosition) {
-        return bestShootPosition(new Amazon(startPosition, playerID.index));
+        Amazon amazon = (Amazon) boardRepresentation.getFigure(startPosition);
+        return bestShootPosition(amazon);
     }
 
     /**
@@ -50,7 +51,6 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
                 }
             }
         }
-
         return amazonToMove;
     }
     public Position bestAmazonDestination(Amazon playerAmazon){
