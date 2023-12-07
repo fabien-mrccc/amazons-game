@@ -155,7 +155,7 @@ public class GameController {
         setPlayer(new GUIPLayer(), playerID);
     }
     public void setPlayerGreedy(PlayerID playerID){
-        setPlayer(new GUIPLayer(), playerID);
+        setPlayer(new AIGreedyPlayer(), playerID);
     }
 
 }

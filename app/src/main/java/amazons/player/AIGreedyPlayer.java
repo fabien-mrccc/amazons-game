@@ -22,7 +22,8 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
 
     @Override
     protected Position destPositionOfArrowToShoot(Position startPosition) {
-        return getRandomElement(new Random(), bestShootPositions(new Amazon(destPositionOfArrowToShoot(bestAmazonToMove().getPosition()),playerID.index)));
+        bestAmazonToMove().setPosition(destPositionOfAmazonToMove(bestAmazonToMove().getPosition()));
+        return getRandomElement(new Random(), bestShootPositions(bestAmazonToMove()));
     }
 
     /**
@@ -41,28 +42,40 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
      * return the best position to move at depending on the bestShootPosition and the number of arrows arround the position
      * @return bestMovePosition
      */
-    public Amazon bestAmazonToMove(){
-        int smallerPlayerScore = 0;
+    public Amazon bestAmazonToMove() {
+        int smallerPlayerScore = boardHeight*boardWidth;
         Amazon amazonToMove = null;
-        for(Amazon playerAmazon: aiPlayerAmazons){
-            if(smallerPlayerScore> getScore(playerAmazon)){
-                if(playerAmazon.getAccessiblePositions(aiBoardRepresentation).size() != 0) {
+        for (Amazon playerAmazon : aiPlayerAmazons) {
+            if (smallerPlayerScore > getScore(playerAmazon)) {
+                if (playerAmazon.getAccessiblePositions(aiBoardRepresentation).size() != 0) {
                     smallerPlayerScore = getScore(playerAmazon);
                     amazonToMove = playerAmazon;
                 }
             }
         }
+
         return amazonToMove;
     }
     public List<Position> bestAmazonDestinations(Amazon playerAmazon){
-        List<Position> bestPositions = new ArrayList<>();
+
+        List<Position> bestPositionsToMoveIn = new ArrayList<>();
         int biggerAccessibleOpponentAdjacentPositionsNum = 0;
+
         for(Position position: playerAmazon.getAccessiblePositions(aiBoardRepresentation)){
             for(Amazon opponentAmazon: opponentAmazons) {
-                bestPositions = getBestPositionsToMoveIn(new Amazon(position, playerID.index), biggerAccessibleOpponentAdjacentPositionsNum, getAdjacentPositions(opponentAmazon.getPosition()));
+                Amazon amazon = new Amazon(position, playerID.index);
+                List<Position> opponentAdjacentPositions = getAdjacentPositions(opponentAmazon.getPosition());
+                int accessibleOpponentAdjacentPositionsNum = getAccessibleOpponentAdjacentPositionsNum(amazon,opponentAdjacentPositions);
+                if(biggerAccessibleOpponentAdjacentPositionsNum < accessibleOpponentAdjacentPositionsNum){
+                    biggerAccessibleOpponentAdjacentPositionsNum = accessibleOpponentAdjacentPositionsNum;
+                    bestPositionsToMoveIn = amazon.getAccessiblePositions(aiBoardRepresentation, opponentAdjacentPositions);
+                }
             }
         }
-        return bestPositions;
+        if(bestPositionsToMoveIn.isEmpty()){
+            bestPositionsToMoveIn = playerAmazon.getAccessiblePositions(aiBoardRepresentation);
+        }
+        return bestPositionsToMoveIn;
     }
     private int getAccessibleOpponentAdjacentPositionsNum(Amazon amazon,List<Position> opponentAdjacentPositions){
         int accessibleOpponentAdjacentPositionsNum =0;
@@ -73,15 +86,7 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
         }
         return accessibleOpponentAdjacentPositionsNum;
     }
-    private List<Position> getBestPositionsToMoveIn(Amazon amazon, int biggerAccessibleOpponentAdjacentPositionsNum, List<Position> opponentAdjacentPositions){
-        List<Position> bestPositionsToMoveIn = new ArrayList<>();
-        int accessibleOpponentAdjacentPositionsNum = getAccessibleOpponentAdjacentPositionsNum(amazon,opponentAdjacentPositions);
-        if(biggerAccessibleOpponentAdjacentPositionsNum < accessibleOpponentAdjacentPositionsNum){
-            biggerAccessibleOpponentAdjacentPositionsNum = accessibleOpponentAdjacentPositionsNum;
-            bestPositionsToMoveIn = amazon.getAccessiblePositions(aiBoardRepresentation, opponentAdjacentPositions);
-        }
-        return bestPositionsToMoveIn;
-    }
+
     /**
      * return the best shoot position to reduce the opponent playing choices
      * @return bestShootPosition
@@ -96,6 +101,9 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
                     positionsToChooseFrom = playerAmazon.getAccessiblePositions(aiBoardRepresentation,getAdjacentPositions(opponentAmazon.getPosition()));
                 }
             }
+        }
+        if(positionsToChooseFrom.isEmpty()){
+            positionsToChooseFrom = playerAmazon.getAccessiblePositions(aiBoardRepresentation);
         }
         return positionsToChooseFrom;
     }
