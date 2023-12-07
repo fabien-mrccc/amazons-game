@@ -22,12 +22,7 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
 
     @Override
     protected Position destPositionOfArrowToShoot(Position startPosition) {
-        for(Amazon playerAmazon: playerAmazons){
-            if(playerAmazon.getPosition() == startPosition){
-                return bestShootPosition(playerAmazon);
-            }
-        }
-        return null;
+        return bestShootPosition((Amazon) boardRepresentation.getFigure(startPosition));
     }
 
     /**
