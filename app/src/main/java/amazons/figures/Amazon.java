@@ -75,7 +75,7 @@ public final class Amazon extends MovableFigure implements Figure{
 
         for(Position position: positions){
             if(!board.isOutOfBoard(position)){
-                if(!board.isEmpty(position)){ break;}
+                if(!board.isEmpty(position)){ continue;}
                 accessiblePositions.add(position);
             }
         }
