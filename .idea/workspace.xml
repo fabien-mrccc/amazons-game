@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected List&lt;Position&gt; getAdjacentPositions(Position position)">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public Amazon bestAmazonToMove()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,20 +228,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00178" summary="add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
-      <created>1701852231169</created>
-      <option name="number" value="00178" />
-      <option name="presentableId" value="LOCAL-00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1701852231169</updated>
-    </task>
-    <task id="LOCAL-00179" summary="add protected abstract Amazon getAmazonToMove()">
-      <created>1701853613825</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1701853613825</updated>
     </task>
     <task id="LOCAL-00180" summary="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()">
       <created>1701853777514</created>
@@ -574,7 +558,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701961283644</updated>
     </task>
-    <option name="localTasksCounter" value="227" />
+    <task id="LOCAL-00227" summary="add void testIsOutOfBoard()">
+      <created>1701966681192</created>
+      <option name="number" value="00227" />
+      <option name="presentableId" value="LOCAL-00227" />
+      <option name="project" value="LOCAL" />
+      <updated>1701966681192</updated>
+    </task>
+    <task id="LOCAL-00228" summary="fix public Amazon bestAmazonToMove()">
+      <created>1701967102646</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1701967102646</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,8 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove public Move play(Move opponentMove)" />
-    <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
     <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
     <MESSAGE value="fix public final Move play(Move opponentMove)" />
@@ -617,6 +613,8 @@
     <MESSAGE value="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)&#10;fix public int getScore(Amazon amazon)" />
     <MESSAGE value="fix public List&lt;Position&gt; bestShootPositions(Amazon playerAmazon)" />
     <MESSAGE value="fix protected List&lt;Position&gt; getAdjacentPositions(Position position)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix protected List&lt;Position&gt; getAdjacentPositions(Position position)" />
+    <MESSAGE value="add void testIsOutOfBoard()" />
+    <MESSAGE value="fix public Amazon bestAmazonToMove()" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public Amazon bestAmazonToMove()" />
   </component>
 </project>
