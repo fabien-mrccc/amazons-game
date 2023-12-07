@@ -24,7 +24,7 @@ public class GameController {
     private Move lastMove = Move.DUMMY_MOVE;
 
     private final SimpleObjectProperty<TurnPhase> phase = new SimpleObjectProperty<>(TurnPhase.AMAZON_PHASE);
-    private static final int PAUSE_MILLISECONDS = 30000;
+    private static final int PAUSE_MILLISECONDS = 100;
     private final PauseTransition pause = new PauseTransition(Duration.millis(PAUSE_MILLISECONDS));
 
     private final Player[] players = new Player[Game.NUMBER_OF_PLAYERS];
@@ -86,24 +86,23 @@ public class GameController {
         this.menu = menu;
     }
     public void playComputerTurn(){
-        Player currentPlayer = getCurrentPlayer();
+        AbstractAIPlayer currentPlayer = (AbstractAIPlayer) getCurrentPlayer();
         lastMove = currentPlayer.play(lastMove);
-        if (checkLastMoveNullValue(lastMove)){
+        if(!currentPlayer.hasMovableAmazons){
             game.hasLost(getCurrentPlayerID());
             endTurn();
+            return;
         }
-        System.out.println(lastMove);
+        lastAmazonStartPosition = lastMove.getAmazonStartPosition();
+        lastAmazonDstPosition = lastMove.getAmazonDstPosition();
+        lastArrowDstPosition = lastMove.getArrowDstPosition();
         game.updateGame(lastMove);
-        System.out.println(lastMove);
+        updatePlayersBoardRepresentation();
         view.showMove(lastMove);
         pause.play();
-        game.incrementTurn();
-    }
-
-    private boolean checkLastMoveNullValue(Move lastMove){
-        return (lastMove.getAmazonStartPosition() == null
-        || lastMove.getAmazonDstPosition() == null
-        || lastMove.getArrowDstPosition() == null);
+        if(getOpponentPlayer().isGUIControlled()){
+            game.incrementTurn();
+        }
     }
 
     public void startGame(){
@@ -155,19 +154,23 @@ public class GameController {
 
     // call by the view
     public void shootArrow(Position startPosition, Position arrowDstPosition){
-        AbstractPlayer player = (AbstractPlayer) getCurrentPlayer();
-        AbstractPlayer opponentPlayer = (AbstractPlayer) getOpponentPlayer();
-        player.updateBoardAmazonCase(lastAmazonStartPosition, lastAmazonDstPosition);
-        opponentPlayer.updateBoardAmazonCase(lastAmazonStartPosition, lastAmazonDstPosition);
         game.updateGameArrowShot(startPosition, arrowDstPosition);
         lastArrowDstPosition = arrowDstPosition;
-        player.updateBoardArrowCase(lastAmazonDstPosition, lastArrowDstPosition);
-        opponentPlayer.updateBoardArrowCase(lastAmazonDstPosition, lastArrowDstPosition);
+        updatePlayersBoardRepresentation();
         PlayerID loser = checkForLosers();
         if(loser != null){
             game.hasLost(loser);
         }
         lastMove = new Move(lastAmazonStartPosition, lastAmazonDstPosition, lastArrowDstPosition);
+    }
+
+    private void updatePlayersBoardRepresentation(){
+        AbstractPlayer player = (AbstractPlayer) getCurrentPlayer();
+        AbstractPlayer opponentPlayer = (AbstractPlayer) getOpponentPlayer();
+        player.updateBoardAmazonCase(lastAmazonStartPosition, lastAmazonDstPosition);
+        opponentPlayer.updateBoardAmazonCase(lastAmazonStartPosition, lastAmazonDstPosition);
+        player.updateBoardArrowCase(lastAmazonDstPosition, lastArrowDstPosition);
+        opponentPlayer.updateBoardArrowCase(lastAmazonDstPosition, lastArrowDstPosition);
     }
 
     private PlayerID checkForLosers(){
