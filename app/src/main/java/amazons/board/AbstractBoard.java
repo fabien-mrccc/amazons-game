@@ -54,6 +54,9 @@ public abstract class AbstractBoard implements Board{
      * @throws IllegalMoveException: thrown if the move is invalid or the destination is unreachable
      */
     private void checkMovingOrShootingOperation(Position startPosition, Position dstPosition) throws IllegalMoveException{
+        if(startPosition == null || dstPosition == null){
+            throw new IllegalMoveException("You sent null parameters!");
+        }
         if(!getFigure(startPosition).canMoveTo(dstPosition,this)){
             throw new IllegalMoveException("Your move/shoot is forbidden! You have chosen the wrong figure to move OR the destination position is occupied!");
         }
