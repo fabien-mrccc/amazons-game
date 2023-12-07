@@ -88,9 +88,20 @@ public class GameController {
     public void playComputerTurn(){
         Player currentPlayer = getCurrentPlayer();
         lastMove = currentPlayer.play(lastMove);
+        if (checkLastMoveNullValue(lastMove)){
+            game.hasLost(getCurrentPlayerID());
+            endTurn();
+        }
+        System.out.println(lastMove);
         game.updateGame(lastMove);
         view.showMove(lastMove);
         pause.play();
+    }
+
+    private boolean checkLastMoveNullValue(Move lastMove){
+        return (lastMove.getAmazonStartPosition() == null
+        || lastMove.getAmazonDstPosition() == null
+        || lastMove.getArrowDstPosition() == null);
     }
 
     public void startGame(){
