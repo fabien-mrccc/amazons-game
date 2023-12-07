@@ -94,8 +94,10 @@ public class GameController {
         }
         System.out.println(lastMove);
         game.updateGame(lastMove);
+        System.out.println(lastMove);
         view.showMove(lastMove);
         pause.play();
+        game.incrementTurn();
     }
 
     private boolean checkLastMoveNullValue(Move lastMove){
