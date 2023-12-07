@@ -4,6 +4,7 @@ import amazons.board.Position;
 import amazons.figures.Amazon;
 import static amazons.util.RandomUtil.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -41,8 +42,8 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
      */
     public Amazon bestAmazonToMove() {
         int smallerPlayerScore = boardHeight*boardWidth;
-        Amazon amazonToMove = null;
-        for (Amazon playerAmazon : playerAmazons) {
+        Amazon amazonToMove = getRandomElement(new Random(), getMovableAmazons());
+        for (Amazon playerAmazon : getMovableAmazons()) {
             if (smallerPlayerScore > getScore(playerAmazon)) {
                 if (playerAmazon.getAccessiblePositions(boardRepresentation).size() != 0) {
                     smallerPlayerScore = getScore(playerAmazon);
