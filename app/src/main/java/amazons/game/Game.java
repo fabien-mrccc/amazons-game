@@ -120,6 +120,7 @@ public class Game {
         else{
             turn++;
         }
+        System.out.println(turn);
     }
 
     public int getTurn() {return turn; }

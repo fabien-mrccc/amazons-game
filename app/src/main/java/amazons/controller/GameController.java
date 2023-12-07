@@ -89,8 +89,10 @@ public class GameController {
         Player currentPlayer = getCurrentPlayer();
         lastMove = currentPlayer.play(lastMove);
         game.updateGame(lastMove);
+        System.out.println(lastMove);
         view.showMove(lastMove);
         pause.play();
+        game.incrementTurn();
     }
 
     public void startGame(){
