@@ -16,8 +16,8 @@ public class AIBasicPlayer extends AbstractAIPlayer{
 
     @Override
     protected Position destPositionOfAmazonToMove(Position startPosition) {
-        Amazon amazon = (Amazon) aiBoardRepresentation.getFigure(startPosition);
-        List<Position> accessibleDestinationsPositions = amazon.getAccessiblePositions(aiBoardRepresentation, getAdjacentPositions(startPosition));
+        Amazon amazon = (Amazon) boardRepresentation.getFigure(startPosition);
+        List<Position> accessibleDestinationsPositions = amazon.getAccessiblePositions(boardRepresentation, getAdjacentPositions(startPosition));
         if(accessibleDestinationsPositions.size() == 0){
             return startPosition;
         }

@@ -33,7 +33,7 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
      */
     public int getScore(Amazon amazon){
         int score = 0;
-        for(Position position:amazon.getAccessiblePositions(aiBoardRepresentation)){
+        for(Position position:amazon.getAccessiblePositions(boardRepresentation)){
             score = score + 1;
         }
         return score;
@@ -45,9 +45,9 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
     public Amazon bestAmazonToMove() {
         int smallerPlayerScore = boardHeight*boardWidth;
         Amazon amazonToMove = null;
-        for (Amazon playerAmazon : aiPlayerAmazons) {
+        for (Amazon playerAmazon : playerAmazons) {
             if (smallerPlayerScore > getScore(playerAmazon)) {
-                if (playerAmazon.getAccessiblePositions(aiBoardRepresentation).size() != 0) {
+                if (playerAmazon.getAccessiblePositions(boardRepresentation).size() != 0) {
                     smallerPlayerScore = getScore(playerAmazon);
                     amazonToMove = playerAmazon;
                 }
@@ -61,26 +61,26 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
         List<Position> bestPositionsToMoveIn = new ArrayList<>();
         int biggerAccessibleOpponentAdjacentPositionsNum = 0;
 
-        for(Position position: playerAmazon.getAccessiblePositions(aiBoardRepresentation)){
+        for(Position position: playerAmazon.getAccessiblePositions(boardRepresentation)){
             for(Amazon opponentAmazon: opponentAmazons) {
                 Amazon amazon = new Amazon(position, playerID.index);
                 List<Position> opponentAdjacentPositions = getAdjacentPositions(opponentAmazon.getPosition());
                 int accessibleOpponentAdjacentPositionsNum = getAccessibleOpponentAdjacentPositionsNum(amazon,opponentAdjacentPositions);
                 if(biggerAccessibleOpponentAdjacentPositionsNum < accessibleOpponentAdjacentPositionsNum){
                     biggerAccessibleOpponentAdjacentPositionsNum = accessibleOpponentAdjacentPositionsNum;
-                    bestPositionsToMoveIn = amazon.getAccessiblePositions(aiBoardRepresentation, opponentAdjacentPositions);
+                    bestPositionsToMoveIn = amazon.getAccessiblePositions(boardRepresentation, opponentAdjacentPositions);
                 }
             }
         }
         if(bestPositionsToMoveIn.isEmpty()){
-            bestPositionsToMoveIn = playerAmazon.getAccessiblePositions(aiBoardRepresentation);
+            bestPositionsToMoveIn = playerAmazon.getAccessiblePositions(boardRepresentation);
         }
         return bestPositionsToMoveIn;
     }
     private int getAccessibleOpponentAdjacentPositionsNum(Amazon amazon,List<Position> opponentAdjacentPositions){
         int accessibleOpponentAdjacentPositionsNum =0;
         for(Position adjacentPosition: opponentAdjacentPositions) {
-            if (amazon.getAccessiblePositions(aiBoardRepresentation).contains(adjacentPosition)) {
+            if (amazon.getAccessiblePositions(boardRepresentation).contains(adjacentPosition)) {
                 accessibleOpponentAdjacentPositionsNum = accessibleOpponentAdjacentPositionsNum +1;
             }
         }
@@ -96,14 +96,14 @@ public class AIGreedyPlayer extends AbstractAIPlayer {
         List<Position> positionsToChooseFrom = new ArrayList<>();
         for(Amazon opponentAmazon: opponentAmazons){
             if (biggerOpponentScore < getScore(opponentAmazon)) {
-                if (playerAmazon.getAccessiblePositions(aiBoardRepresentation,getAdjacentPositions(opponentAmazon.getPosition())).size() != 0) {
+                if (playerAmazon.getAccessiblePositions(boardRepresentation,getAdjacentPositions(opponentAmazon.getPosition())).size() != 0) {
                     biggerOpponentScore = getScore(opponentAmazon);
-                    positionsToChooseFrom = playerAmazon.getAccessiblePositions(aiBoardRepresentation,getAdjacentPositions(opponentAmazon.getPosition()));
+                    positionsToChooseFrom = playerAmazon.getAccessiblePositions(boardRepresentation,getAdjacentPositions(opponentAmazon.getPosition()));
                 }
             }
         }
         if(positionsToChooseFrom.isEmpty()){
-            positionsToChooseFrom = playerAmazon.getAccessiblePositions(aiBoardRepresentation);
+            positionsToChooseFrom = playerAmazon.getAccessiblePositions(boardRepresentation);
         }
         return positionsToChooseFrom;
     }
