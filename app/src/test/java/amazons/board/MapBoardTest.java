@@ -243,6 +243,11 @@ class MapBoardTest {
                 .containsExactlyInAnyOrder(amazon00Player0, amazon01Player0, amazon32Player0);
     }
     @Test
+    void testIsOutOfBoard(){
+        assertThat(testBoard.isOutOfBoard(new Position(100,-2))).isTrue();
+        assertThat(testBoard.isOutOfBoard(position11)).isFalse();
+    }
+    @Test
     void testIsEmpty() {
         testBoard.setFigure(position32,EMPTY_FIGURE);
         assertThat(testBoard.isEmpty(position32)).isTrue();

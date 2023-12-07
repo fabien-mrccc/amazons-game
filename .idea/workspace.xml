@@ -7,8 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add public Player getOpponentPlayer()&#10;fix public void shootArrow(Position startPosition, Position arrowDstPosition)&#10;add private PlayerID checkForLosers()">
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected List&lt;Position&gt; getAdjacentPositions(Position position)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AbstractAIPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/MapBoardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +53,11 @@
                 <item name="amazons-template" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="amazons-template" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -114,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatrixBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="amazons.board.MatrixBoard" />
+    <configuration name="AppGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="amazons.AppGUI" />
       <module name="amazons-template.app.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="amazons.board.*" />
+          <option name="PATTERN" value="amazons.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -195,10 +204,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.amazons-template [run]" />
+        <item itemvalue="Application.AppGUI" />
         <item itemvalue="Gradle.amazons-template [test]" />
         <item itemvalue="Gradle.EmptyFigureGeneratorTest.testNextFigure" />
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.MatrixBoard" />
       </list>
     </recent_temporary>
   </component>
@@ -221,34 +230,6 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-    </task>
-    <task id="LOCAL-00174" summary="fix public void initializeGame(Player player0, Player player1): replace constants utilisation by attributes&#10;fix public int getNumberOfColumns()&#10;fix public int getNumberOfRows()">
-      <created>1701848480918</created>
-      <option name="number" value="00174" />
-      <option name="presentableId" value="LOCAL-00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1701848480918</updated>
-    </task>
-    <task id="LOCAL-00175" summary="add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)">
-      <created>1701851209998</created>
-      <option name="number" value="00175" />
-      <option name="presentableId" value="LOCAL-00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1701851209998</updated>
-    </task>
-    <task id="LOCAL-00176" summary="add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)">
-      <created>1701851628364</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1701851628364</updated>
-    </task>
-    <task id="LOCAL-00177" summary="add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
-      <created>1701852072217</created>
-      <option name="number" value="00177" />
-      <option name="presentableId" value="LOCAL-00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1701852072217</updated>
     </task>
     <task id="LOCAL-00178" summary="add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)">
       <created>1701852231169</created>
@@ -565,7 +546,35 @@
       <option name="project" value="LOCAL" />
       <updated>1701958173232</updated>
     </task>
-    <option name="localTasksCounter" value="223" />
+    <task id="LOCAL-00223" summary="fix public int getScore(Amazon amazon)">
+      <created>1701960916486</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1701960916486</updated>
+    </task>
+    <task id="LOCAL-00224" summary="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)&#10;fix public int getScore(Amazon amazon)">
+      <created>1701961047589</created>
+      <option name="number" value="00224" />
+      <option name="presentableId" value="LOCAL-00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1701961047589</updated>
+    </task>
+    <task id="LOCAL-00225" summary="fix public List&lt;Position&gt; bestShootPositions(Amazon playerAmazon)">
+      <created>1701961132457</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1701961132457</updated>
+    </task>
+    <task id="LOCAL-00226" summary="fix protected List&lt;Position&gt; getAdjacentPositions(Position position)">
+      <created>1701961283643</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1701961283644</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,11 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove" />
-    <MESSAGE value="fix protected void fillOpponentAmazonsList(List&lt;Position&gt; initialPositions)" />
-    <MESSAGE value="remove private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)&#10;fix public Move play(Move opponentMove)&#10;fix protected Amazon getAmazonToMove()" />
-    <MESSAGE value="refactoring getPositionOfAmazonToMove() method" />
-    <MESSAGE value="add public final Move play(Move opponentMove) &#10;add protected List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="remove public Move play(Move opponentMove)" />
     <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
@@ -608,6 +612,11 @@
     <MESSAGE value="add public boolean hasPlayableAmazons()&#10;add private void fillPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;add private void instantiateBoard(List&lt;Position&gt;[] initialPositions)&#10;add protected List&lt;Amazon&gt; getMovableAmazons()&#10;add public void updateBoardAmazonCase(Position amazonStartPosition, Position amazonDestPosition)&#10;add public void updateBoardArrowCase(Position amazonDestPosition, Position arrowDestinationPosition)" />
     <MESSAGE value="fix public final Move play(Move opponentMove)&#10;remove private void instantiateAIBoard(List&lt;Position&gt;[] initialPositions){&#10;remove private void updateBoard(Position startPosition, Position destPosition)&#10;remove private void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;remove protected List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="add public Player getOpponentPlayer()&#10;fix public void shootArrow(Position startPosition, Position arrowDstPosition)&#10;add private PlayerID checkForLosers()" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public Player getOpponentPlayer()&#10;fix public void shootArrow(Position startPosition, Position arrowDstPosition)&#10;add private PlayerID checkForLosers()" />
+    <MESSAGE value="fix public int getScore(Amazon amazon)" />
+    <MESSAGE value="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)" />
+    <MESSAGE value="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)&#10;fix public int getScore(Amazon amazon)" />
+    <MESSAGE value="fix public List&lt;Position&gt; bestShootPositions(Amazon playerAmazon)" />
+    <MESSAGE value="fix protected List&lt;Position&gt; getAdjacentPositions(Position position)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix protected List&lt;Position&gt; getAdjacentPositions(Position position)" />
   </component>
 </project>
