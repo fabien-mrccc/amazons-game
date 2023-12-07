@@ -19,6 +19,6 @@ public class AIRandomPlayer extends AbstractAIPlayer {
 
     @Override
     protected Position destPositionOfArrowToShoot(Position startPosition) {
-        return null;
+        return destPositionOfAmazonToMove(startPosition);
     }
 }
