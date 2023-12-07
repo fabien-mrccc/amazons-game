@@ -7,10 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected Position destPositionOfArrowToShoot(Position startPosition)">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/PresetFigureGeneratorTest.java" afterDir="false" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="add void testNextFigure()">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/board/RandomFigureGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/board/RandomFigureGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/amazons/board/RandomFigureGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/RandomFigureGeneratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,20 +109,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.PresetFigureGeneratorTest">
-    <configuration name="AppGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="amazons.AppGUI" />
-      <module name="amazons-template.app.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="amazons.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.amazons-template [run]">
     <configuration name="MatrixIteratorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -167,6 +156,52 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="RandomFigureGeneratorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;amazons.board.RandomFigureGeneratorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="RandomFigureGeneratorTest.nextFigure" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;amazons.board.RandomFigureGeneratorTest.nextFigure&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="amazons-template [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -188,34 +223,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="amazons-template [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.amazons-template [run]" />
+        <item itemvalue="Gradle.RandomFigureGeneratorTest" />
+        <item itemvalue="Gradle.RandomFigureGeneratorTest.nextFigure" />
         <item itemvalue="Gradle.PresetFigureGeneratorTest" />
         <item itemvalue="Gradle.MatrixIteratorTest" />
-        <item itemvalue="Gradle.amazons-template [run]" />
-        <item itemvalue="Application.AppGUI" />
-        <item itemvalue="Gradle.amazons-template [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -239,13 +253,6 @@
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
       <workItem from="1701971041271" duration="2129000" />
-    </task>
-    <task id="LOCAL-00188" summary="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove">
-      <created>1701859405726</created>
-      <option name="number" value="00188" />
-      <option name="presentableId" value="LOCAL-00188" />
-      <option name="project" value="LOCAL" />
-      <updated>1701859405726</updated>
     </task>
     <task id="LOCAL-00189" summary="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove">
       <created>1701859416739</created>
@@ -583,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701982042120</updated>
     </task>
-    <option name="localTasksCounter" value="237" />
+    <task id="LOCAL-00237" summary="add void testNextFigure()">
+      <created>1701984960344</created>
+      <option name="number" value="00237" />
+      <option name="presentableId" value="LOCAL-00237" />
+      <option name="project" value="LOCAL" />
+      <updated>1701984960345</updated>
+    </task>
+    <option name="localTasksCounter" value="238" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +615,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix public void updateGame(Move move)&#10;fix public PlayerID getPlayerID()&#10;fix public Player getPlayer()&#10;fix public void incrementTurn()" />
     <MESSAGE value="fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)" />
     <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions" />
     <MESSAGE value="fix public void initializeGame(Player player0, Player player1)" />
@@ -626,6 +639,7 @@
     <MESSAGE value="fix protected Position startPositionOfAmazonToMove()" />
     <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
     <MESSAGE value="fix protected Position destPositionOfArrowToShoot(Position startPosition)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix protected Position destPositionOfArrowToShoot(Position startPosition)" />
+    <MESSAGE value="add void testNextFigure()" />
+    <option name="LAST_COMMIT_MESSAGE" value="add void testNextFigure()" />
   </component>
 </project>
