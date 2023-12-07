@@ -7,7 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix public void playComputerTurn()" />
+    <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="fix protected Position destPositionOfArrowToShoot(Position startPosition)">
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/amazons/board/PresetFigureGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/AppGUI.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,20 +107,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.amazons-template [run]">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="amazons.App" />
-      <module name="amazons-template.app.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="amazons.figures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.PresetFigureGeneratorTest">
     <configuration name="AppGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="amazons.AppGUI" />
       <module name="amazons-template.app.main" />
@@ -130,7 +121,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmptyFigureGeneratorTest.testNextFigure" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MatrixIteratorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -143,7 +134,30 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;amazons.board.EmptyFigureGeneratorTest.testNextFigure&quot;" />
+            <option value="&quot;amazons.board.MatrixIteratorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PresetFigureGeneratorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+            <option value="--tests" />
+            <option value="&quot;amazons.board.PresetFigureGeneratorTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PresetFigureGeneratorTest" />
+        <item itemvalue="Gradle.MatrixIteratorTest" />
         <item itemvalue="Gradle.amazons-template [run]" />
         <item itemvalue="Application.AppGUI" />
         <item itemvalue="Gradle.amazons-template [test]" />
-        <item itemvalue="Gradle.EmptyFigureGeneratorTest.testNextFigure" />
-        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -225,55 +239,6 @@
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
       <workItem from="1701971041271" duration="2129000" />
-    </task>
-    <task id="LOCAL-00181" summary="add void setUp()">
-      <created>1701854641796</created>
-      <option name="number" value="00181" />
-      <option name="presentableId" value="LOCAL-00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1701854641796</updated>
-    </task>
-    <task id="LOCAL-00182" summary="fix protected Amazon getAmazonToMove()&#10;fix private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)">
-      <created>1701854926040</created>
-      <option name="number" value="00182" />
-      <option name="presentableId" value="LOCAL-00182" />
-      <option name="project" value="LOCAL" />
-      <updated>1701854926040</updated>
-    </task>
-    <task id="LOCAL-00183" summary="fix protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)">
-      <created>1701857078451</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1701857078451</updated>
-    </task>
-    <task id="LOCAL-00184" summary="fix private Amazon getRandomAmazon(List&lt;Amazon&gt; amazons)">
-      <created>1701857455936</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1701857455936</updated>
-    </task>
-    <task id="LOCAL-00185" summary="refactoring aiPlayerAmazons">
-      <created>1701857696045</created>
-      <option name="number" value="00185" />
-      <option name="presentableId" value="LOCAL-00185" />
-      <option name="project" value="LOCAL" />
-      <updated>1701857696045</updated>
-    </task>
-    <task id="LOCAL-00186" summary="add void testPlay()">
-      <created>1701857792747</created>
-      <option name="number" value="00186" />
-      <option name="presentableId" value="LOCAL-00186" />
-      <option name="project" value="LOCAL" />
-      <updated>1701857792747</updated>
-    </task>
-    <task id="LOCAL-00187" summary="add protected Amazon getAmazonToMove()">
-      <created>1701857988992</created>
-      <option name="number" value="00187" />
-      <option name="presentableId" value="LOCAL-00187" />
-      <option name="project" value="LOCAL" />
-      <updated>1701857988992</updated>
     </task>
     <task id="LOCAL-00188" summary="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions): infinite loop remove">
       <created>1701859405726</created>
@@ -569,7 +534,56 @@
       <option name="project" value="LOCAL" />
       <updated>1701969595838</updated>
     </task>
-    <option name="localTasksCounter" value="230" />
+    <task id="LOCAL-00230" summary="add private boolean checkLastMoveNullValue(Move lastMove)&#10;fix public void playComputerTurn()">
+      <created>1701977227470</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1701977227470</updated>
+    </task>
+    <task id="LOCAL-00231" summary="fix protected Position destPositionOfArrowToShoot(Position startPosition)&#10;fix public Position bestAmazonDestination(Amazon playerAmazon)">
+      <created>1701980981629</created>
+      <option name="number" value="00231" />
+      <option name="presentableId" value="LOCAL-00231" />
+      <option name="project" value="LOCAL" />
+      <updated>1701980981629</updated>
+    </task>
+    <task id="LOCAL-00232" summary="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions)">
+      <created>1701981020513</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1701981020513</updated>
+    </task>
+    <task id="LOCAL-00233" summary="fix protected Position destPositionOfArrowToShoot(Position startPosition)">
+      <created>1701981649290</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1701981649290</updated>
+    </task>
+    <task id="LOCAL-00234" summary="fix protected Position startPositionOfAmazonToMove()">
+      <created>1701981698654</created>
+      <option name="number" value="00234" />
+      <option name="presentableId" value="LOCAL-00234" />
+      <option name="project" value="LOCAL" />
+      <updated>1701981698654</updated>
+    </task>
+    <task id="LOCAL-00235" summary="fix protected Position destPositionOfAmazonToMove(Position startPosition)">
+      <created>1701981866338</created>
+      <option name="number" value="00235" />
+      <option name="presentableId" value="LOCAL-00235" />
+      <option name="project" value="LOCAL" />
+      <updated>1701981866339</updated>
+    </task>
+    <task id="LOCAL-00236" summary="fix protected Position destPositionOfArrowToShoot(Position startPosition)">
+      <created>1701982042120</created>
+      <option name="number" value="00236" />
+      <option name="presentableId" value="LOCAL-00236" />
+      <option name="project" value="LOCAL" />
+      <updated>1701982042120</updated>
+    </task>
+    <option name="localTasksCounter" value="237" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,13 +601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove public Move play(Move opponentMove)&#10;remove private List&lt;Amazon&gt; getMovableAmazons()&#10;add protected Position startPositionOfAmazonToMove()&#10;add protected Position destPositionOfAmazonToMove(Position startPosition)&#10;add     protected Position destPositionOfArrowToShoot(Position startPosition)" />
-    <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
-    <MESSAGE value="fix public final Move play(Move opponentMove)" />
-    <MESSAGE value="fix protected Position destPositionOfArrowToShoot(Position startPosition)" />
-    <MESSAGE value="remove public int getNumberOfAmazonsPerPlayer()" />
-    <MESSAGE value="fix public void updateGame(Move move): set new current player ID at the end of the method" />
-    <MESSAGE value="fix public Move play(Move opponentMove): remove player ID setter" />
     <MESSAGE value="fix public void updateGame(Move move)&#10;fix public PlayerID getPlayerID()&#10;fix public Player getPlayer()&#10;fix public void incrementTurn()" />
     <MESSAGE value="fix public final Move play(Move opponentMove) &#10;add private void updateBoard(Position startPosition, Position destPosition)" />
     <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition): manage if  there is no accessible positions" />
@@ -613,6 +620,12 @@
     <MESSAGE value="add void testIsOutOfBoard()" />
     <MESSAGE value="fix public Amazon bestAmazonToMove()" />
     <MESSAGE value="fix public Position bestShootPosition(Amazon playerAmazon)&#10;fix public Position bestAmazonDestination(Amazon playerAmazon)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix public Position bestShootPosition(Amazon playerAmazon)&#10;fix public Position bestAmazonDestination(Amazon playerAmazon)" />
+    <MESSAGE value="add private boolean checkLastMoveNullValue(Move lastMove)&#10;fix public void playComputerTurn()" />
+    <MESSAGE value="fix protected Position destPositionOfArrowToShoot(Position startPosition)&#10;fix public Position bestAmazonDestination(Amazon playerAmazon)" />
+    <MESSAGE value="fix public List&lt;Position&gt; getAccessiblePositions(Board board, List&lt;Position&gt; positions)" />
+    <MESSAGE value="fix protected Position startPositionOfAmazonToMove()" />
+    <MESSAGE value="fix protected Position destPositionOfAmazonToMove(Position startPosition)" />
+    <MESSAGE value="fix protected Position destPositionOfArrowToShoot(Position startPosition)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix protected Position destPositionOfArrowToShoot(Position startPosition)" />
   </component>
 </project>
