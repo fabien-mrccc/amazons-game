@@ -10,6 +10,7 @@
     <list default="true" id="f0ac77af-9bf1-47cc-a9a0-0dd0e10750b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/player/AIGreedyPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amazons/util/RandomUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amazons/util/RandomUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,21 +226,7 @@
       <workItem from="1701184810804" duration="5802000" />
       <workItem from="1701362909876" duration="21283000" />
       <workItem from="1701682674385" duration="22208000" />
-      <workItem from="1701934409691" duration="6666000" />
-    </task>
-    <task id="LOCAL-00157" summary="fix several access modifiers">
-      <created>1701794893593</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1701794893594</updated>
-    </task>
-    <task id="LOCAL-00158" summary="fix public String toString(): refactoring local variable names">
-      <created>1701795144389</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1701795144389</updated>
+      <workItem from="1701934409691" duration="8839000" />
     </task>
     <task id="LOCAL-00159" summary="fix public String toString(): refactoring local variable names">
       <created>1701795193299</created>
@@ -570,7 +557,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701939707767</updated>
     </task>
-    <option name="localTasksCounter" value="206" />
+    <task id="LOCAL-00206" summary="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)&#10;add public int getAccessibleOpponentAdjacentPositionsNum(Amazon amazon,List&lt;Position&gt; opponentAdjacentPositions)">
+      <created>1701941117753</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
+      <option name="project" value="LOCAL" />
+      <updated>1701941117753</updated>
+    </task>
+    <task id="LOCAL-00207" summary="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)&#10;add private List&lt;Position&gt; getBestPositionsToMoveIn(Amazon amazon, int biggerAccessibleOpponentAdjacentPositionsNum, List&lt;Position&gt; opponentAdjacentPositions)">
+      <created>1701942087762</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
+      <option name="project" value="LOCAL" />
+      <updated>1701942087762</updated>
+    </task>
+    <option name="localTasksCounter" value="208" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,8 +589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add private void instantiateAiBoard(List&lt;Position&gt;[] initialPositions)" />
-    <MESSAGE value="add protected void fillAIPlayerAmazonsList(List&lt;Position&gt; initialPositions)&#10;fix public void initialize(int boardWidth, int boardHeight,  PlayerID playerID, List&lt;Position&gt;[] initialPositions)" />
     <MESSAGE value="add protected abstract Amazon getAmazonToMove()" />
     <MESSAGE value="add protected Amazon getAmazonToMove()&#10;add private Amazon getRandomAmazonOfAIPlayer(List&lt;Amazon&gt; movableAmazons)&#10;add private List&lt;Amazon&gt; getMovableAmazons()" />
     <MESSAGE value="add void setUp()" />
@@ -613,6 +612,8 @@
     <MESSAGE value="remove public int getNumberOfAmazonsPerPlayer()" />
     <MESSAGE value="add public Amazon bestAmazonToMove()&#10;add public List&lt;Position&gt; bestShootPositions(Amazon playerAmazon)" />
     <MESSAGE value="add public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)" />
+    <MESSAGE value="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)&#10;add public int getAccessibleOpponentAdjacentPositionsNum(Amazon amazon,List&lt;Position&gt; opponentAdjacentPositions)" />
+    <MESSAGE value="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)&#10;add private List&lt;Position&gt; getBestPositionsToMoveIn(Amazon amazon, int biggerAccessibleOpponentAdjacentPositionsNum, List&lt;Position&gt; opponentAdjacentPositions)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix public List&lt;Position&gt; bestAmazonDestinations(Amazon playerAmazon)&#10;add private List&lt;Position&gt; getBestPositionsToMoveIn(Amazon amazon, int biggerAccessibleOpponentAdjacentPositionsNum, List&lt;Position&gt; opponentAdjacentPositions)" />
   </component>
 </project>
