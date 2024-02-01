@@ -1,14 +1,17 @@
-## Project description
+## Project Description
 This project is about implementing the game Amazons.
 It's a two player strategy game played on a checkerboard or chessboard.
 The goal is to capture your opponent's pieces.
 A move consists of two steps: moving a piece and shooting an arrow at a square.
 The square is then inaccessible to other players' pieces for the rest of the game.
-The winner is the last player to complete a move.
+The winner is the last player to complete a move.  
 
-## Project members
-- FANANI, amina
-- MARCUCCINI, fabien
+## Project details
+The game is playable with 2 real players (local), 1 real player VS 1 AI (3 difficulty modes) or AI VS AI.
+
+## Project Members
+- FANANI Amina
+- MARCUCCINI Fabien
 
 ## Preview
 <img alt="Preview of the project! (#1)" src="https://fabien-marcuccini.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fb09fcc6c-df16-46f2-8a4f-d37dba6294b1%2F52762059-493b-4e26-ac8c-a11951a748a4%2FUntitled.png?table=block&id=0c1c3b74-3065-40f0-8f8c-d3efe2b3e8a6&spaceId=b09fcc6c-df16-46f2-8a4f-d37dba6294b1&width=1860&userId=&cache=v2" width="800"/>
