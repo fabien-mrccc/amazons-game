@@ -7,7 +7,8 @@ The square is then inaccessible to other players' pieces for the rest of the gam
 The winner is the last player to complete a move.  
 
 ## Project details
-The game is playable with 2 real players (local), 1 real player VS 1 AI (3 difficulty modes) or AI VS AI.
+The game is playable with 2 real players (local), 1 real player VS 1 AI (3 difficulty modes) or AI VS AI.<br>
+The project was developed during the third semester at the University of Aix-Marseille (2023-2024).
 
 ## Project Members
 - FANANI Amina
